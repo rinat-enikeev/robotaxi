@@ -2049,7 +2049,7 @@
           >
             Try again
           </button>
-        {:else if hasFetchedRobotaxis}
+        {:else if hasFetchedRobotaxis && robotaxisWithCoords().length > 0}
           <p class="menu-status">
             Showing {robotaxisWithCoords().length} robotaxi companies
           </p>
@@ -2079,99 +2079,98 @@
             Try again
           </button>
         {:else if hasFetchedRidehailings}
-          <p class="menu-status">
-            Showing {ridehailingsWithCoords().length} ridehailing companies
-          </p>
+          <!-- Ridehailing data loaded; no status message shown -->
         {/if}
 
-        <label class="menu-item menu-subitem">
-          <input
-            type="checkbox"
-            checked={isRidehailingOperationsEnabled}
-            disabled={!isRidehailingsEnabled}
-            onchange={(event) =>
-              handleRidehailingOperationsToggle(
-                (event.currentTarget as HTMLInputElement).checked,
-              )}
-          />
-          <span class="menu-label">Operations</span>
-        </label>
-
         {#if isRidehailingsEnabled}
-          {#if isRidehailingOperationsLoading || isCountryBoundariesLoading}
-            <p class="menu-status menu-substatus">Loading operations…</p>
-          {:else if ridehailingOperationsError || countryBoundariesError}
-            <p class="menu-status error menu-substatus">
-              {#if ridehailingOperationsError}
-                Failed to load operations: {ridehailingOperationsError}
-              {/if}
-              {#if countryBoundariesError}
+          <div class="menu-group menu-subgroup">
+            <label class="menu-item menu-subitem">
+              <input
+                type="checkbox"
+                checked={isRidehailingOperationsEnabled}
+                onchange={(event) =>
+                  handleRidehailingOperationsToggle(
+                    (event.currentTarget as HTMLInputElement).checked,
+                  )}
+              />
+              <span class="menu-label">Operations</span>
+            </label>
+
+            {#if isRidehailingOperationsLoading || isCountryBoundariesLoading}
+              <p class="menu-status menu-substatus">Loading operations…</p>
+            {:else if ridehailingOperationsError || countryBoundariesError}
+              <p class="menu-status error menu-substatus">
                 {#if ridehailingOperationsError}
-                  <br />
+                  Failed to load operations: {ridehailingOperationsError}
                 {/if}
-                Failed to load country boundaries: {countryBoundariesError}
-              {/if}
-            </p>
-            <button
-              class="retry-button menu-substatus"
-              type="button"
-              onclick={handleRetryRidehailingOperations}
-            >
-              Try again
-            </button>
-          {:else if isRidehailingOperationsEnabled && hasFetchedRidehailingOperations}
-            {#if ridehailingOperationsGeoJson().features.length === 0}
-              <p class="menu-status menu-substatus">No operations data yet.</p>
-            {:else}
-              {#if ridehailingOperationCompanies().length > 0}
-                <div class="operations-checkboxes">
-                  {#each ridehailingOperationCompanies() as company}
-                    <div class="operations-company">
-                      <label class="menu-item menu-subitem operations-company-row">
-                        <input
-                          type="checkbox"
-                          checked={ridehailingOperationVisibilityBySlug[
-                            company.slug
-                          ] ?? true}
-                          onchange={(event) =>
-                            handleRidehailingOperationVisibilityToggle(
-                              company.slug,
-                              (event.currentTarget as HTMLInputElement).checked,
-                            )}
-                        />
-                        <span class="menu-label">{company.name}</span>
-                        <span class="menu-meta">
-                          {company.countryCount}{" "}
-                          {company.countryCount === 1 ? "country" : "countries"}
-                        </span>
-                      </label>
-                      {#if company.cityCount > 0}
-                        <label class="menu-item menu-subitem operations-company-row city">
+                {#if countryBoundariesError}
+                  {#if ridehailingOperationsError}
+                    <br />
+                  {/if}
+                  Failed to load country boundaries: {countryBoundariesError}
+                {/if}
+              </p>
+              <button
+                class="retry-button menu-substatus"
+                type="button"
+                onclick={handleRetryRidehailingOperations}
+              >
+                Try again
+              </button>
+            {:else if isRidehailingOperationsEnabled && hasFetchedRidehailingOperations}
+              {#if ridehailingOperationsGeoJson().features.length === 0}
+                <p class="menu-status menu-substatus">No operations data yet.</p>
+              {:else}
+                {#if ridehailingOperationCompanies().length > 0}
+                  <div class="operations-checkboxes">
+                    {#each ridehailingOperationCompanies() as company}
+                      <div class="operations-company">
+                        <label class="menu-item menu-subitem operations-company-row">
                           <input
                             type="checkbox"
-                            checked={ridehailingCityVisibilityBySlug[
+                            checked={ridehailingOperationVisibilityBySlug[
                               company.slug
-                            ] ?? false}
+                            ] ?? true}
                             onchange={(event) =>
-                              handleRidehailingCityVisibilityToggle(
+                              handleRidehailingOperationVisibilityToggle(
                                 company.slug,
-                                (event.currentTarget as HTMLInputElement)
-                                  .checked,
+                                (event.currentTarget as HTMLInputElement).checked,
                               )}
                           />
-                          <span class="menu-label">Cities</span>
+                          <span class="menu-label">{company.name}</span>
                           <span class="menu-meta">
-                            {company.cityCount}{" "}
-                            {company.cityCount === 1 ? "city" : "cities"}
+                            {company.countryCount}{" "}
+                            {company.countryCount === 1 ? "country" : "countries"}
                           </span>
                         </label>
-                      {/if}
-                    </div>
-                  {/each}
-                </div>
+                        {#if company.cityCount > 0}
+                          <label class="menu-item menu-subitem operations-company-row city">
+                            <input
+                              type="checkbox"
+                              checked={ridehailingCityVisibilityBySlug[
+                                company.slug
+                              ] ?? false}
+                              onchange={(event) =>
+                                handleRidehailingCityVisibilityToggle(
+                                  company.slug,
+                                  (event.currentTarget as HTMLInputElement)
+                                    .checked,
+                                )}
+                            />
+                            <span class="menu-label">Cities</span>
+                            <span class="menu-meta">
+                              {company.cityCount}{" "}
+                              {company.cityCount === 1 ? "city" : "cities"}
+                            </span>
+                          </label>
+                        {/if}
+                      </div>
+                    {/each}
+                  </div>
+                {/if}
               {/if}
             {/if}
-          {/if}
+          </div>
         {/if}
 
         <label class="menu-item">
@@ -2325,6 +2324,20 @@
 
   .menu-subitem input {
     margin-left: -1.5rem;
+  }
+
+  .menu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .menu-subgroup {
+    margin-left: 1.5rem;
+  }
+
+  .menu-subgroup .menu-substatus {
+    margin-left: 0;
   }
 
   .menu-substatus {
