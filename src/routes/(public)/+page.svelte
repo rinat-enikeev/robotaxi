@@ -1,13 +1,21 @@
 <script lang="ts">
-  import { onMount } from "svelte"
+  import { onMount, tick } from "svelte"
   import {
     MapLibre,
     GeoJSONSource,
     CircleLayer,
     SymbolLayer,
+    FillLayer,
+    LineLayer,
     GlobeControl,
   } from "svelte-maplibre-gl"
   import maplibregl from "maplibre-gl"
+  import type {
+    Feature,
+    FeatureCollection,
+    MultiPolygon,
+    Polygon,
+  } from "geojson"
 
   type Robotaxi = {
     id: number
@@ -30,6 +38,52 @@
     website?: string | null
   }
 
+  type Ridehailing = {
+    id: number
+    slug: string
+    name: string
+    website: string | null
+    latitude: number
+    longitude: number
+    address: string | null
+    city_slug: string
+    country_slug: string
+  }
+
+  type RidehailingFeatureProperties = {
+    id: number
+    name: string
+    website: string
+    address: string
+    slug: string
+    sanitizedWebsite: string
+    imageName: string | null
+  }
+
+  type RidehailingCountryOperation = {
+    ridehailing_slug: string
+    country_slug: string
+    iso_alpha_2: string | null
+    iso_alpha_3: string | null
+  }
+
+  type RidehailingOperationFeatureProperties = {
+    ridehailing_slug: string
+    name: string
+    iso_alpha_3: string
+  }
+
+  type CountryFeatureProperties = {
+    name: string
+    "ISO3166-1-Alpha-3": string
+    "ISO3166-1-Alpha-2": string
+  }
+
+  type CountryFeatureCollection = FeatureCollection<
+    Polygon | MultiPolygon,
+    CountryFeatureProperties
+  >
+
   type RobotaxiFeatureProperties = {
     id: number
     name: string
@@ -44,17 +98,34 @@
 
   let isHamburgerOpen = $state(false)
 
-  let isRobotaxisEnabled = $state(true)
+  let isRobotaxisEnabled = $state(false)
   let isRobotaxisLoading = $state(false)
   let hasFetchedRobotaxis = $state(false)
   let robotaxis = $state<Robotaxi[]>([])
   let robotaxisError = $state<string | null>(null)
+
+  let isRidehailingsEnabled = $state(true)
+  let isRidehailingsLoading = $state(false)
+  let hasFetchedRidehailings = $state(false)
+  let ridehailings = $state<Ridehailing[]>([])
+  let ridehailingsError = $state<string | null>(null)
 
   let isUniversitiesEnabled = $state(false)
   let isUniversitiesLoading = $state(false)
   let hasFetchedUniversities = $state(false)
   let universities = $state<University[]>([])
   let universitiesError = $state<string | null>(null)
+
+  let isRidehailingOperationsEnabled = $state(true)
+  let isRidehailingOperationsLoading = $state(false)
+  let hasFetchedRidehailingOperations = $state(false)
+  let ridehailingCountryOperations = $state<RidehailingCountryOperation[]>([])
+  let ridehailingOperationsError = $state<string | null>(null)
+  let ridehailingOperationVisibilityBySlug = $state<Record<string, boolean>>({})
+
+  let isCountryBoundariesLoading = $state(false)
+  let countryBoundariesError = $state<string | null>(null)
+  let countriesGeoJson = $state<CountryFeatureCollection | null>(null)
 
   const sanitizeWebsite = (value: string) => {
     const trimmed = value.trim()
@@ -120,6 +191,46 @@
     }),
   }))
 
+  const ridehailingsWithCoords = $derived(() => {
+    if (!isRidehailingsEnabled) {
+      return []
+    }
+
+    return ridehailings.filter(
+      (company) => company.longitude != null && company.latitude != null,
+    )
+  })
+
+  const ridehailingGeoJson = $derived(() => ({
+    type: "FeatureCollection" as const,
+    features: ridehailingsWithCoords().map((company) => {
+      const website = (company.website ?? "").trim()
+      const sanitizedWebsite = website ? sanitizeWebsite(website) : ""
+      const imageName =
+        sanitizedWebsite !== "" ? `ridehailing-${company.slug}` : null
+
+      return {
+        type: "Feature" as const,
+        properties: {
+          id: company.id,
+          name: company.name,
+          website,
+          address: company.address ?? "",
+          slug: company.slug,
+          sanitizedWebsite,
+          imageName,
+        },
+        geometry: {
+          type: "Point" as const,
+          coordinates: [
+            Number(company.longitude),
+            Number(company.latitude),
+          ] as [number, number],
+        },
+      }
+    }),
+  }))
+
   const universitiesWithCoords = $derived(() => {
     if (!isUniversitiesEnabled) {
       return []
@@ -155,6 +266,11 @@
       website,
     )}?size=128&format=png&circular=true&token=pk_Yu3KDenwQuy7Mr1I3USKIA`
 
+  const buildRidehailingLogoUrl = (website: string) =>
+    `https://img.logo.dev/${encodeURIComponent(
+      website,
+    )}?size=128&format=png&circular=true&token=pk_Yu3KDenwQuy7Mr1I3USKIA`
+
   const robotaxiLogos = $derived(() =>
     robotaxiGeoJson()
       .features.map(
@@ -169,9 +285,313 @@
       })),
   )
 
+  const robotaxiLogoMap = $derived(() => {
+    const entries = new Map<string, string>()
+    for (const { imageName, logoUrl } of robotaxiLogos()) {
+      entries.set(imageName, logoUrl)
+    }
+    return entries
+  })
+
+  const ridehailingLogos = $derived(() =>
+    ridehailingGeoJson()
+      .features.map(
+        (feature) => feature.properties as RidehailingFeatureProperties,
+      )
+      .filter(
+        (props) => props.imageName !== null && props.sanitizedWebsite !== "",
+      )
+      .map((props) => ({
+        imageName: props.imageName as string,
+        logoUrl: buildRidehailingLogoUrl(props.sanitizedWebsite),
+      })),
+  )
+
+  const ridehailingLogoMap = $derived(() => {
+    const entries = new Map<string, string>()
+    for (const { imageName, logoUrl } of ridehailingLogos()) {
+      entries.set(imageName, logoUrl)
+    }
+    return entries
+  })
+
+  const ridehailingColorPalette = [
+    { fill: "#16a34a", outline: "#15803d" },
+    { fill: "#0ea5e9", outline: "#0369a1" },
+    { fill: "#f97316", outline: "#ea580c" },
+    { fill: "#9333ea", outline: "#7e22ce" },
+    { fill: "#f59e0b", outline: "#d97706" },
+    { fill: "#ec4899", outline: "#db2777" },
+    { fill: "#22c55e", outline: "#16a34a" },
+    { fill: "#6366f1", outline: "#4f46e5" },
+  ] as const
+
+  const ridehailingCountryCounts = $derived(() => {
+    const counts = new Map<string, number>()
+    for (const record of ridehailingCountryOperations) {
+      const slug = record.ridehailing_slug
+      counts.set(slug, (counts.get(slug) ?? 0) + 1)
+    }
+    return counts
+  })
+
+  const ridehailingCountryIsoCodesBySlug = $derived(() => {
+    const map = new Map<string, { alpha2: Set<string>; alpha3: Set<string> }>()
+
+    for (const record of ridehailingCountryOperations) {
+      const slug = record.ridehailing_slug
+      const entry = map.get(slug) ?? {
+        alpha2: new Set<string>(),
+        alpha3: new Set<string>(),
+      }
+
+      const isoAlpha2 = record.iso_alpha_2
+      if (isoAlpha2) {
+        entry.alpha2.add(isoAlpha2.toUpperCase())
+      }
+
+      const isoAlpha3 = record.iso_alpha_3
+      if (isoAlpha3) {
+        entry.alpha3.add(isoAlpha3.toUpperCase())
+      }
+
+      map.set(slug, entry)
+    }
+
+    return map
+  })
+
+  const emptyRidehailingOperationsGeoJson: FeatureCollection<
+    Polygon | MultiPolygon,
+    RidehailingOperationFeatureProperties
+  > = {
+    type: "FeatureCollection",
+    features: [],
+  }
+
+  const ridehailingOperationsGeoJson = $derived(() => {
+    if (!isRidehailingOperationsEnabled) {
+      return emptyRidehailingOperationsGeoJson
+    }
+
+    const geoJson = countriesGeoJson
+    if (!geoJson) {
+      return emptyRidehailingOperationsGeoJson
+    }
+
+    const isoCodes = ridehailingCountryIsoCodesBySlug()
+    if (isoCodes.size === 0) {
+      return emptyRidehailingOperationsGeoJson
+    }
+
+    const features: Feature<
+      Polygon | MultiPolygon,
+      RidehailingOperationFeatureProperties
+    >[] = []
+
+    for (const feature of geoJson.features) {
+      const properties = feature.properties
+      if (!properties) continue
+
+      const isoAlpha3 =
+        properties["ISO3166-1-Alpha-3"]?.toUpperCase() ??
+        properties["ISO3166-1-Alpha-2"]?.toUpperCase()
+      if (!isoAlpha3) continue
+
+      for (const [slug, codes] of isoCodes.entries()) {
+        if (
+          codes.alpha3.has(isoAlpha3) ||
+          codes.alpha2.has(properties["ISO3166-1-Alpha-2"]?.toUpperCase() ?? "")
+        ) {
+          features.push({
+            type: "Feature" as const,
+            properties: {
+              ridehailing_slug: slug,
+              name: properties.name,
+              iso_alpha_3: isoAlpha3,
+            },
+            geometry: feature.geometry,
+          })
+        }
+      }
+    }
+
+    return {
+      type: "FeatureCollection" as const,
+      features,
+    }
+  })
+
+  const ridehailingColorsBySlug = $derived(() => {
+    const colors = new Map<string, { fill: string; outline: string }>()
+    const palette = ridehailingColorPalette
+    const slugs = Array.from(
+      new Set(
+        ridehailingCountryOperations.map((record) => record.ridehailing_slug),
+      ),
+    ).sort()
+
+    let index = 0
+    for (const slug of slugs) {
+      const paletteColor = palette[index % palette.length]
+      colors.set(slug, paletteColor)
+      index += 1
+    }
+
+    return colors
+  })
+
+  const ridehailingOperationCompanies = $derived(() => {
+    const counts = ridehailingCountryCounts()
+    if (counts.size === 0) {
+      return []
+    }
+
+    return Array.from(counts.entries())
+      .map(([slug, count]) => {
+        const companyName =
+          ridehailings.find((company) => company.slug === slug)?.name ?? slug
+
+        return {
+          slug,
+          name: companyName,
+          countryCount: count,
+        }
+      })
+      .sort((a, b) =>
+        a.name.localeCompare(b.name, undefined, { sensitivity: "base" }),
+      )
+  })
+
+  const activeRidehailingOperationSlugs = $derived(() => {
+    const visibility = ridehailingOperationVisibilityBySlug
+    const companies = ridehailingOperationCompanies()
+    if (companies.length === 0) {
+      return []
+    }
+
+    const result: string[] = []
+    for (const company of companies) {
+      const isVisible = visibility[company.slug]
+      if (isVisible === undefined || isVisible) {
+        result.push(company.slug)
+      }
+    }
+
+    if (result.length > 0) {
+      return result
+    }
+
+    return []
+  })
+
+  const ridehailingOperationsLayerFilter = $derived(
+    (): maplibregl.FilterSpecification => {
+      const activeSlugs = activeRidehailingOperationSlugs()
+      if (activeSlugs.length === 0) {
+        return ["in", "ridehailing_slug", "__no_visible_ridehailing__"]
+      }
+
+      return ["in", "ridehailing_slug", ...activeSlugs]
+    },
+  )
+
+  const ridehailingFillColorExpression: () => maplibregl.DataDrivenPropertyValueSpecification<string> =
+    $derived(() => {
+      const entries = Array.from(ridehailingColorsBySlug().entries())
+      if (entries.length === 0) {
+        return "#4b5563"
+      }
+
+      return [
+        "match",
+        ["get", "ridehailing_slug"],
+        ...entries.flatMap(([slug, color]) => [slug, color.fill]),
+        "#4b5563",
+      ] as unknown as maplibregl.ExpressionSpecification
+    })
+
+  const ridehailingOutlineColorExpression: () => maplibregl.DataDrivenPropertyValueSpecification<string> =
+    $derived(() => {
+      const entries = Array.from(ridehailingColorsBySlug().entries())
+      if (entries.length === 0) {
+        return "#374151"
+      }
+
+      return [
+        "match",
+        ["get", "ridehailing_slug"],
+        ...entries.flatMap(([slug, color]) => [slug, color.outline]),
+        "#374151",
+      ] as unknown as maplibregl.ExpressionSpecification
+    })
+
+  const ridehailingOperationsSummary = $derived(() => {
+    const counts = ridehailingCountryCounts()
+    if (counts.size === 0) {
+      return ""
+    }
+
+    const activeSlugs = activeRidehailingOperationSlugs()
+    if (activeSlugs.length === 0) {
+      return ""
+    }
+
+    const entries = activeSlugs
+      .map((slug) => {
+        const count = counts.get(slug)
+        if (!count) {
+          return null
+        }
+
+        const companyName =
+          ridehailings.find((company) => company.slug === slug)?.name ?? slug
+        return `${companyName}: ${count} ${count === 1 ? "country" : "countries"}`
+      })
+      .filter((value): value is string => Boolean(value))
+
+    if (entries.length === 0) {
+      return ""
+    }
+
+    return entries.join(", ")
+  })
+
+  $effect(() => {
+    const counts = ridehailingCountryCounts()
+    const currentVisibility = ridehailingOperationVisibilityBySlug
+    const nextVisibility: Record<string, boolean> = {}
+    let changed = false
+
+    for (const slug of counts.keys()) {
+      const existing = currentVisibility[slug]
+      nextVisibility[slug] = existing ?? true
+      if (existing === undefined) {
+        changed = true
+      }
+    }
+
+    for (const slug in currentVisibility) {
+      if (!counts.has(slug)) {
+        changed = true
+        break
+      }
+    }
+
+    if (
+      changed ||
+      Object.keys(currentVisibility).length !==
+        Object.keys(nextVisibility).length
+    ) {
+      ridehailingOperationVisibilityBySlug = nextVisibility
+    }
+  })
+
   let hasSetGlobeProjection = false
   const failedRobotaxiImages = new Set<string>()
   const pendingRobotaxiImages = new Set<string>()
+  const failedRidehailingImages = new Set<string>()
+  const pendingRidehailingImages = new Set<string>()
 
   const ensureGlobeProjection = (m: maplibregl.Map) => {
     if (!hasSetGlobeProjection) {
@@ -195,7 +615,26 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 80, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
+    }
+  }
+
+  const focusMapOnRidehailings = (
+    m: maplibregl.Map,
+    companies: Ridehailing[] | null = null,
+  ) => {
+    const items = (companies ?? ridehailingsWithCoords()).filter(
+      (company) => company.longitude != null && company.latitude != null,
+    )
+    if (items.length === 0) return
+
+    const bounds = new maplibregl.LngLatBounds()
+    for (const company of items) {
+      bounds.extend([Number(company.longitude), Number(company.latitude)])
+    }
+
+    if (!bounds.isEmpty()) {
+      m.fitBounds(bounds, { padding: 360, maxZoom: 6 })
     }
   }
 
@@ -211,56 +650,163 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 80, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
+    }
+  }
+
+  const ensureRidehailingOperationsLayerOrder = (m: maplibregl.Map) => {
+    const fillId = "ridehailings-operations-fill"
+    const outlineId = "ridehailings-operations-outline"
+
+    if (!m.getLayer(fillId) || !m.getLayer(outlineId)) {
+      return
+    }
+
+    const beforeLayerCandidates = [
+      "ridehailings-circles",
+      "ridehailings-logos",
+      "robotaxis-circles",
+      "robotaxis-logos",
+      "universities-pins",
+      "universities-labels",
+    ]
+
+    const beforeId = beforeLayerCandidates.find((layerId) =>
+      m.getLayer(layerId),
+    )
+    if (!beforeId) {
+      return
+    }
+
+    m.moveLayer(fillId, beforeId)
+    m.moveLayer(outlineId, beforeId)
+  }
+
+  const loadRobotaxiImage = async (
+    m: maplibregl.Map,
+    imageName: string,
+    logoUrl: string,
+  ) => {
+    if (m.hasImage(imageName) || failedRobotaxiImages.has(imageName)) {
+      return
+    }
+
+    if (pendingRobotaxiImages.has(imageName)) {
+      return
+    }
+
+    pendingRobotaxiImages.add(imageName)
+    try {
+      const response = await m.loadImage(logoUrl)
+      if (!m.hasImage(imageName)) {
+        m.addImage(imageName, response.data)
+      }
+    } catch (error) {
+      failedRobotaxiImages.add(imageName)
+      const message =
+        error instanceof Error
+          ? error.message
+          : typeof error === "string"
+            ? error
+            : "Unknown error"
+      console.warn(`Failed to load robotaxi logo for ${imageName}:`, message)
+    } finally {
+      pendingRobotaxiImages.delete(imageName)
     }
   }
 
   const loadRobotaxiImages = async (m: maplibregl.Map) => {
-    const logos = robotaxiLogos()
-    if (logos.length === 0) return
+    const entries = robotaxiLogoMap()
+    if (entries.size === 0) return
 
     const tasks: Promise<void>[] = []
 
-    for (const { imageName, logoUrl } of logos) {
-      if (m.hasImage(imageName) || failedRobotaxiImages.has(imageName)) {
-        continue
+    for (const [imageName, logoUrl] of entries.entries()) {
+      tasks.push(loadRobotaxiImage(m, imageName, logoUrl))
+    }
+
+    if (tasks.length === 0) {
+      return
+    }
+
+    await Promise.allSettled(tasks)
+    m.triggerRepaint()
+  }
+
+  const loadRidehailingImage = async (
+    m: maplibregl.Map,
+    imageName: string,
+    logoUrl: string,
+  ) => {
+    if (m.hasImage(imageName) || failedRidehailingImages.has(imageName)) {
+      return
+    }
+
+    if (pendingRidehailingImages.has(imageName)) {
+      return
+    }
+
+    pendingRidehailingImages.add(imageName)
+    try {
+      const response = await m.loadImage(logoUrl)
+      if (!m.hasImage(imageName)) {
+        m.addImage(imageName, response.data)
       }
+    } catch (error) {
+      failedRidehailingImages.add(imageName)
+      const message =
+        error instanceof Error
+          ? error.message
+          : typeof error === "string"
+            ? error
+            : "Unknown error"
+      console.warn(`Failed to load ridehailing logo for ${imageName}:`, message)
+    } finally {
+      pendingRidehailingImages.delete(imageName)
+    }
+  }
 
-      if (pendingRobotaxiImages.has(imageName)) {
-        continue
-      }
+  const loadRidehailingImages = async (m: maplibregl.Map) => {
+    const entries = ridehailingLogoMap()
+    if (entries.size === 0) return
 
-      pendingRobotaxiImages.add(imageName)
-      const task = m
-        .loadImage(logoUrl)
-        .then((response) => {
-          if (!m.hasImage(imageName)) {
-            m.addImage(imageName, response.data)
-          }
-        })
-        .catch((error) => {
-          failedRobotaxiImages.add(imageName)
-          const message =
-            error instanceof Error
-              ? error.message
-              : typeof error === "string"
-                ? error
-                : "Unknown error"
-          console.warn(
-            `Failed to load robotaxi logo for ${imageName}:`,
-            message,
-          )
-        })
-        .finally(() => {
-          pendingRobotaxiImages.delete(imageName)
-        })
-
-      tasks.push(task)
+    const tasks: Promise<void>[] = []
+    for (const [imageName, logoUrl] of entries.entries()) {
+      tasks.push(loadRidehailingImage(m, imageName, logoUrl))
     }
 
     if (tasks.length > 0) {
       await Promise.allSettled(tasks)
     }
+  }
+
+  const handleRidehailingOperationVisibilityToggle = (
+    slug: string,
+    checked: boolean,
+  ) => {
+    ridehailingOperationVisibilityBySlug = {
+      ...ridehailingOperationVisibilityBySlug,
+      [slug]: checked,
+    }
+  }
+
+  const handleRidehailingStyleImageMissing = (
+    event: maplibregl.MapStyleImageMissingEvent,
+  ) => {
+    const mapInstance = map
+    if (!mapInstance) return
+
+    const imageName = event.id
+    if (!imageName.startsWith("ridehailing-")) {
+      return
+    }
+
+    const logoUrl = ridehailingLogoMap().get(imageName)
+    if (!logoUrl) {
+      return
+    }
+
+    void loadRidehailingImage(mapInstance, imageName, logoUrl)
   }
 
   const loadRobotaxis = async () => {
@@ -283,14 +829,17 @@
       robotaxis = records
       hasFetchedRobotaxis = true
 
-      const m = map
-      if (m && isRobotaxisEnabled) {
+      const mapInstance = map
+      if (mapInstance && isRobotaxisEnabled) {
         const itemsWithCoords = records.filter(
           (record) => record.longitude != null && record.latitude != null,
         )
         if (itemsWithCoords.length > 0) {
-          focusMapOnRobotaxis(m, itemsWithCoords)
+          focusMapOnRobotaxis(mapInstance, itemsWithCoords)
         }
+        await loadRobotaxiImages(mapInstance)
+      } else if (mapInstance) {
+        await loadRobotaxiImages(mapInstance)
       }
     } catch (error) {
       const message =
@@ -299,6 +848,102 @@
       hasFetchedRobotaxis = false
     } finally {
       isRobotaxisLoading = false
+    }
+  }
+
+  const loadRidehailings = async () => {
+    if (isRidehailingsLoading) return
+
+    isRidehailingsLoading = true
+    ridehailingsError = null
+
+    try {
+      const response = await fetch("/api/ridehailings")
+      if (!response.ok) {
+        throw new Error("Failed to fetch ridehailings")
+      }
+
+      const payload = (await response.json()) as {
+        ridehailings: Ridehailing[]
+      }
+
+      const records = payload.ridehailings ?? []
+      ridehailings = records
+      hasFetchedRidehailings = true
+
+      const mapInstance = map
+      if (mapInstance && isRidehailingsEnabled) {
+        const itemsWithCoords = records.filter(
+          (record) => record.longitude != null && record.latitude != null,
+        )
+        if (itemsWithCoords.length > 0) {
+          focusMapOnRidehailings(mapInstance, itemsWithCoords)
+        }
+      }
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      ridehailingsError = message
+      hasFetchedRidehailings = false
+    } finally {
+      isRidehailingsLoading = false
+    }
+  }
+
+  const loadRidehailingOperations = async () => {
+    if (isRidehailingOperationsLoading) return
+
+    isRidehailingOperationsLoading = true
+    ridehailingOperationsError = null
+
+    try {
+      const response = await fetch("/api/ridehailings/operations")
+      if (!response.ok) {
+        throw new Error("Failed to fetch ridehailing operations")
+      }
+
+      const payload = (await response.json()) as {
+        countryOperations: RidehailingCountryOperation[]
+      }
+
+      ridehailingCountryOperations = payload.countryOperations ?? []
+      hasFetchedRidehailingOperations = true
+
+      const mapInstance = map
+      if (mapInstance && isRidehailingOperationsEnabled) {
+        await tick()
+        ensureRidehailingOperationsLayerOrder(mapInstance)
+      }
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      ridehailingOperationsError = message
+      hasFetchedRidehailingOperations = false
+    } finally {
+      isRidehailingOperationsLoading = false
+    }
+  }
+
+  const loadCountryBoundaries = async () => {
+    if (countriesGeoJson || isCountryBoundariesLoading) return
+
+    isCountryBoundariesLoading = true
+    countryBoundariesError = null
+
+    try {
+      const response = await fetch("/data/countries-simplified.geojson")
+      if (!response.ok) {
+        throw new Error("Failed to fetch country boundaries")
+      }
+
+      const payload = (await response.json()) as CountryFeatureCollection
+      countriesGeoJson = payload
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      countryBoundariesError = message
+    } finally {
+      isCountryBoundariesLoading = false
     }
   }
 
@@ -321,9 +966,9 @@
       universities = payload.universities ?? []
       hasFetchedUniversities = true
 
-      const m = map
-      if (m && isUniversitiesEnabled) {
-        focusMapOnUniversities(m)
+      const mapInstance = map
+      if (mapInstance && isUniversitiesEnabled) {
+        focusMapOnUniversities(mapInstance)
       }
     } catch (error) {
       const message =
@@ -338,8 +983,66 @@
   const handleRobotaxisToggle = async (checked: boolean) => {
     isRobotaxisEnabled = checked
 
-    if (checked && !hasFetchedRobotaxis) {
+    if (!checked) {
+      return
+    }
+
+    if (!hasFetchedRobotaxis) {
       await loadRobotaxis()
+    }
+
+    const mapInstance = map
+    if (mapInstance) {
+      await loadRobotaxiImages(mapInstance)
+    }
+  }
+
+  const handleRidehailingsToggle = async (checked: boolean) => {
+    isRidehailingsEnabled = checked
+
+    if (!checked) {
+      isRidehailingOperationsEnabled = false
+    }
+
+    if (checked && !hasFetchedRidehailings) {
+      await loadRidehailings()
+    }
+  }
+
+  const handleRidehailingOperationsToggle = async (checked: boolean) => {
+    if (!isRidehailingsEnabled) {
+      isRidehailingOperationsEnabled = false
+      return
+    }
+
+    isRidehailingOperationsEnabled = checked
+
+    if (!checked) {
+      return
+    }
+
+    const tasks: Promise<unknown>[] = []
+
+    if (!hasFetchedRidehailings) {
+      tasks.push(loadRidehailings())
+    }
+
+    if (!hasFetchedRidehailingOperations) {
+      tasks.push(loadRidehailingOperations())
+    }
+
+    if (!countriesGeoJson) {
+      tasks.push(loadCountryBoundaries())
+    }
+
+    if (tasks.length > 0) {
+      await Promise.allSettled(tasks)
+    }
+
+    const mapInstance = map
+    if (mapInstance) {
+      await tick()
+      ensureRidehailingOperationsLayerOrder(mapInstance)
     }
   }
 
@@ -358,6 +1061,21 @@
     }
   }
 
+  const handleRetryRidehailings = async () => {
+    hasFetchedRidehailings = false
+    if (isRidehailingsEnabled) {
+      await loadRidehailings()
+    }
+  }
+
+  const handleRetryRidehailingOperations = async () => {
+    hasFetchedRidehailingOperations = false
+    await loadRidehailingOperations()
+    if (!countriesGeoJson) {
+      await loadCountryBoundaries()
+    }
+  }
+
   const handleRetryUniversities = async () => {
     hasFetchedUniversities = false
     if (isUniversitiesEnabled) {
@@ -370,20 +1088,20 @@
   }
 
   const handleMouseEnter = () => {
-    const m = map
-    if (!m) return
-    m.getCanvas().style.cursor = "pointer"
+    const mapInstance = map
+    if (!mapInstance) return
+    mapInstance.getCanvas().style.cursor = "pointer"
   }
 
   const handleMouseLeave = () => {
-    const m = map
-    if (!m) return
-    m.getCanvas().style.cursor = ""
+    const mapInstance = map
+    if (!mapInstance) return
+    mapInstance.getCanvas().style.cursor = ""
   }
 
   const handleRobotaxiClick = (event: maplibregl.MapLayerMouseEvent) => {
-    const m = map
-    if (!m) return
+    const mapInstance = map
+    if (!mapInstance) return
 
     const feature = event.features?.[0]
     if (!feature) return
@@ -452,12 +1170,86 @@
     })
       .setLngLat(coordinates)
       .setHTML(html)
-      .addTo(m)
+      .addTo(mapInstance)
+  }
+
+  const handleRidehailingClick = (event: maplibregl.MapLayerMouseEvent) => {
+    const mapInstance = map
+    if (!mapInstance) return
+
+    const feature = event.features?.[0]
+    if (!feature) return
+
+    const props = feature.properties ?? {}
+    const geometry = feature.geometry as {
+      type: string
+      coordinates: [number, number]
+    }
+
+    const coordinates = geometry.coordinates
+    const rawName = props.name ? String(props.name) : "Ridehailing"
+    const rawAddress = props.address ? String(props.address) : ""
+    const rawWebsite = props.website ? String(props.website) : ""
+
+    const name = escapeHtml(rawName)
+    const address = rawAddress ? escapeHtml(rawAddress) : ""
+    const hasProtocol = /^https?:\/\//i.test(rawWebsite)
+    const websiteUrl = rawWebsite
+      ? hasProtocol
+        ? rawWebsite
+        : `https://${rawWebsite}`
+      : ""
+    const websiteLabel = rawWebsite
+      ? escapeHtml(rawWebsite.replace(/^https?:\/\//i, ""))
+      : ""
+
+    const details: string[] = []
+
+    if (address) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">📍 Address</span>
+          <span class="popup-value">${address}</span>
+        </div>
+      `)
+    }
+
+    if (websiteUrl) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">🌐 Website</span>
+          <a class="popup-link" href="${websiteUrl}" target="_blank" rel="noopener noreferrer">${websiteLabel}</a>
+        </div>
+      `)
+    }
+
+    const html = `
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3 class="popup-title">${name}</h3>
+        </div>
+        <div class="popup-body">
+          ${
+            details.length > 0
+              ? details.join("")
+              : "<div class='popup-field'><span class='popup-value'>No additional details.</span></div>"
+          }
+        </div>
+      </div>
+    `
+
+    new maplibregl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+    })
+      .setLngLat(coordinates)
+      .setHTML(html)
+      .addTo(mapInstance)
   }
 
   const handleUniversityClick = (event: maplibregl.MapLayerMouseEvent) => {
-    const m = map
-    if (!m) return
+    const mapInstance = map
+    if (!mapInstance) return
 
     const feature = event.features?.[0]
     if (!feature) return
@@ -526,52 +1318,140 @@
     })
       .setLngLat(coordinates)
       .setHTML(html)
-      .addTo(m)
+      .addTo(mapInstance)
   }
 
   onMount(() => {
     if (isRobotaxisEnabled && !hasFetchedRobotaxis) {
       void loadRobotaxis()
     }
+
+    const ridehailingTasks: Promise<unknown>[] = []
+
+    if (isRidehailingsEnabled && !hasFetchedRidehailings) {
+      ridehailingTasks.push(loadRidehailings())
+    }
+
+    if (isRidehailingOperationsEnabled) {
+      if (!hasFetchedRidehailings && ridehailingTasks.length === 0) {
+        ridehailingTasks.push(loadRidehailings())
+      }
+
+      if (!hasFetchedRidehailingOperations) {
+        ridehailingTasks.push(loadRidehailingOperations())
+      }
+
+      if (!countriesGeoJson) {
+        ridehailingTasks.push(loadCountryBoundaries())
+      }
+    }
+
+    if (ridehailingTasks.length > 0) {
+      void Promise.allSettled(ridehailingTasks)
+    }
+
+    const mapInstance = map
+    if (!mapInstance) return
+
+    const reattachHandlers = () => {
+      mapInstance.off("styledata", reattachHandlers)
+
+      for (const layerId of robotaxiLayerIds) {
+        mapInstance.off("click", layerId, handleRobotaxiClick)
+        mapInstance.on("click", layerId, handleRobotaxiClick)
+      }
+
+      mapInstance.off("click", "universities-pins", handleUniversityClick)
+      mapInstance.on("click", "universities-pins", handleUniversityClick)
+
+      mapInstance.on("styledata", reattachHandlers)
+    }
+
+    mapInstance.on("styledata", reattachHandlers)
+
+    return () => {
+      mapInstance.off("styledata", reattachHandlers)
+    }
   })
 
   const robotaxiLayerIds = ["robotaxis-logos", "robotaxis-circles"] as const
+  const ridehailingLayerIds = [
+    "ridehailings-logos",
+    "ridehailings-circles",
+  ] as const
 
   $effect(() => {
-    const m = map
+    const mapInstance = map
     const robotaxiCount = robotaxisWithCoords().length
     const enabled = isRobotaxisEnabled
 
-    if (!m) return
+    if (!mapInstance) return
+
+    let handlersAttached = false
+
+    const attachHandlers = () => {
+      if (handlersAttached) return
+      const layersReady = robotaxiLayerIds.every((layerId) =>
+        Boolean(mapInstance.getLayer(layerId)),
+      )
+      if (!layersReady) return
+
+      for (const layerId of robotaxiLayerIds) {
+        mapInstance.on("click", layerId, handleRobotaxiClick)
+        mapInstance.on("mouseenter", layerId, handleMouseEnter)
+        mapInstance.on("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = true
+    }
+
+    const detachHandlers = () => {
+      if (!handlersAttached) return
+
+      for (const layerId of robotaxiLayerIds) {
+        mapInstance.off("click", layerId, handleRobotaxiClick)
+        mapInstance.off("mouseenter", layerId, handleMouseEnter)
+        mapInstance.off("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = false
+    }
+
+    const handleData = (event: maplibregl.MapDataEvent) => {
+      if (
+        "sourceId" in event &&
+        event.sourceId === "robotaxis" &&
+        "isSourceLoaded" in event &&
+        event.isSourceLoaded
+      ) {
+        attachHandlers()
+      }
+    }
 
     const setup = () => {
-      ensureGlobeProjection(m)
+      ensureGlobeProjection(mapInstance)
       if (enabled && robotaxiCount > 0) {
-        focusMapOnRobotaxis(m)
+        focusMapOnRobotaxis(mapInstance)
       }
-      void loadRobotaxiImages(m)
-      for (const layerId of robotaxiLayerIds) {
-        m.on("click", layerId, handleRobotaxiClick)
-        m.on("mouseenter", layerId, handleMouseEnter)
-        m.on("mouseleave", layerId, handleMouseLeave)
+
+      mapInstance.on("data", handleData)
+
+      const source = mapInstance.getSource("robotaxis")
+      if (source && mapInstance.isSourceLoaded("robotaxis")) {
+        attachHandlers()
       }
     }
 
     const cleanup = () => {
-      for (const layerId of robotaxiLayerIds) {
-        m.off("click", layerId, handleRobotaxiClick)
-        m.off("mouseenter", layerId, handleMouseEnter)
-        m.off("mouseleave", layerId, handleMouseLeave)
-      }
+      mapInstance.off("data", handleData)
+      detachHandlers()
     }
 
-    if (!m.loaded()) {
+    if (!mapInstance.loaded()) {
       const onLoad = () => {
         setup()
       }
-      m.once("load", onLoad)
+      mapInstance.once("load", onLoad)
       return () => {
-        m.off("load", onLoad)
+        mapInstance.off("load", onLoad)
         cleanup()
       }
     }
@@ -584,35 +1464,157 @@
   })
 
   $effect(() => {
-    const m = map
-    const universityCount = universitiesWithCoords().length
-    const enabled = isUniversitiesEnabled
+    const mapInstance = map
+    const ridehailingCount = ridehailingsWithCoords().length
+    const enabled = isRidehailingsEnabled
 
-    if (!m) return
+    if (!mapInstance) return
+
+    let handlersAttached = false
+
+    const attachHandlers = () => {
+      if (handlersAttached) return
+      const layersReady = ridehailingLayerIds.every((layerId) =>
+        Boolean(mapInstance.getLayer(layerId)),
+      )
+      if (!layersReady) return
+
+      for (const layerId of ridehailingLayerIds) {
+        mapInstance.on("click", layerId, handleRidehailingClick)
+        mapInstance.on("mouseenter", layerId, handleMouseEnter)
+        mapInstance.on("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = true
+    }
+
+    const detachHandlers = () => {
+      if (!handlersAttached) return
+
+      for (const layerId of ridehailingLayerIds) {
+        mapInstance.off("click", layerId, handleRidehailingClick)
+        mapInstance.off("mouseenter", layerId, handleMouseEnter)
+        mapInstance.off("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = false
+    }
+
+    const handleData = (event: maplibregl.MapDataEvent) => {
+      if (
+        "sourceId" in event &&
+        event.sourceId === "ridehailings" &&
+        "isSourceLoaded" in event &&
+        event.isSourceLoaded
+      ) {
+        attachHandlers()
+      }
+    }
 
     const setup = () => {
-      ensureGlobeProjection(m)
-      if (enabled && universityCount > 0) {
-        focusMapOnUniversities(m)
+      ensureGlobeProjection(mapInstance)
+      if (enabled && ridehailingCount > 0) {
+        focusMapOnRidehailings(mapInstance)
       }
-      m.on("click", "universities-pins", handleUniversityClick)
-      m.on("mouseenter", "universities-pins", handleMouseEnter)
-      m.on("mouseleave", "universities-pins", handleMouseLeave)
+      void loadRidehailingImages(mapInstance)
+
+      mapInstance.on("styleimagemissing", handleRidehailingStyleImageMissing)
+      mapInstance.on("data", handleData)
+
+      const source = mapInstance.getSource("ridehailings")
+      if (source && mapInstance.isSourceLoaded("ridehailings")) {
+        attachHandlers()
+      }
     }
 
     const cleanup = () => {
-      m.off("click", "universities-pins", handleUniversityClick)
-      m.off("mouseenter", "universities-pins", handleMouseEnter)
-      m.off("mouseleave", "universities-pins", handleMouseLeave)
+      mapInstance.off("styleimagemissing", handleRidehailingStyleImageMissing)
+      mapInstance.off("data", handleData)
+      detachHandlers()
     }
 
-    if (!m.loaded()) {
+    if (!mapInstance.loaded()) {
       const onLoad = () => {
         setup()
       }
-      m.once("load", onLoad)
+      mapInstance.once("load", onLoad)
       return () => {
-        m.off("load", onLoad)
+        mapInstance.off("load", onLoad)
+        cleanup()
+      }
+    }
+
+    setup()
+
+    return () => {
+      cleanup()
+    }
+  })
+
+  $effect(() => {
+    const mapInstance = map
+    const universityCount = universitiesWithCoords().length
+    const enabled = isUniversitiesEnabled
+
+    if (!mapInstance) return
+
+    let handlersAttached = false
+
+    const attachHandlers = () => {
+      if (handlersAttached) return
+      const layerExists = Boolean(mapInstance.getLayer("universities-pins"))
+      if (!layerExists) return
+
+      mapInstance.on("click", "universities-pins", handleUniversityClick)
+      mapInstance.on("mouseenter", "universities-pins", handleMouseEnter)
+      mapInstance.on("mouseleave", "universities-pins", handleMouseLeave)
+      handlersAttached = true
+    }
+
+    const detachHandlers = () => {
+      if (!handlersAttached) return
+
+      mapInstance.off("click", "universities-pins", handleUniversityClick)
+      mapInstance.off("mouseenter", "universities-pins", handleMouseEnter)
+      mapInstance.off("mouseleave", "universities-pins", handleMouseLeave)
+      handlersAttached = false
+    }
+
+    const handleData = (event: maplibregl.MapDataEvent) => {
+      if (
+        "sourceId" in event &&
+        event.sourceId === "universities" &&
+        "isSourceLoaded" in event &&
+        event.isSourceLoaded
+      ) {
+        attachHandlers()
+      }
+    }
+
+    const setup = () => {
+      ensureGlobeProjection(mapInstance)
+      if (enabled && universityCount > 0) {
+        focusMapOnUniversities(mapInstance)
+      }
+
+      mapInstance.on("data", handleData)
+
+      const source = mapInstance.getSource("universities")
+      if (source && mapInstance.isSourceLoaded("universities")) {
+        attachHandlers()
+      }
+    }
+
+    const cleanup = () => {
+      mapInstance.off("data", handleData)
+      detachHandlers()
+    }
+
+    if (!mapInstance.loaded()) {
+      const onLoad = () => {
+        setup()
+      }
+      mapInstance.once("load", onLoad)
+      return () => {
+        mapInstance.off("load", onLoad)
         cleanup()
       }
     }
@@ -631,11 +1633,59 @@
     class="h-full w-full"
     style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
     zoom={2}
-    center={{ lng: 0, lat: 20 }}
   >
     <GlobeControl />
 
-    <GeoJSONSource data={robotaxiGeoJson()}>
+    {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
+      <GeoJSONSource
+        id="ridehailings-operations"
+        data={ridehailingOperationsGeoJson()}
+      >
+        <FillLayer
+          id="ridehailings-operations-fill"
+          filter={ridehailingOperationsLayerFilter()}
+          paint={{
+            "fill-color": ridehailingFillColorExpression(),
+            "fill-opacity": 0.22,
+          }}
+        />
+        <LineLayer
+          id="ridehailings-operations-outline"
+          filter={ridehailingOperationsLayerFilter()}
+          paint={{
+            "line-color": ridehailingOutlineColorExpression(),
+            "line-width": 1,
+            "line-opacity": 0.6,
+          }}
+        />
+      </GeoJSONSource>
+    {/if}
+
+    <GeoJSONSource id="ridehailings" data={ridehailingGeoJson()}>
+      <SymbolLayer
+        id="ridehailings-logos"
+        filter={["all", ["!=", ["get", "imageName"], null]]}
+        layout={{
+          "icon-image": ["get", "imageName"],
+          "icon-size": 0.28,
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        }}
+      />
+      <CircleLayer
+        id="ridehailings-circles"
+        filter={["all", ["==", ["get", "imageName"], null]]}
+        paint={{
+          "circle-radius": 6,
+          "circle-color": "#0ea5e9",
+          "circle-opacity": 0.9,
+          "circle-stroke-width": 1.5,
+          "circle-stroke-color": "#ffffff",
+        }}
+      />
+    </GeoJSONSource>
+
+    <GeoJSONSource id="robotaxis" data={robotaxiGeoJson()}>
       <SymbolLayer
         id="robotaxis-logos"
         filter={["all", ["!=", ["get", "imageName"], null]]}
@@ -660,7 +1710,7 @@
       />
     </GeoJSONSource>
 
-    <GeoJSONSource data={universitiesGeoJson()}>
+    <GeoJSONSource id="universities" data={universitiesGeoJson()}>
       <CircleLayer
         id="universities-pins"
         paint={{
@@ -741,6 +1791,108 @@
         <label class="menu-item">
           <input
             type="checkbox"
+            checked={isRidehailingsEnabled}
+            onchange={(event) =>
+              handleRidehailingsToggle(
+                (event.currentTarget as HTMLInputElement).checked,
+              )}
+          />
+          <span class="menu-label">Ridehailing companies</span>
+        </label>
+
+        {#if isRidehailingsLoading}
+          <p class="menu-status">Loading ridehailings…</p>
+        {:else if ridehailingsError}
+          <p class="menu-status error">Failed to load: {ridehailingsError}</p>
+          <button
+            class="retry-button"
+            type="button"
+            onclick={handleRetryRidehailings}
+          >
+            Try again
+          </button>
+        {:else if hasFetchedRidehailings}
+          <p class="menu-status">
+            Showing {ridehailingsWithCoords().length} ridehailing companies
+          </p>
+        {/if}
+
+        <label class="menu-item menu-subitem">
+          <input
+            type="checkbox"
+            checked={isRidehailingOperationsEnabled}
+            disabled={!isRidehailingsEnabled}
+            onchange={(event) =>
+              handleRidehailingOperationsToggle(
+                (event.currentTarget as HTMLInputElement).checked,
+              )}
+          />
+          <span class="menu-label">Operations</span>
+        </label>
+
+        {#if isRidehailingsEnabled}
+          {#if isRidehailingOperationsLoading || isCountryBoundariesLoading}
+            <p class="menu-status menu-substatus">Loading operations…</p>
+          {:else if ridehailingOperationsError || countryBoundariesError}
+            <p class="menu-status error menu-substatus">
+              {#if ridehailingOperationsError}
+                Failed to load operations: {ridehailingOperationsError}
+              {/if}
+              {#if countryBoundariesError}
+                {#if ridehailingOperationsError}
+                  <br />
+                {/if}
+                Failed to load country boundaries: {countryBoundariesError}
+              {/if}
+            </p>
+            <button
+              class="retry-button menu-substatus"
+              type="button"
+              onclick={handleRetryRidehailingOperations}
+            >
+              Try again
+            </button>
+          {:else if isRidehailingOperationsEnabled && hasFetchedRidehailingOperations}
+            {#if ridehailingOperationsGeoJson().features.length === 0}
+              <p class="menu-status menu-substatus">No operations data yet.</p>
+            {:else}
+              {#if ridehailingOperationsSummary()}
+                <p class="menu-status menu-substatus">
+                  Highlighting {ridehailingOperationsSummary()}
+                </p>
+              {/if}
+
+              {#if ridehailingOperationCompanies().length > 0}
+                <div class="operations-checkboxes">
+                  {#each ridehailingOperationCompanies() as company}
+                    <label class="menu-item menu-subitem">
+                      <input
+                        type="checkbox"
+                        checked={ridehailingOperationVisibilityBySlug[
+                          company.slug
+                        ] ?? true}
+                        onchange={(event) =>
+                          handleRidehailingOperationVisibilityToggle(
+                            company.slug,
+                            (event.currentTarget as HTMLInputElement).checked,
+                          )}
+                      />
+                      <span class="menu-label">{company.name}</span>
+                      <span class="menu-meta">
+                        {company.countryCount}{" "}
+                        {company.countryCount === 1 ? "country" : "countries"}
+                      </span>
+                    </label>
+                  {/each}
+                </div>
+              {/if}
+            {/if}
+          {/if}
+        {/if}
+
+        <label class="menu-item">
+          <input
+            type="checkbox"
             checked={isUniversitiesEnabled}
             onchange={(event) =>
               handleUniversitiesToggle(
@@ -772,6 +1924,10 @@
 
   {#if isRobotaxisEnabled && hasFetchedRobotaxis && !isRobotaxisLoading && robotaxisWithCoords().length === 0}
     <div class="empty-state">No robotaxi companies available yet.</div>
+  {/if}
+
+  {#if isRidehailingsEnabled && hasFetchedRidehailings && !isRidehailingsLoading && ridehailingsWithCoords().length === 0}
+    <div class="empty-state">No ridehailing companies available yet.</div>
   {/if}
 
   {#if isUniversitiesEnabled && hasFetchedUniversities && !isUniversitiesLoading && universitiesWithCoords().length === 0}
@@ -868,8 +2024,34 @@
     margin-top: 0.75rem;
   }
 
+  .menu-subitem {
+    padding-left: 1.5rem;
+  }
+
+  .menu-subitem input {
+    margin-left: -1.5rem;
+  }
+
+  .menu-substatus {
+    margin-left: 1.5rem;
+  }
+
+  .operations-checkboxes {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
   .menu-label {
     flex: 1;
+  }
+
+  .menu-meta {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #6b7280;
   }
 
   .menu-status {

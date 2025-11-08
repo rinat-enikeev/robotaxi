@@ -141,6 +141,141 @@ export type Database = {
         }
         Relationships: []
       }
+      ridehailing_city_operations: {
+        Row: {
+          city_slug: string
+          created_at: string | null
+          id: number
+          ridehailing_slug: string
+          updated_at: string | null
+        }
+        Insert: {
+          city_slug: string
+          created_at?: string | null
+          id?: number
+          ridehailing_slug: string
+          updated_at?: string | null
+        }
+        Update: {
+          city_slug?: string
+          created_at?: string | null
+          id?: number
+          ridehailing_slug?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ridehailing_city_operations_city_slug_fkey"
+            columns: ["city_slug"]
+            isOneToOne: false
+            referencedRelation: "cities"
+            referencedColumns: ["slug"]
+          },
+          {
+            foreignKeyName: "ridehailing_city_operations_ridehailing_slug_fkey"
+            columns: ["ridehailing_slug"]
+            isOneToOne: false
+            referencedRelation: "ridehailings"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
+      ridehailing_country_operations: {
+        Row: {
+          country_slug: string
+          created_at: string | null
+          id: number
+          ridehailing_slug: string
+          updated_at: string | null
+        }
+        Insert: {
+          country_slug: string
+          created_at?: string | null
+          id?: number
+          ridehailing_slug: string
+          updated_at?: string | null
+        }
+        Update: {
+          country_slug?: string
+          created_at?: string | null
+          id?: number
+          ridehailing_slug?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ridehailing_country_operations_country_slug_fkey"
+            columns: ["country_slug"]
+            isOneToOne: false
+            referencedRelation: "countries"
+            referencedColumns: ["slug"]
+          },
+          {
+            foreignKeyName: "ridehailing_country_operations_ridehailing_slug_fkey"
+            columns: ["ridehailing_slug"]
+            isOneToOne: false
+            referencedRelation: "ridehailings"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
+      ridehailings: {
+        Row: {
+          address: string | null
+          city_slug: string
+          country_slug: string
+          created_at: string | null
+          id: number
+          latitude: number
+          longitude: number
+          name: string
+          slug: string
+          updated_at: string | null
+          website: string | null
+        }
+        Insert: {
+          address?: string | null
+          city_slug: string
+          country_slug: string
+          created_at?: string | null
+          id?: number
+          latitude: number
+          longitude: number
+          name: string
+          slug: string
+          updated_at?: string | null
+          website?: string | null
+        }
+        Update: {
+          address?: string | null
+          city_slug?: string
+          country_slug?: string
+          created_at?: string | null
+          id?: number
+          latitude?: number
+          longitude?: number
+          name?: string
+          slug?: string
+          updated_at?: string | null
+          website?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ridehailings_city_slug_fkey"
+            columns: ["city_slug"]
+            isOneToOne: false
+            referencedRelation: "cities"
+            referencedColumns: ["slug"]
+          },
+          {
+            foreignKeyName: "ridehailings_country_slug_fkey"
+            columns: ["country_slug"]
+            isOneToOne: false
+            referencedRelation: "countries"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
       robotaxis: {
         Row: {
           address: string | null
