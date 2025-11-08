@@ -1,9 +1,11 @@
-name: Sync Data
+name: Sync Data (Staging)
 
 on:
   workflow_run:
     workflows:
       - Release (Staging)
+    branches:
+      - develop
     types:
       - completed
   workflow_dispatch:
@@ -14,7 +16,6 @@ permissions:
 jobs:
   sync-staging:
     if: >
-      github.event_name == 'workflow_run' &&
       github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.name == 'Release (Staging)'
     runs-on: ubuntu-latest

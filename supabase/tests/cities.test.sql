@@ -64,8 +64,9 @@ select is(
     'capital can be set explicitly'
 );
 
-insert into public.cities (slug, city, latitude, longitude, country_slug)
-values ('test-city-default-capital', 'Default Capital City', 11.111111, 22.222222, 'test-country');
+insert into public.cities (slug, city, city_ascii, latitude, longitude, admin_name, capital, population, source_id, country_slug)
+values ('test-city-default-capital', 'Default Capital City', 11.111111, 22.222222, 'Test Admin', 'capital', 987654, 42, 'test-country');
+
 
 select is(
     (select capital from public.cities where slug = 'test-city-default-capital'),

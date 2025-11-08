@@ -4,6 +4,8 @@ on:
   workflow_run:
     workflows:
       - Release (Production)
+    branches:
+      - main
     types:
       - completed
   workflow_dispatch:
@@ -14,7 +16,6 @@ permissions:
 jobs:
   sync-production:
     if: >
-      github.event_name == 'workflow_run' &&
       github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.name == 'Release (Production)'
     runs-on: ubuntu-latest
