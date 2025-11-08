@@ -496,33 +496,35 @@
     },
   )
 
-  const ridehailingFillColorExpression = $derived(() => {
+  const ridehailingFillColorExpression: () => maplibregl.DataDrivenPropertyValueSpecification<string> =
+    $derived(() => {
     const entries = Array.from(ridehailingColorsBySlug().entries())
     if (entries.length === 0) {
       return "#4b5563"
     }
 
-    return [
-      "match",
-      ["get", "ridehailing_slug"],
-      ...entries.flatMap(([slug, color]) => [slug, color.fill]),
-      "#4b5563",
-    ]
-  })
+      return [
+        "match",
+        ["get", "ridehailing_slug"],
+        ...entries.flatMap(([slug, color]) => [slug, color.fill]),
+        "#4b5563",
+      ] as unknown as maplibregl.ExpressionSpecification
+    })
 
-  const ridehailingOutlineColorExpression = $derived(() => {
+  const ridehailingOutlineColorExpression: () => maplibregl.DataDrivenPropertyValueSpecification<string> =
+    $derived(() => {
     const entries = Array.from(ridehailingColorsBySlug().entries())
     if (entries.length === 0) {
       return "#374151"
     }
 
-    return [
-      "match",
-      ["get", "ridehailing_slug"],
-      ...entries.flatMap(([slug, color]) => [slug, color.outline]),
-      "#374151",
-    ]
-  })
+      return [
+        "match",
+        ["get", "ridehailing_slug"],
+        ...entries.flatMap(([slug, color]) => [slug, color.outline]),
+        "#374151",
+      ] as unknown as maplibregl.ExpressionSpecification
+    })
 
   const ridehailingOperationsSummary = $derived(() => {
     const counts = ridehailingCountryCounts()
@@ -1642,10 +1644,7 @@
           id="ridehailings-operations-fill"
           filter={ridehailingOperationsLayerFilter()}
           paint={{
-            "fill-color":
-              typeof ridehailingFillColorExpression() === "string"
-                ? ridehailingFillColorExpression()
-                : (ridehailingFillColorExpression() as any), // Ensure correct type for DataDrivenPropertyValueSpecification<string>
+            "fill-color": ridehailingFillColorExpression(),
             "fill-opacity": 0.22,
           }}
         />
@@ -1653,10 +1652,7 @@
           id="ridehailings-operations-outline"
           filter={ridehailingOperationsLayerFilter()}
           paint={{
-            "line-color":
-              typeof ridehailingOutlineColorExpression() === "string"
-                ? ridehailingOutlineColorExpression()
-                : (ridehailingOutlineColorExpression() as any), // Ensure correct type
+            "line-color": ridehailingOutlineColorExpression(),
             "line-width": 1,
             "line-opacity": 0.6,
           }}
