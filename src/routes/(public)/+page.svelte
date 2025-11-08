@@ -50,6 +50,16 @@
     country_slug: string
   }
 
+  type RidehailingFeatureProperties = {
+    id: number
+    name: string
+    website: string
+    address: string
+    slug: string
+    sanitizedWebsite: string
+    imageName: string | null
+  }
+
   type RidehailingCountryOperation = {
     ridehailing_slug: string
     country_slug: string
@@ -200,6 +210,8 @@
     features: ridehailingsWithCoords().map((company) => {
       const website = (company.website ?? "").trim()
       const sanitizedWebsite = website ? sanitizeWebsite(website) : ""
+      const imageName =
+        sanitizedWebsite !== "" ? `ridehailing-${company.slug}` : null
 
       return {
         type: "Feature" as const,
@@ -210,6 +222,7 @@
           address: company.address ?? "",
           slug: company.slug,
           sanitizedWebsite,
+          imageName,
         },
         geometry: {
           type: "Point" as const,
@@ -257,6 +270,11 @@
       website,
     )}?size=128&format=png&circular=true&token=pk_Yu3KDenwQuy7Mr1I3USKIA`
 
+  const buildRidehailingLogoUrl = (website: string) =>
+    `https://img.logo.dev/${encodeURIComponent(
+      website,
+    )}?size=128&format=png&circular=true&token=pk_Yu3KDenwQuy7Mr1I3USKIA`
+
   const robotaxiLogos = $derived(() =>
     robotaxiGeoJson()
       .features.map(
@@ -270,6 +288,39 @@
         logoUrl: buildRobotaxiLogoUrl(props.sanitizedWebsite),
       })),
   )
+
+  const ridehailingLogos = $derived(() =>
+    ridehailingGeoJson()
+      .features.map(
+        (feature) => feature.properties as RidehailingFeatureProperties,
+      )
+      .filter(
+        (props) => props.imageName !== null && props.sanitizedWebsite !== "",
+      )
+      .map((props) => ({
+        imageName: props.imageName as string,
+        logoUrl: buildRidehailingLogoUrl(props.sanitizedWebsite),
+      })),
+  )
+
+  const ridehailingLogoMap = $derived(() => {
+    const entries = new Map<string, string>()
+    for (const { imageName, logoUrl } of ridehailingLogos()) {
+      entries.set(imageName, logoUrl)
+    }
+    return entries
+  })
+
+  const ridehailingColorPalette = [
+    { fill: "#16a34a", outline: "#15803d" },
+    { fill: "#0ea5e9", outline: "#0369a1" },
+    { fill: "#f97316", outline: "#ea580c" },
+    { fill: "#9333ea", outline: "#7e22ce" },
+    { fill: "#f59e0b", outline: "#d97706" },
+    { fill: "#ec4899", outline: "#db2777" },
+    { fill: "#22c55e", outline: "#16a34a" },
+    { fill: "#6366f1", outline: "#4f46e5" },
+  ] as const
 
   const ridehailingCountryCounts = $derived(() => {
     const counts = new Map<string, number>()
@@ -368,13 +419,62 @@
     }
   })
 
+  const ridehailingColorsBySlug = $derived(() => {
+    const colors = new Map<string, { fill: string; outline: string }>()
+    const palette = ridehailingColorPalette
+    const slugs = Array.from(
+      new Set(ridehailingCountryOperations.map((record) => record.ridehailing_slug)),
+    ).sort()
+
+    let index = 0
+    for (const slug of slugs) {
+      const paletteColor = palette[index % palette.length]
+      colors.set(slug, paletteColor)
+      index += 1
+    }
+
+    return colors
+  })
+
+  const ridehailingFillColorExpression = $derived(() => {
+    const entries = Array.from(ridehailingColorsBySlug().entries())
+    if (entries.length === 0) {
+      return "#4b5563"
+    }
+
+    return [
+      "match",
+      ["get", "ridehailing_slug"],
+      ...entries.flatMap(([slug, color]) => [slug, color.fill]),
+      "#4b5563",
+    ]
+  })
+
+  const ridehailingOutlineColorExpression = $derived(() => {
+    const entries = Array.from(ridehailingColorsBySlug().entries())
+    if (entries.length === 0) {
+      return "#374151"
+    }
+
+    return [
+      "match",
+      ["get", "ridehailing_slug"],
+      ...entries.flatMap(([slug, color]) => [slug, color.outline]),
+      "#374151",
+    ]
+  })
+
   const ridehailingOperationsSummary = $derived(() => {
     if (ridehailingCountryCounts().size === 0) {
       return ""
     }
 
     const entries = Array.from(ridehailingCountryCounts().entries()).map(
-      ([slug, count]) => `${count} ${slug} ${count === 1 ? "country" : "countries"}`,
+      ([slug, count]) => {
+        const companyName =
+          ridehailings.find((company) => company.slug === slug)?.name ?? slug
+        return `${companyName}: ${count} ${count === 1 ? "country" : "countries"}`
+      },
     )
 
     return entries.join(", ")
@@ -383,6 +483,8 @@
   let hasSetGlobeProjection = false
   const failedRobotaxiImages = new Set<string>()
   const pendingRobotaxiImages = new Set<string>()
+  const failedRidehailingImages = new Set<string>()
+  const pendingRidehailingImages = new Set<string>()
 
   const ensureGlobeProjection = (m: maplibregl.Map) => {
     if (!hasSetGlobeProjection) {
@@ -491,6 +593,72 @@
     if (tasks.length > 0) {
       await Promise.allSettled(tasks)
     }
+  }
+
+  const loadRidehailingImage = async (
+    m: maplibregl.Map,
+    imageName: string,
+    logoUrl: string,
+  ) => {
+    if (m.hasImage(imageName) || failedRidehailingImages.has(imageName)) {
+      return
+    }
+
+    if (pendingRidehailingImages.has(imageName)) {
+      return
+    }
+
+    pendingRidehailingImages.add(imageName)
+    try {
+      const response = await m.loadImage(logoUrl)
+      if (!m.hasImage(imageName)) {
+        m.addImage(imageName, response.data)
+      }
+    } catch (error) {
+      failedRidehailingImages.add(imageName)
+      const message =
+        error instanceof Error
+          ? error.message
+          : typeof error === "string"
+            ? error
+            : "Unknown error"
+      console.warn(`Failed to load ridehailing logo for ${imageName}:`, message)
+    } finally {
+      pendingRidehailingImages.delete(imageName)
+    }
+  }
+
+  const loadRidehailingImages = async (m: maplibregl.Map) => {
+    const entries = ridehailingLogoMap()
+    if (entries.size === 0) return
+
+    const tasks: Promise<void>[] = []
+    for (const [imageName, logoUrl] of entries.entries()) {
+      tasks.push(loadRidehailingImage(m, imageName, logoUrl))
+    }
+
+    if (tasks.length > 0) {
+      await Promise.allSettled(tasks)
+    }
+  }
+
+  const handleRidehailingStyleImageMissing = (
+    event: maplibregl.StyleImageMissingEvent,
+  ) => {
+    const m = map
+    if (!m) return
+
+    const imageName = event.id
+    if (!imageName.startsWith("ridehailing-")) {
+      return
+    }
+
+    const logoUrl = ridehailingLogoMap().get(imageName)
+    if (!logoUrl) {
+      return
+    }
+
+    void loadRidehailingImage(m, imageName, logoUrl)
   }
 
   const loadRobotaxis = async () => {
@@ -988,7 +1156,7 @@
   })
 
   const robotaxiLayerIds = ["robotaxis-logos", "robotaxis-circles"] as const
-  const ridehailingLayerIds = ["ridehailings-circles"] as const
+  const ridehailingLayerIds = ["ridehailings-logos", "ridehailings-circles"] as const
 
   $effect(() => {
     const m = map
@@ -1048,6 +1216,8 @@
       if (enabled && ridehailingCount > 0) {
         focusMapOnRidehailings(m)
       }
+      void loadRidehailingImages(m)
+      m.on("styleimagemissing", handleRidehailingStyleImageMissing)
       for (const layerId of ridehailingLayerIds) {
         m.on("click", layerId, handleRidehailingClick)
         m.on("mouseenter", layerId, handleMouseEnter)
@@ -1056,6 +1226,7 @@
     }
 
     const cleanup = () => {
+      m.off("styleimagemissing", handleRidehailingStyleImageMissing)
       for (const layerId of ridehailingLayerIds) {
         m.off("click", layerId, handleRidehailingClick)
         m.off("mouseenter", layerId, handleMouseEnter)
@@ -1136,48 +1307,16 @@
     {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
       <GeoJSONSource data={ridehailingOperationsGeoJson()}>
         <FillLayer
-          id="ridehailings-operations-bolt"
-          filter={["==", ["get", "ridehailing_slug"], "bolt"]}
+          id="ridehailings-operations-fill"
           paint={{
-            "fill-color": "#16a34a",
-            "fill-opacity": 0.28,
-            "fill-outline-color": "#15803d",
-          }}
-        />
-        <FillLayer
-          id="ridehailings-operations-uber"
-          filter={["==", ["get", "ridehailing_slug"], "uber"]}
-          paint={{
-            "fill-color": "#111827",
-            "fill-opacity": 0.18,
-            "fill-outline-color": "#0f172a",
-          }}
-        />
-        <FillLayer
-          id="ridehailings-operations-other"
-          filter={[
-            "all",
-            ["!=", ["get", "ridehailing_slug"], "bolt"],
-            ["!=", ["get", "ridehailing_slug"], "uber"],
-          ]}
-          paint={{
-            "fill-color": "#4b5563",
-            "fill-opacity": 0.14,
-            "fill-outline-color": "#374151",
+            "fill-color": ridehailingFillColorExpression(),
+            "fill-opacity": 0.22,
           }}
         />
         <LineLayer
           id="ridehailings-operations-outline"
           paint={{
-            "line-color": [
-              "match",
-              ["get", "ridehailing_slug"],
-              "bolt",
-              "#16a34a",
-              "uber",
-              "#111827",
-              "#4b5563",
-            ],
+            "line-color": ridehailingOutlineColorExpression(),
             "line-width": 1,
             "line-opacity": 0.6,
           }}
@@ -1186,8 +1325,19 @@
     {/if}
 
     <GeoJSONSource data={ridehailingGeoJson()}>
+      <SymbolLayer
+        id="ridehailings-logos"
+        filter={["all", ["!=", ["get", "imageName"], null]]}
+        layout={{
+          "icon-image": ["get", "imageName"],
+          "icon-size": 0.28,
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        }}
+      />
       <CircleLayer
         id="ridehailings-circles"
+        filter={["all", ["==", ["get", "imageName"], null]]}
         paint={{
           "circle-radius": 6,
           "circle-color": "#0ea5e9",
