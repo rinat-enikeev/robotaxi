@@ -317,7 +317,8 @@
       type="button"
       aria-haspopup="true"
       aria-expanded={isHamburgerOpen}
-      on:click={toggleHamburgerMenu}
+      aria-label="Toggle datasets menu"
+      onclick={toggleHamburgerMenu}
     >
       <span class="hamburger-icon"></span>
       <span class="hamburger-icon"></span>
@@ -331,7 +332,7 @@
           <input
             type="checkbox"
             checked={isUniversitiesEnabled}
-            on:change={(event) =>
+            onchange={(event) =>
               handleUniversitiesToggle(
                 (event.currentTarget as HTMLInputElement).checked,
               )}
@@ -346,7 +347,7 @@
           <button
             class="retry-button"
             type="button"
-            on:click={handleRetryUniversities}
+            onclick={handleRetryUniversities}
           >
             Try again
           </button>
