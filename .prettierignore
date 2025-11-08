@@ -5,3 +5,6 @@
 # Don't format plaintext email templates, the new lines are important
 src/lib/emails/*_text.svelte
 src/lib/emails/*_text.hbs
+
+data/*/*.yaml
+data/*/*.json

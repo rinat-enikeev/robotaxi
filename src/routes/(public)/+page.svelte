@@ -334,8 +334,7 @@
             on:change={(event) =>
               handleUniversitiesToggle(
                 (event.currentTarget as HTMLInputElement).checked,
-              )
-            }
+              )}
           />
           <span class="menu-label">Universities</span>
         </label>
@@ -360,14 +359,8 @@
     {/if}
   </div>
 
-  {#if
-    isUniversitiesEnabled &&
-    hasFetchedUniversities &&
-    !isUniversitiesLoading &&
-    universitiesWithCoords().length === 0}
-    <div class="empty-state">
-      No universities available yet.
-    </div>
+  {#if isUniversitiesEnabled && hasFetchedUniversities && !isUniversitiesLoading && universitiesWithCoords().length === 0}
+    <div class="empty-state">No universities available yet.</div>
   {/if}
 </div>
 
@@ -388,7 +381,9 @@
     border: 1px solid rgba(17, 24, 39, 0.08);
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
     cursor: pointer;
-    transition: transform 150ms ease, box-shadow 150ms ease;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
   }
 
   .floating-button:hover {
@@ -501,8 +496,8 @@
   }
 
   :global(
-      .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib.maplibregl-compact
-    ) {
+    .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib.maplibregl-compact
+  ) {
     border-radius: 0.75rem;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
   }
@@ -593,4 +588,3 @@
     text-decoration: underline;
   }
 </style>
-
