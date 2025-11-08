@@ -32,7 +32,7 @@ jobs:
         run: pip install --disable-pip-version-check --no-cache-dir pyyaml
 
       - name: Generate seed SQL from data
-        run: ./scripts/generate_cities_seed.sh
+        run: make generate_seed
 
       - name: Install PostgreSQL client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
