@@ -1,2 +1,2 @@
-\i './cities.sql'
-\i './universities.sql'
+\ir ./cities.sql
+\ir ./universities.sql

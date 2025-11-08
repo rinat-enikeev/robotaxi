@@ -24943,8 +24943,10 @@
   name: Bidhan Chandra Agricultural University
   website: http://www.bckv.edu.in/
   country_iso: IN
-  city_name: unknown
-  city: unknown-india
+  latitude: 22.9452502
+  longitude: 88.5309966
+  city_name: Kanchrapara
+  city: kanchrapara-india
 - slug: biju-pattnaik-university-of-technology-in
   name: Biju Pattnaik University of Technology
   website: http://www.bput.org/
@@ -26621,8 +26623,10 @@
   name: Rajitlal Institute of Technology & Health Sciences (RITHS)
   website: http://www.riths.ac.in/
   country_iso: IN
-  city_name: unknown
-  city: unknown-india
+  latitude: 8.5110695
+  longitude: 76.9646667
+  city_name: Thiruvananthapuram
+  city: thiruvananthapuram-india
 - slug: rajiv-gandhi-technical-university-university-of-technology-of-madhya-pradesh-in
   name: Rajiv Gandhi Technical University (University of Technology of Madhya Pradesh)
   website: http://www.rgtu.net/
