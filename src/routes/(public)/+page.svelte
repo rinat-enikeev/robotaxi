@@ -1238,6 +1238,29 @@
     if (ridehailingTasks.length > 0) {
       void Promise.allSettled(ridehailingTasks)
     }
+
+    const mapInstance = map
+    if (!mapInstance) return
+
+    const reattachHandlers = () => {
+      mapInstance.off("styledata", reattachHandlers)
+
+      for (const layerId of robotaxiLayerIds) {
+        mapInstance.off("click", layerId, handleRobotaxiClick)
+        mapInstance.on("click", layerId, handleRobotaxiClick)
+      }
+
+      mapInstance.off("click", "universities-pins", handleUniversityClick)
+      mapInstance.on("click", "universities-pins", handleUniversityClick)
+
+      mapInstance.on("styledata", reattachHandlers)
+    }
+
+    mapInstance.on("styledata", reattachHandlers)
+
+    return () => {
+      mapInstance.off("styledata", reattachHandlers)
+    }
   })
 
   const robotaxiLayerIds = ["robotaxis-logos", "robotaxis-circles"] as const
@@ -1250,24 +1273,62 @@
 
     if (!mapInstance) return
 
-    const setup = () => {
-      ensureGlobeProjection(mapInstance)
-      if (enabled && robotaxiCount > 0) {
-        focusMapOnRobotaxis(mapInstance)
-      }
+    let handlersAttached = false
+
+    const attachHandlers = () => {
+      if (handlersAttached) return
+      const layersReady = robotaxiLayerIds.every((layerId) =>
+        Boolean(mapInstance.getLayer(layerId)),
+      )
+      if (!layersReady) return
+
       for (const layerId of robotaxiLayerIds) {
         mapInstance.on("click", layerId, handleRobotaxiClick)
         mapInstance.on("mouseenter", layerId, handleMouseEnter)
         mapInstance.on("mouseleave", layerId, handleMouseLeave)
       }
+      handlersAttached = true
     }
 
-    const cleanup = () => {
+    const detachHandlers = () => {
+      if (!handlersAttached) return
+
       for (const layerId of robotaxiLayerIds) {
         mapInstance.off("click", layerId, handleRobotaxiClick)
         mapInstance.off("mouseenter", layerId, handleMouseEnter)
         mapInstance.off("mouseleave", layerId, handleMouseLeave)
       }
+      handlersAttached = false
+    }
+
+    const handleData = (event: maplibregl.MapDataEvent) => {
+      if (
+        "sourceId" in event &&
+        event.sourceId === "robotaxis" &&
+        "isSourceLoaded" in event &&
+        event.isSourceLoaded
+      ) {
+        attachHandlers()
+      }
+    }
+
+    const setup = () => {
+      ensureGlobeProjection(mapInstance)
+      if (enabled && robotaxiCount > 0) {
+        focusMapOnRobotaxis(mapInstance)
+      }
+
+      mapInstance.on("data", handleData)
+
+      const source = mapInstance.getSource("robotaxis")
+      if (source && mapInstance.isSourceLoaded("robotaxis")) {
+        attachHandlers()
+      }
+    }
+
+    const cleanup = () => {
+      mapInstance.off("data", handleData)
+      detachHandlers()
     }
 
     if (!mapInstance.loaded()) {
@@ -1295,27 +1356,65 @@
 
     if (!mapInstance) return
 
+    let handlersAttached = false
+
+    const attachHandlers = () => {
+      if (handlersAttached) return
+      const layersReady = ridehailingLayerIds.every((layerId) =>
+        Boolean(mapInstance.getLayer(layerId)),
+      )
+      if (!layersReady) return
+
+      for (const layerId of ridehailingLayerIds) {
+        mapInstance.on("click", layerId, handleRidehailingClick)
+        mapInstance.on("mouseenter", layerId, handleMouseEnter)
+        mapInstance.on("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = true
+    }
+
+    const detachHandlers = () => {
+      if (!handlersAttached) return
+
+      for (const layerId of ridehailingLayerIds) {
+        mapInstance.off("click", layerId, handleRidehailingClick)
+        mapInstance.off("mouseenter", layerId, handleMouseEnter)
+        mapInstance.off("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = false
+    }
+
+    const handleData = (event: maplibregl.MapDataEvent) => {
+      if (
+        "sourceId" in event &&
+        event.sourceId === "ridehailings" &&
+        "isSourceLoaded" in event &&
+        event.isSourceLoaded
+      ) {
+        attachHandlers()
+      }
+    }
+
     const setup = () => {
       ensureGlobeProjection(mapInstance)
       if (enabled && ridehailingCount > 0) {
         focusMapOnRidehailings(mapInstance)
       }
       void loadRidehailingImages(mapInstance)
+
       mapInstance.on("styleimagemissing", handleRidehailingStyleImageMissing)
-      for (const layerId of ridehailingLayerIds) {
-        mapInstance.on("click", layerId, handleRidehailingClick)
-        mapInstance.on("mouseenter", layerId, handleMouseEnter)
-        mapInstance.on("mouseleave", layerId, handleMouseLeave)
+      mapInstance.on("data", handleData)
+
+      const source = mapInstance.getSource("ridehailings")
+      if (source && mapInstance.isSourceLoaded("ridehailings")) {
+        attachHandlers()
       }
     }
 
     const cleanup = () => {
       mapInstance.off("styleimagemissing", handleRidehailingStyleImageMissing)
-      for (const layerId of ridehailingLayerIds) {
-        mapInstance.off("click", layerId, handleRidehailingClick)
-        mapInstance.off("mouseenter", layerId, handleMouseEnter)
-        mapInstance.off("mouseleave", layerId, handleMouseLeave)
-      }
+      mapInstance.off("data", handleData)
+      detachHandlers()
     }
 
     if (!mapInstance.loaded()) {
@@ -1343,20 +1442,56 @@
 
     if (!mapInstance) return
 
+    let handlersAttached = false
+
+    const attachHandlers = () => {
+      if (handlersAttached) return
+      const layerExists = Boolean(mapInstance.getLayer("universities-pins"))
+      if (!layerExists) return
+
+      mapInstance.on("click", "universities-pins", handleUniversityClick)
+      mapInstance.on("mouseenter", "universities-pins", handleMouseEnter)
+      mapInstance.on("mouseleave", "universities-pins", handleMouseLeave)
+      handlersAttached = true
+    }
+
+    const detachHandlers = () => {
+      if (!handlersAttached) return
+
+      mapInstance.off("click", "universities-pins", handleUniversityClick)
+      mapInstance.off("mouseenter", "universities-pins", handleMouseEnter)
+      mapInstance.off("mouseleave", "universities-pins", handleMouseLeave)
+      handlersAttached = false
+    }
+
+    const handleData = (event: maplibregl.MapDataEvent) => {
+      if (
+        "sourceId" in event &&
+        event.sourceId === "universities" &&
+        "isSourceLoaded" in event &&
+        event.isSourceLoaded
+      ) {
+        attachHandlers()
+      }
+    }
+
     const setup = () => {
       ensureGlobeProjection(mapInstance)
       if (enabled && universityCount > 0) {
         focusMapOnUniversities(mapInstance)
       }
-      mapInstance.on("click", "universities-pins", handleUniversityClick)
-      mapInstance.on("mouseenter", "universities-pins", handleMouseEnter)
-      mapInstance.on("mouseleave", "universities-pins", handleMouseLeave)
+
+      mapInstance.on("data", handleData)
+
+      const source = mapInstance.getSource("universities")
+      if (source && mapInstance.isSourceLoaded("universities")) {
+        attachHandlers()
+      }
     }
 
     const cleanup = () => {
-      mapInstance.off("click", "universities-pins", handleUniversityClick)
-      mapInstance.off("mouseenter", "universities-pins", handleMouseEnter)
-      mapInstance.off("mouseleave", "universities-pins", handleMouseLeave)
+      mapInstance.off("data", handleData)
+      detachHandlers()
     }
 
     if (!mapInstance.loaded()) {
@@ -1388,7 +1523,7 @@
     <GlobeControl />
 
     {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
-      <GeoJSONSource data={ridehailingOperationsGeoJson()}>
+      <GeoJSONSource id="ridehailings-operations" data={ridehailingOperationsGeoJson()}>
         <FillLayer
           id="ridehailings-operations-fill"
           paint={{
@@ -1411,7 +1546,7 @@
       </GeoJSONSource>
     {/if}
 
-    <GeoJSONSource data={ridehailingGeoJson()}>
+    <GeoJSONSource id="ridehailings" data={ridehailingGeoJson()}>
       <SymbolLayer
         id="ridehailings-logos"
         filter={["all", ["!=", ["get", "imageName"], null]]}
@@ -1435,7 +1570,7 @@
       />
     </GeoJSONSource>
 
-    <GeoJSONSource data={robotaxiGeoJson()}>
+    <GeoJSONSource id="robotaxis" data={robotaxiGeoJson()}>
       <SymbolLayer
         id="robotaxis-logos"
         filter={["all", ["!=", ["get", "imageName"], null]]}
@@ -1460,7 +1595,7 @@
       />
     </GeoJSONSource>
 
-    <GeoJSONSource data={universitiesGeoJson()}>
+    <GeoJSONSource id="universities" data={universitiesGeoJson()}>
       <CircleLayer
         id="universities-pins"
         paint={{
