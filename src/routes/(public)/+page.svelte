@@ -362,9 +362,7 @@
   ] as const
 
   const CITY_COLUMN_RADIUS_METERS = 18000
-  const CITY_COLUMN_MIN_ELEVATION = 4000
-  const CITY_COLUMN_MAX_ELEVATION = 22000
-  const CITY_COLUMN_ELEVATION_FACTOR = 2200
+  const CITY_COLUMN_POPULATION_SCALE = 0.2
   const CITY_LABEL_VERTICAL_OFFSET = 2200
   const DEFAULT_COLUMN_RGB: [number, number, number] = [75, 85, 99]
 
@@ -396,18 +394,11 @@
 
   const computeCityElevation = (population: number | null): number => {
     if (!population || population <= 0) {
-      return CITY_COLUMN_MIN_ELEVATION
+      return 0
     }
 
-    const height = Math.log10(population) * CITY_COLUMN_ELEVATION_FACTOR
-    if (!Number.isFinite(height)) {
-      return CITY_COLUMN_MIN_ELEVATION
-    }
-
-    return Math.min(
-      CITY_COLUMN_MAX_ELEVATION,
-      Math.max(CITY_COLUMN_MIN_ELEVATION, height),
-    )
+    const height = population * CITY_COLUMN_POPULATION_SCALE
+    return Number.isFinite(height) ? height : 0
   }
 
   const ridehailingCountryCounts = $derived(() => {
