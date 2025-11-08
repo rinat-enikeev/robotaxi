@@ -97,7 +97,29 @@ def normalize_country_iso(raw) -> str | None:
 
 
 records: dict[str, dict] = {}
-skipped_unknown_cities = 0
+skipped_city_slug_mismatches = 0
+
+cities_source_path = input_path.parent / "cities.yaml"
+valid_city_slugs: set[str] = set()
+
+if cities_source_path.exists():
+    raw_cities = cities_source_path.read_text(encoding="utf-8")
+    city_data = yaml.safe_load(raw_cities)
+    if isinstance(city_data, list):
+        for entry in city_data:
+            if isinstance(entry, dict):
+                slug = str(entry.get("slug") or "").strip()
+                if slug:
+                    valid_city_slugs.add(slug)
+    else:
+        sys.stderr.write(
+            f"Warning: Expected list in {cities_source_path}, "
+            "city slug validation disabled.\n"
+        )
+else:
+    sys.stderr.write(
+        f"Warning: {cities_source_path} missing, city slug validation disabled.\n"
+    )
 
 for idx, item in enumerate(data):
     if not isinstance(item, dict):
@@ -125,8 +147,13 @@ for idx, item in enumerate(data):
     if slug in records:
         raise SystemExit(f"Duplicate university slug detected: {slug}")
 
-    if city_slug.lower().startswith("unknown"):
-        skipped_unknown_cities += 1
+    lowercase_city_slug = city_slug.lower()
+    if lowercase_city_slug.startswith("unknown"):
+        skipped_city_slug_mismatches += 1
+        continue
+
+    if valid_city_slugs and city_slug not in valid_city_slugs:
+        skipped_city_slug_mismatches += 1
         continue
 
     record = {
@@ -180,9 +207,9 @@ with output_path.open("w", encoding="utf-8") as fh:
     fh.write("COMMIT;\n")
 
 print(f"Wrote {len(sorted_records)} universities to {output_path}")
-if skipped_unknown_cities:
+if skipped_city_slug_mismatches:
     print(
-        f"Skipped {skipped_unknown_cities} universities with unknown city slugs",
+        f"Skipped {skipped_city_slug_mismatches} universities due to missing city slugs",
         file=sys.stderr,
     )
 PY
