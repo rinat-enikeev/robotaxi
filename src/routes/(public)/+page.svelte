@@ -643,10 +643,11 @@
   }
 
   const handleRidehailingStyleImageMissing = (
-    event: maplibregl.StyleImageMissingEvent,
+    event: maplibregl.MapStyleImageMissingEvent,
   ) => {
     const m = map
     if (!m) return
+
 
     const imageName = event.id
     if (!imageName.startsWith("ridehailing-")) {
@@ -1309,14 +1310,18 @@
         <FillLayer
           id="ridehailings-operations-fill"
           paint={{
-            "fill-color": ridehailingFillColorExpression(),
+            "fill-color": typeof ridehailingFillColorExpression() === "string"
+              ? ridehailingFillColorExpression()
+              : (ridehailingFillColorExpression() as any), // Ensure correct type for DataDrivenPropertyValueSpecification<string>
             "fill-opacity": 0.22,
           }}
         />
         <LineLayer
           id="ridehailings-operations-outline"
           paint={{
-            "line-color": ridehailingOutlineColorExpression(),
+            "line-color": typeof ridehailingOutlineColorExpression() === "string"
+              ? ridehailingOutlineColorExpression()
+              : (ridehailingOutlineColorExpression() as any), // Ensure correct type
             "line-width": 1,
             "line-opacity": 0.6,
           }}
