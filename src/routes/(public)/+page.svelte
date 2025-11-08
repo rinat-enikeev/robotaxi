@@ -398,8 +398,9 @@
 
   .hamburger-wrapper {
     position: absolute;
-    bottom: 1.5rem;
+    top: 50%;
     right: 1.5rem;
+    transform: translateY(-50%);
     z-index: 30;
     display: flex;
     flex-direction: column;
