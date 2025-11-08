@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte"
+  import { onMount, tick } from "svelte"
   import {
     MapLibre,
     GeoJSONSource,
@@ -555,6 +555,32 @@
     }
   }
 
+  const ensureRidehailingOperationsLayerOrder = (m: maplibregl.Map) => {
+    const fillId = "ridehailings-operations-fill"
+    const outlineId = "ridehailings-operations-outline"
+
+    if (!m.getLayer(fillId) || !m.getLayer(outlineId)) {
+      return
+    }
+
+    const beforeLayerCandidates = [
+      "ridehailings-circles",
+      "ridehailings-logos",
+      "robotaxis-circles",
+      "robotaxis-logos",
+      "universities-pins",
+      "universities-labels",
+    ]
+
+    const beforeId = beforeLayerCandidates.find((layerId) => m.getLayer(layerId))
+    if (!beforeId) {
+      return
+    }
+
+    m.moveLayer(fillId, beforeId)
+    m.moveLayer(outlineId, beforeId)
+  }
+
   const loadRobotaxiImage = async (
     m: maplibregl.Map,
     imageName: string,
@@ -656,9 +682,8 @@
   const handleRidehailingStyleImageMissing = (
     event: maplibregl.MapStyleImageMissingEvent,
   ) => {
-    const m = map
-    if (!m) return
-
+    const mapInstance = map
+    if (!mapInstance) return
 
     const imageName = event.id
     if (!imageName.startsWith("ridehailing-")) {
@@ -670,7 +695,7 @@
       return
     }
 
-    void loadRidehailingImage(m, imageName, logoUrl)
+    void loadRidehailingImage(mapInstance, imageName, logoUrl)
   }
 
   const loadRobotaxis = async () => {
@@ -693,17 +718,17 @@
       robotaxis = records
       hasFetchedRobotaxis = true
 
-      const m = map
-      if (m && isRobotaxisEnabled) {
+      const mapInstance = map
+      if (mapInstance && isRobotaxisEnabled) {
         const itemsWithCoords = records.filter(
           (record) => record.longitude != null && record.latitude != null,
         )
         if (itemsWithCoords.length > 0) {
-          focusMapOnRobotaxis(m, itemsWithCoords)
+          focusMapOnRobotaxis(mapInstance, itemsWithCoords)
         }
-        await loadRobotaxiImages(m)
-      } else if (m) {
-        await loadRobotaxiImages(m)
+        await loadRobotaxiImages(mapInstance)
+      } else if (mapInstance) {
+        await loadRobotaxiImages(mapInstance)
       }
     } catch (error) {
       const message =
@@ -735,13 +760,13 @@
       ridehailings = records
       hasFetchedRidehailings = true
 
-      const m = map
-      if (m && isRidehailingsEnabled) {
+      const mapInstance = map
+      if (mapInstance && isRidehailingsEnabled) {
         const itemsWithCoords = records.filter(
           (record) => record.longitude != null && record.latitude != null,
         )
         if (itemsWithCoords.length > 0) {
-          focusMapOnRidehailings(m, itemsWithCoords)
+          focusMapOnRidehailings(mapInstance, itemsWithCoords)
         }
       }
     } catch (error) {
@@ -772,6 +797,12 @@
 
       ridehailingCountryOperations = payload.countryOperations ?? []
       hasFetchedRidehailingOperations = true
+
+      const mapInstance = map
+      if (mapInstance && isRidehailingOperationsEnabled) {
+        await tick()
+        ensureRidehailingOperationsLayerOrder(mapInstance)
+      }
     } catch (error) {
       const message =
         error instanceof Error ? error.message : "Unexpected error occurred"
@@ -824,9 +855,9 @@
       universities = payload.universities ?? []
       hasFetchedUniversities = true
 
-      const m = map
-      if (m && isUniversitiesEnabled) {
-        focusMapOnUniversities(m)
+      const mapInstance = map
+      if (mapInstance && isUniversitiesEnabled) {
+        focusMapOnUniversities(mapInstance)
       }
     } catch (error) {
       const message =
@@ -849,9 +880,9 @@
       await loadRobotaxis()
     }
 
-    const m = map
-    if (m) {
-      await loadRobotaxiImages(m)
+    const mapInstance = map
+    if (mapInstance) {
+      await loadRobotaxiImages(mapInstance)
     }
   }
 
@@ -895,6 +926,12 @@
 
     if (tasks.length > 0) {
       await Promise.allSettled(tasks)
+    }
+
+    const mapInstance = map
+    if (mapInstance) {
+      await tick()
+      ensureRidehailingOperationsLayerOrder(mapInstance)
     }
   }
 
@@ -940,20 +977,20 @@
   }
 
   const handleMouseEnter = () => {
-    const m = map
-    if (!m) return
-    m.getCanvas().style.cursor = "pointer"
+    const mapInstance = map
+    if (!mapInstance) return
+    mapInstance.getCanvas().style.cursor = "pointer"
   }
 
   const handleMouseLeave = () => {
-    const m = map
-    if (!m) return
-    m.getCanvas().style.cursor = ""
+    const mapInstance = map
+    if (!mapInstance) return
+    mapInstance.getCanvas().style.cursor = ""
   }
 
   const handleRobotaxiClick = (event: maplibregl.MapLayerMouseEvent) => {
-    const m = map
-    if (!m) return
+    const mapInstance = map
+    if (!mapInstance) return
 
     const feature = event.features?.[0]
     if (!feature) return
@@ -1022,12 +1059,12 @@
     })
       .setLngLat(coordinates)
       .setHTML(html)
-      .addTo(m)
+      .addTo(mapInstance)
   }
 
   const handleRidehailingClick = (event: maplibregl.MapLayerMouseEvent) => {
-    const m = map
-    if (!m) return
+    const mapInstance = map
+    if (!mapInstance) return
 
     const feature = event.features?.[0]
     if (!feature) return
@@ -1096,12 +1133,12 @@
     })
       .setLngLat(coordinates)
       .setHTML(html)
-      .addTo(m)
+      .addTo(mapInstance)
   }
 
   const handleUniversityClick = (event: maplibregl.MapLayerMouseEvent) => {
-    const m = map
-    if (!m) return
+    const mapInstance = map
+    if (!mapInstance) return
 
     const feature = event.features?.[0]
     if (!feature) return
@@ -1170,7 +1207,7 @@
     })
       .setLngLat(coordinates)
       .setHTML(html)
-      .addTo(m)
+      .addTo(mapInstance)
   }
 
   onMount(() => {
@@ -1207,39 +1244,39 @@
   const ridehailingLayerIds = ["ridehailings-logos", "ridehailings-circles"] as const
 
   $effect(() => {
-    const m = map
+    const mapInstance = map
     const robotaxiCount = robotaxisWithCoords().length
     const enabled = isRobotaxisEnabled
 
-    if (!m) return
+    if (!mapInstance) return
 
     const setup = () => {
-      ensureGlobeProjection(m)
+      ensureGlobeProjection(mapInstance)
       if (enabled && robotaxiCount > 0) {
-        focusMapOnRobotaxis(m)
+        focusMapOnRobotaxis(mapInstance)
       }
       for (const layerId of robotaxiLayerIds) {
-        m.on("click", layerId, handleRobotaxiClick)
-        m.on("mouseenter", layerId, handleMouseEnter)
-        m.on("mouseleave", layerId, handleMouseLeave)
+        mapInstance.on("click", layerId, handleRobotaxiClick)
+        mapInstance.on("mouseenter", layerId, handleMouseEnter)
+        mapInstance.on("mouseleave", layerId, handleMouseLeave)
       }
     }
 
     const cleanup = () => {
       for (const layerId of robotaxiLayerIds) {
-        m.off("click", layerId, handleRobotaxiClick)
-        m.off("mouseenter", layerId, handleMouseEnter)
-        m.off("mouseleave", layerId, handleMouseLeave)
+        mapInstance.off("click", layerId, handleRobotaxiClick)
+        mapInstance.off("mouseenter", layerId, handleMouseEnter)
+        mapInstance.off("mouseleave", layerId, handleMouseLeave)
       }
     }
 
-    if (!m.loaded()) {
+    if (!mapInstance.loaded()) {
       const onLoad = () => {
         setup()
       }
-      m.once("load", onLoad)
+      mapInstance.once("load", onLoad)
       return () => {
-        m.off("load", onLoad)
+        mapInstance.off("load", onLoad)
         cleanup()
       }
     }
@@ -1252,42 +1289,42 @@
   })
 
   $effect(() => {
-    const m = map
+    const mapInstance = map
     const ridehailingCount = ridehailingsWithCoords().length
     const enabled = isRidehailingsEnabled
 
-    if (!m) return
+    if (!mapInstance) return
 
     const setup = () => {
-      ensureGlobeProjection(m)
+      ensureGlobeProjection(mapInstance)
       if (enabled && ridehailingCount > 0) {
-        focusMapOnRidehailings(m)
+        focusMapOnRidehailings(mapInstance)
       }
-      void loadRidehailingImages(m)
-      m.on("styleimagemissing", handleRidehailingStyleImageMissing)
+      void loadRidehailingImages(mapInstance)
+      mapInstance.on("styleimagemissing", handleRidehailingStyleImageMissing)
       for (const layerId of ridehailingLayerIds) {
-        m.on("click", layerId, handleRidehailingClick)
-        m.on("mouseenter", layerId, handleMouseEnter)
-        m.on("mouseleave", layerId, handleMouseLeave)
+        mapInstance.on("click", layerId, handleRidehailingClick)
+        mapInstance.on("mouseenter", layerId, handleMouseEnter)
+        mapInstance.on("mouseleave", layerId, handleMouseLeave)
       }
     }
 
     const cleanup = () => {
-      m.off("styleimagemissing", handleRidehailingStyleImageMissing)
+      mapInstance.off("styleimagemissing", handleRidehailingStyleImageMissing)
       for (const layerId of ridehailingLayerIds) {
-        m.off("click", layerId, handleRidehailingClick)
-        m.off("mouseenter", layerId, handleMouseEnter)
-        m.off("mouseleave", layerId, handleMouseLeave)
+        mapInstance.off("click", layerId, handleRidehailingClick)
+        mapInstance.off("mouseenter", layerId, handleMouseEnter)
+        mapInstance.off("mouseleave", layerId, handleMouseLeave)
       }
     }
 
-    if (!m.loaded()) {
+    if (!mapInstance.loaded()) {
       const onLoad = () => {
         setup()
       }
-      m.once("load", onLoad)
+      mapInstance.once("load", onLoad)
       return () => {
-        m.off("load", onLoad)
+        mapInstance.off("load", onLoad)
         cleanup()
       }
     }
@@ -1300,35 +1337,35 @@
   })
 
   $effect(() => {
-    const m = map
+    const mapInstance = map
     const universityCount = universitiesWithCoords().length
     const enabled = isUniversitiesEnabled
 
-    if (!m) return
+    if (!mapInstance) return
 
     const setup = () => {
-      ensureGlobeProjection(m)
+      ensureGlobeProjection(mapInstance)
       if (enabled && universityCount > 0) {
-        focusMapOnUniversities(m)
+        focusMapOnUniversities(mapInstance)
       }
-      m.on("click", "universities-pins", handleUniversityClick)
-      m.on("mouseenter", "universities-pins", handleMouseEnter)
-      m.on("mouseleave", "universities-pins", handleMouseLeave)
+      mapInstance.on("click", "universities-pins", handleUniversityClick)
+      mapInstance.on("mouseenter", "universities-pins", handleMouseEnter)
+      mapInstance.on("mouseleave", "universities-pins", handleMouseLeave)
     }
 
     const cleanup = () => {
-      m.off("click", "universities-pins", handleUniversityClick)
-      m.off("mouseenter", "universities-pins", handleMouseEnter)
-      m.off("mouseleave", "universities-pins", handleMouseLeave)
+      mapInstance.off("click", "universities-pins", handleUniversityClick)
+      mapInstance.off("mouseenter", "universities-pins", handleMouseEnter)
+      mapInstance.off("mouseleave", "universities-pins", handleMouseLeave)
     }
 
-    if (!m.loaded()) {
+    if (!mapInstance.loaded()) {
       const onLoad = () => {
         setup()
       }
-      m.once("load", onLoad)
+      mapInstance.once("load", onLoad)
       return () => {
-        m.off("load", onLoad)
+        mapInstance.off("load", onLoad)
         cleanup()
       }
     }
