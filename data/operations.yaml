@@ -711,6 +711,77 @@
     - zugdidi-georgia
     - zurich-switzerland
     - zvolen-slovakia
-
-
-
+- slug: uber
+  countries:
+    - andorra
+    - united-arab-emirates
+    - argentina
+    - austria
+    - australia
+    - bangladesh
+    - belgium
+    - bahrain
+    - bolivia
+    - brazil
+    - canada
+    - switzerland
+    - cote-divoire
+    - chile
+    - colombia
+    - costa-rica
+    - czechia
+    - germany
+    - denmark
+    - dominican-republic
+    - ecuador
+    - estonia
+    - egypt
+    - spain
+    - finland
+    - france
+    - united-kingdom
+    - ghana
+    - greece
+    - guatemala
+    - hong-kong
+    - honduras
+    - croatia
+    - hungary
+    - ireland
+    - india
+    - italy
+    - jamaica
+    - jordan
+    - japan
+    - kenya
+    - korea-south
+    - lebanon
+    - sri-lanka
+    - lithuania
+    - luxembourg
+    - malta
+    - mexico
+    - nigeria
+    - netherlands
+    - norway
+    - new-zealand
+    - panama
+    - peru
+    - poland
+    - portugal
+    - paraguay
+    - qatar
+    - romania
+    - saudi-arabia
+    - sweden
+    - slovenia
+    - slovakia
+    - el-salvador
+    - turkey
+    - taiwan
+    - tanzania
+    - ukraine
+    - uganda
+    - united-states
+    - uruguay
+    - south-africa
