@@ -88,7 +88,7 @@ select throws_ok(
     values ('invalid-capital-city', 'Invalid Capital City', 33.333333, 44.444444, 'test-country', 'invalid')
     $$,
     '23514',
-    'capital only allows expected values'
+    'new row for relation "cities" violates check constraint "cities_capital_check"'
 );
 
 select throws_ok(
@@ -106,7 +106,7 @@ select throws_ok(
     values ('no-country-city', 'No Country City', 77.777777, 88.888888, 'missing-country')
     $$,
     '23503',
-    'country_slug must reference an existing country'
+    'insert or update on table "cities" violates foreign key constraint "cities_country_slug_fkey"'
 );
 
 select * from finish();
