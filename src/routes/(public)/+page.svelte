@@ -1933,6 +1933,17 @@
   {#if isUniversitiesEnabled && hasFetchedUniversities && !isUniversitiesLoading && universitiesWithCoords().length === 0}
     <div class="empty-state">No universities available yet.</div>
   {/if}
+
+  <div class="contribute-wrapper">
+    <a
+      class="contribute-button"
+      href="https://github.com/rinat-enikeev/robotaxi/tree/main/data"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Contribute on GitHub
+    </a>
+  </div>
 </div>
 
 <style>
@@ -2097,6 +2108,41 @@
   ) {
     border-radius: 0.75rem;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+  }
+
+  .contribute-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem;
+    transform: translateX(-50%);
+    z-index: 30;
+  }
+
+  .contribute-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    color: #111827;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  .contribute-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.22);
+  }
+
+  .contribute-button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
   }
 
   .empty-state {
