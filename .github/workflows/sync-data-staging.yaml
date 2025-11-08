@@ -32,7 +32,7 @@ jobs:
         run: pip install --disable-pip-version-check --no-cache-dir pyyaml
 
       - name: Generate seed SQL from data
-        run: ./scripts/generate_cities_seed.sh
+        run: make generate_seed
 
       - name: Install PostgreSQL client
         run: sudo apt-get update && sudo apt-get install -y postgresql-client
@@ -46,6 +46,6 @@ jobs:
             --port="5432" \
             --username="postgres" \
             --dbname="postgres" \
-            --file="supabase/seeds/cities.sql" \
+            --file="supabase/seeds/seed.sql" \
             --set="ON_ERROR_STOP=1" \
             --single-transaction

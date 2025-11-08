@@ -83,4 +83,7 @@ gcp_jwt_path = "supabase/gcloud.json"
 
 [db.seed]
 enabled = true
-sql_paths = ['./seeds/*.sql']
+sql_paths = [
+  './seeds/cities.sql',
+  './seeds/universities.sql',
+]
