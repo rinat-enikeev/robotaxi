@@ -111,10 +111,10 @@
         },
         geometry: {
           type: "Point" as const,
-          coordinates: [Number(company.longitude), Number(company.latitude)] as [
-            number,
-            number,
-          ],
+          coordinates: [
+            Number(company.longitude),
+            Number(company.latitude),
+          ] as [number, number],
         },
       }
     }),
@@ -157,7 +157,9 @@
 
   const robotaxiLogos = $derived(() =>
     robotaxiGeoJson()
-      .features.map((feature) => feature.properties as RobotaxiFeatureProperties)
+      .features.map(
+        (feature) => feature.properties as RobotaxiFeatureProperties,
+      )
       .filter(
         (props) => props.imageName !== null && props.sanitizedWebsite !== "",
       )
@@ -647,10 +649,7 @@
 
       <CircleLayer
         id="robotaxis-circles"
-        filter={[
-          "all",
-          ["==", ["get", "imageName"], null],
-        ]}
+        filter={["all", ["==", ["get", "imageName"], null]]}
         paint={{
           "circle-radius": 6,
           "circle-color": "#2563eb",
