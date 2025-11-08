@@ -141,6 +141,56 @@ export type Database = {
         }
         Relationships: []
       }
+      universities: {
+        Row: {
+          city_name: string | null
+          city_slug: string
+          country_iso: string | null
+          created_at: string | null
+          id: number
+          latitude: number | null
+          longitude: number | null
+          name: string
+          slug: string
+          updated_at: string | null
+          website: string | null
+        }
+        Insert: {
+          city_name?: string | null
+          city_slug: string
+          country_iso?: string | null
+          created_at?: string | null
+          id?: number
+          latitude?: number | null
+          longitude?: number | null
+          name: string
+          slug: string
+          updated_at?: string | null
+          website?: string | null
+        }
+        Update: {
+          city_name?: string | null
+          city_slug?: string
+          country_iso?: string | null
+          created_at?: string | null
+          id?: number
+          latitude?: number | null
+          longitude?: number | null
+          name?: string
+          slug?: string
+          updated_at?: string | null
+          website?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "universities_city_slug_fkey"
+            columns: ["city_slug"]
+            isOneToOne: false
+            referencedRelation: "cities"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
