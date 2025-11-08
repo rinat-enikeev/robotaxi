@@ -7,20 +7,33 @@
     GlobeControl,
   } from "svelte-maplibre-gl"
   import maplibregl from "maplibre-gl"
-  import type { PageData } from "./$types"
 
-  interface Props {
-    data: PageData
+  type University = {
+    id: number | string
+    name: string
+    latitude: number | string | null
+    longitude: number | string | null
+    city_name?: string | null
+    website?: string | null
   }
-
-  let { data }: Props = $props()
   let map = $state<maplibregl.Map | undefined>(undefined)
 
-  const universitiesWithCoords = $derived(() =>
-    data.universities.filter(
+  let isHamburgerOpen = $state(false)
+  let isUniversitiesEnabled = $state(false)
+  let isUniversitiesLoading = $state(false)
+  let hasFetchedUniversities = $state(false)
+  let universities = $state<University[]>([])
+  let universitiesError = $state<string | null>(null)
+
+  const universitiesWithCoords = $derived(() => {
+    if (!isUniversitiesEnabled) {
+      return []
+    }
+
+    return universities.filter(
       (uni) => uni.longitude != null && uni.latitude != null,
-    ),
-  )
+    )
+  })
 
   const universitiesGeoJson = $derived(() => ({
     type: "FeatureCollection" as const,
@@ -61,6 +74,58 @@
     })
 
   let hasSetGlobeProjection = false
+
+  const loadUniversities = async () => {
+    if (isUniversitiesLoading) return
+
+    isUniversitiesLoading = true
+    universitiesError = null
+
+    try {
+      const response = await fetch("/api/universities")
+      if (!response.ok) {
+        throw new Error("Failed to fetch universities")
+      }
+
+      const payload = (await response.json()) as {
+        universities: University[]
+      }
+
+      universities = payload.universities ?? []
+      hasFetchedUniversities = true
+
+      const m = map
+      if (m && isUniversitiesEnabled) {
+        focusMapOnUniversities(m)
+      }
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      universitiesError = message
+      hasFetchedUniversities = false
+    } finally {
+      isUniversitiesLoading = false
+    }
+  }
+
+  const handleUniversitiesToggle = async (checked: boolean) => {
+    isUniversitiesEnabled = checked
+
+    if (checked && !hasFetchedUniversities) {
+      await loadUniversities()
+    }
+  }
+
+  const handleRetryUniversities = async () => {
+    hasFetchedUniversities = false
+    if (isUniversitiesEnabled) {
+      await loadUniversities()
+    }
+  }
+
+  const toggleHamburgerMenu = () => {
+    isHamburgerOpen = !isHamburgerOpen
+  }
 
   const focusMapOnUniversities = (m: maplibregl.Map) => {
     const features = universitiesWithCoords()
@@ -167,6 +232,7 @@
   $effect(() => {
     const m = map
     const universityCount = universitiesWithCoords().length
+    const enabled = isUniversitiesEnabled
 
     if (!m) return
 
@@ -175,7 +241,7 @@
         m.setProjection({ type: "globe" })
         hasSetGlobeProjection = true
       }
-      if (universityCount > 0) {
+      if (enabled && universityCount > 0) {
         focusMapOnUniversities(m)
       }
       m.on("click", "universities-pins", handleUniversityClick)
@@ -245,7 +311,60 @@
     </GeoJSONSource>
   </MapLibre>
 
-  {#if universitiesWithCoords().length === 0}
+  <div class="hamburger-wrapper">
+    <button
+      class="floating-button hamburger-button"
+      type="button"
+      aria-haspopup="true"
+      aria-expanded={isHamburgerOpen}
+      on:click={toggleHamburgerMenu}
+    >
+      <span class="hamburger-icon"></span>
+      <span class="hamburger-icon"></span>
+      <span class="hamburger-icon"></span>
+    </button>
+
+    {#if isHamburgerOpen}
+      <div class="hamburger-menu" role="menu">
+        <h2 class="menu-heading">Datasets</h2>
+        <label class="menu-item">
+          <input
+            type="checkbox"
+            checked={isUniversitiesEnabled}
+            on:change={(event) =>
+              handleUniversitiesToggle(
+                (event.currentTarget as HTMLInputElement).checked,
+              )
+            }
+          />
+          <span class="menu-label">Universities</span>
+        </label>
+
+        {#if isUniversitiesLoading}
+          <p class="menu-status">Loading universities…</p>
+        {:else if universitiesError}
+          <p class="menu-status error">Failed to load: {universitiesError}</p>
+          <button
+            class="retry-button"
+            type="button"
+            on:click={handleRetryUniversities}
+          >
+            Try again
+          </button>
+        {:else if hasFetchedUniversities}
+          <p class="menu-status">
+            Showing {universitiesWithCoords().length} universities
+          </p>
+        {/if}
+      </div>
+    {/if}
+  </div>
+
+  {#if
+    isUniversitiesEnabled &&
+    hasFetchedUniversities &&
+    !isUniversitiesLoading &&
+    universitiesWithCoords().length === 0}
     <div class="empty-state">
       No universities available yet.
     </div>
@@ -256,6 +375,135 @@
   .map-page {
     position: fixed;
     inset: 0;
+  }
+
+  .floating-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    cursor: pointer;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+  }
+
+  .floating-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(15, 23, 42, 0.22);
+  }
+
+  .hamburger-wrapper {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+
+  .hamburger-button {
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.75rem;
+  }
+
+  .hamburger-button:focus-visible,
+  .floating-button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+
+  .hamburger-icon {
+    display: block;
+    width: 1.5rem;
+    height: 0.125rem;
+    border-radius: 9999px;
+    background: #111827;
+  }
+
+  .hamburger-menu {
+    width: 16rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.2);
+    backdrop-filter: blur(12px);
+  }
+
+  .menu-heading {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1f2937;
+  }
+
+  .menu-item + .menu-status {
+    margin-top: 0.75rem;
+  }
+
+  .menu-label {
+    flex: 1;
+  }
+
+  .menu-status {
+    margin: 0.75rem 0 0 0;
+    font-size: 0.8rem;
+    color: #374151;
+  }
+
+  .menu-status.error {
+    color: #b91c1c;
+  }
+
+  .retry-button {
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .retry-button:hover {
+    background: #1d4ed8;
+  }
+
+  :global(.maplibregl-ctrl-bottom-right) {
+    right: auto;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 25;
+  }
+
+  :global(.maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib-button) {
+    margin: 0;
+    border-radius: 9999px;
+  }
+
+  :global(
+      .maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib.maplibregl-compact
+    ) {
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
   }
 
   .empty-state {
