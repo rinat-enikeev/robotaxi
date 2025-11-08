@@ -88,7 +88,7 @@ select throws_ok(
     insert into public.cities (slug, city, latitude, longitude, country_slug, capital)
     values ('invalid-capital-city', 'Invalid Capital City', 33.333333, 44.444444, 'test-country', 'invalid')
     $$,
-    'violates check constraint "cities_capital_check"',
+    '23514: new row for relation "cities" violates check constraint "cities_capital_check"',
     'capital only allows expected values'
 );
 
@@ -106,7 +106,7 @@ select throws_ok(
     insert into public.cities (slug, city, latitude, longitude, country_slug)
     values ('no-country-city', 'No Country City', 77.777777, 88.888888, 'missing-country')
     $$,
-    'violates foreign key constraint "cities_country_slug_fkey"',
+    '23503: insert or update on table "cities" violates foreign key constraint "cities_country_slug_fkey"',
     'country_slug must reference an existing country'
 );
 

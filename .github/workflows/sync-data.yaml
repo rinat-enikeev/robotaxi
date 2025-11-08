@@ -1,10 +1,12 @@
 name: Sync Data
 
 on:
-  push:
-    branches:
-      - develop
-      - main
+  workflow_run:
+    workflows:
+      - Release (Staging)
+      - Release (Production)
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
@@ -12,14 +14,15 @@ permissions:
 
 jobs:
   sync-staging:
-    if: github.ref == 'refs/heads/develop'
+    if: >
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.name == 'Release (Staging)'
     runs-on: ubuntu-latest
-    env:
-      SUPABASE_PROJECT_ID: ${{ secrets.STAGING_PROJECT_ID }}
-      SUPABASE_DB_PASSWORD: ${{ secrets.STAGING_DB_PASSWORD }}
-
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - uses: actions/setup-python@v5
         with:
@@ -48,14 +51,15 @@ jobs:
             --single-transaction
 
   sync-production:
-    if: github.ref == 'refs/heads/main'
+    if: >
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.name == 'Release (Production)'
     runs-on: ubuntu-latest
-    env:
-      SUPABASE_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
-      SUPABASE_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
-
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - uses: actions/setup-python@v5
         with:
