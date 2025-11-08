@@ -1,5 +1,5 @@
 begin;
-select plan(24);
+select plan(18);
 
 select has_table('public', 'cities', 'cities table exists');
 
