@@ -141,6 +141,63 @@ export type Database = {
         }
         Relationships: []
       }
+      robotaxis: {
+        Row: {
+          address: string | null
+          city_slug: string
+          country_slug: string
+          created_at: string | null
+          id: number
+          latitude: number
+          longitude: number
+          name: string
+          slug: string
+          updated_at: string | null
+          website: string | null
+        }
+        Insert: {
+          address?: string | null
+          city_slug: string
+          country_slug: string
+          created_at?: string | null
+          id?: number
+          latitude: number
+          longitude: number
+          name: string
+          slug: string
+          updated_at?: string | null
+          website?: string | null
+        }
+        Update: {
+          address?: string | null
+          city_slug?: string
+          country_slug?: string
+          created_at?: string | null
+          id?: number
+          latitude?: number
+          longitude?: number
+          name?: string
+          slug?: string
+          updated_at?: string | null
+          website?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "robotaxis_city_slug_fkey"
+            columns: ["city_slug"]
+            isOneToOne: false
+            referencedRelation: "cities"
+            referencedColumns: ["slug"]
+          },
+          {
+            foreignKeyName: "robotaxis_country_slug_fkey"
+            columns: ["country_slug"]
+            isOneToOne: false
+            referencedRelation: "countries"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
       universities: {
         Row: {
           city_name: string | null

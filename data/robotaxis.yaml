@@ -1,0 +1,121 @@
+- slug: apollo-go
+  name: Apollo Go
+  website: apollogo.com
+  city: beijing-china
+  country: china
+  latitude: 39.904211
+  longitude: 116.407395
+  address: Beijing, China
+- slug: autox
+  name: AutoX
+  website: autox.ai
+  city: shenzhen-china
+  country: china
+  latitude: 22.5428599
+  longitude: 114.05956
+  address: Shenzhen, Guangdong Province, China
+- slug: kira
+  name: KIRA
+  website: kira-autonom.de
+  city: frankfurt-germany
+  country: germany
+  latitude: 50.1109221
+  longitude: 8.6821267
+  address: Frankfurt am Main, Germany
+- slug: moia
+  name: Moia
+  website: moia.io
+  city: hamburg-germany
+  country: germany
+  latitude: 53.5488282
+  longitude: 9.987170299999999
+  address: Hamburg, Germany
+- slug: momenta
+  name: Momenta
+  website: momenta.cn
+  city: suzhou-china
+  country: china
+  latitude: 31.41852
+  longitude: 120.64135
+  address: 'China, Jiang Su Sheng, Su Zhou Shi, Xiang Cheng Qu, 77, 正南方向140米 邮政编码:
+    215133'
+- slug: pony.ai
+  name: Pony.ai
+  website: pony.ai
+  city: guangzhou-china
+  country: china
+  latitude: 22.77075
+  longitude: 113.51312
+  address: 'China, Guang Zhou Shi, Nan Sha Qu, CN 广东省 广州市 南沙区 明珠一街明珠开发大厦 邮政编码: 511458'
+- slug: tesla
+  name: Tesla
+  website: tesla.com
+  city: austin-united-states
+  country: united-states
+  latitude: 30.267153
+  longitude: -97.7430608
+  address: Austin, TX, USA
+- slug: waymo
+  name: Waymo
+  website: waymo.com
+  city: mountain-view-united-states
+  country: united-states
+  latitude: 37.3944578
+  longitude: -122.0504283
+  address: 690 E Middlefield Rd, Mountain View, CA 94043, USA
+- slug: wayve
+  name: Wayve
+  website: wayve.ai
+  city: london-united-kingdom
+  country: united-kingdom
+  latitude: 51.5427809
+  longitude: -0.1252624
+  address: 230-238 York Wy, London N7 9AG, UK
+- slug: weride
+  name: WeRide
+  website: weride.ai
+  city: guangzhou-china
+  country: china
+  latitude: 23.1290799
+  longitude: 113.26436
+  address: Guangzhou, Guangdong Province, China
+- slug: zeekr
+  name: Zeekr
+  website: zeekr.eu
+  city: hangzhou-china
+  country: china
+  latitude: 30.2741499
+  longitude: 120.15515
+  address: Hangzhou, Zhejiang, China
+- slug: maymobility
+  name: May Mobility
+  website: maymobility.com
+  city: ann-arbor-united-states
+  country: united-states
+  latitude: 42.2112832
+  longitude: -83.743987
+  address: Ann Arbor, MI, USA
+- slug: nuro
+  name: Nuro
+  website: nuro.ai
+  city: chicago-united-states
+  country: united-states
+  latitude: 41.8902454
+  longitude: -87.634482
+  address: 116 W Hubbard St Suite 512, Chicago, IL 60654, United States
+- slug: zoox
+  name: Zoox
+  website: zoox.com
+  city: foster-city-united-states
+  country: united-states
+  latitude: 37.5666329
+  longitude: -122.2730922
+  address: 1149 Chess Dr, Foster City, CA 94404, United States
+- slug: oxa
+  name: Oxa
+  website: oxa.tech
+  city: oxford-united-kingdom
+  country: united-kingdom
+  latitude: 51.733623
+  longitude: -1.207653
+  address: Oxford Business Park, 8050 Alec Issigonis Wy., Oxford OX4 2FL, United Kingdom
