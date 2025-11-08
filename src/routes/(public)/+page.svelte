@@ -5,9 +5,17 @@
     GeoJSONSource,
     CircleLayer,
     SymbolLayer,
+    FillLayer,
+    LineLayer,
     GlobeControl,
   } from "svelte-maplibre-gl"
   import maplibregl from "maplibre-gl"
+  import type {
+    Feature,
+    FeatureCollection,
+    MultiPolygon,
+    Polygon,
+  } from "geojson"
 
   type Robotaxi = {
     id: number
@@ -30,6 +38,47 @@
     website?: string | null
   }
 
+  type Ridehailing = {
+    id: number
+    slug: string
+    name: string
+    website: string | null
+    latitude: number
+    longitude: number
+    address: string | null
+    city_slug: string
+    country_slug: string
+  }
+
+  type RidehailingCountryOperation = {
+    ridehailing_slug: string
+    country_slug: string
+    iso_alpha_2: string | null
+    iso_alpha_3: string | null
+  }
+
+  type RidehailingOperationFeatureProperties = {
+    ridehailing_slug: string
+    name: string
+    iso_alpha_3: string
+  }
+
+  type CountryFeatureProperties = {
+    name: string
+    "ISO3166-1-Alpha-3": string
+    "ISO3166-1-Alpha-2": string
+  }
+
+  type CountryFeature = Feature<
+    Polygon | MultiPolygon,
+    CountryFeatureProperties
+  >
+
+  type CountryFeatureCollection = FeatureCollection<
+    Polygon | MultiPolygon,
+    CountryFeatureProperties
+  >
+
   type RobotaxiFeatureProperties = {
     id: number
     name: string
@@ -50,11 +99,27 @@
   let robotaxis = $state<Robotaxi[]>([])
   let robotaxisError = $state<string | null>(null)
 
+  let isRidehailingsEnabled = $state(false)
+  let isRidehailingsLoading = $state(false)
+  let hasFetchedRidehailings = $state(false)
+  let ridehailings = $state<Ridehailing[]>([])
+  let ridehailingsError = $state<string | null>(null)
+
   let isUniversitiesEnabled = $state(false)
   let isUniversitiesLoading = $state(false)
   let hasFetchedUniversities = $state(false)
   let universities = $state<University[]>([])
   let universitiesError = $state<string | null>(null)
+
+  let isRidehailingOperationsEnabled = $state(false)
+  let isRidehailingOperationsLoading = $state(false)
+  let hasFetchedRidehailingOperations = $state(false)
+  let ridehailingCountryOperations = $state<RidehailingCountryOperation[]>([])
+  let ridehailingOperationsError = $state<string | null>(null)
+
+  let isCountryBoundariesLoading = $state(false)
+  let countryBoundariesError = $state<string | null>(null)
+  let countriesGeoJson = $state<CountryFeatureCollection | null>(null)
 
   const sanitizeWebsite = (value: string) => {
     const trimmed = value.trim()
@@ -120,6 +185,43 @@
     }),
   }))
 
+  const ridehailingsWithCoords = $derived(() => {
+    if (!isRidehailingsEnabled) {
+      return []
+    }
+
+    return ridehailings.filter(
+      (company) => company.longitude != null && company.latitude != null,
+    )
+  })
+
+  const ridehailingGeoJson = $derived(() => ({
+    type: "FeatureCollection" as const,
+    features: ridehailingsWithCoords().map((company) => {
+      const website = (company.website ?? "").trim()
+      const sanitizedWebsite = website ? sanitizeWebsite(website) : ""
+
+      return {
+        type: "Feature" as const,
+        properties: {
+          id: company.id,
+          name: company.name,
+          website,
+          address: company.address ?? "",
+          slug: company.slug,
+          sanitizedWebsite,
+        },
+        geometry: {
+          type: "Point" as const,
+          coordinates: [
+            Number(company.longitude),
+            Number(company.latitude),
+          ] as [number, number],
+        },
+      }
+    }),
+  }))
+
   const universitiesWithCoords = $derived(() => {
     if (!isUniversitiesEnabled) {
       return []
@@ -169,6 +271,115 @@
       })),
   )
 
+  const ridehailingCountryCounts = $derived(() => {
+    const counts = new Map<string, number>()
+    for (const record of ridehailingCountryOperations) {
+      const slug = record.ridehailing_slug
+      counts.set(slug, (counts.get(slug) ?? 0) + 1)
+    }
+    return counts
+  })
+
+  const ridehailingCountryIsoCodesBySlug = $derived(() => {
+    const map = new Map<
+      string,
+      { alpha2: Set<string>; alpha3: Set<string> }
+    >()
+
+    for (const record of ridehailingCountryOperations) {
+      const slug = record.ridehailing_slug
+      const entry =
+        map.get(slug) ?? { alpha2: new Set<string>(), alpha3: new Set<string>() }
+
+      const isoAlpha2 = record.iso_alpha_2
+      if (isoAlpha2) {
+        entry.alpha2.add(isoAlpha2.toUpperCase())
+      }
+
+      const isoAlpha3 = record.iso_alpha_3
+      if (isoAlpha3) {
+        entry.alpha3.add(isoAlpha3.toUpperCase())
+      }
+
+      map.set(slug, entry)
+    }
+
+    return map
+  })
+
+  const emptyRidehailingOperationsGeoJson: FeatureCollection<
+    Polygon | MultiPolygon,
+    RidehailingOperationFeatureProperties
+  > = {
+    type: "FeatureCollection",
+    features: [],
+  }
+
+  const ridehailingOperationsGeoJson = $derived(() => {
+    if (!isRidehailingOperationsEnabled) {
+      return emptyRidehailingOperationsGeoJson
+    }
+
+    const geoJson = countriesGeoJson
+    if (!geoJson) {
+      return emptyRidehailingOperationsGeoJson
+    }
+
+    const isoCodes = ridehailingCountryIsoCodesBySlug()
+    if (isoCodes.size === 0) {
+      return emptyRidehailingOperationsGeoJson
+    }
+
+    const features: Feature<
+      Polygon | MultiPolygon,
+      RidehailingOperationFeatureProperties
+    >[] = []
+
+    for (const feature of geoJson.features) {
+      const properties = feature.properties
+      if (!properties) continue
+
+      const isoAlpha3 =
+        properties["ISO3166-1-Alpha-3"]?.toUpperCase() ??
+        properties["ISO3166-1-Alpha-2"]?.toUpperCase()
+      if (!isoAlpha3) continue
+
+      for (const [slug, codes] of isoCodes.entries()) {
+        if (
+          codes.alpha3.has(isoAlpha3) ||
+          codes.alpha2.has(properties["ISO3166-1-Alpha-2"]?.toUpperCase() ?? "")
+        ) {
+          features.push({
+            type: "Feature" as const,
+            properties: {
+              ridehailing_slug: slug,
+              name: properties.name,
+              iso_alpha_3: isoAlpha3,
+            },
+            geometry: feature.geometry,
+          })
+        }
+      }
+    }
+
+    return {
+      type: "FeatureCollection" as const,
+      features,
+    }
+  })
+
+  const ridehailingOperationsSummary = $derived(() => {
+    if (ridehailingCountryCounts().size === 0) {
+      return ""
+    }
+
+    const entries = Array.from(ridehailingCountryCounts().entries()).map(
+      ([slug, count]) => `${count} ${slug} ${count === 1 ? "country" : "countries"}`,
+    )
+
+    return entries.join(", ")
+  })
+
   let hasSetGlobeProjection = false
   const failedRobotaxiImages = new Set<string>()
   const pendingRobotaxiImages = new Set<string>()
@@ -185,6 +396,25 @@
     companies: Robotaxi[] | null = null,
   ) => {
     const items = (companies ?? robotaxisWithCoords()).filter(
+      (company) => company.longitude != null && company.latitude != null,
+    )
+    if (items.length === 0) return
+
+    const bounds = new maplibregl.LngLatBounds()
+    for (const company of items) {
+      bounds.extend([Number(company.longitude), Number(company.latitude)])
+    }
+
+    if (!bounds.isEmpty()) {
+      m.fitBounds(bounds, { padding: 80, maxZoom: 6 })
+    }
+  }
+
+  const focusMapOnRidehailings = (
+    m: maplibregl.Map,
+    companies: Ridehailing[] | null = null,
+  ) => {
+    const items = (companies ?? ridehailingsWithCoords()).filter(
       (company) => company.longitude != null && company.latitude != null,
     )
     if (items.length === 0) return
@@ -302,6 +532,96 @@
     }
   }
 
+  const loadRidehailings = async () => {
+    if (isRidehailingsLoading) return
+
+    isRidehailingsLoading = true
+    ridehailingsError = null
+
+    try {
+      const response = await fetch("/api/ridehailings")
+      if (!response.ok) {
+        throw new Error("Failed to fetch ridehailings")
+      }
+
+      const payload = (await response.json()) as {
+        ridehailings: Ridehailing[]
+      }
+
+      const records = payload.ridehailings ?? []
+      ridehailings = records
+      hasFetchedRidehailings = true
+
+      const m = map
+      if (m && isRidehailingsEnabled) {
+        const itemsWithCoords = records.filter(
+          (record) => record.longitude != null && record.latitude != null,
+        )
+        if (itemsWithCoords.length > 0) {
+          focusMapOnRidehailings(m, itemsWithCoords)
+        }
+      }
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      ridehailingsError = message
+      hasFetchedRidehailings = false
+    } finally {
+      isRidehailingsLoading = false
+    }
+  }
+
+  const loadRidehailingOperations = async () => {
+    if (isRidehailingOperationsLoading) return
+
+    isRidehailingOperationsLoading = true
+    ridehailingOperationsError = null
+
+    try {
+      const response = await fetch("/api/ridehailings/operations")
+      if (!response.ok) {
+        throw new Error("Failed to fetch ridehailing operations")
+      }
+
+      const payload = (await response.json()) as {
+        countryOperations: RidehailingCountryOperation[]
+      }
+
+      ridehailingCountryOperations = payload.countryOperations ?? []
+      hasFetchedRidehailingOperations = true
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      ridehailingOperationsError = message
+      hasFetchedRidehailingOperations = false
+    } finally {
+      isRidehailingOperationsLoading = false
+    }
+  }
+
+  const loadCountryBoundaries = async () => {
+    if (countriesGeoJson || isCountryBoundariesLoading) return
+
+    isCountryBoundariesLoading = true
+    countryBoundariesError = null
+
+    try {
+      const response = await fetch("/data/countries-simplified.geojson")
+      if (!response.ok) {
+        throw new Error("Failed to fetch country boundaries")
+      }
+
+      const payload = (await response.json()) as CountryFeatureCollection
+      countriesGeoJson = payload
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      countryBoundariesError = message
+    } finally {
+      isCountryBoundariesLoading = false
+    }
+  }
+
   const loadUniversities = async () => {
     if (isUniversitiesLoading) return
 
@@ -343,6 +663,49 @@
     }
   }
 
+  const handleRidehailingsToggle = async (checked: boolean) => {
+    isRidehailingsEnabled = checked
+
+    if (!checked) {
+      isRidehailingOperationsEnabled = false
+    }
+
+    if (checked && !hasFetchedRidehailings) {
+      await loadRidehailings()
+    }
+  }
+
+  const handleRidehailingOperationsToggle = async (checked: boolean) => {
+    if (!isRidehailingsEnabled) {
+      isRidehailingOperationsEnabled = false
+      return
+    }
+
+    isRidehailingOperationsEnabled = checked
+
+    if (!checked) {
+      return
+    }
+
+    const tasks: Promise<unknown>[] = []
+
+    if (!hasFetchedRidehailings) {
+      tasks.push(loadRidehailings())
+    }
+
+    if (!hasFetchedRidehailingOperations) {
+      tasks.push(loadRidehailingOperations())
+    }
+
+    if (!countriesGeoJson) {
+      tasks.push(loadCountryBoundaries())
+    }
+
+    if (tasks.length > 0) {
+      await Promise.allSettled(tasks)
+    }
+  }
+
   const handleUniversitiesToggle = async (checked: boolean) => {
     isUniversitiesEnabled = checked
 
@@ -355,6 +718,21 @@
     hasFetchedRobotaxis = false
     if (isRobotaxisEnabled) {
       await loadRobotaxis()
+    }
+  }
+
+  const handleRetryRidehailings = async () => {
+    hasFetchedRidehailings = false
+    if (isRidehailingsEnabled) {
+      await loadRidehailings()
+    }
+  }
+
+  const handleRetryRidehailingOperations = async () => {
+    hasFetchedRidehailingOperations = false
+    await loadRidehailingOperations()
+    if (!countriesGeoJson) {
+      await loadCountryBoundaries()
     }
   }
 
@@ -396,6 +774,80 @@
 
     const coordinates = geometry.coordinates
     const rawName = props.name ? String(props.name) : "Robotaxi"
+    const rawAddress = props.address ? String(props.address) : ""
+    const rawWebsite = props.website ? String(props.website) : ""
+
+    const name = escapeHtml(rawName)
+    const address = rawAddress ? escapeHtml(rawAddress) : ""
+    const hasProtocol = /^https?:\/\//i.test(rawWebsite)
+    const websiteUrl = rawWebsite
+      ? hasProtocol
+        ? rawWebsite
+        : `https://${rawWebsite}`
+      : ""
+    const websiteLabel = rawWebsite
+      ? escapeHtml(rawWebsite.replace(/^https?:\/\//i, ""))
+      : ""
+
+    const details: string[] = []
+
+    if (address) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">📍 Address</span>
+          <span class="popup-value">${address}</span>
+        </div>
+      `)
+    }
+
+    if (websiteUrl) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">🌐 Website</span>
+          <a class="popup-link" href="${websiteUrl}" target="_blank" rel="noopener noreferrer">${websiteLabel}</a>
+        </div>
+      `)
+    }
+
+    const html = `
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3 class="popup-title">${name}</h3>
+        </div>
+        <div class="popup-body">
+          ${
+            details.length > 0
+              ? details.join("")
+              : "<div class='popup-field'><span class='popup-value'>No additional details.</span></div>"
+          }
+        </div>
+      </div>
+    `
+
+    new maplibregl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+    })
+      .setLngLat(coordinates)
+      .setHTML(html)
+      .addTo(m)
+  }
+
+  const handleRidehailingClick = (event: maplibregl.MapLayerMouseEvent) => {
+    const m = map
+    if (!m) return
+
+    const feature = event.features?.[0]
+    if (!feature) return
+
+    const props = feature.properties ?? {}
+    const geometry = feature.geometry as {
+      type: string
+      coordinates: [number, number]
+    }
+
+    const coordinates = geometry.coordinates
+    const rawName = props.name ? String(props.name) : "Ridehailing"
     const rawAddress = props.address ? String(props.address) : ""
     const rawWebsite = props.website ? String(props.website) : ""
 
@@ -536,6 +988,7 @@
   })
 
   const robotaxiLayerIds = ["robotaxis-logos", "robotaxis-circles"] as const
+  const ridehailingLayerIds = ["ridehailings-circles"] as const
 
   $effect(() => {
     const m = map
@@ -560,6 +1013,51 @@
     const cleanup = () => {
       for (const layerId of robotaxiLayerIds) {
         m.off("click", layerId, handleRobotaxiClick)
+        m.off("mouseenter", layerId, handleMouseEnter)
+        m.off("mouseleave", layerId, handleMouseLeave)
+      }
+    }
+
+    if (!m.loaded()) {
+      const onLoad = () => {
+        setup()
+      }
+      m.once("load", onLoad)
+      return () => {
+        m.off("load", onLoad)
+        cleanup()
+      }
+    }
+
+    setup()
+
+    return () => {
+      cleanup()
+    }
+  })
+
+  $effect(() => {
+    const m = map
+    const ridehailingCount = ridehailingsWithCoords().length
+    const enabled = isRidehailingsEnabled
+
+    if (!m) return
+
+    const setup = () => {
+      ensureGlobeProjection(m)
+      if (enabled && ridehailingCount > 0) {
+        focusMapOnRidehailings(m)
+      }
+      for (const layerId of ridehailingLayerIds) {
+        m.on("click", layerId, handleRidehailingClick)
+        m.on("mouseenter", layerId, handleMouseEnter)
+        m.on("mouseleave", layerId, handleMouseLeave)
+      }
+    }
+
+    const cleanup = () => {
+      for (const layerId of ridehailingLayerIds) {
+        m.off("click", layerId, handleRidehailingClick)
         m.off("mouseenter", layerId, handleMouseEnter)
         m.off("mouseleave", layerId, handleMouseLeave)
       }
@@ -634,6 +1132,71 @@
     center={{ lng: 0, lat: 20 }}
   >
     <GlobeControl />
+
+    {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
+      <GeoJSONSource data={ridehailingOperationsGeoJson()}>
+        <FillLayer
+          id="ridehailings-operations-bolt"
+          filter={["==", ["get", "ridehailing_slug"], "bolt"]}
+          paint={{
+            "fill-color": "#16a34a",
+            "fill-opacity": 0.28,
+            "fill-outline-color": "#15803d",
+          }}
+        />
+        <FillLayer
+          id="ridehailings-operations-uber"
+          filter={["==", ["get", "ridehailing_slug"], "uber"]}
+          paint={{
+            "fill-color": "#111827",
+            "fill-opacity": 0.18,
+            "fill-outline-color": "#0f172a",
+          }}
+        />
+        <FillLayer
+          id="ridehailings-operations-other"
+          filter={[
+            "all",
+            ["!=", ["get", "ridehailing_slug"], "bolt"],
+            ["!=", ["get", "ridehailing_slug"], "uber"],
+          ]}
+          paint={{
+            "fill-color": "#4b5563",
+            "fill-opacity": 0.14,
+            "fill-outline-color": "#374151",
+          }}
+        />
+        <LineLayer
+          id="ridehailings-operations-outline"
+          paint={{
+            "line-color": [
+              "match",
+              ["get", "ridehailing_slug"],
+              "bolt",
+              "#16a34a",
+              "uber",
+              "#111827",
+              "#4b5563",
+            ],
+            "line-width": 1,
+            "line-opacity": 0.6,
+          }}
+        />
+      </GeoJSONSource>
+    {/if}
+
+    <GeoJSONSource data={ridehailingGeoJson()}>
+      <CircleLayer
+        id="ridehailings-circles"
+        paint={{
+          "circle-radius": 6,
+          "circle-color": "#0ea5e9",
+          "circle-opacity": 0.9,
+          "circle-stroke-width": 1.5,
+          "circle-stroke-color": "#ffffff",
+        }}
+      />
+    </GeoJSONSource>
 
     <GeoJSONSource data={robotaxiGeoJson()}>
       <SymbolLayer
@@ -741,6 +1304,85 @@
         <label class="menu-item">
           <input
             type="checkbox"
+            checked={isRidehailingsEnabled}
+            onchange={(event) =>
+              handleRidehailingsToggle(
+                (event.currentTarget as HTMLInputElement).checked,
+              )}
+          />
+          <span class="menu-label">Ridehailing companies</span>
+        </label>
+
+        {#if isRidehailingsLoading}
+          <p class="menu-status">Loading ridehailings…</p>
+        {:else if ridehailingsError}
+          <p class="menu-status error">Failed to load: {ridehailingsError}</p>
+          <button
+            class="retry-button"
+            type="button"
+            onclick={handleRetryRidehailings}
+          >
+            Try again
+          </button>
+        {:else if hasFetchedRidehailings}
+          <p class="menu-status">
+            Showing {ridehailingsWithCoords().length} ridehailing companies
+          </p>
+        {/if}
+
+        <label class="menu-item menu-subitem">
+          <input
+            type="checkbox"
+            checked={isRidehailingOperationsEnabled}
+            disabled={!isRidehailingsEnabled}
+            onchange={(event) =>
+              handleRidehailingOperationsToggle(
+                (event.currentTarget as HTMLInputElement).checked,
+              )}
+          />
+          <span class="menu-label">Operations</span>
+        </label>
+
+        {#if isRidehailingsEnabled}
+          {#if isRidehailingOperationsLoading || isCountryBoundariesLoading}
+            <p class="menu-status menu-substatus">Loading operations…</p>
+          {:else if ridehailingOperationsError || countryBoundariesError}
+            <p class="menu-status error menu-substatus">
+              {#if ridehailingOperationsError}
+                Failed to load operations: {ridehailingOperationsError}
+              {/if}
+              {#if countryBoundariesError}
+                {#if ridehailingOperationsError}
+                  <br />
+                {/if}
+                Failed to load country boundaries: {countryBoundariesError}
+              {/if}
+            </p>
+            <button
+              class="retry-button menu-substatus"
+              type="button"
+              onclick={handleRetryRidehailingOperations}
+            >
+              Try again
+            </button>
+          {:else if
+            isRidehailingOperationsEnabled &&
+            hasFetchedRidehailingOperations &&
+            ridehailingOperationsSummary()}
+            <p class="menu-status menu-substatus">
+              Highlighting {ridehailingOperationsSummary()}
+            </p>
+          {:else if
+            isRidehailingOperationsEnabled &&
+            hasFetchedRidehailingOperations &&
+            ridehailingOperationsGeoJson().features.length === 0}
+            <p class="menu-status menu-substatus">No operations data yet.</p>
+          {/if}
+        {/if}
+
+        <label class="menu-item">
+          <input
+            type="checkbox"
             checked={isUniversitiesEnabled}
             onchange={(event) =>
               handleUniversitiesToggle(
@@ -772,6 +1414,10 @@
 
   {#if isRobotaxisEnabled && hasFetchedRobotaxis && !isRobotaxisLoading && robotaxisWithCoords().length === 0}
     <div class="empty-state">No robotaxi companies available yet.</div>
+  {/if}
+
+  {#if isRidehailingsEnabled && hasFetchedRidehailings && !isRidehailingsLoading && ridehailingsWithCoords().length === 0}
+    <div class="empty-state">No ridehailing companies available yet.</div>
   {/if}
 
   {#if isUniversitiesEnabled && hasFetchedUniversities && !isUniversitiesLoading && universitiesWithCoords().length === 0}
@@ -866,6 +1512,18 @@
 
   .menu-item + .menu-status {
     margin-top: 0.75rem;
+  }
+
+  .menu-subitem {
+    padding-left: 1.5rem;
+  }
+
+  .menu-subitem input {
+    margin-left: -1.5rem;
+  }
+
+  .menu-substatus {
+    margin-left: 1.5rem;
   }
 
   .menu-label {
