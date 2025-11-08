@@ -5,7 +5,6 @@ export const load: PageServerLoad = async ({ locals: { supabase } }) => {
   const { data: universities, error } = await supabase
     .from("universities")
     .select("*")
-    .not("website", "is", null)
     .order("name", { ascending: true })
 
   if (error) {
