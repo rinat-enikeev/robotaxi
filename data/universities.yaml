@@ -7830,22 +7830,6 @@
   longitude: -70.6282117
   city_name: Providencia
   city: providencia-chile
-- slug: universidad-academia-de-humanismo-cristiano-cl
-  name: Universidad Academia de Humanismo Cristiano
-  website: http://www.academia.cl/
-  country_iso: CL
-  latitude: -33.4381379
-  longitude: -70.6282117
-  city_name: Providencia
-  city: providencia-chile
-- slug: universidad-adolfo-ibanez-cl
-  name: Universidad "Adolfo Ibañez"
-  website: http://www.uai.cl/
-  country_iso: CL
-  latitude: -33.4214361
-  longitude: -70.5916782
-  city_name: Provincia de Santiago
-  city: provincia-de-santiago-chile
 - slug: universidad-adolfo-ibanez-cl
   name: Universidad Adolfo Ibáñez
   website: http://www.uai.cl/
@@ -11873,14 +11857,6 @@
   city_name: Bogota
   city: bogota-colombia
 - slug: universidad-de-antioquia-co
-  name: Universidad de Antioquia
-  website: http://www.udea.edu.co/
-  country_iso: CO
-  latitude: 6.2679527
-  longitude: -75.5687748
-  city_name: Medellín
-  city: medellin-colombia
-- slug: universidad-de-antioquia-co
   name: Universidad de Antioquía
   website: http://www.udea.edu.co/
   country_iso: CO
@@ -12523,14 +12499,6 @@
 - slug: universidad-san-juan-de-la-cruz-cr
   name: Universidad San Juan de la Cruz
   website: http://www.universidadsanjuan.ac.cr/
-  country_iso: CR
-  city_name: Heredia
-  city: heredia-costa-rica
-  latitude: 9.9973336
-  longitude: -84.1115621
-- slug: universidad-san-juan-de-la-cruz-cr
-  name: Universidad San Juan de la Cruz
-  website: http://www.sjdlc.com/
   country_iso: CR
   city_name: Heredia
   city: heredia-costa-rica
@@ -25665,14 +25633,6 @@
   longitude: 77.8957348
   city_name: Roorkee
   city: roorkee-india
-- slug: indian-institute-of-technology-roorkee-in
-  name: Indian Institute of Technology, Roorkee
-  website: http://www.iitr.ac.in/
-  country_iso: IN
-  latitude: 29.8661656
-  longitude: 77.8957348
-  city_name: Roorkee
-  city: roorkee-india
 - slug: indian-law-institue-in
   name: Indian Law Institue
   website: http://www.ilidelhi.org/
@@ -36589,14 +36549,6 @@
   city: seoul-korea-south
   latitude: 37.6148855
   longitude: 127.0133508
-- slug: seokyeong-university-kr
-  name: Seokyeong University
-  website: http://www.seokyeong.ac.kr/
-  country_iso: KR
-  city_name: Seoul
-  city: seoul-korea-south
-  latitude: 37.6148855
-  longitude: 127.0133508
 - slug: seonam-university-kr
   name: Seonam University
   website: http://www.seonam.ac.kr/
@@ -40489,14 +40441,6 @@
   city: kangar-malaysia
   latitude: 6.5170189
   longitude: 100.2151578
-- slug: institute-of-teachers-education-perlis-my
-  name: Institute of Teachers Education, Perlis
-  website: http://www.ipgperlis.edu.my/
-  country_iso: MY
-  city_name: Kangar
-  city: kangar-malaysia
-  latitude: 6.5170189
-  longitude: 100.2151578
 - slug: institute-of-teachers-education-raja-melewar-my
   name: Institute of Teachers Education, Raja Melewar
   website: http://www.iprm.edu.my/
@@ -40917,14 +40861,6 @@
   city: ipoh-malaysia
   latitude: 4.582512299999999
   longitude: 101.0953994
-- slug: ptpl-college-my
-  name: PTPL College
-  website: http://www.ptpl.edu.my/
-  country_iso: MY
-  latitude: 3.1575656
-  longitude: 101.7532463
-  city_name: Ampang Jaya Municipal Council
-  city: petaling-jaya-malaysia
 - slug: ptpl-college-my
   name: PTPL College
   website: http://www.ptpl.edu.my/
@@ -41832,14 +41768,6 @@
 - slug: godfrey-okoye-university-ng
   name: Godfrey Okoye University
   website: http://www.go-uni-enugu.net/
-  country_iso: NG
-  city_name: Enugu
-  city: enugu-nigeria
-  latitude: 6.4685881
-  longitude: 7.526535
-- slug: godfrey-okoye-university-ng
-  name: Godfrey Okoye University
-  website: http://www.gouni.edu.ng/
   country_iso: NG
   city_name: Enugu
   city: enugu-nigeria
@@ -46351,14 +46279,6 @@
   city: bielsko-biaa-poland
   latitude: 49.8270334
   longitude: 19.051272
-- slug: jozef-tyszkiewicz-college-of-business-and-computer-science-in-bielsko-biala-pl
-  name: Józef Tyszkiewicz College of Business and Computer Science in Bielsko-Biala
-  website: http://www.tyszkiewicz.edu.pl/
-  country_iso: PL
-  city_name: Bielsko-Biała
-  city: bielsko-biaa-poland
-  latitude: 49.8270334
-  longitude: 19.051272
 - slug: katowice-school-of-economics-pl
   name: Katowice School of Economics
   website: http://www.gwsh.pl/
@@ -50532,14 +50452,6 @@
   city: saint-petersburg-russia
   latitude: 59.9465971
   longitude: 30.3313932
-- slug: st-petersburg-state-university-of-culture-and-arts-ru
-  name: St. Petersburg State University of Culture and Arts
-  website: http://www.spbguki.ru/
-  country_iso: RU
-  city_name: Saint Petersburg
-  city: saint-petersburg-russia
-  latitude: 59.9465971
-  longitude: 30.3313932
 - slug: st-petersburg-state-university-of-economics-and-finance-ru
   name: St. Petersburg State University of Economics and Finance
   website: http://www.uef.ru/
@@ -52405,14 +52317,6 @@
   city: bratislava-slovakia
 - slug: catholic-university-in-ruzomberok-sk
   name: Catholic University in Ruzomberok
-  website: http://www.ku.sk/
-  country_iso: SK
-  city_name: Ružomberok
-  city: ruzomberok-slovakia
-  latitude: 49.0793883
-  longitude: 19.2992225
-- slug: catholic-university-in-ruzomberok-sk
-  name: Catholic University in Ružomberok
   website: http://www.ku.sk/
   country_iso: SK
   city_name: Ružomberok
@@ -57123,14 +57027,6 @@
   longitude: -90.5503699
   city_name: Rock Island
   city: rock-island-united-states
-- slug: augustana-college-us
-  name: Augustana College
-  website: http://www.augie.edu/
-  country_iso: US
-  latitude: 41.5015277
-  longitude: -90.5503699
-  city_name: Rock Island
-  city: rock-island-united-states
 - slug: augusta-state-university-us
   name: Augusta State University
   website: http://www.aug.edu/
@@ -57956,14 +57852,6 @@
 - slug: brigham-young-university-us
   name: Brigham Young University
   website: http://www.byui.edu/
-  country_iso: US
-  latitude: 40.2554083
-  longitude: -111.6496832
-  city_name: Provo
-  city: provo-united-states
-- slug: brigham-young-university-us
-  name: Brigham Young University
-  website: http://www.byu.edu/
   country_iso: US
   latitude: 40.2554083
   longitude: -111.6496832
@@ -69375,14 +69263,6 @@
   longitude: -98.4835083
   city_name: San Antonio
   city: san-antonio-united-states
-- slug: trinity-university-us
-  name: Trinity University
-  website: http://www.trinity.edu/
-  country_iso: US
-  latitude: 29.4616913
-  longitude: -98.4835083
-  city_name: San Antonio
-  city: san-antonio-united-states
 - slug: tri-state-university-us
   name: Tri-State University
   website: http://www.tristate.edu/
@@ -72620,14 +72500,6 @@
 - slug: wilmington-college-us
   name: Wilmington College
   website: http://www.wilmcoll.edu/
-  country_iso: US
-  latitude: 39.441677
-  longitude: -83.817316
-  city_name: Wilmington
-  city: wilmington-united-states
-- slug: wilmington-college-us
-  name: Wilmington College
-  website: http://www.wilmington.edu/
   country_iso: US
   latitude: 39.441677
   longitude: -83.817316
