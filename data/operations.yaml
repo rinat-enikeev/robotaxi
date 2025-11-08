@@ -1,4 +1,4 @@
-- slug: bolt
+- ridehailing-slug: bolt
   countries:
     - austria
     - azerbaijan
@@ -711,7 +711,7 @@
     - zugdidi-georgia
     - zurich-switzerland
     - zvolen-slovakia
-- slug: uber
+- ridehailing-slug: uber
   countries:
     - andorra
     - united-arab-emirates
