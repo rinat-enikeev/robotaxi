@@ -1,5 +1,8 @@
 <script lang="ts">
   import { onMount, tick } from "svelte"
+  import { DeckGLOverlay } from "@svelte-maplibre-gl/deckgl"
+  import { ColumnLayer, TextLayer } from "@deck.gl/layers"
+  import { COORDINATE_SYSTEM } from "@deck.gl/core"
   import {
     MapLibre,
     GeoJSONSource,
@@ -67,6 +70,36 @@
     iso_alpha_3: string | null
   }
 
+  type RidehailingCityOperation = {
+    ridehailing_slug: string
+    city_slug: string
+    city_name: string
+    country_slug: string | null
+    latitude: number | null
+    longitude: number | null
+    population: number | null
+  }
+
+  type RidehailingCityOperationPayload = {
+    ridehailing_slug: string
+    city_slug: string
+    city_name: string
+    country_slug: string | null
+    latitude: number | null
+    longitude: number | null
+    population: number | null
+  }
+
+  type RidehailingCityOperationDeckDatum = {
+    ridehailing_slug: string
+    city_slug: string
+    city_name: string
+    latitude: number
+    longitude: number
+    elevation: number
+    fillColor: [number, number, number, number]
+  }
+
   type RidehailingOperationFeatureProperties = {
     ridehailing_slug: string
     name: string
@@ -120,8 +153,10 @@
   let isRidehailingOperationsLoading = $state(false)
   let hasFetchedRidehailingOperations = $state(false)
   let ridehailingCountryOperations = $state<RidehailingCountryOperation[]>([])
+  let ridehailingCityOperations = $state<RidehailingCityOperation[]>([])
   let ridehailingOperationsError = $state<string | null>(null)
   let ridehailingOperationVisibilityBySlug = $state<Record<string, boolean>>({})
+  let ridehailingCityVisibilityBySlug = $state<Record<string, boolean>>({})
 
   let isCountryBoundariesLoading = $state(false)
   let countryBoundariesError = $state<string | null>(null)
@@ -326,9 +361,67 @@
     { fill: "#6366f1", outline: "#4f46e5" },
   ] as const
 
+  const CITY_COLUMN_RADIUS_METERS = 18000
+  const CITY_COLUMN_MIN_ELEVATION = 4000
+  const CITY_COLUMN_MAX_ELEVATION = 22000
+  const CITY_COLUMN_ELEVATION_FACTOR = 2200
+  const CITY_LABEL_VERTICAL_OFFSET = 2200
+  const DEFAULT_COLUMN_RGB: [number, number, number] = [75, 85, 99]
+
+  const hexToRgb = (value: string): [number, number, number] => {
+    const normalized = value.trim().replace(/^#/, "")
+    if (normalized.length === 0) {
+      return DEFAULT_COLUMN_RGB
+    }
+
+    let hex = normalized
+    if (hex.length === 3) {
+      hex = hex
+        .split("")
+        .map((char) => char + char)
+        .join("")
+    }
+
+    if (hex.length !== 6) {
+      return DEFAULT_COLUMN_RGB
+    }
+
+    const int = Number.parseInt(hex, 16)
+    if (Number.isNaN(int)) {
+      return DEFAULT_COLUMN_RGB
+    }
+
+    return [(int >> 16) & 255, (int >> 8) & 255, int & 255]
+  }
+
+  const computeCityElevation = (population: number | null): number => {
+    if (!population || population <= 0) {
+      return CITY_COLUMN_MIN_ELEVATION
+    }
+
+    const height = Math.log10(population) * CITY_COLUMN_ELEVATION_FACTOR
+    if (!Number.isFinite(height)) {
+      return CITY_COLUMN_MIN_ELEVATION
+    }
+
+    return Math.min(
+      CITY_COLUMN_MAX_ELEVATION,
+      Math.max(CITY_COLUMN_MIN_ELEVATION, height),
+    )
+  }
+
   const ridehailingCountryCounts = $derived(() => {
     const counts = new Map<string, number>()
     for (const record of ridehailingCountryOperations) {
+      const slug = record.ridehailing_slug
+      counts.set(slug, (counts.get(slug) ?? 0) + 1)
+    }
+    return counts
+  })
+
+  const ridehailingCityCounts = $derived(() => {
+    const counts = new Map<string, number>()
+    for (const record of ridehailingCityOperations) {
       const slug = record.ridehailing_slug
       counts.set(slug, (counts.get(slug) ?? 0) + 1)
     }
@@ -425,11 +518,17 @@
   const ridehailingColorsBySlug = $derived(() => {
     const colors = new Map<string, { fill: string; outline: string }>()
     const palette = ridehailingColorPalette
-    const slugs = Array.from(
-      new Set(
-        ridehailingCountryOperations.map((record) => record.ridehailing_slug),
-      ),
-    ).sort()
+    const slugSet = new Set<string>()
+
+    for (const record of ridehailingCountryOperations) {
+      slugSet.add(record.ridehailing_slug)
+    }
+
+    for (const record of ridehailingCityOperations) {
+      slugSet.add(record.ridehailing_slug)
+    }
+
+    const slugs = Array.from(slugSet).sort()
 
     let index = 0
     for (const slug of slugs) {
@@ -442,20 +541,32 @@
   })
 
   const ridehailingOperationCompanies = $derived(() => {
-    const counts = ridehailingCountryCounts()
-    if (counts.size === 0) {
+    const countryCounts = ridehailingCountryCounts()
+    const cityCounts = ridehailingCityCounts()
+    const slugSet = new Set<string>()
+
+    for (const slug of countryCounts.keys()) {
+      slugSet.add(slug)
+    }
+
+    for (const slug of cityCounts.keys()) {
+      slugSet.add(slug)
+    }
+
+    if (slugSet.size === 0) {
       return []
     }
 
-    return Array.from(counts.entries())
-      .map(([slug, count]) => {
+    return Array.from(slugSet)
+      .map((slug) => {
         const companyName =
           ridehailings.find((company) => company.slug === slug)?.name ?? slug
 
         return {
           slug,
           name: companyName,
-          countryCount: count,
+          countryCount: countryCounts.get(slug) ?? 0,
+          cityCount: cityCounts.get(slug) ?? 0,
         }
       })
       .sort((a, b) =>
@@ -483,6 +594,25 @@
     }
 
     return []
+  })
+
+  const activeRidehailingCityOperationSlugs = $derived(() => {
+    const visibility = ridehailingCityVisibilityBySlug
+    const companies = ridehailingOperationCompanies()
+    if (companies.length === 0) {
+      return []
+    }
+
+    const result: string[] = []
+    for (const company of companies) {
+      if (company.cityCount === 0) continue
+      const isVisible = visibility[company.slug]
+      if (isVisible) {
+        result.push(company.slug)
+      }
+    }
+
+    return result
   })
 
   const ridehailingOperationsLayerFilter = $derived(
@@ -557,22 +687,104 @@
     return entries.join(", ")
   })
 
+  const ridehailingCityOperationsDeckData = $derived(
+    (): RidehailingCityOperationDeckDatum[] => {
+      if (!isRidehailingOperationsEnabled) {
+        return []
+      }
+
+      const activeSlugs = new Set(activeRidehailingCityOperationSlugs())
+      if (activeSlugs.size === 0) {
+        return []
+      }
+
+      const colors = ridehailingColorsBySlug()
+      const data: RidehailingCityOperationDeckDatum[] = []
+
+      for (const operation of ridehailingCityOperations) {
+        if (!activeSlugs.has(operation.ridehailing_slug)) continue
+        if (operation.longitude == null || operation.latitude == null) continue
+
+        const colorHex =
+          colors.get(operation.ridehailing_slug)?.fill ?? "#4b5563"
+        const [r, g, b] = hexToRgb(colorHex)
+        const elevation = computeCityElevation(operation.population)
+
+        data.push({
+          ridehailing_slug: operation.ridehailing_slug,
+          city_slug: operation.city_slug,
+          city_name: operation.city_name,
+          longitude: operation.longitude,
+          latitude: operation.latitude,
+          elevation,
+          fillColor: [r, g, b, 220],
+        })
+      }
+
+      return data
+    },
+  )
+
+  const ridehailingCityOperationsDeckLayers = $derived(() => {
+    const data = ridehailingCityOperationsDeckData()
+    if (data.length === 0) {
+      return []
+    }
+
+    const columns = new ColumnLayer<RidehailingCityOperationDeckDatum>({
+      id: "ridehailings-city-operations-columns",
+      data,
+      coordinateSystem: COORDINATE_SYSTEM.LNGLAT,
+      pickable: false,
+      diskResolution: 12,
+      radius: CITY_COLUMN_RADIUS_METERS,
+      extruded: true,
+      elevationScale: 1,
+      getPosition: (d) => [d.longitude, d.latitude],
+      getFillColor: (d) => d.fillColor,
+      getElevation: (d) => d.elevation,
+    })
+
+    const labels = new TextLayer<RidehailingCityOperationDeckDatum>({
+      id: "ridehailings-city-operations-labels",
+      data,
+      coordinateSystem: COORDINATE_SYSTEM.LNGLAT,
+      pickable: false,
+      billboard: true,
+      sizeUnits: "pixels",
+      getPosition: (d) => [
+        d.longitude,
+        d.latitude,
+        d.elevation + CITY_LABEL_VERTICAL_OFFSET,
+      ],
+      getText: (d) => d.city_name,
+      getColor: [32, 32, 32, 230],
+      getSize: 14,
+      fontWeight: "600",
+      background: true,
+      backgroundPadding: [4, 2],
+      getBackgroundColor: [255, 255, 255, 220],
+    })
+
+    return [columns, labels]
+  })
+
   $effect(() => {
-    const counts = ridehailingCountryCounts()
+    const companies = ridehailingOperationCompanies()
     const currentVisibility = ridehailingOperationVisibilityBySlug
     const nextVisibility: Record<string, boolean> = {}
     let changed = false
 
-    for (const slug of counts.keys()) {
-      const existing = currentVisibility[slug]
-      nextVisibility[slug] = existing ?? true
+    for (const company of companies) {
+      const existing = currentVisibility[company.slug]
+      nextVisibility[company.slug] = existing ?? true
       if (existing === undefined) {
         changed = true
       }
     }
 
     for (const slug in currentVisibility) {
-      if (!counts.has(slug)) {
+      if (!(slug in nextVisibility)) {
         changed = true
         break
       }
@@ -584,6 +796,36 @@
         Object.keys(nextVisibility).length
     ) {
       ridehailingOperationVisibilityBySlug = nextVisibility
+    }
+  })
+
+  $effect(() => {
+    const companies = ridehailingOperationCompanies()
+    const currentVisibility = ridehailingCityVisibilityBySlug
+    const nextVisibility: Record<string, boolean> = {}
+    let changed = false
+
+    for (const company of companies) {
+      const existing = currentVisibility[company.slug]
+      nextVisibility[company.slug] = existing ?? false
+      if (existing === undefined) {
+        changed = true
+      }
+    }
+
+    for (const slug in currentVisibility) {
+      if (!(slug in nextVisibility)) {
+        changed = true
+        break
+      }
+    }
+
+    if (
+      changed ||
+      Object.keys(currentVisibility).length !==
+        Object.keys(nextVisibility).length
+    ) {
+      ridehailingCityVisibilityBySlug = nextVisibility
     }
   })
 
@@ -790,6 +1032,16 @@
     }
   }
 
+  const handleRidehailingCityVisibilityToggle = (
+    slug: string,
+    checked: boolean,
+  ) => {
+    ridehailingCityVisibilityBySlug = {
+      ...ridehailingCityVisibilityBySlug,
+      [slug]: checked,
+    }
+  }
+
   const handleRidehailingStyleImageMissing = (
     event: maplibregl.MapStyleImageMissingEvent,
   ) => {
@@ -904,9 +1156,32 @@
 
       const payload = (await response.json()) as {
         countryOperations: RidehailingCountryOperation[]
+        cityOperations?: RidehailingCityOperationPayload[]
       }
 
       ridehailingCountryOperations = payload.countryOperations ?? []
+      const cityOps = payload.cityOperations ?? []
+      ridehailingCityOperations = cityOps.map((operation) => ({
+        ridehailing_slug: operation.ridehailing_slug,
+        city_slug: operation.city_slug,
+        city_name: operation.city_name,
+        country_slug: operation.country_slug ?? null,
+        latitude:
+          typeof operation.latitude === "number" &&
+          Number.isFinite(operation.latitude)
+            ? operation.latitude
+            : null,
+        longitude:
+          typeof operation.longitude === "number" &&
+          Number.isFinite(operation.longitude)
+            ? operation.longitude
+            : null,
+        population:
+          typeof operation.population === "number" &&
+          Number.isFinite(operation.population)
+            ? operation.population
+            : null,
+      }))
       hasFetchedRidehailingOperations = true
 
       const mapInstance = map
@@ -1635,6 +1910,7 @@
     zoom={2}
   >
     <GlobeControl />
+    <DeckGLOverlay layers={ridehailingCityOperationsDeckLayers()} />
 
     {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
       <GeoJSONSource
@@ -1865,24 +2141,47 @@
               {#if ridehailingOperationCompanies().length > 0}
                 <div class="operations-checkboxes">
                   {#each ridehailingOperationCompanies() as company}
-                    <label class="menu-item menu-subitem">
-                      <input
-                        type="checkbox"
-                        checked={ridehailingOperationVisibilityBySlug[
-                          company.slug
-                        ] ?? true}
-                        onchange={(event) =>
-                          handleRidehailingOperationVisibilityToggle(
-                            company.slug,
-                            (event.currentTarget as HTMLInputElement).checked,
-                          )}
-                      />
-                      <span class="menu-label">{company.name}</span>
-                      <span class="menu-meta">
-                        {company.countryCount}{" "}
-                        {company.countryCount === 1 ? "country" : "countries"}
-                      </span>
-                    </label>
+                    <div class="operations-company">
+                      <label class="menu-item menu-subitem operations-company-row">
+                        <input
+                          type="checkbox"
+                          checked={ridehailingOperationVisibilityBySlug[
+                            company.slug
+                          ] ?? true}
+                          onchange={(event) =>
+                            handleRidehailingOperationVisibilityToggle(
+                              company.slug,
+                              (event.currentTarget as HTMLInputElement).checked,
+                            )}
+                        />
+                        <span class="menu-label">{company.name}</span>
+                        <span class="menu-meta">
+                          {company.countryCount}{" "}
+                          {company.countryCount === 1 ? "country" : "countries"}
+                        </span>
+                      </label>
+                      {#if company.cityCount > 0}
+                        <label class="menu-item menu-subitem operations-company-row city">
+                          <input
+                            type="checkbox"
+                            checked={ridehailingCityVisibilityBySlug[
+                              company.slug
+                            ] ?? false}
+                            onchange={(event) =>
+                              handleRidehailingCityVisibilityToggle(
+                                company.slug,
+                                (event.currentTarget as HTMLInputElement)
+                                  .checked,
+                              )}
+                          />
+                          <span class="menu-label">Cities</span>
+                          <span class="menu-meta">
+                            {company.cityCount}{" "}
+                            {company.cityCount === 1 ? "city" : "cities"}
+                          </span>
+                        </label>
+                      {/if}
+                    </div>
                   {/each}
                 </div>
               {/if}
@@ -2052,6 +2351,24 @@
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
+  }
+
+  .operations-company {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .operations-company + .operations-company {
+    margin-top: 0.25rem;
+  }
+
+  .operations-company-row.city {
+    padding-left: 2.5rem;
+  }
+
+  .operations-company-row.city input {
+    margin-left: -2.5rem;
   }
 
   .menu-label {
