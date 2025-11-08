@@ -129,7 +129,7 @@
 
   let map = $state<maplibregl.Map | undefined>(undefined)
 
-  let isHamburgerOpen = $state(false)
+  let isHamburgerOpen = $state(true)
 
   let isRobotaxisEnabled = $state(false)
   let isRobotaxisLoading = $state(false)
