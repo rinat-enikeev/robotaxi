@@ -87,4 +87,6 @@ sql_paths = [
   './seeds/cities.sql',
   './seeds/universities.sql',
   './seeds/robotaxis.sql',
+  './seeds/ridehailings.sql',
+  './seeds/operations.sql',
 ]
