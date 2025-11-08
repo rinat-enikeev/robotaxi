@@ -498,10 +498,10 @@
 
   const ridehailingFillColorExpression: () => maplibregl.DataDrivenPropertyValueSpecification<string> =
     $derived(() => {
-    const entries = Array.from(ridehailingColorsBySlug().entries())
-    if (entries.length === 0) {
-      return "#4b5563"
-    }
+      const entries = Array.from(ridehailingColorsBySlug().entries())
+      if (entries.length === 0) {
+        return "#4b5563"
+      }
 
       return [
         "match",
@@ -513,10 +513,10 @@
 
   const ridehailingOutlineColorExpression: () => maplibregl.DataDrivenPropertyValueSpecification<string> =
     $derived(() => {
-    const entries = Array.from(ridehailingColorsBySlug().entries())
-    if (entries.length === 0) {
-      return "#374151"
-    }
+      const entries = Array.from(ridehailingColorsBySlug().entries())
+      if (entries.length === 0) {
+        return "#374151"
+      }
 
       return [
         "match",
@@ -580,7 +580,8 @@
 
     if (
       changed ||
-      Object.keys(currentVisibility).length !== Object.keys(nextVisibility).length
+      Object.keys(currentVisibility).length !==
+        Object.keys(nextVisibility).length
     ) {
       ridehailingOperationVisibilityBySlug = nextVisibility
     }
@@ -1851,8 +1852,7 @@
             >
               Try again
             </button>
-          {:else if
-            isRidehailingOperationsEnabled && hasFetchedRidehailingOperations}
+          {:else if isRidehailingOperationsEnabled && hasFetchedRidehailingOperations}
             {#if ridehailingOperationsGeoJson().features.length === 0}
               <p class="menu-status menu-substatus">No operations data yet.</p>
             {:else}
@@ -1868,9 +1868,9 @@
                     <label class="menu-item menu-subitem">
                       <input
                         type="checkbox"
-                        checked={
-                          ridehailingOperationVisibilityBySlug[company.slug] ?? true
-                        }
+                        checked={ridehailingOperationVisibilityBySlug[
+                          company.slug
+                        ] ?? true}
                         onchange={(event) =>
                           handleRidehailingOperationVisibilityToggle(
                             company.slug,
