@@ -1,3 +1,63 @@
+- slug: aghdash-azerbaijan
+  city: Aghdash
+  city_ascii: Aghdash
+  latitude: 40.6444817
+  longitude: 47.4518425
+  admin_name: Aghdash
+  capital: admin
+  population: 25345
+  source_id: 
+  country:
+    slug: azerbaijan
+    name: Azerbaijan
+    iso2: AZ
+    iso3: AZE
+  country_slug: azerbaijan
+- slug: aghjabadi-azerbaijan
+  city: Aghjabadi
+  city_ascii: Aghjabadi
+  latitude: 40.0467364
+  longitude: 47.4210983
+  admin_name: Aghjabadi
+  capital: admin
+  population: 43000
+  source_id: 
+  country:
+    slug: azerbaijan
+    name: Azerbaijan
+    iso2: AZ
+    iso3: AZE
+  country_slug: azerbaijan
+- slug: aghstafa-azerbaijan
+  city: Aghstafa
+  city_ascii: Aghstafa
+  latitude: 41.1179265
+  longitude: 45.4225221
+  admin_name: Aghstafa
+  capital: admin
+  population: 20200
+  source_id: 
+  country:
+    slug: azerbaijan
+    name: Azerbaijan
+    iso2: AZ
+    iso3: AZE
+  country_slug: azerbaijan
+- slug: agsu-azerbaijan
+  city: Agsu
+  city_ascii: Agsu
+  latitude: 40.5702738
+  longitude: 48.3844224
+  admin_name: Agsu
+  capital: admin
+  population: 20100
+  source_id: 
+  country:
+    slug: azerbaijan
+    name: Azerbaijan
+    iso2: AZ
+    iso3: AZE
+  country_slug: azerbaijan
 - slug: tokyo-japan
   city: Tokyo
   city_ascii: Tokyo
