@@ -24943,8 +24943,10 @@
   name: Bidhan Chandra Agricultural University
   website: http://www.bckv.edu.in/
   country_iso: IN
-  city_name: unknown
-  city: unknown-india
+  latitude: 22.9452502
+  longitude: 88.5309966
+  city_name: Kanchrapara
+  city: kanchrapara-india
 - slug: biju-pattnaik-university-of-technology-in
   name: Biju Pattnaik University of Technology
   website: http://www.bput.org/
