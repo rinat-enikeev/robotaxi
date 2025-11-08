@@ -1,0 +1,281 @@
+- slug: american-axle
+  name: American Axle
+  website: aam.com
+  city: detroit-united-states
+  country: united-states
+  latitude: 42.3887642
+  longitude: -83.06402
+  address: 1840 Holbrook, Detroit, MI 48211, USA
+- slug: apollo-go
+  name: Apollo Go
+  website: apollogo.com
+  city: beijing-china
+  country: china
+  latitude: 39.904211
+  longitude: 116.407395
+  address: Beijing, China
+- slug: autonation-inc.
+  name: AutoNation Inc.
+  website: autonation.com
+  city: fort-lauderdale-united-states
+  country: united-states
+  latitude: 26.1224386
+  longitude: -80.13731740000001
+  address: Fort Lauderdale, FL, USA
+- slug: autox
+  name: AutoX
+  website: autox.ai
+  city: shenzhen-china
+  country: china
+  latitude: 22.5428599
+  longitude: 114.05956
+  address: Shenzhen, Guangdong Province, China
+- slug: avis-budget-group
+  name: Avis Budget Group
+  website: avis.com
+  city: parsippany-united-states
+  country: united-states
+  latitude: 40.8695622
+  longitude: -74.4537067
+  address: 379 Interpace Pkwy, Parsippany, NJ 07054, USA
+- slug: bolt
+  name: Bolt
+  website: bolt.eu
+  city: tallinn-estonia
+  country: estonia
+  latitude: 59.41781779999999
+  longitude: 24.7510108
+  address: Veerenni tn 38, 11313 Tallinn, Estonia
+- slug: c.h.-robinson
+  name: C.H. Robinson
+  website: chrobinson.com
+  city: eden-prairie-united-states
+  country: united-states
+  latitude: 44.8546856
+  longitude: -93.47078599999999
+  address: Eden Prairie, MN, USA
+- slug: daimler-trucks
+  name: Daimler Trucks
+  website: daimler.com
+  city: stuttgart-germany
+  country: germany
+  latitude: 48.7780002
+  longitude: 9.2470859
+  address: Inselstraße 140, 70327 Stuttgart, Germany
+- slug: deepmind
+  name: DeepMind
+  website: deepmind.com
+  city: london-united-kingdom
+  country: united-kingdom
+  latitude: 51.5072178
+  longitude: -0.1275862
+  address: London, UK
+- slug: doordash-inc.
+  name: DoorDash Inc.
+  website: doordash.com
+  city: san-francisco-united-states
+  country: united-states
+  latitude: 37.7749295
+  longitude: -122.4194155
+  address: San Francisco, CA, USA
+- slug: intel-corporation
+  name: Intel Corporation
+  website: intel.com
+  city: santa-clara-united-states
+  country: united-states
+  latitude: 37.3541079
+  longitude: -121.9552356
+  address: Santa Clara, CA, USA
+- slug: j.b.-hunt-transport
+  name: J.B. Hunt Transport
+  website: jbhunt.com
+  city: lowell-united-states
+  country: united-states
+  latitude: 36.2447313
+  longitude: -94.1494438
+  address: 615 JB Hunt Corporate Dr, Lowell, AR 72745, USA
+- slug: kira
+  name: KIRA
+  website: kira-autonom.de
+  city: frankfurt-germany
+  country: germany
+  latitude: 50.1109221
+  longitude: 8.6821267
+  address: Frankfurt am Main, Germany
+- slug: lucid
+  name: Lucid
+  website: lucidmotors.com
+  city: newark-united-states
+  country: united-states
+  latitude: 37.5414655
+  longitude: -122.0618562
+  address: 7373 Gateway Blvd, Newark, CA 94560, USA
+- slug: lyft-inc.
+  name: Lyft Inc.
+  website: lyft.com
+  city: san-francisco-united-states
+  country: united-states
+  latitude: 37.7749295
+  longitude: -122.4194155
+  address: San Francisco, CA, USA
+- slug: magna-international
+  name: Magna International
+  website: magna.com
+  city: aurora-canada
+  country: canada
+  latitude: 44.0043944
+  longitude: -79.43211769999999
+  address: 337 Magna Dr, Aurora, ON L4G 7L6, Canada
+- slug: moia
+  name: Moia
+  website: moia.io
+  city: hamburg-germany
+  country: germany
+  latitude: 53.5488282
+  longitude: 9.987170299999999
+  address: Hamburg, Germany
+- slug: momenta
+  name: Momenta
+  website: momenta.cn
+  city: suzhou-china
+  country: china
+  latitude: 31.41852
+  longitude: 120.64135
+  address: 'China, Jiang Su Sheng, Su Zhou Shi, Xiang Cheng Qu, 77, 正南方向140米 邮政编码:
+    215133'
+- slug: pony.ai
+  name: Pony.ai
+  website: pony.ai
+  city: guangzhou-china
+  country: china
+  latitude: 22.77075
+  longitude: 113.51312
+  address: 'China, Guang Zhou Shi, Nan Sha Qu, CN 广东省 广州市 南沙区 明珠一街明珠开发大厦 邮政编码: 511458'
+- slug: renault-nissan-alliance
+  name: Renault-Nissan Alliance
+  website: renault.com
+  city: boulogne-billancourt-france
+  country: france
+  latitude: 48.8396952
+  longitude: 2.2399123
+  address: 92100 Boulogne-Billancourt, France
+- slug: ryder-system-inc.
+  name: Ryder System Inc.
+  website: ryder.com
+  city: miami-united-states
+  country: united-states
+  latitude: 25.7616798
+  longitude: -80.1917902
+  address: Miami, FL, USA
+- slug: stellantis-(fca)
+  name: Stellantis (FCA)
+  website: stellantis.com
+  city: amsterdam-netherlands
+  country: netherlands
+  latitude: 52.3014355
+  longitude: 4.946914
+  address: Laarderhoogtweg 25, 1101 EB Amsterdam, Netherlands
+- slug: tesla
+  name: Tesla
+  website: tesla.com
+  city: austin-united-states
+  country: united-states
+  latitude: 30.267153
+  longitude: -97.7430608
+  address: Austin, TX, USA
+- slug: toyota-motor-corporation
+  name: Toyota Motor Corporation
+  website: toyota.com
+  city: toyota-japan
+  country: japan
+  latitude: 36.204824
+  longitude: 138.252924
+  address: Japan
+- slug: uber-eats
+  name: Uber Eats
+  website: ubereats.com
+  city: san-francisco-united-states
+  country: united-states
+  latitude: 37.7749295
+  longitude: -122.4194155
+  address: San Francisco, CA, USA
+- slug: uber-freight
+  name: Uber Freight
+  website: uberfreight.com
+  city: chicago-united-states
+  country: united-states
+  latitude: 41.88325
+  longitude: -87.6323879
+  address: Chicago, IL, USA
+- slug: uber-technologies
+  name: Uber Technologies
+  website: uber.com
+  city: san-francisco-united-states
+  country: united-states
+  latitude: 37.7887311
+  longitude: -122.3984852
+  address: 535 Mission St, San Francisco, CA 94105, USA
+- slug: ups-inc.
+  name: UPS Inc.
+  website: ups.com
+  city: atlanta-united-states
+  country: united-states
+  latitude: 33.7501275
+  longitude: -84.3885209
+  address: Atlanta, GA, USA
+- slug: via-transportation
+  name: Via Transportation
+  website: ridewithvia.com
+  city: new-york-united-states
+  country: united-states
+  latitude: 40.7480631
+  longitude: -73.9863316
+  address: 18 W 33rd St, New York, NY 10001, USA
+- slug: volvo-car-group
+  name: Volvo Car Group
+  website: volvocars.com
+  city: gothenburg-sweden
+  country: sweden
+  latitude: 57.71029369999999
+  longitude: 11.9470914
+  address: Planetgatan 8, 417 55 Göteborg, Sweden
+- slug: waymo
+  name: Waymo
+  website: waymo.com
+  city: mountain-view-united-states
+  country: united-states
+  latitude: 37.3944578
+  longitude: -122.0504283
+  address: 690 E Middlefield Rd, Mountain View, CA 94043, USA
+- slug: wayve
+  name: Wayve
+  website: wayve.ai
+  city: london-united-kingdom
+  country: united-kingdom
+  latitude: 51.5427809
+  longitude: -0.1252624
+  address: 230-238 York Wy, London N7 9AG, UK
+- slug: weride
+  name: WeRide
+  website: weride.ai
+  city: guangzhou-china
+  country: china
+  latitude: 23.1290799
+  longitude: 113.26436
+  address: Guangzhou, Guangdong Province, China
+- slug: yandex
+  name: Yandex
+  website: yandex.com
+  city: moscow-russia
+  country: russia
+  latitude: 55.7340271
+  longitude: 37.5883458
+  address: Ulitsa L'va Tolstogo, 16, Moskva, Russia, 119021
+- slug: zeekr
+  name: Zeekr
+  website: zeekr.eu
+  city: hangzhou-china
+  country: china
+  latitude: 30.2741499
+  longitude: 120.15515
+  address: Hangzhou, Zhejiang, China
