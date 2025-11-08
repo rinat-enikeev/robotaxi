@@ -785,3 +785,33 @@
     - united-states
     - uruguay
     - south-africa
+- ridehailing-slug: waymo
+  countries:
+    - japan
+    - united-kingdom
+    - united-states
+  cities:
+    - atlanta-united-states
+    - austin-united-states
+    - boston-united-states
+    - buffalo-united-states
+    - dallas-united-states
+    - denver-united-states
+    - detroit-united-states
+    - houston-united-states
+    - las-vegas-united-states
+    - london-united-kingdom
+    - los-angeles-united-states
+    - miami-united-states
+    - nashville-united-states
+    - new-orleans-united-states
+    - new-york-united-states
+    - philadelphia-united-states
+    - phoenix-united-states
+    - san-antonio-united-states
+    - san-diego-united-states
+    - san-francisco-united-states
+    - san-jose-united-states
+    - seattle-united-states
+    - tokyo-japan
+    - washington-united-states

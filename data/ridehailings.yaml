@@ -14,3 +14,11 @@
   latitude: 59.41781779999999
   longitude: 24.7510108
   address: Veerenni tn 38, 11313 Tallinn, Estonia
+- slug: waymo
+  name: Waymo
+  website: waymo.com
+  city: mountain-view-united-states
+  country: united-states
+  latitude: 37.394462
+  longitude: -122.0530032
+  address: 690 E Middlefield Rd, Mountain View, CA 94043, USA
