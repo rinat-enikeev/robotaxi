@@ -289,6 +289,14 @@
       })),
   )
 
+  const robotaxiLogoMap = $derived(() => {
+    const entries = new Map<string, string>()
+    for (const { imageName, logoUrl } of robotaxiLogos()) {
+      entries.set(imageName, logoUrl)
+    }
+    return entries
+  })
+
   const ridehailingLogos = $derived(() =>
     ridehailingGeoJson()
       .features.map(
@@ -547,52 +555,55 @@
     }
   }
 
+  const loadRobotaxiImage = async (
+    m: maplibregl.Map,
+    imageName: string,
+    logoUrl: string,
+  ) => {
+    if (m.hasImage(imageName) || failedRobotaxiImages.has(imageName)) {
+      return
+    }
+
+    if (pendingRobotaxiImages.has(imageName)) {
+      return
+    }
+
+    pendingRobotaxiImages.add(imageName)
+    try {
+      const response = await m.loadImage(logoUrl)
+      if (!m.hasImage(imageName)) {
+        m.addImage(imageName, response.data)
+      }
+    } catch (error) {
+      failedRobotaxiImages.add(imageName)
+      const message =
+        error instanceof Error
+          ? error.message
+          : typeof error === "string"
+            ? error
+            : "Unknown error"
+      console.warn(`Failed to load robotaxi logo for ${imageName}:`, message)
+    } finally {
+      pendingRobotaxiImages.delete(imageName)
+    }
+  }
+
   const loadRobotaxiImages = async (m: maplibregl.Map) => {
-    const logos = robotaxiLogos()
-    if (logos.length === 0) return
+    const entries = robotaxiLogoMap()
+    if (entries.size === 0) return
 
     const tasks: Promise<void>[] = []
 
-    for (const { imageName, logoUrl } of logos) {
-      if (m.hasImage(imageName) || failedRobotaxiImages.has(imageName)) {
-        continue
-      }
-
-      if (pendingRobotaxiImages.has(imageName)) {
-        continue
-      }
-
-      pendingRobotaxiImages.add(imageName)
-      const task = m
-        .loadImage(logoUrl)
-        .then((response) => {
-          if (!m.hasImage(imageName)) {
-            m.addImage(imageName, response.data)
-          }
-        })
-        .catch((error) => {
-          failedRobotaxiImages.add(imageName)
-          const message =
-            error instanceof Error
-              ? error.message
-              : typeof error === "string"
-                ? error
-                : "Unknown error"
-          console.warn(
-            `Failed to load robotaxi logo for ${imageName}:`,
-            message,
-          )
-        })
-        .finally(() => {
-          pendingRobotaxiImages.delete(imageName)
-        })
-
-      tasks.push(task)
+    for (const [imageName, logoUrl] of entries.entries()) {
+      tasks.push(loadRobotaxiImage(m, imageName, logoUrl))
     }
 
-    if (tasks.length > 0) {
-      await Promise.allSettled(tasks)
+    if (tasks.length === 0) {
+      return
     }
+
+    await Promise.allSettled(tasks)
+    m.triggerRepaint()
   }
 
   const loadRidehailingImage = async (
@@ -690,6 +701,9 @@
         if (itemsWithCoords.length > 0) {
           focusMapOnRobotaxis(m, itemsWithCoords)
         }
+        await loadRobotaxiImages(m)
+      } else if (m) {
+        await loadRobotaxiImages(m)
       }
     } catch (error) {
       const message =
@@ -827,8 +841,17 @@
   const handleRobotaxisToggle = async (checked: boolean) => {
     isRobotaxisEnabled = checked
 
-    if (checked && !hasFetchedRobotaxis) {
+    if (!checked) {
+      return
+    }
+
+    if (!hasFetchedRobotaxis) {
       await loadRobotaxis()
+    }
+
+    const m = map
+    if (m) {
+      await loadRobotaxiImages(m)
     }
   }
 
@@ -1195,7 +1218,6 @@
       if (enabled && robotaxiCount > 0) {
         focusMapOnRobotaxis(m)
       }
-      void loadRobotaxiImages(m)
       for (const layerId of robotaxiLayerIds) {
         m.on("click", layerId, handleRobotaxiClick)
         m.on("mouseenter", layerId, handleMouseEnter)
