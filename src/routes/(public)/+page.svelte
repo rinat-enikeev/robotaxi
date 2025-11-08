@@ -647,37 +647,6 @@
       ] as unknown as maplibregl.ExpressionSpecification
     })
 
-  const ridehailingOperationsSummary = $derived(() => {
-    const counts = ridehailingCountryCounts()
-    if (counts.size === 0) {
-      return ""
-    }
-
-    const activeSlugs = activeRidehailingOperationSlugs()
-    if (activeSlugs.length === 0) {
-      return ""
-    }
-
-    const entries = activeSlugs
-      .map((slug) => {
-        const count = counts.get(slug)
-        if (!count) {
-          return null
-        }
-
-        const companyName =
-          ridehailings.find((company) => company.slug === slug)?.name ?? slug
-        return `${companyName}: ${count} ${count === 1 ? "country" : "countries"}`
-      })
-      .filter((value): value is string => Boolean(value))
-
-    if (entries.length === 0) {
-      return ""
-    }
-
-    return entries.join(", ")
-  })
-
   const ridehailingCityOperationsDeckData = $derived(
     (): RidehailingCityOperationDeckDatum[] => {
       if (!isRidehailingOperationsEnabled) {
@@ -2119,55 +2088,59 @@
               </button>
             {:else if isRidehailingOperationsEnabled && hasFetchedRidehailingOperations}
               {#if ridehailingOperationsGeoJson().features.length === 0}
-                <p class="menu-status menu-substatus">No operations data yet.</p>
-              {:else}
-                {#if ridehailingOperationCompanies().length > 0}
-                  <div class="operations-checkboxes">
-                    {#each ridehailingOperationCompanies() as company}
-                      <div class="operations-company">
-                        <label class="menu-item menu-subitem operations-company-row">
+                <p class="menu-status menu-substatus">
+                  No operations data yet.
+                </p>
+              {:else if ridehailingOperationCompanies().length > 0}
+                <div class="operations-checkboxes">
+                  {#each ridehailingOperationCompanies() as company}
+                    <div class="operations-company">
+                      <label
+                        class="menu-item menu-subitem operations-company-row"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={ridehailingOperationVisibilityBySlug[
+                            company.slug
+                          ] ?? true}
+                          onchange={(event) =>
+                            handleRidehailingOperationVisibilityToggle(
+                              company.slug,
+                              (event.currentTarget as HTMLInputElement).checked,
+                            )}
+                        />
+                        <span class="menu-label">{company.name}</span>
+                        <span class="menu-meta">
+                          {company.countryCount}{" "}
+                          {company.countryCount === 1 ? "country" : "countries"}
+                        </span>
+                      </label>
+                      {#if company.cityCount > 0}
+                        <label
+                          class="menu-item menu-subitem operations-company-row city"
+                        >
                           <input
                             type="checkbox"
-                            checked={ridehailingOperationVisibilityBySlug[
+                            checked={ridehailingCityVisibilityBySlug[
                               company.slug
-                            ] ?? true}
+                            ] ?? false}
                             onchange={(event) =>
-                              handleRidehailingOperationVisibilityToggle(
+                              handleRidehailingCityVisibilityToggle(
                                 company.slug,
-                                (event.currentTarget as HTMLInputElement).checked,
+                                (event.currentTarget as HTMLInputElement)
+                                  .checked,
                               )}
                           />
-                          <span class="menu-label">{company.name}</span>
+                          <span class="menu-label">Cities</span>
                           <span class="menu-meta">
-                            {company.countryCount}{" "}
-                            {company.countryCount === 1 ? "country" : "countries"}
+                            {company.cityCount}{" "}
+                            {company.cityCount === 1 ? "city" : "cities"}
                           </span>
                         </label>
-                        {#if company.cityCount > 0}
-                          <label class="menu-item menu-subitem operations-company-row city">
-                            <input
-                              type="checkbox"
-                              checked={ridehailingCityVisibilityBySlug[
-                                company.slug
-                              ] ?? false}
-                              onchange={(event) =>
-                                handleRidehailingCityVisibilityToggle(
-                                  company.slug,
-                                  (event.currentTarget as HTMLInputElement)
-                                    .checked,
-                                )}
-                            />
-                            <span class="menu-label">Cities</span>
-                            <span class="menu-meta">
-                              {company.cityCount}{" "}
-                              {company.cityCount === 1 ? "city" : "cities"}
-                            </span>
-                          </label>
-                        {/if}
-                      </div>
-                    {/each}
-                  </div>
-                {/if}
+                      {/if}
+                    </div>
+                  {/each}
+                </div>
               {/if}
             {/if}
           </div>
