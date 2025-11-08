@@ -79,11 +79,6 @@
     "ISO3166-1-Alpha-2": string
   }
 
-  type CountryFeature = Feature<
-    Polygon | MultiPolygon,
-    CountryFeatureProperties
-  >
-
   type CountryFeatureCollection = FeatureCollection<
     Polygon | MultiPolygon,
     CountryFeatureProperties
@@ -126,6 +121,7 @@
   let hasFetchedRidehailingOperations = $state(false)
   let ridehailingCountryOperations = $state<RidehailingCountryOperation[]>([])
   let ridehailingOperationsError = $state<string | null>(null)
+  let ridehailingOperationVisibilityBySlug = $state<Record<string, boolean>>({})
 
   let isCountryBoundariesLoading = $state(false)
   let countryBoundariesError = $state<string | null>(null)
@@ -340,15 +336,14 @@
   })
 
   const ridehailingCountryIsoCodesBySlug = $derived(() => {
-    const map = new Map<
-      string,
-      { alpha2: Set<string>; alpha3: Set<string> }
-    >()
+    const map = new Map<string, { alpha2: Set<string>; alpha3: Set<string> }>()
 
     for (const record of ridehailingCountryOperations) {
       const slug = record.ridehailing_slug
-      const entry =
-        map.get(slug) ?? { alpha2: new Set<string>(), alpha3: new Set<string>() }
+      const entry = map.get(slug) ?? {
+        alpha2: new Set<string>(),
+        alpha3: new Set<string>(),
+      }
 
       const isoAlpha2 = record.iso_alpha_2
       if (isoAlpha2) {
@@ -431,7 +426,9 @@
     const colors = new Map<string, { fill: string; outline: string }>()
     const palette = ridehailingColorPalette
     const slugs = Array.from(
-      new Set(ridehailingCountryOperations.map((record) => record.ridehailing_slug)),
+      new Set(
+        ridehailingCountryOperations.map((record) => record.ridehailing_slug),
+      ),
     ).sort()
 
     let index = 0
@@ -443,6 +440,61 @@
 
     return colors
   })
+
+  const ridehailingOperationCompanies = $derived(() => {
+    const counts = ridehailingCountryCounts()
+    if (counts.size === 0) {
+      return []
+    }
+
+    return Array.from(counts.entries())
+      .map(([slug, count]) => {
+        const companyName =
+          ridehailings.find((company) => company.slug === slug)?.name ?? slug
+
+        return {
+          slug,
+          name: companyName,
+          countryCount: count,
+        }
+      })
+      .sort((a, b) =>
+        a.name.localeCompare(b.name, undefined, { sensitivity: "base" }),
+      )
+  })
+
+  const activeRidehailingOperationSlugs = $derived(() => {
+    const visibility = ridehailingOperationVisibilityBySlug
+    const companies = ridehailingOperationCompanies()
+    if (companies.length === 0) {
+      return []
+    }
+
+    const result: string[] = []
+    for (const company of companies) {
+      const isVisible = visibility[company.slug]
+      if (isVisible === undefined || isVisible) {
+        result.push(company.slug)
+      }
+    }
+
+    if (result.length > 0) {
+      return result
+    }
+
+    return []
+  })
+
+  const ridehailingOperationsLayerFilter = $derived(
+    (): maplibregl.FilterSpecification => {
+      const activeSlugs = activeRidehailingOperationSlugs()
+      if (activeSlugs.length === 0) {
+        return ["in", "ridehailing_slug", "__no_visible_ridehailing__"]
+      }
+
+      return ["in", "ridehailing_slug", ...activeSlugs]
+    },
+  )
 
   const ridehailingFillColorExpression = $derived(() => {
     const entries = Array.from(ridehailingColorsBySlug().entries())
@@ -473,19 +525,63 @@
   })
 
   const ridehailingOperationsSummary = $derived(() => {
-    if (ridehailingCountryCounts().size === 0) {
+    const counts = ridehailingCountryCounts()
+    if (counts.size === 0) {
       return ""
     }
 
-    const entries = Array.from(ridehailingCountryCounts().entries()).map(
-      ([slug, count]) => {
+    const activeSlugs = activeRidehailingOperationSlugs()
+    if (activeSlugs.length === 0) {
+      return ""
+    }
+
+    const entries = activeSlugs
+      .map((slug) => {
+        const count = counts.get(slug)
+        if (!count) {
+          return null
+        }
+
         const companyName =
           ridehailings.find((company) => company.slug === slug)?.name ?? slug
         return `${companyName}: ${count} ${count === 1 ? "country" : "countries"}`
-      },
-    )
+      })
+      .filter((value): value is string => Boolean(value))
+
+    if (entries.length === 0) {
+      return ""
+    }
 
     return entries.join(", ")
+  })
+
+  $effect(() => {
+    const counts = ridehailingCountryCounts()
+    const currentVisibility = ridehailingOperationVisibilityBySlug
+    const nextVisibility: Record<string, boolean> = {}
+    let changed = false
+
+    for (const slug of counts.keys()) {
+      const existing = currentVisibility[slug]
+      nextVisibility[slug] = existing ?? true
+      if (existing === undefined) {
+        changed = true
+      }
+    }
+
+    for (const slug in currentVisibility) {
+      if (!counts.has(slug)) {
+        changed = true
+        break
+      }
+    }
+
+    if (
+      changed ||
+      Object.keys(currentVisibility).length !== Object.keys(nextVisibility).length
+    ) {
+      ridehailingOperationVisibilityBySlug = nextVisibility
+    }
   })
 
   let hasSetGlobeProjection = false
@@ -572,7 +668,9 @@
       "universities-labels",
     ]
 
-    const beforeId = beforeLayerCandidates.find((layerId) => m.getLayer(layerId))
+    const beforeId = beforeLayerCandidates.find((layerId) =>
+      m.getLayer(layerId),
+    )
     if (!beforeId) {
       return
     }
@@ -676,6 +774,16 @@
 
     if (tasks.length > 0) {
       await Promise.allSettled(tasks)
+    }
+  }
+
+  const handleRidehailingOperationVisibilityToggle = (
+    slug: string,
+    checked: boolean,
+  ) => {
+    ridehailingOperationVisibilityBySlug = {
+      ...ridehailingOperationVisibilityBySlug,
+      [slug]: checked,
     }
   }
 
@@ -1264,7 +1372,10 @@
   })
 
   const robotaxiLayerIds = ["robotaxis-logos", "robotaxis-circles"] as const
-  const ridehailingLayerIds = ["ridehailings-logos", "ridehailings-circles"] as const
+  const ridehailingLayerIds = [
+    "ridehailings-logos",
+    "ridehailings-circles",
+  ] as const
 
   $effect(() => {
     const mapInstance = map
@@ -1523,22 +1634,29 @@
     <GlobeControl />
 
     {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
-      <GeoJSONSource id="ridehailings-operations" data={ridehailingOperationsGeoJson()}>
+      <GeoJSONSource
+        id="ridehailings-operations"
+        data={ridehailingOperationsGeoJson()}
+      >
         <FillLayer
           id="ridehailings-operations-fill"
+          filter={ridehailingOperationsLayerFilter()}
           paint={{
-            "fill-color": typeof ridehailingFillColorExpression() === "string"
-              ? ridehailingFillColorExpression()
-              : (ridehailingFillColorExpression() as any), // Ensure correct type for DataDrivenPropertyValueSpecification<string>
+            "fill-color":
+              typeof ridehailingFillColorExpression() === "string"
+                ? ridehailingFillColorExpression()
+                : (ridehailingFillColorExpression() as any), // Ensure correct type for DataDrivenPropertyValueSpecification<string>
             "fill-opacity": 0.22,
           }}
         />
         <LineLayer
           id="ridehailings-operations-outline"
+          filter={ridehailingOperationsLayerFilter()}
           paint={{
-            "line-color": typeof ridehailingOutlineColorExpression() === "string"
-              ? ridehailingOutlineColorExpression()
-              : (ridehailingOutlineColorExpression() as any), // Ensure correct type
+            "line-color":
+              typeof ridehailingOutlineColorExpression() === "string"
+                ? ridehailingOutlineColorExpression()
+                : (ridehailingOutlineColorExpression() as any), // Ensure correct type
             "line-width": 1,
             "line-opacity": 0.6,
           }}
@@ -1738,17 +1856,41 @@
               Try again
             </button>
           {:else if
-            isRidehailingOperationsEnabled &&
-            hasFetchedRidehailingOperations &&
-            ridehailingOperationsSummary()}
-            <p class="menu-status menu-substatus">
-              Highlighting {ridehailingOperationsSummary()}
-            </p>
-          {:else if
-            isRidehailingOperationsEnabled &&
-            hasFetchedRidehailingOperations &&
-            ridehailingOperationsGeoJson().features.length === 0}
-            <p class="menu-status menu-substatus">No operations data yet.</p>
+            isRidehailingOperationsEnabled && hasFetchedRidehailingOperations}
+            {#if ridehailingOperationsGeoJson().features.length === 0}
+              <p class="menu-status menu-substatus">No operations data yet.</p>
+            {:else}
+              {#if ridehailingOperationsSummary()}
+                <p class="menu-status menu-substatus">
+                  Highlighting {ridehailingOperationsSummary()}
+                </p>
+              {/if}
+
+              {#if ridehailingOperationCompanies().length > 0}
+                <div class="operations-checkboxes">
+                  {#each ridehailingOperationCompanies() as company}
+                    <label class="menu-item menu-subitem">
+                      <input
+                        type="checkbox"
+                        checked={
+                          ridehailingOperationVisibilityBySlug[company.slug] ?? true
+                        }
+                        onchange={(event) =>
+                          handleRidehailingOperationVisibilityToggle(
+                            company.slug,
+                            (event.currentTarget as HTMLInputElement).checked,
+                          )}
+                      />
+                      <span class="menu-label">{company.name}</span>
+                      <span class="menu-meta">
+                        {company.countryCount}{" "}
+                        {company.countryCount === 1 ? "country" : "countries"}
+                      </span>
+                    </label>
+                  {/each}
+                </div>
+              {/if}
+            {/if}
           {/if}
         {/if}
 
@@ -1898,8 +2040,22 @@
     margin-left: 1.5rem;
   }
 
+  .operations-checkboxes {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
   .menu-label {
     flex: 1;
+  }
+
+  .menu-meta {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #6b7280;
   }
 
   .menu-status {
