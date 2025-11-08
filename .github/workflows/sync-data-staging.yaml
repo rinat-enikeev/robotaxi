@@ -46,6 +46,6 @@ jobs:
             --port="5432" \
             --username="postgres" \
             --dbname="postgres" \
-            --file="supabase/seeds/cities.sql" \
+            --file="supabase/seeds/seed.sql" \
             --set="ON_ERROR_STOP=1" \
             --single-transaction

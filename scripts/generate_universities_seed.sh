@@ -97,6 +97,7 @@ def normalize_country_iso(raw) -> str | None:
 
 
 records: dict[str, dict] = {}
+skipped_unknown_cities = 0
 
 for idx, item in enumerate(data):
     if not isinstance(item, dict):
@@ -123,6 +124,10 @@ for idx, item in enumerate(data):
 
     if slug in records:
         raise SystemExit(f"Duplicate university slug detected: {slug}")
+
+    if city_slug.lower().startswith("unknown"):
+        skipped_unknown_cities += 1
+        continue
 
     record = {
         "slug": slug,
@@ -175,6 +180,11 @@ with output_path.open("w", encoding="utf-8") as fh:
     fh.write("COMMIT;\n")
 
 print(f"Wrote {len(sorted_records)} universities to {output_path}")
+if skipped_unknown_cities:
+    print(
+        f"Skipped {skipped_unknown_cities} universities with unknown city slugs",
+        file=sys.stderr,
+    )
 PY
 
 echo "Seed written to ${OUTPUT_FILE}"
