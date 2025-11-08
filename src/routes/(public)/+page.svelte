@@ -103,13 +103,13 @@
 
   let isHamburgerOpen = $state(false)
 
-  let isRobotaxisEnabled = $state(true)
+  let isRobotaxisEnabled = $state(false)
   let isRobotaxisLoading = $state(false)
   let hasFetchedRobotaxis = $state(false)
   let robotaxis = $state<Robotaxi[]>([])
   let robotaxisError = $state<string | null>(null)
 
-  let isRidehailingsEnabled = $state(false)
+  let isRidehailingsEnabled = $state(true)
   let isRidehailingsLoading = $state(false)
   let hasFetchedRidehailings = $state(false)
   let ridehailings = $state<Ridehailing[]>([])
@@ -121,7 +121,7 @@
   let universities = $state<University[]>([])
   let universitiesError = $state<string | null>(null)
 
-  let isRidehailingOperationsEnabled = $state(false)
+  let isRidehailingOperationsEnabled = $state(true)
   let isRidehailingOperationsLoading = $state(false)
   let hasFetchedRidehailingOperations = $state(false)
   let ridehailingCountryOperations = $state<RidehailingCountryOperation[]>([])
@@ -508,7 +508,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 80, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: 360, maxZoom: 6 })
     }
   }
 
@@ -527,7 +527,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 80, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: 360, maxZoom: 6 })
     }
   }
 
@@ -543,7 +543,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 80, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: 360, maxZoom: 6 })
     }
   }
 
@@ -1154,6 +1154,30 @@
     if (isRobotaxisEnabled && !hasFetchedRobotaxis) {
       void loadRobotaxis()
     }
+
+    const ridehailingTasks: Promise<unknown>[] = []
+
+    if (isRidehailingsEnabled && !hasFetchedRidehailings) {
+      ridehailingTasks.push(loadRidehailings())
+    }
+
+    if (isRidehailingOperationsEnabled) {
+      if (!hasFetchedRidehailings && ridehailingTasks.length === 0) {
+        ridehailingTasks.push(loadRidehailings())
+      }
+
+      if (!hasFetchedRidehailingOperations) {
+        ridehailingTasks.push(loadRidehailingOperations())
+      }
+
+      if (!countriesGeoJson) {
+        ridehailingTasks.push(loadCountryBoundaries())
+      }
+    }
+
+    if (ridehailingTasks.length > 0) {
+      void Promise.allSettled(ridehailingTasks)
+    }
   })
 
   const robotaxiLayerIds = ["robotaxis-logos", "robotaxis-circles"] as const
@@ -1301,7 +1325,6 @@
     class="h-full w-full"
     style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
     zoom={2}
-    center={{ lng: 0, lat: 20 }}
   >
     <GlobeControl />
 
