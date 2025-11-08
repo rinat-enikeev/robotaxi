@@ -60,6 +60,8 @@
       }
     })
 
+  let hasSetGlobeProjection = false
+
   const focusMapOnUniversities = (m: maplibregl.Map) => {
     const features = universitiesWithCoords()
     if (features.length === 0) return
@@ -169,6 +171,10 @@
     if (!m) return
 
     const setup = () => {
+      if (!hasSetGlobeProjection) {
+        m.setProjection({ type: "globe" })
+        hasSetGlobeProjection = true
+      }
       if (universityCount > 0) {
         focusMapOnUniversities(m)
       }
