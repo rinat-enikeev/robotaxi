@@ -720943,3 +720943,363 @@
     iso2: VI
     iso3: VIR
   country_slug: u-s-virgin-islands
+- slug: ardee-ireland
+  city: Ardee
+  city_ascii: Ardee
+  latitude: 53.8562568
+  longitude: -6.5394307
+  admin_name: Ardee
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: ireland
+    name: Ireland
+    iso2: IE
+    iso3: IRL
+  country_slug: ireland
+- slug: aseer-province-italy
+  city: Aseer Province
+  city_ascii: Aseer Province
+  latitude: 19.0969062
+  longitude: 42.8637875
+  admin_name: Aseer Province
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: saudi-arabia
+    name: Saudi Arabia
+    iso2: SA
+    iso3: SAU
+  country_slug: saudi-arabia
+- slug: bakuriani-georgia
+  city: Bakuriani
+  city_ascii: Bakuriani
+  latitude: 41.750748099999996
+  longitude: 43.528312
+  admin_name: Bakuriani
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: georgia
+    name: Georgia
+    iso2: GE
+    iso3: GEO
+  country_slug: georgia
+- slug: bray-france
+  city: Bray-sur-Seine
+  city_ascii: Bray-sur-Seine
+  latitude: 48.415096999999996
+  longitude: 3.239486
+  admin_name: Bray-sur-Seine
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: france
+    name: France
+    iso2: FR
+    iso3: FRA
+  country_slug: france
+- slug: collon-ireland
+  city: Collon
+  city_ascii: Collon
+  latitude: 53.7777425
+  longitude: -6.4840991
+  admin_name: Collon
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: ireland
+    name: Ireland
+    iso2: IE
+    iso3: IRL
+  country_slug: ireland
+- slug: dunleer-ireland
+  city: Dunleer
+  city_ascii: Dunleer
+  latitude: 53.8310533
+  longitude: -6.3944559
+  admin_name: Dunleer
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: ireland
+    name: Ireland
+    iso2: IE
+    iso3: IRL
+  country_slug: ireland
+- slug: garden-route-south-africa
+  city: Garden Route District Municipality
+  city_ascii: Garden Route District Municipality
+  latitude: -33.704229
+  longitude: 22.047636999999998
+  admin_name: Garden Route District Municipality
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: south-africa
+    name: South Africa
+    iso2: ZA
+    iso3: ZAF
+  country_slug: south-africa
+- slug: gudauri-stepantsminda-georgia
+  city: Gudauri
+  city_ascii: Gudauri
+  latitude: 42.475539399999995
+  longitude: 44.480472299999995
+  admin_name: Gudauri
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: georgia
+    name: Georgia
+    iso2: GE
+    iso3: GEO
+  country_slug: georgia
+- slug: hail-province-saudi-arabia
+  city: Hail Province
+  city_ascii: Hail Province
+  latitude: 27.7076143
+  longitude: 41.9196471
+  admin_name: Hail Province
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: saudi-arabia
+    name: Saudi Arabia
+    iso2: SA
+    iso3: SAU
+  country_slug: saudi-arabia
+- slug: karatina-kenya
+  city: Karatina
+  city_ascii: Karatina
+  latitude: -0.4831579999999999
+  longitude: 37.1273549
+  admin_name: Karatina
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: kenya
+    name: Kenya
+    iso2: KE
+    iso3: KEN
+  country_slug: kenya
+- slug: madeira-portugal
+  city: Madeira
+  city_ascii: Madeira
+  latitude: 32.76070740000001
+  longitude: -16.959472299999998
+  admin_name: Madeira
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: portugal
+    name: Portugal
+    iso2: PT
+    iso3: PRT
+  country_slug: portugal
+- slug: makkah-province-saudi-arabia
+  city: Makkah Province
+  city_ascii: Makkah Province
+  latitude: 21.5235584
+  longitude: 41.9196471
+  admin_name: Makkah Province
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: saudi-arabia
+    name: Saudi Arabia
+    iso2: SA
+    iso3: SAU
+  country_slug: saudi-arabia
+- slug: medina-province-saudi-arabia
+  city: Al Madinah Province
+  city_ascii: Al Madinah Province
+  latitude: 24.8403977
+  longitude: 39.320624099999996
+  admin_name: Al Madinah Province
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: saudi-arabia
+    name: Saudi Arabia
+    iso2: SA
+    iso3: SAU
+  country_slug: saudi-arabia
+- slug: mikolajki-poland
+  city: Mikołajki
+  city_ascii: Mikoajki
+  latitude: 53.8027021
+  longitude: 21.5706044
+  admin_name: Mikołajki
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: poland
+    name: Poland
+    iso2: PL
+    iso3: POL
+  country_slug: poland
+- slug: najran-province-saudi-arabia
+  city: Najran Province
+  city_ascii: Najran Province
+  latitude: 18.3514664
+  longitude: 45.6007108
+  admin_name: Najran Province
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: saudi-arabia
+    name: Saudi Arabia
+    iso2: SA
+    iso3: SAU
+  country_slug: saudi-arabia
+- slug: neusiedl-am-see-austria
+  city: Neusiedl am See
+  city_ascii: Neusiedl am See
+  latitude: 47.947359999999996
+  longitude: 16.84537
+  admin_name: Neusiedl am See
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: austria
+    name: Austria
+    iso2: AT
+    iso3: AUT
+  country_slug: austria
+- slug: parndorf-austria
+  city: Parndorf
+  city_ascii: Parndorf
+  latitude: 47.9948905
+  longitude: 16.857569599999998
+  admin_name: Parndorf
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: austria
+    name: Austria
+    iso2: AT
+    iso3: AUT
+  country_slug: austria
+- slug: podersdorf-am-see-austria
+  city: Podersdorf am See
+  city_ascii: Podersdorf am See
+  latitude: 47.8544248
+  longitude: 16.837115999999998
+  admin_name: Podersdorf am See
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: austria
+    name: Austria
+    iso2: AT
+    iso3: AUT
+  country_slug: austria
+- slug: queenstown-new-zealand
+  city: Queenstown
+  city_ascii: Queenstown
+  latitude: -45.030151100000005
+  longitude: 168.6615141
+  admin_name: Queenstown
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: new-zealand
+    name: New Zealand
+    iso2: NZ
+    iso3: NZL
+  country_slug: new-zealand
+- slug: riyadh-province-saudi-arabia
+  city: Riyadh Province
+  city_ascii: Riyadh Province
+  latitude: 22.7554385
+  longitude: 46.2091547
+  admin_name: Riyadh Province
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: saudi-arabia
+    name: Saudi Arabia
+    iso2: SA
+    iso3: SAU
+  country_slug: saudi-arabia
+- slug: rust-austria
+  city: Rust
+  city_ascii: Rust
+  latitude: 47.800700299999995
+  longitude: 16.6725639
+  admin_name: Rust
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: austria
+    name: Austria
+    iso2: AT
+    iso3: AUT
+  country_slug: austria
+- slug: szklarska-poreba-poland
+  city: Szklarska Poręba
+  city_ascii: Szklarska Poreba
+  latitude: 50.8274316
+  longitude: 15.5261478
+  admin_name: Szklarska Poręba
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: poland
+    name: Poland
+    iso2: PL
+    iso3: POL
+  country_slug: poland
+- slug: tabuk-province-saudi-arabia
+  city: Tabuk Province
+  city_ascii: Tabuk Province
+  latitude: 28.2492372
+  longitude: 36.6093926
+  admin_name: Tabuk Province
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: saudi-arabia
+    name: Saudi Arabia
+    iso2: SA
+    iso3: SAU
+  country_slug: saudi-arabia
+- slug: valea-prahovei-united-kingdom
+  city: Valea Prahovei
+  city_ascii: Valea Prahovei
+  latitude: 45.516833000000005
+  longitude: 25.5664715
+  admin_name: Oraş Predeal
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: romania
+    name: Romania
+    iso2: RO
+    iso3: ROU
+  country_slug: romania

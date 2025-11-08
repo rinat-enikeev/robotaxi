@@ -86,7 +86,7 @@
     - al-bahah-saudi-arabia
     - buraydah-saudi-arabia
     - alba-iulia-romania
-    - algarve-portugal
+    - silves-portugal
     - alkmaar-netherlands
     - almaty-kazakhstan
     - alytus-lithuania
@@ -109,16 +109,16 @@
     - aveiro-portugal
     - avignon-france
     - awka-nigeria
-    - ayia-napa-cyprus
+    - paralimni-cyprus
     - baghdad-iraq
     - baia-mare-romania
     - baku-azerbaijan
     - bakuriani-georgia
-    - balakan-azerbaijan
+    - balakn-azerbaijan
     - bangkok-thailand
     - banska-bystrica-slovakia
     - barcelona-spain
-    - barda-azerbaijan
+    - brd-azerbaijan
     - basel-switzerland
     - bath-united-kingdom
     - batumi-georgia
@@ -126,12 +126,12 @@
     - bayonne-france
     - beirut-lebanon
     - beja-portugal
-    - belchatow-poland
+    - bechatow-poland
     - benin-city-nigeria
     - bergen-norway
     - berlin-germany
     - bernburg-germany
-    - beylagan-azerbaijan
+    - beylqan-azerbaijan
     - biarritz-france
     - bielefeld-germany
     - bila-tserkva-ukraine
@@ -153,12 +153,12 @@
     - bristol-united-kingdom
     - brno-czechia
     - brovary-ukraine
-    - brugge-belgium
+    - bruges-belgium
     - brussels-belgium
-    - bucha-germany
+    - jena-germany
     - bucharest-romania
     - budapest-hungary
-    - buriram-thailand
+    - buri-ram-thailand
     - bydgoszcz-poland
     - caen-france
     - cairo-egypt
@@ -169,13 +169,13 @@
     - cape-coast-ghana
     - cape-town-south-africa
     - carcassonne-france
-    - cardiff-united-kingdom
+    - caerdydd-united-kingdom
     - castelo-branco-portugal
     - celle-germany
     - charleroi-belgium
     - cheb-czechia
-    - chelm-poland
-    - cherbourg-en-cotentin-france
+    - chem-poland
+    - cherbourg-france
     - cherkasy-ukraine
     - chernihiv-ukraine
     - chernivtsi-ukraine
@@ -201,9 +201,9 @@
     - daugavpils-latvia
     - debica-poland
     - debrecen-hungary
-    - den-bosch-netherlands
+    - s-hertogenbosch-netherlands
     - derby-united-kingdom
-    - deva-hunedoara-romania
+    - deva-romania
     - dijon-france
     - dinant-belgium
     - dnipro-ukraine
@@ -213,22 +213,22 @@
     - drobeta-turnu-severin-romania
     - drohobych-ukraine
     - druskininkai-lithuania
-    - dubai-uae
+    - dubai-united-arab-emirates
     - dublin-ireland
     - dubrovnik-croatia
-    - dundalk-ireland
+    - dun-dealgan-ireland
     - dunkerque-france
     - dunleer-ireland
     - durango-mexico
     - durban-south-africa
     - east-london-south-africa
-    - ede-wageningen-netherlands
+    - ede-netherlands
     - edinburgh-united-kingdom
     - eger-hungary
     - eindhoven-netherlands
     - eisenstadt-austria
     - eldoret-kenya
-    - emalahleni-south-africa
+    - witbank-south-africa
     - enschede-netherlands
     - enugu-nigeria
     - ericeira-portugal
@@ -242,27 +242,27 @@
     - famagusta-cyprus
     - faro-portugal
     - figueira-da-foz-portugal
-    - frankfurt-am-main-germany
+    - frankfurt-germany
     - fuzuli-azerbaijan
-    - gadabay-azerbaijan
-    - ganja-azerbaijan
+    - gdby-azerbaijan
+    - gnc-azerbaijan
     - garden-route-south-africa
     - gargzdai-lithuania
     - garliava-lithuania
     - gdansk-poland
     - gdynia-poland
     - gelsenkirchen-germany
-    - ghent-belgium
+    - gent-belgium
     - gifhorn-germany
     - giurgiu-romania
-    - glogow-poland
+    - gogow-poland
     - gniezno-poland
     - gomez-palacio-mexico
     - gothenburg-sweden
-    - goychay-azerbaijan
-    - gozo-malta
+    - goycay-azerbaijan
+    - victoria-malta
     - graz-austria
-    - greater-manchester-united-kingdom
+    - reddish-united-kingdom
     - grenoble-france
     - groningen-netherlands
     - grudziadz-poland
@@ -284,18 +284,18 @@
     - herford-germany
     - hilden-germany
     - hildesheim-germany
-    - ho-united-kingdom
+    - sutton-on-hull-united-kingdom
     - ibadan-nigeria
     - ilorin-nigeria
-    - imishli-azerbaijan
+    - imisli-azerbaijan
     - innsbruck-austria
-    - inowroclaw-poland
+    - inowrocaw-poland
     - irpin-ukraine
     - ivano-frankivsk-ukraine
     - jablonec-nad-nisou-czechia
-    - jalilabad-azerbaijan
+    - clilabad-azerbaijan
     - jastrzebie-zdroj-poland
-    - jazan-province-saudi-arabia
+    - sabya-saudi-arabia
     - jelenia-gora-poland
     - jelgava-latvia
     - jihlava-czechia
@@ -313,7 +313,7 @@
     - karlovac-croatia
     - karlovy-vary-czechia
     - karlsruhe-germany
-    - karpacz-poland
+    - kowary-poland
     - kassel-germany
     - katowice-poland
     - kaunas-lithuania
@@ -322,7 +322,7 @@
     - keila-estonia
     - kerava-finland
     - ketrzyn-poland
-    - khankendi-azerbaijan
+    - xankndi-azerbaijan
     - kharkiv-ukraine
     - khmelnytskyi-ukraine
     - khon-kaen-thailand
@@ -337,12 +337,12 @@
     - kladno-czechia
     - klaukkala-finland
     - koforidua-ghana
-    - kolo-poland
-    - kolobrzeg-poland
+    - koo-poland
+    - koobrzeg-poland
     - konin-poland
     - koper-slovenia
     - kortrijk-belgium
-    - kosice-czechia
+    - kosice-slovakia
     - koszalin-poland
     - kovel-ukraine
     - krabi-thailand
@@ -358,7 +358,7 @@
     - kuala-lumpur-malaysia
     - kumasi-ghana
     - kuopio-finland
-    - kurdamir-azerbaijan
+    - kurdmir-azerbaijan
     - kuressaare-estonia
     - kursenai-lithuania
     - kutaisi-georgia
@@ -369,7 +369,7 @@
     - lafia-nigeria
     - lagos-nigeria
     - lahti-finland
-    - lankaran-azerbaijan
+    - lnkran-azerbaijan
     - lappeenranta-finland
     - larnaca-cyprus
     - le-havre-france
@@ -379,8 +379,8 @@
     - leiria-portugal
     - lens-france
     - leszno-poland
-    - leuven-belgium
-    - levice-italy
+    - wilsele-belgium
+    - levice-slovakia
     - liberec-czechia
     - lille-france
     - limassol-cyprus
@@ -394,7 +394,7 @@
     - lubin-poland
     - lublin-poland
     - ludwigshafen-germany
-    - lund-sweden
+    - lomma-sweden
     - lutsk-ukraine
     - lviv-ukraine
     - lyon-france
@@ -405,17 +405,17 @@
     - mainz-germany
     - makkah-province-saudi-arabia
     - makurdi-nigeria
-    - malindi-tanzania
-    - malta-malta
+    - zanzibar-tanzania
+    - imgarr-malta
     - mannheim-germany
     - maribor-slovenia
     - marseille-france
     - martin-slovakia
-    - masalli-azerbaijan
+    - masall-azerbaijan
     - mazatlan-mexico
     - mbarara-uganda
     - mbeya-tanzania
-    - mbombela-south-africa
+    - nelspruit-south-africa
     - medina-province-saudi-arabia
     - merseburg-germany
     - meru-kenya
@@ -423,10 +423,10 @@
     - mielec-poland
     - mikolajki-poland
     - milan-italy
-    - milton-keynes-uk
-    - mingachevir-azerbaijan
+    - milton-keynes-united-kingdom
+    - mingcevir-azerbaijan
     - miskolc-hungary
-    - mlawa-poland
+    - mawa-poland
     - mombasa-kenya
     - montauban-france
     - montpellier-france
@@ -435,7 +435,7 @@
     - moss-norway
     - most-czechia
     - mthatha-south-africa
-    - mukachevo-ukraine
+    - mukacheve-ukraine
     - mulhouse-france
     - munich-germany
     - murcia-spain
@@ -444,7 +444,7 @@
     - nairobi-kenya
     - naivasha-kenya
     - najran-province-saudi-arabia
-    - nakhchivan-azerbaijan
+    - naxcvan-azerbaijan
     - nakhon-ratchasima-thailand
     - nakhon-si-thammarat-thailand
     - nakuru-kenya
@@ -454,10 +454,10 @@
     - nanyuki-kenya
     - narbonne-france
     - narva-estonia
-    - neftchala-azerbaijan
+    - neftcala-azerbaijan
     - neusiedl-am-see-austria
     - neuss-germany
-    - newcastle-upon-tyne-uk
+    - newcastle-united-kingdom
     - newport-united-kingdom
     - nice-france
     - nicosia-cyprus
@@ -475,7 +475,7 @@
     - nysa-poland
     - odesa-ukraine
     - ogre-latvia
-    - olawa-poland
+    - oawa-poland
     - oldenburg-germany
     - oleksandriia-ukraine
     - olomouc-czechia
@@ -510,7 +510,7 @@
     - phuket-thailand
     - phuthaditjhaba-south-africa
     - pietermaritzburg-south-africa
-    - pila-poland
+    - pia-poland
     - piotrkow-trybunalski-poland
     - podersdorf-am-see-austria
     - poitiers-france
@@ -520,10 +520,10 @@
     - ponta-delgada-portugal
     - poprad-slovakia
     - pori-finland
-    - port-elizabeth-south-africa
+    - gqeberha-south-africa
     - port-harcourt-nigeria
     - portalegre-portugal
-    - portlaoise-ireland
+    - port-laoise-ireland
     - porto-portugal
     - portsmouth-united-kingdom
     - potchefstroom-south-africa
@@ -534,9 +534,9 @@
     - prievidza-slovakia
     - przemysl-poland
     - pula-croatia
-    - qabala-azerbaijan
-    - qakh-azerbaijan
-    - qazakh-azerbaijan
+    - qbl-azerbaijan
+    - qax-azerbaijan
+    - qazax-azerbaijan
     - quba-azerbaijan
     - queenstown-new-zealand
     - qusar-azerbaijan
@@ -567,17 +567,17 @@
     - salzgitter-germany
     - sandomierz-poland
     - sanok-poland
-    - santa-maria-da-feira-portugal
+    - feira-portugal
     - satu-mare-romania
     - saulkrasti-latvia
     - schwabach-germany
     - setubal-portugal
-    - seville-spain
-    - shaki-azerbaijan
-    - shamakhi-azerbaijan
-    - shamkir-azerbaijan
+    - sevilla-spain
+    - ski-azerbaijan
+    - samax-azerbaijan
+    - smkir-azerbaijan
     - sheffield-united-kingdom
-    - shusha-azerbaijan
+    - susa-azerbaijan
     - sibiu-romania
     - siedlce-poland
     - sigulda-latvia
@@ -596,7 +596,7 @@
     - split-croatia
     - stalowa-wola-poland
     - starachowice-poland
-    - stargard-poland
+    - stargard-szczecinski-poland
     - starogard-gdanski-poland
     - stavanger-norway
     - stein-netherlands
@@ -605,7 +605,7 @@
     - stryi-ukraine
     - stuttgart-germany
     - suceava-romania
-    - sumgayit-azerbaijan
+    - sumqayt-azerbaijan
     - sumy-ukraine
     - sunyani-ghana
     - surat-thani-thailand
@@ -617,13 +617,13 @@
     - szombathely-hungary
     - tabuk-province-saudi-arabia
     - taipei-taiwan
-    - takoradi-ghana
+    - effia-kuma-ghana
     - tallinn-estonia
     - tamale-ghana
     - tampere-finland
-    - taoyuan-taiwan
+    - taoyuan-district-taiwan
     - tarnobrzeg-poland
-    - tartar-azerbaijan
+    - trtr-azerbaijan
     - tartu-estonia
     - tbilisi-georgia
     - telavi-georgia
@@ -673,7 +673,7 @@
     - veszprem-hungary
     - viana-do-castelo-portugal
     - vienna-austria
-    - vila-real-spain
+    - villareal-spain
     - viljandi-estonia
     - vilkaviskis-lithuania
     - vilnius-lithuania
@@ -682,7 +682,7 @@
     - viseu-portugal
     - vyshhorod-ukraine
     - vyshneve-ukraine
-    - walbrzych-poland
+    - wabrzych-poland
     - warri-nigeria
     - warsaw-poland
     - welkom-south-africa
@@ -693,14 +693,14 @@
     - wolverhampton-united-kingdom
     - worcester-south-africa
     - yenagoa-nigeria
-    - yevlakh-azerbaijan
-    - ypres-belgium
+    - yevlax-azerbaijan
+    - ieper-belgium
     - zadar-croatia
     - zagreb-croatia
     - zakopane-poland
     - zamosc-poland
     - zanzibar-tanzania
-    - zaporizhia-ukraine
+    - zaporizhzhia-ukraine
     - zaqatala-azerbaijan
     - zaragoza-spain
     - zaria-nigeria
@@ -711,4 +711,6 @@
     - zugdidi-georgia
     - zurich-switzerland
     - zvolen-slovakia
+
+
 
