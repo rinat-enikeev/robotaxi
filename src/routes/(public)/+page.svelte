@@ -2123,12 +2123,6 @@
             {#if ridehailingOperationsGeoJson().features.length === 0}
               <p class="menu-status menu-substatus">No operations data yet.</p>
             {:else}
-              {#if ridehailingOperationsSummary()}
-                <p class="menu-status menu-substatus">
-                  Highlighting {ridehailingOperationsSummary()}
-                </p>
-              {/if}
-
               {#if ridehailingOperationCompanies().length > 0}
                 <div class="operations-checkboxes">
                   {#each ridehailingOperationCompanies() as company}
@@ -2359,7 +2353,7 @@
   }
 
   .operations-company-row.city input {
-    margin-left: -2.5rem;
+    margin-left: 0;
   }
 
   .menu-label {
