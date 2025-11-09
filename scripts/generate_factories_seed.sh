@@ -59,7 +59,7 @@ columns = [
     "slug",
     "city_slug",
     "manufacturer",
-    "label",
+    "focus",
     "brand",
     "address",
     "rank",
@@ -78,6 +78,18 @@ def clean_optional_string(value: Any) -> Optional[str]:
         return None
     text = str(value).strip()
     return text or None
+def clean_optional_list(value: Any) -> Optional[list[str]]:
+    if value is None:
+        return None
+    if isinstance(value, (list, tuple)):
+        cleaned = [str(item).strip() for item in value if str(item).strip()]
+        return cleaned or None
+    if isinstance(value, str):
+        text = value.strip()
+        return [text] if text else None
+    raise SystemExit(f"Unsupported type {type(value)!r} for list field: {value!r}")
+
+
 
 
 def ensure_required_string(
@@ -117,6 +129,23 @@ def format_decimal(value: Any, column: str) -> str:
     return format(decimal_value, ".6f")
 
 
+def format_text_array(value: Any, column: str) -> str:
+    if value is None:
+        return "NULL"
+    if isinstance(value, (list, tuple)):
+        cleaned = [str(item).strip() for item in value if str(item).strip()]
+        if not cleaned:
+            return "ARRAY[]::text[]"
+        elements = ", ".join(f"'{sanitize_string(element)}'" for element in cleaned)
+        return f"ARRAY[{elements}]"
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return "NULL"
+        return f"ARRAY['{sanitize_string(text)}']"
+    raise SystemExit(f"Unsupported type {type(value)!r} for array field '{column}': {value!r}")
+
+
 def format_rank(value: Any) -> str:
     if value is None:
         return "NULL"
@@ -141,6 +170,8 @@ def format_value(column: str, value: Any) -> str:
         return format_decimal(value, column)
     if column == "rank":
         return format_rank(value)
+    if column in {"focus", "brand"}:
+        return format_text_array(value, column)
     if value is None:
         return "NULL"
     if isinstance(value, str):
@@ -177,8 +208,8 @@ for idx, item in enumerate(data):
         "slug": slug,
         "city_slug": ensure_required_string(item, "city", idx),
         "manufacturer": ensure_required_string(item, "manufacturer", idx),
-        "label": clean_optional_string(item.get("label")),
-        "brand": clean_optional_string(item.get("brand")),
+        "focus": clean_optional_list(item.get("focus")),
+        "brand": clean_optional_list(item.get("brand")),
         "address": clean_optional_string(item.get("address")),
         "rank": item.get("rank"),
         "selection": clean_optional_string(item.get("selection")),
@@ -204,7 +235,7 @@ with output_path.open("w", encoding="utf-8") as fh:
     fh.write("TRUNCATE TABLE public.factories RESTART IDENTITY CASCADE;\n\n")
 
     fh.write(
-        "INSERT INTO public.factories (slug, city_slug, manufacturer, label, brand, address, rank, selection, latitude, longitude)\n"
+        "INSERT INTO public.factories (slug, city_slug, manufacturer, focus, brand, address, rank, selection, latitude, longitude)\n"
         "VALUES\n"
     )
 
@@ -219,7 +250,7 @@ with output_path.open("w", encoding="utf-8") as fh:
         "ON CONFLICT (slug) DO UPDATE SET\n"
         "  city_slug = EXCLUDED.city_slug,\n"
         "  manufacturer = EXCLUDED.manufacturer,\n"
-        "  label = EXCLUDED.label,\n"
+        "  focus = EXCLUDED.focus,\n"
         "  brand = EXCLUDED.brand,\n"
         "  address = EXCLUDED.address,\n"
         "  rank = EXCLUDED.rank,\n"

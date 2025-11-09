@@ -144,11 +144,11 @@ export type Database = {
       factories: {
         Row: {
           address: string | null
-          brand: string | null
+          brand: string[] | null
           city_slug: string
           created_at: string | null
+          focus: string[] | null
           id: number
-          label: string | null
           latitude: number
           longitude: number
           manufacturer: string
@@ -159,11 +159,11 @@ export type Database = {
         }
         Insert: {
           address?: string | null
-          brand?: string | null
+          brand?: string[] | null
           city_slug: string
           created_at?: string | null
+          focus?: string[] | null
           id?: number
-          label?: string | null
           latitude: number
           longitude: number
           manufacturer: string
@@ -174,11 +174,11 @@ export type Database = {
         }
         Update: {
           address?: string | null
-          brand?: string | null
+          brand?: string[] | null
           city_slug?: string
           created_at?: string | null
+          focus?: string[] | null
           id?: number
-          label?: string | null
           latitude?: number
           longitude?: number
           manufacturer?: string

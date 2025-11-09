@@ -12,7 +12,6 @@ export const GET: RequestHandler = async ({ locals }) => {
     .from("factories")
     .select("*")
     .order("manufacturer", { ascending: true })
-    .order("brand", { ascending: true })
 
   if (error) {
     console.error("Error fetching factories:", error)

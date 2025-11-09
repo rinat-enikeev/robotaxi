@@ -46,8 +46,8 @@
     slug: string
     city_slug: string
     manufacturer: string
-    label: string | null
-    brand: string | null
+    focus: string[] | null
+    brand: string[] | null
     address: string | null
     rank: number | null
     selection: string | null
@@ -205,6 +205,18 @@
       }
     })
 
+  const formatStringList = (value: string[] | null | undefined) => {
+    if (!value) {
+      return ""
+    }
+
+    const cleaned = value
+      .map((item) => (item ?? "").toString().trim())
+      .filter((item) => item.length > 0)
+
+    return cleaned.join(", ")
+  }
+
   const robotaxisWithCoords = $derived(() => {
     if (!isRobotaxisEnabled) {
       return []
@@ -297,27 +309,32 @@
 
   const factoriesGeoJson = $derived(() => ({
     type: "FeatureCollection" as const,
-    features: factoriesWithCoords().map((factory) => ({
-      type: "Feature" as const,
-      properties: {
-        id: factory.id,
-        slug: factory.slug,
-        manufacturer: factory.manufacturer,
-        brand: factory.brand ?? "",
-        label: factory.label ?? "",
-        address: factory.address ?? "",
-        selection: factory.selection ?? "",
-        rank: factory.rank ?? null,
-        city_slug: factory.city_slug,
-      },
-      geometry: {
-        type: "Point" as const,
-        coordinates: [Number(factory.longitude), Number(factory.latitude)] as [
-          number,
-          number,
-        ],
-      },
-    })),
+    features: factoriesWithCoords().map((factory) => {
+      const brand = formatStringList(factory.brand)
+      const focus = formatStringList(factory.focus)
+
+      return {
+        type: "Feature" as const,
+        properties: {
+          id: factory.id,
+          slug: factory.slug,
+          manufacturer: factory.manufacturer,
+          brand,
+          focus,
+          address: factory.address ?? "",
+          selection: factory.selection ?? "",
+          rank: factory.rank ?? null,
+          city_slug: factory.city_slug,
+        },
+        geometry: {
+          type: "Point" as const,
+          coordinates: [Number(factory.longitude), Number(factory.latitude)] as [
+            number,
+            number,
+          ],
+        },
+      }
+    }),
   }))
 
   const universitiesWithCoords = $derived(() => {
@@ -1632,7 +1649,7 @@
       ? String(props.manufacturer)
       : "Factory"
     const rawBrand = props.brand ? String(props.brand) : ""
-    const rawLabel = props.label ? String(props.label) : ""
+    const rawFocus = props.focus ? String(props.focus) : ""
     const rawAddress = props.address ? String(props.address) : ""
     const rawSelection = props.selection ? String(props.selection) : ""
     const parsedRank =
@@ -1642,7 +1659,7 @@
 
     const title = escapeHtml(rawManufacturer)
     const brand = rawBrand ? escapeHtml(rawBrand) : ""
-    const label = rawLabel ? escapeHtml(rawLabel) : ""
+    const focus = rawFocus ? escapeHtml(rawFocus) : ""
     const address = rawAddress ? escapeHtml(rawAddress) : ""
     const selection = rawSelection ? escapeHtml(rawSelection) : ""
     const rank = Number.isFinite(parsedRank) ? parsedRank : null
@@ -1658,11 +1675,11 @@
       `)
     }
 
-    if (label) {
+    if (focus) {
       details.push(`
         <div class="popup-field">
           <span class="popup-label">🏭 Focus</span>
-          <span class="popup-value">${label}</span>
+          <span class="popup-value">${focus}</span>
         </div>
       `)
     }
