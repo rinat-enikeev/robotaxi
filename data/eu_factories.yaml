@@ -75,8 +75,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: stellantis-sevelsud-val-di-sangro-italy
-  city: val-di-sangro-italy
+- slug: stellantis-sevelsud-atessa-italy
+  city: atessa-italy
   latitude: 42,14862
   longitude: 14,44875
   manufacturer: stellantis-sevelsud
@@ -97,8 +97,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: mercedes-benz-group-vitoria-spain
-  city: vitoria-spain
+- slug: mercedes-benz-group-arriaga-spain
+  city: arriaga-spain
   latitude: 42,859166
   longitude: -2,681792
   manufacturer: mercedes-benz-group
@@ -130,8 +130,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: industria-italiana-autobus-flumeri-italy
-  city: flumeri-italy
+- slug: industria-italiana-autobus-bologna-italy
+  city: bologna-italy
   latitude: 44,494887
   longitude: 11,342616
   manufacturer: industria-italiana-autobus
@@ -152,8 +152,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: stellantis-mirafiori-italy
-  city: mirafiori-italy
+- slug: stellantis-beinasco-italy
+  city: beinasco-italy
   latitude: 45,021022
   longitude: 7,588697
   manufacturer: stellantis
@@ -207,8 +207,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: iveco-group-rorthais-france
-  city: rorthais-france
+- slug: iveco-group-mauleon-france
+  city: mauleon-france
   latitude: 46,916446
   longitude: -0,707339
   manufacturer: iveco-group
@@ -229,8 +229,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: stellantis-sochaux-france
-  city: sochaux-france
+- slug: stellantis-montbeliard-france
+  city: montbeliard-france
   latitude: 47,513075
   longitude: 6,830703
   manufacturer: stellantis
@@ -306,8 +306,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: volkswagen-group-stuttgart-zuffenhausen-germany
-  city: stuttgart-zuffenhausen-germany
+- slug: volkswagen-group-kornwestheim-germany
+  city: kornwestheim-germany
   latitude: 48,833251
   longitude: 9,168805
   manufacturer: volkswagen-group
@@ -339,8 +339,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: renault-group-flins-france
-  city: flins-france
+- slug: renault-group-aubergenville-france
+  city: aubergenville-france
   latitude: 48,962687
   longitude: 1,87006
   manufacturer: renault-group
@@ -361,8 +361,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: daimler-truck-worth-germany
-  city: worth-germany
+- slug: daimler-truck-worth-am-rhein-germany
+  city: worth-am-rhein-germany
   latitude: 49,051442
   longitude: 8,257338
   manufacturer: daimler-truck
@@ -394,8 +394,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: ebusco-cleon-france
-  city: cleon-france
+- slug: ebusco-elbeuf-france
+  city: elbeuf-france
   latitude: 49,3158196
   longitude: 1,048496947
   manufacturer: ebusco
@@ -416,8 +416,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: renault-group-sandouville-france
-  city: sandouville-france
+- slug: renault-group-gonfreville-lorcher-france
+  city: gonfreville-lorcher-france
   latitude: 49,496903
   longitude: 0,31919
   manufacturer: renault-group
@@ -427,8 +427,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: hyundai-motor-europe-nosovice-czechia
-  city: nosovice-czechia
+- slug: hyundai-motor-europe-frydek-mistek-czechia
+  city: frydek-mistek-czechia
   latitude: 49,660725
   longitude: 18,426336
   manufacturer: hyundai-motor-europe
@@ -460,8 +460,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: sor-libchavy-czechia
-  city: libchavy-czechia
+- slug: sor-usti-nad-orlici-czechia
+  city: usti-nad-orlici-czechia
   latitude: 50,005475
   longitude: 16,38904
   manufacturer: sor
@@ -471,8 +471,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: stellantis-sevelnord-hordain-france
-  city: hordain-france
+- slug: stellantis-sevelnord-douchy-les-mines-france
+  city: douchy-les-mines-france
   latitude: 50,262392
   longitude: 3,312659
   manufacturer: stellantis-sevelnord
@@ -559,8 +559,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: bmw-group-goodwood-united-kingdom
-  city: goodwood-united-kingdom
+- slug: bmw-group-chichester-united-kingdom
+  city: chichester-united-kingdom
   latitude: 50,868676
   longitude: -0,735111
   manufacturer: bmw-group
@@ -570,8 +570,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: ford-of-europe-koln-germany
-  city: koln-germany
+- slug: ford-of-europe-cologne-germany
+  city: cologne-germany
   latitude: 50,937531
   longitude: 6,960279
   manufacturer: ford-of-europe
@@ -636,8 +636,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: volvo-group-wroclaw-poland
-  city: wroclaw-poland
+- slug: volvo-group-kieczow-poland
+  city: kieczow-poland
   latitude: 51,1211158
   longitude: 17,1138628
   manufacturer: volvo-group
@@ -658,8 +658,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: vdl-groep-valkenswaard-the-netherlands
-  city: valkenswaard-the-netherlands
+- slug: vdl-groep-valkenswaard-netherlands
+  city: valkenswaard-netherlands
   latitude: 51,355496
   longitude: 5,453327
   manufacturer: vdl-groep
@@ -680,8 +680,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: daf-trucks-nv-eindhoven-the-netherlands
-  city: eindhoven-the-netherlands
+- slug: daf-trucks-nv-eindhoven-netherlands
+  city: eindhoven-netherlands
   latitude: 51,441642
   longitude: 5,469722
   manufacturer: daf-trucks-nv
@@ -713,8 +713,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: ginaf-veenendaal-the-netherlands
-  city: veenendaal-the-netherlands
+- slug: ginaf-veenendaal-netherlands
+  city: veenendaal-netherlands
   latitude: 52,026301
   longitude: 5,554431
   manufacturer: ginaf
@@ -790,8 +790,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: geely-uk-ltd-ansty-united-kingdom
-  city: ansty-united-kingdom
+- slug: geely-uk-ltd-foleshill-united-kingdom
+  city: foleshill-united-kingdom
   latitude: 52,4313992
   longitude: -1,40982
   manufacturer: geely-uk-ltd
@@ -801,8 +801,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: lotus-group-hethel-united-kingdom
-  city: hethel-united-kingdom
+- slug: lotus-group-wymondham-united-kingdom
+  city: wymondham-united-kingdom
   latitude: 52,555074
   longitude: 1,191918
   manufacturer: lotus-group
@@ -900,8 +900,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: volvo-group-tuve-sweden
-  city: tuve-sweden
+- slug: volvo-group-gothenburg-sweden
+  city: gothenburg-sweden
   latitude: 57,70887
   longitude: 11,97456
   manufacturer: volvo-group
@@ -977,8 +977,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: stellantis-pomigliano-d-arco-italy
-  city: pomigliano-d-arco-italy
+- slug: stellantis-pomigliano-darco-italy
+  city: pomigliano-darco-italy
   latitude: 40,91013
   longitude: 14,382912
   manufacturer: stellantis
@@ -988,8 +988,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: stellantis-pratola-serra-italy
-  city: pratola-serra-italy
+- slug: stellantis-atripalda-italy
+  city: atripalda-italy
   latitude: 40,987369
   longitude: 14,851785
   manufacturer: stellantis
@@ -1010,8 +1010,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: faam-teverola-italy
-  city: teverola-italy
+- slug: faam-casaluce-italy
+  city: casaluce-italy
   latitude: 41,0151845
   longitude: 14,23381871
   manufacturer: faam
@@ -1120,8 +1120,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: volkswagen-group-landaben-spain
-  city: landaben-spain
+- slug: volkswagen-group-baranain-spain
+  city: baranain-spain
   latitude: 42,807818
   longitude: -1,686141
   manufacturer: volkswagen-group
@@ -1142,8 +1142,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: irizar-lazkao-spain
-  city: lazkao-spain
+- slug: irizar-beasain-spain
+  city: beasain-spain
   latitude: 43,0439089
   longitude: -2,18908188
   manufacturer: irizar
@@ -1153,8 +1153,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: irizar-ormaiztegi-spain
-  city: ormaiztegi-spain
+- slug: irizar-beasain-spain
+  city: beasain-spain
   latitude: 43,044062
   longitude: -2,25627
   manufacturer: irizar
@@ -1164,8 +1164,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: rampini-passignano-sul-trasimeno-italy
-  city: passignano-sul-trasimeno-italy
+- slug: rampini-magione-italy
+  city: magione-italy
   latitude: 43,1988755
   longitude: 12,11628079
   manufacturer: rampini
@@ -1175,8 +1175,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: irizar-aduna-spain
-  city: aduna-spain
+- slug: irizar-andoain-spain
+  city: andoain-spain
   latitude: 43,2052
   longitude: -2,04000703
   manufacturer: irizar
@@ -1241,8 +1241,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: prime-motors-rombat-cernica-romania
-  city: cernica-romania
+- slug: prime-motors-rombat-pantelimon-romania
+  city: pantelimon-romania
   latitude: 44,4202003
   longitude: 26,22560411
   manufacturer: prime-motors-rombat
@@ -1252,8 +1252,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: bmc-group-ciorogarla-romania
-  city: ciorogarla-romania
+- slug: bmc-group-domnesti-romania
+  city: domnesti-romania
   latitude: 44,4426717
   longitude: 25,91881966
   manufacturer: bmc-group
@@ -1274,8 +1274,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: pagani-san-cesario-sul-panaro-italy
-  city: san-cesario-sul-panaro-italy
+- slug: pagani-spilamberto-italy
+  city: spilamberto-italy
   latitude: 44,562105
   longitude: 11,034807
   manufacturer: pagani
@@ -1296,8 +1296,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: volkswagen-group-sant-agata-bolognese-italy
-  city: sant-agata-bolognese-italy
+- slug: volkswagen-group-san-giovanni-in-persiceto-italy
+  city: san-giovanni-in-persiceto-italy
   latitude: 44,664776
   longitude: 11,134232
   manufacturer: volkswagen-group
@@ -1340,8 +1340,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: iveco-group-torino-italy
-  city: torino-italy
+- slug: iveco-group-turin-italy
+  city: turin-italy
   latitude: 45,070312
   longitude: 7,686856
   manufacturer: iveco-group
@@ -1384,8 +1384,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: automotive-cells-company-acc-nersac-france
-  city: nersac-france
+- slug: automotive-cells-company-acc-angouleme-france
+  city: angouleme-france
   latitude: 45,6311586
   longitude: 0,063730302
   manufacturer: automotive-cells-company-acc
@@ -1593,8 +1593,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: inobat-voderady-slovakia
-  city: voderady-slovakia
+- slug: inobat-trnava-slovakia
+  city: trnava-slovakia
   latitude: 48,3007649
   longitude: 17,58465049
   manufacturer: inobat
@@ -1703,8 +1703,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: evum-motors-bayerbach-bei-ergoldsbach-germany
-  city: bayerbach-bei-ergoldsbach-germany
+- slug: evum-motors-ergoldsbach-germany
+  city: ergoldsbach-germany
   latitude: 48,7050237
   longitude: 12,29551156
   manufacturer: evum-motors
@@ -1725,8 +1725,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: thyssenkrupp-herrlisheim-france
-  city: herrlisheim-france
+- slug: thyssenkrupp-bischwiller-france
+  city: bischwiller-france
   latitude: 48,7480727
   longitude: 7,920513012
   manufacturer: thyssenkrupp
@@ -1736,8 +1736,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: mercedes-benz-group-unterturkheim-germany
-  city: unterturkheim-germany
+- slug: mercedes-benz-group-fellbach-germany
+  city: fellbach-germany
   latitude: 48,785674
   longitude: 9,256159
   manufacturer: mercedes-benz-group
@@ -1747,8 +1747,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: mercedes-benz-group-affalterbach-germany
-  city: affalterbach-germany
+- slug: mercedes-benz-group-marbach-am-neckar-germany
+  city: marbach-am-neckar-germany
   latitude: 48,920349
   longitude: 9,32356
   manufacturer: mercedes-benz-group
@@ -1758,8 +1758,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: vanwall-greding-germany
-  city: greding-germany
+- slug: vanwall-berching-germany
+  city: berching-germany
   latitude: 49,0480258
   longitude: 11,33774574
   manufacturer: vanwall
@@ -1769,8 +1769,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: ineos-hambach-france
-  city: hambach-france
+- slug: ineos-sarreguemines-france
+  city: sarreguemines-france
   latitude: 49,061083
   longitude: 7,041725
   manufacturer: ineos
@@ -1791,8 +1791,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: valmet-automotive-kirchardt-germany
-  city: kirchardt-germany
+- slug: valmet-automotive-bad-rappenau-germany
+  city: bad-rappenau-germany
   latitude: 49,2044988
   longitude: 9,009647095
   manufacturer: valmet-automotive
@@ -1802,8 +1802,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: volvo-group-blainville-sur-orne-france
-  city: blainville-sur-orne-france
+- slug: volvo-group-herouville-saint-clair-france
+  city: herouville-saint-clair-france
   latitude: 49,2118598
   longitude: -0,29816055
   manufacturer: volvo-group
@@ -1824,8 +1824,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: stellantis-tremery-france
-  city: tremery-france
+- slug: stellantis-hagondange-france
+  city: hagondange-france
   latitude: 49,246379
   longitude: 6,224908
   manufacturer: stellantis
@@ -1846,8 +1846,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: renault-group-cleon-france
-  city: cleon-france
+- slug: renault-group-elbeuf-france
+  city: elbeuf-france
   latitude: 49,315798
   longitude: 1,032768
   manufacturer: renault-group
@@ -1978,8 +1978,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: volkswagen-group-kvasiny-czechia
-  city: kvasiny-czechia
+- slug: volkswagen-group-rychnov-nad-kneznou-czechia
+  city: rychnov-nad-kneznou-czechia
   latitude: 50,212494
   longitude: 16,263234
   manufacturer: volkswagen-group
@@ -2033,8 +2033,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: stellantis-douvrin-france
-  city: douvrin-france
+- slug: stellantis-wingles-france
+  city: wingles-france
   latitude: 50,510541
   longitude: 2,83204
   manufacturer: stellantis
@@ -2044,8 +2044,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: automotive-cells-company-acc-billy-berclau-france
-  city: billy-berclau-france
+- slug: automotive-cells-company-acc-wingles-france
+  city: wingles-france
   latitude: 50,5207482
   longitude: 2,845806539
   manufacturer: automotive-cells-company-acc
@@ -2121,8 +2121,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: aston-martin-koln-germany
-  city: koln-germany
+- slug: aston-martin-cologne-germany
+  city: cologne-germany
   latitude: 51,0050958
   longitude: 6,959467739
   manufacturer: aston-martin
@@ -2165,8 +2165,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: gordon-murray-automotive-dunsfold-united-kingdom
-  city: dunsfold-united-kingdom
+- slug: gordon-murray-automotive-cranleigh-united-kingdom
+  city: cranleigh-united-kingdom
   latitude: 51,1221954
   longitude: -0,52993222
   manufacturer: gordon-murray-automotive
@@ -2176,8 +2176,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: tvr-walliswood-united-kingdom
-  city: walliswood-united-kingdom
+- slug: tvr-cranleigh-united-kingdom
+  city: cranleigh-united-kingdom
   latitude: 51,1325212
   longitude: -0,40218814
   manufacturer: tvr
@@ -2220,8 +2220,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: vdl-group-venlo-the-netherlands
-  city: venlo-the-netherlands
+- slug: vdl-group-venlo-netherlands
+  city: venlo-netherlands
   latitude: 51,370375
   longitude: 6,172403
   manufacturer: vdl-group
@@ -2231,8 +2231,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: aston-martin-saint-athan-united-kingdom
-  city: saint-athan-united-kingdom
+- slug: aston-martin-llantwit-major-united-kingdom
+  city: llantwit-major-united-kingdom
   latitude: 51,410837
   longitude: -3,433624
   manufacturer: aston-martin
@@ -2242,8 +2242,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: ebusco-deurne-the-netherlands
-  city: deurne-the-netherlands
+- slug: ebusco-deurne-netherlands
+  city: deurne-netherlands
   latitude: 51,4543792
   longitude: 5,766804556
   manufacturer: ebusco
@@ -2275,8 +2275,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: eleo-technologies-helmond-the-netherlands
-  city: helmond-the-netherlands
+- slug: eleo-technologies-helmond-netherlands
+  city: helmond-netherlands
   latitude: 51,4747961
   longitude: 5,622406218
   manufacturer: eleo-technologies
@@ -2341,8 +2341,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: morgan-motor-company-malvern-united-kingdom
-  city: malvern-united-kingdom
+- slug: morgan-motor-company-worcester-united-kingdom
+  city: worcester-united-kingdom
   latitude: 52,136618
   longitude: -2,319977
   manufacturer: morgan-motor-company
@@ -2385,8 +2385,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: volkswagen-group-brunswick-germany
-  city: brunswick-germany
+- slug: volkswagen-group-braunschweig-germany
+  city: braunschweig-germany
   latitude: 52,2934302
   longitude: 10,51898856
   manufacturer: volkswagen-group
@@ -2473,8 +2473,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: volkswagen-group-zwolle-the-netherlands
-  city: zwolle-the-netherlands
+- slug: volkswagen-group-zwolle-netherlands
+  city: zwolle-netherlands
   latitude: 52,516775
   longitude: 6,083022
   manufacturer: volkswagen-group
@@ -2484,8 +2484,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: donkervoort-lelystad-the-netherlands
-  city: lelystad-the-netherlands
+- slug: donkervoort-lelystad-netherlands
+  city: lelystad-netherlands
   latitude: 52,518537
   longitude: 5,471422
   manufacturer: donkervoort
@@ -2506,8 +2506,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: jaguar-land-rover-hams-hall-united-kingdom
-  city: hams-hall-united-kingdom
+- slug: jaguar-land-rover-castle-bromwich-united-kingdom
+  city: castle-bromwich-united-kingdom
   latitude: 52,5291111
   longitude: -1,70033777
   manufacturer: jaguar-land-rover
@@ -2517,8 +2517,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: bmw-group-hams-hall-united-kingdom
-  city: hams-hall-united-kingdom
+- slug: bmw-group-castle-bromwich-united-kingdom
+  city: castle-bromwich-united-kingdom
   latitude: 52,529475
   longitude: -1,723087
   manufacturer: bmw-group
@@ -2528,8 +2528,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: caf-group-bolechowo-poland
-  city: bolechowo-poland
+- slug: caf-group-murowana-goslina-poland
+  city: murowana-goslina-poland
   latitude: 52,5465548
   longitude: 16,97661254
   manufacturer: caf-group
@@ -2550,8 +2550,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: toyota-motor-europe-burnaston-united-kingdom
-  city: burnaston-united-kingdom
+- slug: toyota-motor-europe-mickleover-united-kingdom
+  city: mickleover-united-kingdom
   latitude: 52,889015
   longitude: -1,570412
   manufacturer: toyota-motor-europe
@@ -2594,8 +2594,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: toyota-motor-europe-deeside-united-kingdom
-  city: deeside-united-kingdom
+- slug: toyota-motor-europe-hawarden-united-kingdom
+  city: hawarden-united-kingdom
   latitude: 53,202661
   longitude: -3,030351
   manufacturer: toyota-motor-europe
@@ -2616,8 +2616,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: ashok-leyland-sherburn-in-elmet-united-kingdom
-  city: sherburn-in-elmet-united-kingdom
+- slug: ashok-leyland-knottingley-united-kingdom
+  city: knottingley-united-kingdom
   latitude: 53,789584
   longitude: -1,22068528
   manufacturer: ashok-leyland
@@ -2759,8 +2759,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: sisu-auto-karjaa-finland
-  city: karjaa-finland
+- slug: sisu-auto-karis-finland
+  city: karis-finland
   latitude: 60,07139
   longitude: 23,661911
   manufacturer: sisu-auto
@@ -2825,8 +2825,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: stellantis-pratola-serra-italy
-  city: pratola-serra-italy
+- slug: stellantis-atripalda-italy
+  city: atripalda-italy
   latitude: 40,987369
   longitude: 14,851785
   manufacturer: stellantis
@@ -2913,8 +2913,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: volkswagen-group-sant-agata-bolognese-italy
-  city: sant-agata-bolognese-italy
+- slug: volkswagen-group-san-giovanni-in-persiceto-italy
+  city: san-giovanni-in-persiceto-italy
   latitude: 44,664776
   longitude: 11,134232
   manufacturer: volkswagen-group
@@ -2946,8 +2946,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: stellantis-mirafiori-italy
-  city: mirafiori-italy
+- slug: stellantis-beinasco-italy
+  city: beinasco-italy
   latitude: 45,021022
   longitude: 7,588697
   manufacturer: stellantis
@@ -2957,8 +2957,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: iveco-group-torino-italy
-  city: torino-italy
+- slug: iveco-group-turin-italy
+  city: turin-italy
   latitude: 45,070312
   longitude: 7,686856
   manufacturer: iveco-group
@@ -3067,8 +3067,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: thyssenkrupp-herrlisheim-france
-  city: herrlisheim-france
+- slug: thyssenkrupp-bischwiller-france
+  city: bischwiller-france
   latitude: 48,74807271
   longitude: 7,920513012
   manufacturer: thyssenkrupp
@@ -3078,8 +3078,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: mercedes-benz-group-unterturkheim-germany
-  city: unterturkheim-germany
+- slug: mercedes-benz-group-fellbach-germany
+  city: fellbach-germany
   latitude: 48,785674
   longitude: 9,256159
   manufacturer: mercedes-benz-group
@@ -3089,8 +3089,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: volkswagen-group-stuttgart-zuffenhausen-germany
-  city: stuttgart-zuffenhausen-germany
+- slug: volkswagen-group-kornwestheim-germany
+  city: kornwestheim-germany
   latitude: 48,833251
   longitude: 9,168805
   manufacturer: volkswagen-group
@@ -3100,8 +3100,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: mercedes-benz-group-affalterbach-germany
-  city: affalterbach-germany
+- slug: mercedes-benz-group-marbach-am-neckar-germany
+  city: marbach-am-neckar-germany
   latitude: 48,920349
   longitude: 9,32356
   manufacturer: mercedes-benz-group
@@ -3122,8 +3122,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: stellantis-tremery-france
-  city: tremery-france
+- slug: stellantis-hagondange-france
+  city: hagondange-france
   latitude: 49,246379
   longitude: 6,224908
   manufacturer: stellantis
@@ -3133,8 +3133,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: renault-group-cleon-france
-  city: cleon-france
+- slug: renault-group-elbeuf-france
+  city: elbeuf-france
   latitude: 49,315798
   longitude: 1,032768
   manufacturer: renault-group
@@ -3199,8 +3199,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: stellantis-douvrin-france
-  city: douvrin-france
+- slug: stellantis-wingles-france
+  city: wingles-france
   latitude: 50,510541
   longitude: 2,83204
   manufacturer: stellantis
@@ -3232,8 +3232,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: aston-martin-koln-germany
-  city: koln-germany
+- slug: aston-martin-cologne-germany
+  city: cologne-germany
   latitude: 51,00509584
   longitude: 6,959467739
   manufacturer: aston-martin
@@ -3265,8 +3265,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: daf-trucks-nv-eindhoven-the-netherlands
-  city: eindhoven-the-netherlands
+- slug: daf-trucks-nv-eindhoven-netherlands
+  city: eindhoven-netherlands
   latitude: 51,441642
   longitude: 5,469722
   manufacturer: daf-trucks-nv
@@ -3331,8 +3331,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: bmw-group-hams-hall-united-kingdom
-  city: hams-hall-united-kingdom
+- slug: bmw-group-castle-bromwich-united-kingdom
+  city: castle-bromwich-united-kingdom
   latitude: 52,529475
   longitude: -1,723087
   manufacturer: bmw-group
@@ -3364,8 +3364,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: toyota-motor-europe-deeside-united-kingdom
-  city: deeside-united-kingdom
+- slug: toyota-motor-europe-hawarden-united-kingdom
+  city: hawarden-united-kingdom
   latitude: 53,202661
   longitude: -3,030351
   manufacturer: toyota-motor-europe
@@ -3441,8 +3441,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: faam-teverola-italy
-  city: teverola-italy
+- slug: faam-casaluce-italy
+  city: casaluce-italy
   latitude: 41,01518447
   longitude: 14,23381871
   manufacturer: faam
@@ -3496,8 +3496,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: prime-motors-rombat-cernica-romania
-  city: cernica-romania
+- slug: prime-motors-rombat-pantelimon-romania
+  city: pantelimon-romania
   latitude: 44,42020033
   longitude: 26,22560411
   manufacturer: prime-motors-rombat
@@ -3518,8 +3518,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: stellantis-mirafiori-italy
-  city: mirafiori-italy
+- slug: stellantis-beinasco-italy
+  city: beinasco-italy
   latitude: 45,021022
   longitude: 7,588697
   manufacturer: stellantis
@@ -3529,8 +3529,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: iveco-group-torino-italy
-  city: torino-italy
+- slug: iveco-group-turin-italy
+  city: turin-italy
   latitude: 45,070312
   longitude: 7,686856
   manufacturer: iveco-group
@@ -3551,8 +3551,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: automotive-cells-company-acc-nersac-france
-  city: nersac-france
+- slug: automotive-cells-company-acc-angouleme-france
+  city: angouleme-france
   latitude: 45,63115859
   longitude: 0,063730302
   manufacturer: automotive-cells-company-acc
@@ -3584,8 +3584,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: stellantis-sochaux-france
-  city: sochaux-france
+- slug: stellantis-montbeliard-france
+  city: montbeliard-france
   latitude: 47,513075
   longitude: 6,830703
   manufacturer: stellantis
@@ -3628,8 +3628,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: inobat-voderady-slovakia
-  city: voderady-slovakia
+- slug: inobat-trnava-slovakia
+  city: trnava-slovakia
   latitude: 48,30076486
   longitude: 17,58465049
   manufacturer: inobat
@@ -3694,8 +3694,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: mercedes-benz-group-unterturkheim-germany
-  city: unterturkheim-germany
+- slug: mercedes-benz-group-fellbach-germany
+  city: fellbach-germany
   latitude: 48,785674
   longitude: 9,256159
   manufacturer: mercedes-benz-group
@@ -3716,8 +3716,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: valmet-automotive-kirchardt-germany
-  city: kirchardt-germany
+- slug: valmet-automotive-bad-rappenau-germany
+  city: bad-rappenau-germany
   latitude: 49,20449876
   longitude: 9,009647095
   manufacturer: valmet-automotive
@@ -3727,8 +3727,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: renault-group-cleon-france
-  city: cleon-france
+- slug: renault-group-elbeuf-france
+  city: elbeuf-france
   latitude: 49,315798
   longitude: 1,032768
   manufacturer: renault-group
@@ -3760,8 +3760,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: hyundai-motor-europe-nosovice-czechia
-  city: nosovice-czechia
+- slug: hyundai-motor-europe-frydek-mistek-czechia
+  city: frydek-mistek-czechia
   latitude: 49,660725
   longitude: 18,426336
   manufacturer: hyundai-motor-europe
@@ -3771,8 +3771,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: stellantis-sevelnord-hordain-france
-  city: hordain-france
+- slug: stellantis-sevelnord-douchy-les-mines-france
+  city: douchy-les-mines-france
   latitude: 50,262392
   longitude: 3,312659
   manufacturer: stellantis-sevelnord
@@ -3826,8 +3826,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: automotive-cells-company-acc-billy-berclau-france
-  city: billy-berclau-france
+- slug: automotive-cells-company-acc-wingles-france
+  city: wingles-france
   latitude: 50,52074823
   longitude: 2,845806539
   manufacturer: automotive-cells-company-acc
@@ -3936,8 +3936,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: daf-trucks-nv-eindhoven-the-netherlands
-  city: eindhoven-the-netherlands
+- slug: daf-trucks-nv-eindhoven-netherlands
+  city: eindhoven-netherlands
   latitude: 51,441642
   longitude: 5,469722
   manufacturer: daf-trucks-nv
@@ -3947,8 +3947,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: eleo-technologies-helmond-the-netherlands
-  city: helmond-the-netherlands
+- slug: eleo-technologies-helmond-netherlands
+  city: helmond-netherlands
   latitude: 51,47479608
   longitude: 5,622406218
   manufacturer: eleo-technologies
@@ -3980,8 +3980,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: volkswagen-group-brunswick-germany
-  city: brunswick-germany
+- slug: volkswagen-group-braunschweig-germany
+  city: braunschweig-germany
   latitude: 52,29343018
   longitude: 10,51898856
   manufacturer: volkswagen-group
@@ -4024,8 +4024,8 @@
   rank: 3
   selection: batteries
   icons: batteries
-- slug: jaguar-land-rover-hams-hall-united-kingdom
-  city: hams-hall-united-kingdom
+- slug: jaguar-land-rover-castle-bromwich-united-kingdom
+  city: castle-bromwich-united-kingdom
   latitude: 52,52911108
   longitude: -1,700337765
   manufacturer: jaguar-land-rover
@@ -4222,8 +4222,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: stellantis-mirafiori-italy
-  city: mirafiori-italy
+- slug: stellantis-beinasco-italy
+  city: beinasco-italy
   latitude: 45,021022
   longitude: 7,588697
   manufacturer: stellantis
@@ -4277,8 +4277,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: stellantis-sochaux-france
-  city: sochaux-france
+- slug: stellantis-montbeliard-france
+  city: montbeliard-france
   latitude: 47,513075
   longitude: 6,830703
   manufacturer: stellantis
@@ -4321,8 +4321,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: volkswagen-group-stuttgart-zuffenhausen-germany
-  city: stuttgart-zuffenhausen-germany
+- slug: volkswagen-group-kornwestheim-germany
+  city: kornwestheim-germany
   latitude: 48,833251
   longitude: 9,168805
   manufacturer: volkswagen-group
@@ -4354,8 +4354,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: renault-group-flins-france
-  city: flins-france
+- slug: renault-group-aubergenville-france
+  city: aubergenville-france
   latitude: 48,962687
   longitude: 1,87006
   manufacturer: renault-group
@@ -4387,8 +4387,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: hyundai-motor-europe-nosovice-czechia
-  city: nosovice-czechia
+- slug: hyundai-motor-europe-frydek-mistek-czechia
+  city: frydek-mistek-czechia
   latitude: 49,660725
   longitude: 18,426336
   manufacturer: hyundai-motor-europe
@@ -4464,8 +4464,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: bmw-group-goodwood-united-kingdom
-  city: goodwood-united-kingdom
+- slug: bmw-group-chichester-united-kingdom
+  city: chichester-united-kingdom
   latitude: 50,868676
   longitude: -0,735111
   manufacturer: bmw-group
@@ -4475,8 +4475,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: ford-of-europe-koln-germany
-  city: koln-germany
+- slug: ford-of-europe-cologne-germany
+  city: cologne-germany
   latitude: 50,937531
   longitude: 6,960279
   manufacturer: ford-of-europe
@@ -4596,8 +4596,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: geely-uk-ltd-ansty-united-kingdom
-  city: ansty-united-kingdom
+- slug: geely-uk-ltd-foleshill-united-kingdom
+  city: foleshill-united-kingdom
   latitude: 52,4313992
   longitude: -1,40982
   manufacturer: geely-uk-ltd
@@ -4607,8 +4607,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars*
-- slug: lotus-group-hethel-united-kingdom
-  city: hethel-united-kingdom
+- slug: lotus-group-wymondham-united-kingdom
+  city: wymondham-united-kingdom
   latitude: 52,555074
   longitude: 1,191918
   manufacturer: lotus-group
@@ -4695,8 +4695,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: stellantis-pomigliano-d-arco-italy
-  city: pomigliano-d-arco-italy
+- slug: stellantis-pomigliano-darco-italy
+  city: pomigliano-darco-italy
   latitude: 40,91013
   longitude: 14,382912
   manufacturer: stellantis
@@ -4750,8 +4750,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: volkswagen-group-landaben-spain
-  city: landaben-spain
+- slug: volkswagen-group-baranain-spain
+  city: baranain-spain
   latitude: 42,807818
   longitude: -1,686141
   manufacturer: volkswagen-group
@@ -4794,8 +4794,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: pagani-san-cesario-sul-panaro-italy
-  city: san-cesario-sul-panaro-italy
+- slug: pagani-spilamberto-italy
+  city: spilamberto-italy
   latitude: 44,562105
   longitude: 11,034807
   manufacturer: pagani
@@ -4816,8 +4816,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: volkswagen-group-sant-agata-bolognese-italy
-  city: sant-agata-bolognese-italy
+- slug: volkswagen-group-san-giovanni-in-persiceto-italy
+  city: san-giovanni-in-persiceto-italy
   latitude: 44,664776
   longitude: 11,134232
   manufacturer: volkswagen-group
@@ -4926,8 +4926,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: vanwall-greding-germany
-  city: greding-germany
+- slug: vanwall-berching-germany
+  city: berching-germany
   latitude: 49,04802576
   longitude: 11,33774574
   manufacturer: vanwall
@@ -4937,8 +4937,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: ineos-hambach-france
-  city: hambach-france
+- slug: ineos-sarreguemines-france
+  city: sarreguemines-france
   latitude: 49,061083
   longitude: 7,041725
   manufacturer: ineos
@@ -5014,8 +5014,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: volkswagen-group-kvasiny-czechia
-  city: kvasiny-czechia
+- slug: volkswagen-group-rychnov-nad-kneznou-czechia
+  city: rychnov-nad-kneznou-czechia
   latitude: 50,212494
   longitude: 16,263234
   manufacturer: volkswagen-group
@@ -5047,8 +5047,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: gordon-murray-automotive-dunsfold-united-kingdom
-  city: dunsfold-united-kingdom
+- slug: gordon-murray-automotive-cranleigh-united-kingdom
+  city: cranleigh-united-kingdom
   latitude: 51,12219539
   longitude: -0,52993222
   manufacturer: gordon-murray-automotive
@@ -5058,8 +5058,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: tvr-walliswood-united-kingdom
-  city: walliswood-united-kingdom
+- slug: tvr-cranleigh-united-kingdom
+  city: cranleigh-united-kingdom
   latitude: 51,13252117
   longitude: -0,402188137
   manufacturer: tvr
@@ -5091,8 +5091,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: aston-martin-saint-athan-united-kingdom
-  city: saint-athan-united-kingdom
+- slug: aston-martin-llantwit-major-united-kingdom
+  city: llantwit-major-united-kingdom
   latitude: 51,410837
   longitude: -3,433624
   manufacturer: aston-martin
@@ -5113,8 +5113,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: morgan-motor-company-malvern-united-kingdom
-  city: malvern-united-kingdom
+- slug: morgan-motor-company-worcester-united-kingdom
+  city: worcester-united-kingdom
   latitude: 52,136618
   longitude: -2,319977
   manufacturer: morgan-motor-company
@@ -5146,8 +5146,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: donkervoort-lelystad-the-netherlands
-  city: lelystad-the-netherlands
+- slug: donkervoort-lelystad-netherlands
+  city: lelystad-netherlands
   latitude: 52,518537
   longitude: 5,471422
   manufacturer: donkervoort
@@ -5157,8 +5157,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: toyota-motor-europe-burnaston-united-kingdom
-  city: burnaston-united-kingdom
+- slug: toyota-motor-europe-mickleover-united-kingdom
+  city: mickleover-united-kingdom
   latitude: 52,889015
   longitude: -1,570412
   manufacturer: toyota-motor-europe
@@ -5234,8 +5234,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: daimler-truck-tramagal-portugal
-  city: tramagal-portugal
+- slug: daimler-truck-abrantes-portugal
+  city: abrantes-portugal
   latitude: 39,451625
   longitude: -8,254116
   manufacturer: daimler-truck
@@ -5245,8 +5245,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles*
-- slug: irizar-lazkao-spain
-  city: lazkao-spain
+- slug: irizar-beasain-spain
+  city: beasain-spain
   latitude: 43,04390894
   longitude: -2,189081878
   manufacturer: irizar
@@ -5289,8 +5289,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles*
-- slug: daimler-truck-worth-germany
-  city: worth-germany
+- slug: daimler-truck-worth-am-rhein-germany
+  city: worth-am-rhein-germany
   latitude: 49,051442
   longitude: 8,257338
   manufacturer: daimler-truck
@@ -5300,8 +5300,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles*
-- slug: volvo-group-blainville-sur-orne-france
-  city: blainville-sur-orne-france
+- slug: volvo-group-herouville-saint-clair-france
+  city: herouville-saint-clair-france
   latitude: 49,21185984
   longitude: -0,298160548
   manufacturer: volvo-group
@@ -5322,8 +5322,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles*
-- slug: daf-trucks-nv-eindhoven-the-netherlands
-  city: eindhoven-the-netherlands
+- slug: daf-trucks-nv-eindhoven-netherlands
+  city: eindhoven-netherlands
   latitude: 51,441642
   longitude: 5,469722
   manufacturer: daf-trucks-nv
@@ -5344,8 +5344,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles*
-- slug: ginaf-veenendaal-the-netherlands
-  city: veenendaal-the-netherlands
+- slug: ginaf-veenendaal-netherlands
+  city: veenendaal-netherlands
   latitude: 52,026301
   longitude: 5,554431
   manufacturer: ginaf
@@ -5388,8 +5388,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles*
-- slug: volvo-group-tuve-sweden
-  city: tuve-sweden
+- slug: volvo-group-gothenburg-sweden
+  city: gothenburg-sweden
   latitude: 57,70887
   longitude: 11,97456
   manufacturer: volvo-group
@@ -5542,8 +5542,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles
-- slug: volkswagen-group-zwolle-the-netherlands
-  city: zwolle-the-netherlands
+- slug: volkswagen-group-zwolle-netherlands
+  city: zwolle-netherlands
   latitude: 52,516775
   longitude: 6,083022
   manufacturer: volkswagen-group
@@ -5575,8 +5575,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles
-- slug: sisu-auto-karjaa-finland
-  city: karjaa-finland
+- slug: sisu-auto-karis-finland
+  city: karis-finland
   latitude: 60,07139
   longitude: 23,661911
   manufacturer: sisu-auto
@@ -5586,8 +5586,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles
-- slug: stellantis-sevelsud-val-di-sangro-italy
-  city: val-di-sangro-italy
+- slug: stellantis-sevelsud-atessa-italy
+  city: atessa-italy
   latitude: 42,14862
   longitude: 14,44875
   manufacturer: stellantis-sevelsud
@@ -5608,8 +5608,8 @@
   rank: 6
   selection: light-commercial-vehicles
   icons: light-commercial-vehicles*
-- slug: mercedes-benz-group-vitoria-spain
-  city: vitoria-spain
+- slug: mercedes-benz-group-arriaga-spain
+  city: arriaga-spain
   latitude: 42,859166
   longitude: -2,681792
   manufacturer: mercedes-benz-group
@@ -5630,8 +5630,8 @@
   rank: 6
   selection: light-commercial-vehicles
   icons: light-commercial-vehicles*
-- slug: evum-motors-bayerbach-bei-ergoldsbach-germany
-  city: bayerbach-bei-ergoldsbach-germany
+- slug: evum-motors-ergoldsbach-germany
+  city: ergoldsbach-germany
   latitude: 48,70502372
   longitude: 12,29551156
   manufacturer: evum-motors
@@ -5652,8 +5652,8 @@
   rank: 6
   selection: light-commercial-vehicles
   icons: light-commercial-vehicles*
-- slug: renault-group-sandouville-france
-  city: sandouville-france
+- slug: renault-group-gonfreville-lorcher-france
+  city: gonfreville-lorcher-france
   latitude: 49,496903
   longitude: 0,31919
   manufacturer: renault-group
@@ -5663,8 +5663,8 @@
   rank: 6
   selection: light-commercial-vehicles
   icons: light-commercial-vehicles*
-- slug: stellantis-sevelnord-hordain-france
-  city: hordain-france
+- slug: stellantis-sevelnord-douchy-les-mines-france
+  city: douchy-les-mines-france
   latitude: 50,262392
   longitude: 3,312659
   manufacturer: stellantis-sevelnord
@@ -5773,8 +5773,8 @@
   rank: 6
   selection: light-commercial-vehicles
   icons: light-commercial-vehicles*
-- slug: geely-uk-ltd-ansty-united-kingdom
-  city: ansty-united-kingdom
+- slug: geely-uk-ltd-foleshill-united-kingdom
+  city: foleshill-united-kingdom
   latitude: 52,4313992
   longitude: -1,40982
   manufacturer: geely-uk-ltd
@@ -5850,8 +5850,8 @@
   rank: 6
   selection: light-commercial-vehicles
   icons: light-commercial-vehicles
-- slug: vdl-group-venlo-the-netherlands
-  city: venlo-the-netherlands
+- slug: vdl-group-venlo-netherlands
+  city: venlo-netherlands
   latitude: 51,370375
   longitude: 6,172403
   manufacturer: vdl-group
@@ -5982,8 +5982,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: rampini-passignano-sul-trasimeno-italy
-  city: passignano-sul-trasimeno-italy
+- slug: rampini-magione-italy
+  city: magione-italy
   latitude: 43,19887554
   longitude: 12,11628079
   manufacturer: rampini
@@ -5993,8 +5993,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: irizar-aduna-spain
-  city: aduna-spain
+- slug: irizar-andoain-spain
+  city: andoain-spain
   latitude: 43,20519995
   longitude: -2,040007027
   manufacturer: irizar
@@ -6004,8 +6004,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: bmc-group-ciorogarla-romania
-  city: ciorogarla-romania
+- slug: bmc-group-domnesti-romania
+  city: domnesti-romania
   latitude: 44,44267165
   longitude: 25,91881966
   manufacturer: bmc-group
@@ -6026,8 +6026,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: industria-italiana-autobus-flumeri-italy
-  city: flumeri-italy
+- slug: industria-italiana-autobus-bologna-italy
+  city: bologna-italy
   latitude: 44,494887
   longitude: 11,342616
   manufacturer: industria-italiana-autobus
@@ -6037,8 +6037,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: iveco-group-rorthais-france
-  city: rorthais-france
+- slug: iveco-group-mauleon-france
+  city: mauleon-france
   latitude: 46,916446
   longitude: -0,707339
   manufacturer: iveco-group
@@ -6081,8 +6081,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: ebusco-cleon-france
-  city: cleon-france
+- slug: ebusco-elbeuf-france
+  city: elbeuf-france
   latitude: 49,3158196
   longitude: 1,048496947
   manufacturer: ebusco
@@ -6136,8 +6136,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: sor-libchavy-czechia
-  city: libchavy-czechia
+- slug: sor-usti-nad-orlici-czechia
+  city: usti-nad-orlici-czechia
   latitude: 50,005475
   longitude: 16,38904
   manufacturer: sor
@@ -6169,8 +6169,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: volvo-group-wroclaw-poland
-  city: wroclaw-poland
+- slug: volvo-group-kieczow-poland
+  city: kieczow-poland
   latitude: 51,1211158
   longitude: 17,1138628
   manufacturer: volvo-group
@@ -6180,8 +6180,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: vdl-groep-valkenswaard-the-netherlands
-  city: valkenswaard-the-netherlands
+- slug: vdl-groep-valkenswaard-netherlands
+  city: valkenswaard-netherlands
   latitude: 51,355496
   longitude: 5,453327
   manufacturer: vdl-groep
@@ -6191,8 +6191,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: ebusco-deurne-the-netherlands
-  city: deurne-the-netherlands
+- slug: ebusco-deurne-netherlands
+  city: deurne-netherlands
   latitude: 51,45437921
   longitude: 5,766804556
   manufacturer: ebusco
@@ -6202,8 +6202,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: caf-group-bolechowo-poland
-  city: bolechowo-poland
+- slug: caf-group-murowana-goslina-poland
+  city: murowana-goslina-poland
   latitude: 52,54655482
   longitude: 16,97661254
   manufacturer: caf-group
@@ -6224,8 +6224,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: ashok-leyland-sherburn-in-elmet-united-kingdom
-  city: sherburn-in-elmet-united-kingdom
+- slug: ashok-leyland-knottingley-united-kingdom
+  city: knottingley-united-kingdom
   latitude: 53,78958402
   longitude: -1,220685275
   manufacturer: ashok-leyland
@@ -6312,8 +6312,8 @@
   rank: 7
   selection: buses
   icons: buses
-- slug: irizar-ormaiztegi-spain
-  city: ormaiztegi-spain
+- slug: irizar-beasain-spain
+  city: beasain-spain
   latitude: 43,044062
   longitude: -2,25627
   manufacturer: irizar

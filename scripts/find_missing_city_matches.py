@@ -14,7 +14,7 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, Iterator, List, Mapping, MutableMapping, Optional, Sequence, Tuple
+from typing import Dict, Iterable, List, Mapping, MutableMapping, Optional, Sequence, Tuple
 
 try:
     import yaml  # type: ignore
@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MISSING_PATH = ROOT / "data" / "missing.txt"
 DEFAULT_FACTORIES_PATH = ROOT / "data" / "eu_factories.yaml"
 DEFAULT_CITIES_PATH = ROOT / "data" / "cities.yaml"
+UPDATE_THRESHOLD_KM = 10.0
 
 
 @dataclass(frozen=True)
@@ -89,6 +90,12 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Restrict candidate matches to cities sharing the same country slug.",
     )
+    parser.add_argument(
+        "--threshold",
+        type=float,
+        default=UPDATE_THRESHOLD_KM,
+        help="Distance threshold (km) for updating factory entries (default: 10 km).",
+    )
     return parser.parse_args()
 
 
@@ -147,15 +154,17 @@ def to_float(value: object) -> Optional[float]:
         return None
 
 
-def load_factories(path: Path) -> Mapping[str, FactoryLocation]:
+def load_factories(path: Path) -> Tuple[List[str], Mapping[str, FactoryLocation]]:
     if not path.exists():
         raise SystemExit(f"Factories file not found: {path}")
 
     with path.open("r", encoding="utf-8") as fp:
-        try:
-            data = yaml.safe_load(fp)
-        except yaml.YAMLError as exc:
-            raise SystemExit(f"Failed to parse factories YAML: {exc}") from exc
+        raw_lines = fp.readlines()
+
+    try:
+        data = yaml.safe_load("".join(raw_lines))
+    except yaml.YAMLError as exc:
+        raise SystemExit(f"Failed to parse factories YAML: {exc}") from exc
 
     if not isinstance(data, list):
         raise SystemExit("Expected factories YAML to be a list.")
@@ -182,7 +191,8 @@ def load_factories(path: Path) -> Mapping[str, FactoryLocation]:
         avg_lon = sum(lon for _, lon in coords) / len(coords)
         coordinates[slug] = (avg_lat, avg_lon)
 
-    return {slug: FactoryLocation(lat, lon) for slug, (lat, lon) in coordinates.items()}
+    mapped = {slug: FactoryLocation(lat, lon) for slug, (lat, lon) in coordinates.items()}
+    return raw_lines, mapped
 
 
 def load_cities(path: Path) -> List[CityEntry]:
@@ -304,6 +314,52 @@ def find_matches(
     return results
 
 
+def replace_city_suffix(slug_line: str, old_city: str, new_city: str) -> str:
+    prefix, _, value = slug_line.partition(":")
+    current = value.strip()
+    if current.endswith(old_city):
+        updated = current[: -len(old_city)] + new_city
+    else:
+        updated = current.replace(old_city, new_city, 1)
+    return f"{prefix}: {updated}\n"
+
+
+def update_factories_file(
+    lines: List[str],
+    updates: Mapping[str, str],
+) -> List[str]:
+    if not updates:
+        return lines
+
+    updated_lines = lines[:]
+    count = 0
+    for idx, line in enumerate(updated_lines):
+        stripped = line.strip()
+        if not stripped.startswith("city:"):
+            continue
+        _, _, city_slug = stripped.partition(":")
+        old_city = city_slug.strip()
+        new_city = updates.get(old_city)
+        if not new_city or old_city == new_city:
+            continue
+
+        # Update city line
+        indent = line[: line.index("city:")]
+        updated_lines[idx] = f"{indent}city: {new_city}\n"
+
+        # Look backwards for the slug line
+        for j in range(idx - 1, -1, -1):
+            prior = updated_lines[j].lstrip()
+            if prior.startswith("- slug:"):
+                updated_lines[j] = replace_city_suffix(updated_lines[j], old_city, new_city)
+                count += 1
+                break
+
+    if count:
+        print(f"[INFO] Updated {count} factory entries in data/eu_factories.yaml")
+    return updated_lines
+
+
 def format_result(item: MissingEntry, matches: Sequence[Tuple[CityEntry, float]]) -> str:
     header = (
         f"{item.slug} "
@@ -324,7 +380,7 @@ def format_result(item: MissingEntry, matches: Sequence[Tuple[CityEntry, float]]
 def main() -> None:
     args = parse_args()
     missing_entries = parse_missing(args.missing_path)
-    factories = load_factories(args.factories_path)
+    raw_factory_lines, factories = load_factories(args.factories_path)
     cities = load_cities(args.cities_path)
 
     matches = find_matches(
@@ -335,10 +391,23 @@ def main() -> None:
         restrict_country=args.country_filter,
     )
 
+    replacements: Dict[str, str] = {}
     for item in missing_entries:
         suggestion_block = format_result(item, matches.get(item.slug, []))
         print(suggestion_block)
         print()
+
+        top_match = matches.get(item.slug, [])
+        if not top_match:
+            continue
+        candidate, distance = top_match[0]
+        if distance <= args.threshold:
+            replacements[item.slug] = candidate.slug
+
+    if replacements:
+        updated_lines = update_factories_file(raw_factory_lines, replacements)
+        with args.factories_path.open("w", encoding="utf-8") as fp:
+            fp.writelines(updated_lines)
 
 
 if __name__ == "__main__":
