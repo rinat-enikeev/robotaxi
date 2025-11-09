@@ -880,5 +880,64 @@
     - philippines
     - thailand
     - vietnam
-    - myanmar
+    - burma
     - cambodia
+- ridehailing-slug: lyft
+  countries:
+    - united-states
+    - canada
+- ridehailing-slug: cabify
+  countries:
+    - spain
+    - mexico
+    - chile
+    - colombia
+    - peru
+    - argentina
+    - uruguay
+    - ecuador
+    - dominican-republic
+    - portugal
+- ridehailing-slug: yango
+  countries:
+    - finland
+    - france
+    - norway
+    - cote-divoire
+    - ghana
+    - cameroon
+    - angola
+    - senegal
+    - zambia
+    - congo-kinshasa
+    - mozambique
+    - morocco
+    - algeria
+    - tunisia
+    - tanzania
+    - uganda
+    - nigeria
+    - armenia
+    - georgia
+    - kyrgyzstan
+    - uzbekistan
+    - tajikistan
+    - laos
+    - vietnam
+    - israel
+    - united-arab-emirates
+- ridehailing-slug: yandex-taxi
+  countries:
+    - russia
+    - moldova
+    - armenia
+    - azerbaijan
+    - belarus
+    - georgia
+    - kyrgyzstan
+    - serbia
+    - uzbekistan
+    - kazakhstan
+    - tajikistan
+    - israel
+    - united-arab-emirates
