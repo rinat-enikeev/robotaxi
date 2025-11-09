@@ -3,3 +3,4 @@
 \ir ./robotaxis.sql
 \ir ./ridehailings.sql
 \ir ./operations.sql
+\ir ./factories.sql
