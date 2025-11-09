@@ -22,3 +22,59 @@
   latitude: 37.394462
   longitude: -122.0530032
   address: 690 E Middlefield Rd, Mountain View, CA 94043, USA
+- slug: indrive
+  name: inDrive
+  website: indrive.com
+  city: mountain-view-united-states
+  country: united-states
+  latitude: 37.3865223
+  longitude: -122.086914
+  address: 800 West El Camino Real, Mountain View, California, United States
+- slug: didi
+  name: DiDi Global
+  website: didiglobal.com
+  city: beijing-china
+  country: china
+  latitude: 40.067721
+  longitude: 116.275465
+  address: Building 1, Yard 6, North Ring Road, Tangjialing, Haidian District, Beijing, People's Republic of China
+- slug: grab
+  name: Grab Holdings
+  website: grab.com
+  city: singapore-singapore
+  country: singapore
+  latitude: 1.2918358
+  longitude: 103.7903292
+  address: 3 Media Close, 01-03 Grab Building, Singapore 138498
+- slug: lyft
+  name: Lyft
+  website: lyft.com
+  city: san-francisco-united-states
+  country: united-states
+  latitude: 37.7765452
+  longitude: -122.3945455
+  address: 185 Berry St 5000, San Francisco, CA 94107, USA
+- slug: cabify
+  name: Cabify
+  website: cabify.com
+  city: madrid-spain
+  country: spain
+  latitude: 40.4398032
+  longitude: -3.6810586
+  address: Calle Príncipe de Vergara 112, Madrid, Spain
+- slug: yango
+  name: Yango
+  website: yango.com
+  city: dubai-united-arab-emirates
+  country: united-arab-emirates
+  latitude: 25.2203094
+  longitude: 55.2822601
+  address: One Central Building 5, Trade Center Second, Dubai
+- slug: yandex-taxi
+  name: Yandex Taxi
+  website: taxi.yandex.com
+  city: moscow-russia
+  country: russia
+  latitude: 55.7340711
+  longitude: 37.584527
+  address: 16 Leo Tolstoy St, Moscow, Russia, 119021

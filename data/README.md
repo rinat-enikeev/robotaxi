@@ -7,6 +7,7 @@ This folder contains the source of truth for the geospatial and organizational d
 - `data/cities.yaml` — cities with embedded country metadata; drives `supabase/seeds/cities.sql`.
 - `data/robotaxis.yaml` — autonomous vehicle operators and headquarters.
 - `data/ridehailings.yaml` — ridehailing companies and primary offices.
+- `data/factories.yaml` — automotive manufacturing sites; drives `supabase/seeds/factories.sql`.
 - `data/operations.yaml` — per ridehailing company, the countries and cities where they operate.
 - `data/universities.yaml` — universities mapped to city and country slugs.
 - `scripts/generate_*_seed.sh` — Python-backed helpers that convert YAML into Supabase seed SQL.
@@ -31,11 +32,12 @@ This folder contains the source of truth for the geospatial and organizational d
    ```
 4. **Regenerate seeds** for any dataset you touched:
    ```bash
-   ./scripts/generate_cities_seed.sh
-   ./scripts/generate_ridehailings_seed.sh
-   ./scripts/generate_robotaxis_seed.sh
-   ./scripts/generate_operations_seed.sh
-   ./scripts/generate_universities_seed.sh
+  ./scripts/generate_cities_seed.sh
+  ./scripts/generate_ridehailings_seed.sh
+  ./scripts/generate_robotaxis_seed.sh
+  ./scripts/generate_operations_seed.sh
+  ./scripts/generate_universities_seed.sh
+  ./scripts/generate_factories_seed.sh
    ```
    Run only the scripts that correspond to the YAML files you modified. They validate required fields, uniqueness, and write updated SQL under `supabase/seeds/`.
 5. **Check the repo** before opening a pull request:
@@ -45,7 +47,7 @@ This folder contains the source of truth for the geospatial and organizational d
    npm run check
    npm run format_check
    ```
-6. **Review your diff** to confirm both YAML and generated SQL changes are present, then open a PR describing the data source and verification steps.
+6. **Review your diff** to confirm both YAML and generated SQL changes are present, then open a PR against `develop` (never `main`) describing the data source and verification steps.
 
 ## Dataset-Specific Guidelines
 
@@ -73,6 +75,14 @@ This folder contains the source of truth for the geospatial and organizational d
 - Prefer ISO Alpha-2 codes for `country_iso`.
 - Populate coordinates where possible to support map visualisations.
 
+### `factories.yaml`
+- Required keys: `slug`, `city`, `manufacturer`, `latitude`, `longitude`.
+- Optional keys: `focus`, `brand`, `address`, `rank`, `selection`.
+- `focus` and `brand` accept either a YAML list or single string; the generator converts values into Postgres `text[]`.
+- `city` references the slug defined in `cities.yaml`. The generator will fail if the slug is missing.
+- Coordinates must use decimal degrees with up to six decimal places.
+- Keep manufacturer names in proper case; slugs stay lowercase.
+
 ## Quality Checklist
 
 - Added or updated slugs already exist in the upstream files they reference.
@@ -86,3 +96,5 @@ This folder contains the source of truth for the geospatial and organizational d
 The dataset in `cities.yaml` is sourced from [SimpleMaps World Cities](https://simplemaps.com/data/world-cities) and is used under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 The `universities.yaml` dataset is derived from [All Universities in the World](https://www.kaggle.com/datasets/thedevastator/all-universities-in-the-world) by thedevastator on Kaggle; please credit the original author when redistributing.
+
+The `factories.yaml` dataset is derived from [European Automobile Manufacturers’ Association (ACEA)](https://www.acea.auto/press-release-ec/298-automobile-factories-operating-across-europe-new-data-shows/). 

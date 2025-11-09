@@ -1,3 +1,63 @@
+- slug: thurso-united-kingdom
+  city: Thurso
+  city_ascii: Thurso
+  latitude: 58.590851
+  longitude: -3.5345973
+  admin_name: Highland
+  capital: ''
+  population: 739
+  source_id: 
+  country:
+    slug: united-kingdom
+    name: United Kingdom
+    iso2: GB
+    iso3: GBR
+  country_slug: united-kingdom
+- slug: bourbon-lancy-france
+  city: Bourbon-Lancy
+  city_ascii: Bourbon-Lancy
+  latitude: 46.6184241
+  longitude: 3.7211473
+  admin_name: Saône-et-Loire
+  capital: ''
+  population: 4656
+  source_id: 
+  country:
+    slug: france
+    name: France
+    iso2: FR
+    iso3: FRA
+  country_slug: france
+- slug: bad-leonfelden-austria
+  city: Bad Leonfelden
+  city_ascii: Bad Leonfelden
+  latitude: 48.5226913
+  longitude: 14.2880306
+  admin_name: Upper Austria
+  capital: ''
+  population: 4180
+  source_id: 
+  country:
+    slug: austria
+    name: Austria
+    iso2: AT
+    iso3: AUT
+  country_slug: austria
+- slug: macchia-d-isernia-italy
+  city: Macchia d'Isernia
+  city_ascii: Macchia d'Isernia
+  latitude: 41.5603263
+  longitude: 14.1672417
+  admin_name: Province of Isernia
+  capital: ''
+  population: 1008
+  source_id: 
+  country:
+    slug: italy
+    name: Italy
+    iso2: IT
+    iso3: ITA
+  country_slug: italy
 - slug: aghdash-azerbaijan
   city: Aghdash
   city_ascii: Aghdash

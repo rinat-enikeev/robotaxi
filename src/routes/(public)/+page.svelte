@@ -41,6 +41,19 @@
     website?: string | null
   }
 
+  type Factory = {
+    id: number
+    slug: string
+    city_slug: string
+    manufacturer: string
+    focus: string[] | null
+    brand: string[] | null
+    address: string | null
+    rank: number | null
+    selection: string | null
+    latitude: number | string | null
+    longitude: number | string | null
+  }
   type Ridehailing = {
     id: number
     slug: string
@@ -149,6 +162,12 @@
   let universities = $state<University[]>([])
   let universitiesError = $state<string | null>(null)
 
+  let isFactoriesEnabled = $state(false)
+  let isFactoriesLoading = $state(false)
+  let hasFetchedFactories = $state(false)
+  let factories = $state<Factory[]>([])
+  let factoriesError = $state<string | null>(null)
+
   let isRidehailingOperationsEnabled = $state(true)
   let isRidehailingOperationsLoading = $state(false)
   let hasFetchedRidehailingOperations = $state(false)
@@ -185,6 +204,18 @@
           return char
       }
     })
+
+  const formatStringList = (value: string[] | null | undefined) => {
+    if (!value) {
+      return ""
+    }
+
+    const cleaned = value
+      .map((item) => (item ?? "").toString().trim())
+      .filter((item) => item.length > 0)
+
+    return cleaned.join(", ")
+  }
 
   const robotaxisWithCoords = $derived(() => {
     if (!isRobotaxisEnabled) {
@@ -260,6 +291,46 @@
           coordinates: [
             Number(company.longitude),
             Number(company.latitude),
+          ] as [number, number],
+        },
+      }
+    }),
+  }))
+
+  const factoriesWithCoords = $derived(() => {
+    if (!isFactoriesEnabled) {
+      return []
+    }
+
+    return factories.filter(
+      (factory) => factory.longitude != null && factory.latitude != null,
+    )
+  })
+
+  const factoriesGeoJson = $derived(() => ({
+    type: "FeatureCollection" as const,
+    features: factoriesWithCoords().map((factory) => {
+      const brand = formatStringList(factory.brand)
+      const focus = formatStringList(factory.focus)
+
+      return {
+        type: "Feature" as const,
+        properties: {
+          id: factory.id,
+          slug: factory.slug,
+          manufacturer: factory.manufacturer,
+          brand,
+          focus,
+          address: factory.address ?? "",
+          selection: factory.selection ?? "",
+          rank: factory.rank ?? null,
+          city_slug: factory.city_slug,
+        },
+        geometry: {
+          type: "Point" as const,
+          coordinates: [
+            Number(factory.longitude),
+            Number(factory.latitude),
           ] as [number, number],
         },
       }
@@ -836,7 +907,26 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 360, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
+    }
+  }
+
+  const focusMapOnFactories = (
+    m: maplibregl.Map,
+    items: Factory[] | null = null,
+  ) => {
+    const factoriesToUse = (items ?? factoriesWithCoords()).filter(
+      (factory) => factory.longitude != null && factory.latitude != null,
+    )
+    if (factoriesToUse.length === 0) return
+
+    const bounds = new maplibregl.LngLatBounds()
+    for (const factory of factoriesToUse) {
+      bounds.extend([Number(factory.longitude), Number(factory.latitude)])
+    }
+
+    if (!bounds.isEmpty()) {
+      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
     }
   }
 
@@ -869,6 +959,7 @@
       "ridehailings-logos",
       "robotaxis-circles",
       "robotaxis-logos",
+      "factories-pins",
       "universities-pins",
       "universities-labels",
     ]
@@ -1215,6 +1306,45 @@
     }
   }
 
+  const loadFactories = async () => {
+    if (isFactoriesLoading) return
+
+    isFactoriesLoading = true
+    factoriesError = null
+
+    try {
+      const response = await fetch("/api/factories")
+      if (!response.ok) {
+        throw new Error("Failed to fetch factories")
+      }
+
+      const payload = (await response.json()) as {
+        factories: Factory[]
+      }
+
+      const records = payload.factories ?? []
+      factories = records
+      hasFetchedFactories = true
+
+      const mapInstance = map
+      if (mapInstance && isFactoriesEnabled) {
+        const itemsWithCoords = records.filter(
+          (record) => record.longitude != null && record.latitude != null,
+        )
+        if (itemsWithCoords.length > 0) {
+          focusMapOnFactories(mapInstance, itemsWithCoords)
+        }
+      }
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unexpected error occurred"
+      factoriesError = message
+      hasFetchedFactories = false
+    } finally {
+      isFactoriesLoading = false
+    }
+  }
+
   const handleRobotaxisToggle = async (checked: boolean) => {
     isRobotaxisEnabled = checked
 
@@ -1289,6 +1419,18 @@
     }
   }
 
+  const handleFactoriesToggle = async (checked: boolean) => {
+    isFactoriesEnabled = checked
+
+    if (!checked) {
+      return
+    }
+
+    if (!hasFetchedFactories) {
+      await loadFactories()
+    }
+  }
+
   const handleRetryRobotaxis = async () => {
     hasFetchedRobotaxis = false
     if (isRobotaxisEnabled) {
@@ -1315,6 +1457,13 @@
     hasFetchedUniversities = false
     if (isUniversitiesEnabled) {
       await loadUniversities()
+    }
+  }
+
+  const handleRetryFactories = async () => {
+    hasFetchedFactories = false
+    if (isFactoriesEnabled) {
+      await loadFactories()
     }
   }
 
@@ -1482,6 +1631,108 @@
       .addTo(mapInstance)
   }
 
+  const handleFactoryClick = (event: maplibregl.MapLayerMouseEvent) => {
+    const mapInstance = map
+    if (!mapInstance) return
+
+    const feature = event.features?.[0]
+    if (!feature) return
+
+    const props = feature.properties ?? {}
+    const geometry = feature.geometry as {
+      type: string
+      coordinates: [number, number]
+    }
+
+    const coordinates = geometry.coordinates
+    const rawManufacturer = props.manufacturer
+      ? String(props.manufacturer)
+      : "Factory"
+    const rawBrand = props.brand ? String(props.brand) : ""
+    const rawFocus = props.focus ? String(props.focus) : ""
+    const rawAddress = props.address ? String(props.address) : ""
+    const rawSelection = props.selection ? String(props.selection) : ""
+    const parsedRank =
+      props.rank != null && props.rank !== "" ? Number(props.rank) : Number.NaN
+
+    const title = escapeHtml(rawManufacturer)
+    const brand = rawBrand ? escapeHtml(rawBrand) : ""
+    const focus = rawFocus ? escapeHtml(rawFocus) : ""
+    const address = rawAddress ? escapeHtml(rawAddress) : ""
+    const selection = rawSelection ? escapeHtml(rawSelection) : ""
+    const rank = Number.isFinite(parsedRank) ? parsedRank : null
+
+    const details: string[] = []
+
+    if (brand) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">🏷️ Brand</span>
+          <span class="popup-value">${brand}</span>
+        </div>
+      `)
+    }
+
+    if (focus) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">🏭 Focus</span>
+          <span class="popup-value">${focus}</span>
+        </div>
+      `)
+    }
+
+    if (address) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">📍 Address</span>
+          <span class="popup-value">${address}</span>
+        </div>
+      `)
+    }
+
+    if (selection) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">📚 Selection</span>
+          <span class="popup-value">${selection}</span>
+        </div>
+      `)
+    }
+
+    if (rank !== null) {
+      details.push(`
+        <div class="popup-field">
+          <span class="popup-label">⭐ Rank</span>
+          <span class="popup-value">${rank}</span>
+        </div>
+      `)
+    }
+
+    const html = `
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3 class="popup-title">${title}</h3>
+        </div>
+        <div class="popup-body">
+          ${
+            details.length > 0
+              ? details.join("")
+              : "<div class='popup-field'><span class='popup-value'>No additional details.</span></div>"
+          }
+        </div>
+      </div>
+    `
+
+    new maplibregl.Popup({
+      closeButton: true,
+      closeOnClick: true,
+    })
+      .setLngLat(coordinates)
+      .setHTML(html)
+      .addTo(mapInstance)
+  }
+
   const handleUniversityClick = (event: maplibregl.MapLayerMouseEvent) => {
     const mapInstance = map
     if (!mapInstance) return
@@ -1561,6 +1812,10 @@
       void loadRobotaxis()
     }
 
+    if (isFactoriesEnabled && !hasFetchedFactories) {
+      void loadFactories()
+    }
+
     const ridehailingTasks: Promise<unknown>[] = []
 
     if (isRidehailingsEnabled && !hasFetchedRidehailings) {
@@ -1596,6 +1851,11 @@
         mapInstance.on("click", layerId, handleRobotaxiClick)
       }
 
+      for (const layerId of factoryLayerIds) {
+        mapInstance.off("click", layerId, handleFactoryClick)
+        mapInstance.on("click", layerId, handleFactoryClick)
+      }
+
       mapInstance.off("click", "universities-pins", handleUniversityClick)
       mapInstance.on("click", "universities-pins", handleUniversityClick)
 
@@ -1614,6 +1874,7 @@
     "ridehailings-logos",
     "ridehailings-circles",
   ] as const
+  const factoryLayerIds = ["factories-pins"] as const
 
   $effect(() => {
     const mapInstance = map
@@ -1762,6 +2023,89 @@
 
     const cleanup = () => {
       mapInstance.off("styleimagemissing", handleRidehailingStyleImageMissing)
+      mapInstance.off("data", handleData)
+      detachHandlers()
+    }
+
+    if (!mapInstance.loaded()) {
+      const onLoad = () => {
+        setup()
+      }
+      mapInstance.once("load", onLoad)
+      return () => {
+        mapInstance.off("load", onLoad)
+        cleanup()
+      }
+    }
+
+    setup()
+
+    return () => {
+      cleanup()
+    }
+  })
+
+  $effect(() => {
+    const mapInstance = map
+    const factoryCount = factoriesWithCoords().length
+    const enabled = isFactoriesEnabled
+
+    if (!mapInstance) return
+
+    let handlersAttached = false
+
+    const attachHandlers = () => {
+      if (handlersAttached) return
+      const layersReady = factoryLayerIds.every((layerId) =>
+        Boolean(mapInstance.getLayer(layerId)),
+      )
+      if (!layersReady) return
+
+      for (const layerId of factoryLayerIds) {
+        mapInstance.on("click", layerId, handleFactoryClick)
+        mapInstance.on("mouseenter", layerId, handleMouseEnter)
+        mapInstance.on("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = true
+    }
+
+    const detachHandlers = () => {
+      if (!handlersAttached) return
+
+      for (const layerId of factoryLayerIds) {
+        mapInstance.off("click", layerId, handleFactoryClick)
+        mapInstance.off("mouseenter", layerId, handleMouseEnter)
+        mapInstance.off("mouseleave", layerId, handleMouseLeave)
+      }
+      handlersAttached = false
+    }
+
+    const handleData = (event: maplibregl.MapDataEvent) => {
+      if (
+        "sourceId" in event &&
+        event.sourceId === "factories" &&
+        "isSourceLoaded" in event &&
+        event.isSourceLoaded
+      ) {
+        attachHandlers()
+      }
+    }
+
+    const setup = () => {
+      ensureGlobeProjection(mapInstance)
+      if (enabled && factoryCount > 0) {
+        focusMapOnFactories(mapInstance)
+      }
+
+      mapInstance.on("data", handleData)
+
+      const source = mapInstance.getSource("factories")
+      if (source && mapInstance.isSourceLoaded("factories")) {
+        attachHandlers()
+      }
+    }
+
+    const cleanup = () => {
       mapInstance.off("data", handleData)
       detachHandlers()
     }
@@ -1942,6 +2286,19 @@
           "circle-opacity": 0.9,
           "circle-stroke-width": 1.5,
           "circle-stroke-color": "#ffffff",
+        }}
+      />
+    </GeoJSONSource>
+
+    <GeoJSONSource id="factories" data={factoriesGeoJson()}>
+      <CircleLayer
+        id="factories-pins"
+        paint={{
+          "circle-radius": 5.5,
+          "circle-color": "#7f1d1d",
+          "circle-opacity": 0.9,
+          "circle-stroke-width": 1.5,
+          "circle-stroke-color": "#f5f3f4",
         }}
       />
     </GeoJSONSource>
@@ -2149,6 +2506,35 @@
         <label class="menu-item">
           <input
             type="checkbox"
+            checked={isFactoriesEnabled}
+            onchange={(event) =>
+              handleFactoriesToggle(
+                (event.currentTarget as HTMLInputElement).checked,
+              )}
+          />
+          <span class="menu-label">Factories</span>
+        </label>
+
+        {#if isFactoriesLoading}
+          <p class="menu-status">Loading factories…</p>
+        {:else if factoriesError}
+          <p class="menu-status error">Failed to load: {factoriesError}</p>
+          <button
+            class="retry-button"
+            type="button"
+            onclick={handleRetryFactories}
+          >
+            Try again
+          </button>
+        {:else if hasFetchedFactories && factoriesWithCoords().length > 0}
+          <p class="menu-status">
+            Showing {factoriesWithCoords().length} factories
+          </p>
+        {/if}
+
+        <label class="menu-item">
+          <input
+            type="checkbox"
             checked={isUniversitiesEnabled}
             onchange={(event) =>
               handleUniversitiesToggle(
@@ -2186,6 +2572,10 @@
     <div class="empty-state">No ridehailing companies available yet.</div>
   {/if}
 
+  {#if isFactoriesEnabled && hasFetchedFactories && !isFactoriesLoading && factoriesWithCoords().length === 0}
+    <div class="empty-state">No factories available yet.</div>
+  {/if}
+
   {#if isUniversitiesEnabled && hasFetchedUniversities && !isUniversitiesLoading && universitiesWithCoords().length === 0}
     <div class="empty-state">No universities available yet.</div>
   {/if}
@@ -2193,7 +2583,7 @@
   <div class="contribute-wrapper">
     <a
       class="contribute-button"
-      href="https://github.com/rinat-enikeev/robotaxi/tree/main/data"
+      href="https://github.com/rinat-enikeev/robotaxi/tree/develop/data"
       target="_blank"
       rel="noopener noreferrer"
     >
