@@ -392,22 +392,45 @@ def main() -> None:
     )
 
     replacements: Dict[str, str] = {}
-    for item in missing_entries:
-        suggestion_block = format_result(item, matches.get(item.slug, []))
-        print(suggestion_block)
-        print()
+    unresolved: List[Tuple[MissingEntry, List[Tuple[CityEntry, float]]]] = []
+    skipped_resolved = 0
 
-        top_match = matches.get(item.slug, [])
-        if not top_match:
+    for item in missing_entries:
+        if item.slug not in factories:
+            skipped_resolved += 1
             continue
-        candidate, distance = top_match[0]
+
+        matched = matches.get(item.slug, [])
+
+        if not matched:
+            unresolved.append((item, []))
+            continue
+
+        candidate, distance = matched[0]
         if distance <= args.threshold:
             replacements[item.slug] = candidate.slug
+        else:
+            unresolved.append((item, matched))
 
     if replacements:
         updated_lines = update_factories_file(raw_factory_lines, replacements)
         with args.factories_path.open("w", encoding="utf-8") as fp:
             fp.writelines(updated_lines)
+
+    if skipped_resolved:
+        print(
+            f"[INFO] Skipped {skipped_resolved} entries already absent from data/eu_factories.yaml",
+            file=sys.stderr,
+        )
+
+    if not unresolved:
+        print("All missing city slugs have either been updated or lack available data.")
+        return
+
+    for item, matched in unresolved:
+        suggestion_block = format_result(item, matched)
+        print(suggestion_block)
+        print()
 
 
 if __name__ == "__main__":

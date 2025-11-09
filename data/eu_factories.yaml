@@ -372,8 +372,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants*
-- slug: renault-sovab-batilly-france
-  city: batilly-france
+- slug: renault-sovab-rombas-france
+  city: rombas-france
   latitude: 49,164711
   longitude: 5,972459
   manufacturer: renault-sovab
@@ -1076,8 +1076,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: ayats-arbucies-spain
-  city: arbucies-spain
+- slug: ayats-santa-coloma-de-farnes-spain
+  city: santa-coloma-de-farnes-spain
   latitude: 41,8095168
   longitude: 2,523983111
   manufacturer: ayats
@@ -1087,8 +1087,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: beulas-s-a-u-arbucies-spain
-  city: arbucies-spain
+- slug: beulas-s-a-u-santa-coloma-de-farnes-spain
+  city: santa-coloma-de-farnes-spain
   latitude: 41,8252605
   longitude: 2,514196468
   manufacturer: beulas-s-a-u
@@ -1131,8 +1131,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: sunsundegui-altsasu-spain
-  city: altsasu-spain
+- slug: sunsundegui-beasain-spain
+  city: beasain-spain
   latitude: 42,9019889
   longitude: -2,18783278
   manufacturer: sunsundegui
@@ -1439,8 +1439,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: stellantis-szentgotthard-hungary
-  city: szentgotthard-hungary
+- slug: stellantis-salovci-slovenia
+  city: salovci-slovenia
   latitude: 46,950004
   longitude: 16,285398
   manufacturer: stellantis
@@ -1450,8 +1450,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: iveco-group-premstatten-austria
-  city: premstatten-austria
+- slug: iveco-group-graz-austria
+  city: graz-austria
   latitude: 46,960989
   longitude: 15,44321888
   manufacturer: iveco-group
@@ -1692,8 +1692,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: daimler-truck-ligny-en-barrois-france
-  city: ligny-en-barrois-france
+- slug: daimler-truck-bar-le-duc-france
+  city: bar-le-duc-france
   latitude: 48,68827
   longitude: 5,32397
   manufacturer: daimler-truck
@@ -2363,8 +2363,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: aston-martin-gaydon-united-kingdom
-  city: gaydon-united-kingdom
+- slug: aston-martin-whitnash-united-kingdom
+  city: whitnash-united-kingdom
   latitude: 52,183553
   longitude: -1,469946
   manufacturer: aston-martin
@@ -2583,8 +2583,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: hyzon-motors-winschoten-the-netherlands
-  city: winschoten-the-netherlands
+- slug: hyzon-motors-veendam-netherlands
+  city: veendam-netherlands
   latitude: 53,1483073
   longitude: 7,049181061
   manufacturer: hyzon-motors
@@ -2715,8 +2715,8 @@
   rank: 1
   selection: all-plants
   icons: all-plants
-- slug: volvo-car-corporation-geely-torslanda-sweden
-  city: torslanda-sweden
+- slug: volvo-car-corporation-geely-gothenburg-sweden
+  city: gothenburg-sweden
   latitude: 57,723152
   longitude: 11,767669
   manufacturer: volvo-car-corporation-geely
@@ -3012,8 +3012,8 @@
   rank: 2
   selection: engines-electric-motors
   icons: engines-electric-motors
-- slug: stellantis-szentgotthard-hungary
-  city: szentgotthard-hungary
+- slug: stellantis-salovci-slovenia
+  city: salovci-slovenia
   latitude: 46,950004
   longitude: 16,285398
   manufacturer: stellantis
@@ -5124,8 +5124,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: aston-martin-gaydon-united-kingdom
-  city: gaydon-united-kingdom
+- slug: aston-martin-whitnash-united-kingdom
+  city: whitnash-united-kingdom
   latitude: 52,183553
   longitude: -1,469946
   manufacturer: aston-martin
@@ -5212,8 +5212,8 @@
   rank: 4
   selection: passenger-cars
   icons: passenger-cars
-- slug: volvo-car-corporation-geely-torslanda-sweden
-  city: torslanda-sweden
+- slug: volvo-car-corporation-geely-gothenburg-sweden
+  city: gothenburg-sweden
   latitude: 57,723152
   longitude: 11,767669
   manufacturer: volvo-car-corporation-geely
@@ -5454,8 +5454,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles
-- slug: iveco-group-premstatten-austria
-  city: premstatten-austria
+- slug: iveco-group-graz-austria
+  city: graz-austria
   latitude: 46,96098903
   longitude: 15,44321888
   manufacturer: iveco-group
@@ -5553,8 +5553,8 @@
   rank: 5
   selection: heavy-duty-vehicles
   icons: heavy-duty-vehicles
-- slug: hyzon-motors-winschoten-the-netherlands
-  city: winschoten-the-netherlands
+- slug: hyzon-motors-veendam-netherlands
+  city: veendam-netherlands
   latitude: 53,14830728
   longitude: 7,049181061
   manufacturer: hyzon-motors
@@ -5641,8 +5641,8 @@
   rank: 6
   selection: light-commercial-vehicles
   icons: light-commercial-vehicles*
-- slug: renault-sovab-batilly-france
-  city: batilly-france
+- slug: renault-sovab-rombas-france
+  city: rombas-france
   latitude: 49,164711
   longitude: 5,972459
   manufacturer: renault-sovab
@@ -5938,8 +5938,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: ayats-arbucies-spain
-  city: arbucies-spain
+- slug: ayats-santa-coloma-de-farnes-spain
+  city: santa-coloma-de-farnes-spain
   latitude: 41,80951676
   longitude: 2,523983111
   manufacturer: ayats
@@ -5949,8 +5949,8 @@
   rank: 7
   selection: buses
   icons: buses*
-- slug: beulas-s-a-u-arbucies-spain
-  city: arbucies-spain
+- slug: beulas-s-a-u-santa-coloma-de-farnes-spain
+  city: santa-coloma-de-farnes-spain
   latitude: 41,82526049
   longitude: 2,514196468
   manufacturer: beulas-s-a-u
@@ -6301,8 +6301,8 @@
   rank: 7
   selection: buses
   icons: buses
-- slug: sunsundegui-altsasu-spain
-  city: altsasu-spain
+- slug: sunsundegui-beasain-spain
+  city: beasain-spain
   latitude: 42,90198892
   longitude: -2,187832784
   manufacturer: sunsundegui
@@ -6378,8 +6378,8 @@
   rank: 7
   selection: buses
   icons: buses
-- slug: daimler-truck-ligny-en-barrois-france
-  city: ligny-en-barrois-france
+- slug: daimler-truck-bar-le-duc-france
+  city: bar-le-duc-france
   latitude: 48,68827
   longitude: 5,32397
   manufacturer: daimler-truck
