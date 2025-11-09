@@ -141,6 +141,62 @@ export type Database = {
         }
         Relationships: []
       }
+      factories: {
+        Row: {
+          address: string | null
+          brand: string | null
+          city_slug: string
+          created_at: string | null
+          id: number
+          label: string | null
+          latitude: number
+          longitude: number
+          manufacturer: string
+          rank: number | null
+          selection: string | null
+          slug: string
+          updated_at: string | null
+        }
+        Insert: {
+          address?: string | null
+          brand?: string | null
+          city_slug: string
+          created_at?: string | null
+          id?: number
+          label?: string | null
+          latitude: number
+          longitude: number
+          manufacturer: string
+          rank?: number | null
+          selection?: string | null
+          slug: string
+          updated_at?: string | null
+        }
+        Update: {
+          address?: string | null
+          brand?: string | null
+          city_slug?: string
+          created_at?: string | null
+          id?: number
+          label?: string | null
+          latitude?: number
+          longitude?: number
+          manufacturer?: string
+          rank?: number | null
+          selection?: string | null
+          slug?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "factories_city_slug_fkey"
+            columns: ["city_slug"]
+            isOneToOne: false
+            referencedRelation: "cities"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
       ridehailing_city_operations: {
         Row: {
           city_slug: string
