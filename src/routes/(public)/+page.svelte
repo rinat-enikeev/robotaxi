@@ -836,7 +836,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 360, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
     }
   }
 
