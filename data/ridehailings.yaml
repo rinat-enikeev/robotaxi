@@ -22,3 +22,11 @@
   latitude: 37.394462
   longitude: -122.0530032
   address: 690 E Middlefield Rd, Mountain View, CA 94043, USA
+- slug: indrive
+  name: inDrive
+  website: indrive.com
+  city: mountain-view-united-states
+  country: united-states
+  latitude: 37.3865223
+  longitude: -122.086914
+  address: 800 West El Camino Real, Mountain View, California, United States
