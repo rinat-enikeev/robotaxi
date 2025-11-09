@@ -5,7 +5,8 @@
   manufacturer: daimler-truck
   focus:
     - heavy-duty-vehicles
-  brand: fuso
+  brand:
+    - fuso
   address: Tramagal, Portugal
   rank: 1
   selection: all-plants
@@ -16,7 +17,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: citroen
+  brand:
+    - citroen
   address: Madrid (Villaverde), Spain
   rank: 1
   selection: all-plants
@@ -27,7 +29,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - buses
-  brand: caetano-toyota
+  brand:
+    - caetano-toyota
   address: Vila Nova de Gaia (Porto), Portugal
   rank: 1
   selection: all-plants
@@ -38,7 +41,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: alfa-romeo-maserati
+  brand:
+    - alfa-romeo-maserati
   address: Cassino, Italy
   rank: 1
   selection: all-plants
@@ -49,7 +53,8 @@
   manufacturer: dr-motor
   focus:
     - passenger-cars
-  brand: dr-chery
+  brand:
+    - dr-chery
   address: Macchia d'Isernia, Italy
   rank: 1
   selection: all-plants
@@ -61,7 +66,11 @@
   focus:
     - passenger-cars
     - batteries
-  brand: citroen-lancia-opel-vauxhall-peugeot-lithium-ion-batteries
+  brand:
+    - citroen-lancia
+    - opel-vauxhall
+    - peugeot
+    - lithium-ion-batteries
   address: Zaragoza, Spain
   rank: 1
   selection: all-plants
@@ -72,7 +81,8 @@
   manufacturer: ayats
   focus:
     - buses
-  brand: ayats-buses-and-coaches
+  brand:
+    - ayats-buses-and-coaches
   address: Tona, Spain
   rank: 1
   selection: all-plants
@@ -83,7 +93,10 @@
   manufacturer: stellantis-sevelsud
   focus:
     - light-commercial-vehicles
-  brand: fiat-opel-vauxhall-peugeot-citroen
+  brand:
+    - fiat
+    - opel-vauxhall
+    - peugeot-citroen
   address: Val di Sangro (Atessa), Italy
   rank: 1
   selection: all-plants
@@ -98,7 +111,12 @@
     - engines
     - electric-motors
     - batteries
-  brand: citroen-fiat-peugeot-opel-vauxhall-toyota-electric-motors-lithium-ion-battery-packs
+  brand:
+    - citroen-fiat-peugeot
+    - opel-vauxhall
+    - toyota
+    - electric-motors
+    - lithium-ion-battery-packs
   address: Vigo, Spain
   rank: 1
   selection: all-plants
@@ -109,7 +127,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - light-commercial-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Vitoria , Spain
   rank: 1
   selection: all-plants
@@ -120,7 +139,8 @@
   manufacturer: castrosua
   focus:
     - buses
-  brand: castrosua
+  brand:
+    - castrosua
   address: Santiago de Compostela, Spain
   rank: 1
   selection: all-plants
@@ -131,7 +151,8 @@
   manufacturer: industria-italiana-autobus
   focus:
     - buses
-  brand: vivacity-citymood
+  brand:
+    - vivacity-citymood
   address: Bologna, Italy
   rank: 1
   selection: all-plants
@@ -142,7 +163,8 @@
   manufacturer: industria-italiana-autobus
   focus:
     - buses
-  brand: vivacity-citymood
+  brand:
+    - vivacity-citymood
   address: Flumeri, Italy
   rank: 1
   selection: all-plants
@@ -153,7 +175,8 @@
   manufacturer: iveco-group
   focus:
     - light-commercial-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Suzzara, Italy
   rank: 1
   selection: all-plants
@@ -167,7 +190,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: abarth-fiat-maserati-electric-drive-motors
+  brand:
+    - abarth-fiat-maserati-electric-drive-motors
   address: Mirafiori (Torino), Italy
   rank: 1
   selection: all-plants
@@ -181,7 +205,10 @@
     - engines
     - electric-motors
     - batteries
-  brand: rimac-electric-hypercars-battery-packs-electric-powertrain-systems
+  brand:
+    - rimac-electric-hypercars
+    - battery-packs
+    - electric-powertrain-systems
   address: Sveta Nedjelja, Croatia
   rank: 1
   selection: all-plants
@@ -192,7 +219,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: renault
+  brand:
+    - renault
   address: Novo Mesto, Slovenia
   rank: 1
   selection: all-plants
@@ -203,7 +231,8 @@
   manufacturer: volvo-group
   focus:
     - heavy-duty-vehicles
-  brand: renault-trucks
+  brand:
+    - renault-trucks
   address: Bourg-en-Bresse, France
   rank: 1
   selection: all-plants
@@ -214,7 +243,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Kecskemet, Hungary
   rank: 1
   selection: all-plants
@@ -225,7 +255,8 @@
   manufacturer: iveco-group
   focus:
     - buses
-  brand: heuliez-iveco
+  brand:
+    - heuliez-iveco
   address: Rorthais, France
   rank: 1
   selection: all-plants
@@ -236,7 +267,10 @@
   manufacturer: magna-steyr
   focus:
     - passenger-cars
-  brand: bmw-fisker-jlr-mercedes-benz-toyota
+  brand:
+    - bmw-fisker-jlr
+    - mercedes-benz
+    - toyota
   address: Graz, Austria
   rank: 1
   selection: all-plants
@@ -248,7 +282,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: ds-peugeot-drive-battery-packs
+  brand:
+    - ds-peugeot-drive
+    - battery-packs
   address: Sochaux, France
   rank: 1
   selection: all-plants
@@ -259,7 +295,8 @@
   manufacturer: byd
   focus:
     - buses
-  brand: byd-electric-buses
+  brand:
+    - byd-electric-buses
   address: Komaróm, Hungary
   rank: 1
   selection: all-plants
@@ -270,7 +307,8 @@
   manufacturer: steyr-automotive
   focus:
     - heavy-duty-vehicles
-  brand: volta-trucks
+  brand:
+    - volta-trucks
   address: Steyr, Austria
   rank: 1
   selection: all-plants
@@ -281,7 +319,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Ulm, Germany
   rank: 1
   selection: all-plants
@@ -293,7 +332,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw
+  brand:
+    - bmw
   address: Dingolfing, Germany
   rank: 1
   selection: all-plants
@@ -304,7 +344,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Sindelfingen, Germany
   rank: 1
   selection: all-plants
@@ -316,7 +357,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: audi
+  brand:
+    - audi
   address: Ingolstadt, Germany
   rank: 1
   selection: all-plants
@@ -329,7 +371,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: porsche
+  brand:
+    - porsche
   address: Stuttgart-Zuffenhausen, Germany
   rank: 1
   selection: all-plants
@@ -340,7 +383,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Rastatt, Germany
   rank: 1
   selection: all-plants
@@ -351,7 +395,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: ds-opel
+  brand:
+    - ds-opel
   address: Poissy, France
   rank: 1
   selection: all-plants
@@ -362,7 +407,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: renault
+  brand:
+    - renault
   address: Flins, France
   rank: 1
   selection: all-plants
@@ -374,7 +420,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw-battery-modules
+  brand:
+    - bmw-battery-modules
   address: Regensburg, Germany
   rank: 1
   selection: all-plants
@@ -385,7 +432,8 @@
   manufacturer: daimler-truck
   focus:
     - heavy-duty-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Wörth, Germany
   rank: 1
   selection: all-plants
@@ -396,7 +444,8 @@
   manufacturer: renault-sovab
   focus:
     - light-commercial-vehicles
-  brand: renault-nissan
+  brand:
+    - renault-nissan
   address: Batilly (Metz), France
   rank: 1
   selection: all-plants
@@ -407,7 +456,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi
+  brand:
+    - audi
   address: Heilbronn, Germany
   rank: 1
   selection: all-plants
@@ -418,7 +468,8 @@
   manufacturer: ebusco
   focus:
     - buses
-  brand: ebusco-electric-buses
+  brand:
+    - ebusco-electric-buses
   address: Cléon, France
   rank: 1
   selection: all-plants
@@ -432,7 +483,11 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz-evobus-truck-engines-battery-packs-innolab-battery
+  brand:
+    - mercedes-benz
+    - evobus-truck-engines
+    - battery-packs
+    - innolab-battery
   address: Mannheim, Germany
   rank: 1
   selection: all-plants
@@ -443,7 +498,9 @@
   manufacturer: renault-group
   focus:
     - light-commercial-vehicles
-  brand: renault-nissan-mitsubishi
+  brand:
+    - renault-nissan
+    - mitsubishi
   address: Sandouville, France
   rank: 1
   selection: all-plants
@@ -455,7 +512,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: hyundai
+  brand:
+    - hyundai
   address: Nosovice, Czechia
   rank: 1
   selection: all-plants
@@ -466,7 +524,8 @@
   manufacturer: skoda-group
   focus:
     - buses
-  brand: skoda
+  brand:
+    - skoda
   address: Plzeň, Czechia
   rank: 1
   selection: all-plants
@@ -477,7 +536,8 @@
   manufacturer: iveco-group
   focus:
     - buses
-  brand: iveco
+  brand:
+    - iveco
   address: Vysoké Myto, Czechia
   rank: 1
   selection: all-plants
@@ -488,7 +548,8 @@
   manufacturer: sor
   focus:
     - buses
-  brand: sor
+  brand:
+    - sor
   address: Libchavy, Czechia
   rank: 1
   selection: all-plants
@@ -500,7 +561,11 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: peugeot-citroen-opel-vauxhall-fiat-and-toyota-battery-packs
+  brand:
+    - peugeot-citroen
+    - opel-vauxhall
+    - fiat-and-toyota
+    - battery-packs
   address: Hordain, France
   rank: 1
   selection: all-plants
@@ -512,7 +577,10 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: renault-mercedes-benz-nissan-drive-batteries
+  brand:
+    - renault
+    - mercedes-benz
+    - nissan-drive-batteries
   address: Maubeuge, France
   rank: 1
   selection: all-plants
@@ -524,7 +592,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: renault
+  brand:
+    - renault
   address: Douai, France
   rank: 1
   selection: all-plants
@@ -538,7 +607,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: skoda-petrol-engines-battery-packs
+  brand:
+    - skoda-petrol-engines
+    - battery-packs
   address: Mladá Boleslav, Czechia
   rank: 1
   selection: all-plants
@@ -549,7 +620,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi-cupra-volkswagen
+  brand:
+    - audi-cupra-volkswagen
   address: Zwickau, Germany
   rank: 1
   selection: all-plants
@@ -560,7 +632,8 @@
   manufacturer: next-e-go-mobile
   focus:
     - passenger-cars
-  brand: e-go-electric-mini-cars
+  brand:
+    - e-go-electric-mini-cars
   address: Aachen, Germany
   rank: 1
   selection: all-plants
@@ -571,7 +644,8 @@
   manufacturer: b-on
   focus:
     - light-commercial-vehicles
-  brand: electric-vans
+  brand:
+    - electric-vans
   address: Aachen, Germany
   rank: 1
   selection: all-plants
@@ -583,7 +657,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: audi
+  brand:
+    - audi
   address: Forest (Brussels), Belgium
   rank: 1
   selection: all-plants
@@ -594,7 +669,8 @@
   manufacturer: bmw-group
   focus:
     - passenger-cars
-  brand: rolls-royce
+  brand:
+    - rolls-royce
   address: Goodwood, United Kingdom
   rank: 1
   selection: all-plants
@@ -605,7 +681,8 @@
   manufacturer: ford-of-europe
   focus:
     - passenger-cars
-  brand: ford
+  brand:
+    - ford
   address: Köln, Germany
   rank: 1
   selection: all-plants
@@ -616,7 +693,8 @@
   manufacturer: vdl-group
   focus:
     - buses
-  brand: vdl-jonckheere
+  brand:
+    - vdl-jonckheere
   address: Roeselare, Belgium
   rank: 1
   selection: all-plants
@@ -628,7 +706,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: opel-vauxhall-battery-packs
+  brand:
+    - opel-vauxhall
+    - battery-packs
   address: Eisenach, Germany
   rank: 1
   selection: all-plants
@@ -639,7 +719,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Dresden, Germany
   rank: 1
   selection: all-plants
@@ -651,7 +732,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: volvo-battery-packs
+  brand:
+    - volvo
+    - battery-packs
   address: Gent, Belgium
   rank: 1
   selection: all-plants
@@ -663,7 +746,9 @@
   focus:
     - heavy-duty-vehicles
     - batteries
-  brand: volvo-trucks-lithium-ion-battery-packs
+  brand:
+    - volvo-trucks
+    - lithium-ion-battery-packs
   address: Oostakker (Gent), Belgium
   rank: 1
   selection: all-plants
@@ -674,7 +759,8 @@
   manufacturer: volvo-group
   focus:
     - buses
-  brand: volvo-buses
+  brand:
+    - volvo-buses
   address: Wroclaw, Poland
   rank: 1
   selection: all-plants
@@ -685,7 +771,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - light-commercial-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Düsseldorf, Germany
   rank: 1
   selection: all-plants
@@ -696,7 +783,8 @@
   manufacturer: vdl-groep
   focus:
     - buses
-  brand: vdl-bus-coach
+  brand:
+    - vdl-bus-coach
   address: Valkenswaard, The Netherlands
   rank: 1
   selection: all-plants
@@ -708,7 +796,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw-mini-battery-modules
+  brand:
+    - bmw-mini-battery-modules
   address: Leipzig, Germany
   rank: 1
   selection: all-plants
@@ -722,7 +811,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: daf-battery-packs
+  brand:
+    - daf
+    - battery-packs
   address: Eindhoven, The Netherlands
   rank: 1
   selection: all-plants
@@ -734,7 +825,10 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: cenntro-electric-vans-battery-packs
+  brand:
+    - cenntro
+    - electric-vans
+    - battery-packs
   address: Herne, Germany
   rank: 1
   selection: all-plants
@@ -745,7 +839,8 @@
   manufacturer: bmw-group
   focus:
     - passenger-cars
-  brand: mini
+  brand:
+    - mini
   address: Cowley (Oxford), United Kingdom
   rank: 1
   selection: all-plants
@@ -756,7 +851,8 @@
   manufacturer: ginaf
   focus:
     - heavy-duty-vehicles
-  brand: ginaf-heavy-special-vehicles
+  brand:
+    - ginaf-heavy-special-vehicles
   address: Veenendaal, The Netherlands
   rank: 1
   selection: all-plants
@@ -767,7 +863,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen-porsche-skoda
+  brand:
+    - volkswagen-porsche-skoda
   address: Osnabrück, Germany
   rank: 1
   selection: all-plants
@@ -778,7 +875,8 @@
   manufacturer: dennis-eagle
   focus:
     - heavy-duty-vehicles
-  brand: dennis-waste-collection
+  brand:
+    - dennis-waste-collection
   address: Warwick, United Kingdom
   rank: 1
   selection: all-plants
@@ -790,7 +888,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Hannover, Germany
   rank: 1
   selection: all-plants
@@ -802,7 +901,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: tesla
+  brand:
+    - tesla
   address: Grünheide , Germany
   rank: 1
   selection: all-plants
@@ -814,7 +914,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: london-electric-vehicle-company-levc
+  brand:
+    - london-electric-vehicle-company-levc
   address: Coventry, United Kingdom
   rank: 1
   selection: all-plants
@@ -825,7 +926,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen-seat
+  brand:
+    - volkswagen-seat
   address: Wolfsburg, Germany
   rank: 1
   selection: all-plants
@@ -837,7 +939,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: london-electric-vehicle-company-levc
+  brand:
+    - london-electric-vehicle-company-levc
   address: Ansty, United Kingdom
   rank: 1
   selection: all-plants
@@ -848,7 +951,9 @@
   manufacturer: lotus-group
   focus:
     - passenger-cars
-  brand: lotus-sports-cars
+  brand:
+    - lotus
+    - sports-cars
   address: Hethel (Norwich), United Kingdom
   rank: 1
   selection: all-plants
@@ -859,7 +964,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Bremen, Germany
   rank: 1
   selection: all-plants
@@ -872,7 +978,10 @@
     - passenger-cars
     - light-commercial-vehicles
     - batteries
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Ellesmere Port, United Kingdom
   rank: 1
   selection: all-plants
@@ -883,7 +992,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Emden, Germany
   rank: 1
   selection: all-plants
@@ -894,7 +1004,8 @@
   manufacturer: paccar
   focus:
     - heavy-duty-vehicles
-  brand: daf-by-leyland-trucks
+  brand:
+    - daf-by-leyland-trucks
   address: Leyland, United Kingdom
   rank: 1
   selection: all-plants
@@ -905,7 +1016,8 @@
   manufacturer: alexander-dennis
   focus:
     - buses
-  brand: enviro-plaxton
+  brand:
+    - enviro-plaxton
   address: Scarborough, United Kingdom
   rank: 1
   selection: all-plants
@@ -916,7 +1028,8 @@
   manufacturer: wrightbus
   focus:
     - buses
-  brand: wright
+  brand:
+    - wright
   address: Ballymena, United Kingdom
   rank: 1
   selection: all-plants
@@ -930,7 +1043,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: nissan-battery-packs
+  brand:
+    - nissan
+    - battery-packs
   address: Sunderland, United Kingdom
   rank: 1
   selection: all-plants
@@ -941,7 +1056,8 @@
   manufacturer: alexander-dennis
   focus:
     - buses
-  brand: enviro-partnership-with-byd-for-electric-buses
+  brand:
+    - enviro-partnership-with-byd-for-electric-buses
   address: Falkirk, United Kingdom
   rank: 1
   selection: all-plants
@@ -952,7 +1068,8 @@
   manufacturer: volvo-group
   focus:
     - heavy-duty-vehicles
-  brand: volvo-trucks
+  brand:
+    - volvo-trucks
   address: Tuve (Göteborg), Sweden
   rank: 1
   selection: all-plants
@@ -966,7 +1083,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: scania-battery-modules-and-packs
+  brand:
+    - scania
+    - battery-modules-and-packs
   address: Södertälje, Sweden
   rank: 1
   selection: all-plants
@@ -977,7 +1096,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen-by-vw-autoeuropa
+  brand:
+    - volkswagen-by-vw-autoeuropa
   address: Palmela (Setubal), Portugal
   rank: 1
   selection: all-plants
@@ -992,7 +1112,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: ford-lithium-ion-battery-packs
+  brand:
+    - ford
+    - lithium-ion-battery-packs
   address: Valencia (Almusafes), Spain
   rank: 1
   selection: all-plants
@@ -1003,7 +1125,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Madrid, Spain
   rank: 1
   selection: all-plants
@@ -1014,7 +1137,8 @@
   manufacturer: stellantis
   focus:
     - light-commercial-vehicles
-  brand: citroen-fiat-opel-peugeot
+  brand:
+    - citroen-fiat-opel-peugeot
   address: Mangualde, Portugal
   rank: 1
   selection: all-plants
@@ -1025,7 +1149,8 @@
   manufacturer: toyota-caetano-portugal
   focus:
     - passenger-cars
-  brand: toyota
+  brand:
+    - toyota
   address: Ovar, Portugal
   rank: 1
   selection: all-plants
@@ -1036,7 +1161,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: alfa-romeo-dodge-fiat
+  brand:
+    - alfa-romeo-dodge-fiat
   address: Pomigliano d'Arco (Napoli), Italy
   rank: 1
   selection: all-plants
@@ -1048,7 +1174,10 @@
   focus:
     - engines
     - electric-motors
-  brand: alfa-romeo-fiat-jeep-diesel-engines
+  brand:
+    - alfa-romeo
+    - fiat-jeep
+    - diesel-engines
   address: Pratola Serra, Italy
   rank: 1
   selection: all-plants
@@ -1059,7 +1188,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: fiat-jeep
+  brand:
+    - fiat-jeep
   address: Melfi (Potenza), Italy
   rank: 1
   selection: all-plants
@@ -1070,7 +1200,8 @@
   manufacturer: faam
   focus:
     - batteries
-  brand: lithium-batteries
+  brand:
+    - lithium-batteries
   address: Teverola, Italy
   rank: 1
   selection: all-plants
@@ -1083,7 +1214,8 @@
     - buses
     - engines
     - electric-motors
-  brand: by-fpt-powertrain-technologies
+  brand:
+    - by-fpt-powertrain-technologies
   address: Foggia, Italy
   rank: 1
   selection: all-plants
@@ -1094,7 +1226,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi-cupra-seat
+  brand:
+    - audi-cupra-seat
   address: Martorell, Spain
   rank: 1
   selection: all-plants
@@ -1105,7 +1238,8 @@
   manufacturer: hispano-suiza
   focus:
     - passenger-cars
-  brand: hispano-suiza
+  brand:
+    - hispano-suiza
   address: Montmeló (Barcelona), Spain
   rank: 1
   selection: all-plants
@@ -1116,7 +1250,8 @@
   manufacturer: icap-group
   focus:
     - buses
-  brand: tecnobus-electric-minibuses
+  brand:
+    - tecnobus-electric-minibuses
   address: '#REF!'
   rank: 1
   selection: all-plants
@@ -1130,7 +1265,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: mitsubishi-renault-lithium-ion-batteries
+  brand:
+    - mitsubishi-renault
+    - lithium-ion-batteries
   address: Valladolid, Spain
   rank: 1
   selection: all-plants
@@ -1141,7 +1278,8 @@
   manufacturer: ayats
   focus:
     - buses
-  brand: ayats-buses-and-coaches
+  brand:
+    - ayats-buses-and-coaches
   address: Arbúcies, Spain
   rank: 1
   selection: all-plants
@@ -1152,7 +1290,8 @@
   manufacturer: beulas-s-a-u
   focus:
     - buses
-  brand: beulas
+  brand:
+    - beulas
   address: Arbúcies, Spain
   rank: 1
   selection: all-plants
@@ -1165,7 +1304,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: fiat-alfa-romeo-lancia-jeep-maseratti-petrol-engines
+  brand:
+    - fiat-alfa-romeo-lancia-jeep-maseratti-petrol-engines
   address: Termoli (Campobasso), Italy
   rank: 1
   selection: all-plants
@@ -1176,7 +1316,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: renault
+  brand:
+    - renault
   address: Palencia, Spain
   rank: 1
   selection: all-plants
@@ -1187,7 +1328,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Landaben (Pamplona), Spain
   rank: 1
   selection: all-plants
@@ -1198,7 +1340,8 @@
   manufacturer: sunsundegui
   focus:
     - buses
-  brand: sunsundegui
+  brand:
+    - sunsundegui
   address: Altsasu, Spain
   rank: 1
   selection: all-plants
@@ -1209,7 +1352,8 @@
   manufacturer: irizar
   focus:
     - heavy-duty-vehicles
-  brand: irizar-electric-trucks
+  brand:
+    - irizar-electric-trucks
   address: Lazkao, Spain
   rank: 1
   selection: all-plants
@@ -1220,7 +1364,8 @@
   manufacturer: irizar
   focus:
     - buses
-  brand: irizar
+  brand:
+    - irizar
   address: Ormaiztegi, Spain
   rank: 1
   selection: all-plants
@@ -1231,7 +1376,8 @@
   manufacturer: rampini
   focus:
     - buses
-  brand: electric-and-hydrogen-bus
+  brand:
+    - electric-and-hydrogen-bus
   address: Passignano sul Trasimeno, Italy
   rank: 1
   selection: all-plants
@@ -1242,7 +1388,8 @@
   manufacturer: irizar
   focus:
     - buses
-  brand: irizar-electric-buses
+  brand:
+    - irizar-electric-buses
   address: Aduna, Spain
   rank: 1
   selection: all-plants
@@ -1253,7 +1400,8 @@
   manufacturer: piaggio
   focus:
     - light-commercial-vehicles
-  brand: piaggio
+  brand:
+    - piaggio
   address: Pontedera (Pisa), Italy
   rank: 1
   selection: all-plants
@@ -1266,7 +1414,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: compressed-air-cars
+  brand:
+    - compressed-air-cars
   address: Carros, France
   rank: 1
   selection: all-plants
@@ -1277,7 +1426,8 @@
   manufacturer: sin-cars
   focus:
     - passenger-cars
-  brand: sin-supercars
+  brand:
+    - sin-supercars
   address: Giurgiu, Romania
   rank: 1
   selection: all-plants
@@ -1288,7 +1438,8 @@
   manufacturer: safra
   focus:
     - buses
-  brand: safra-hycity-hydrogen-buses
+  brand:
+    - safra-hycity-hydrogen-buses
   address: Albi, France
   rank: 1
   selection: all-plants
@@ -1302,7 +1453,8 @@
     - light-commercial-vehicles
     - engines
     - electric-motors
-  brand: ford
+  brand:
+    - ford
   address: Craiova, Romania
   rank: 1
   selection: all-plants
@@ -1313,7 +1465,8 @@
   manufacturer: prime-motors-rombat
   focus:
     - batteries
-  brand: li-ion-batteries
+  brand:
+    - li-ion-batteries
   address: Cernica, Romania
   rank: 1
   selection: all-plants
@@ -1324,7 +1477,8 @@
   manufacturer: bmc-group
   focus:
     - buses
-  brand: euro-bus-diamond
+  brand:
+    - euro-bus-diamond
   address: Ciorogârla (Bucharest), Romania
   rank: 1
   selection: all-plants
@@ -1338,7 +1492,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: ferrari
+  brand:
+    - ferrari
   address: Maranello, Italy
   rank: 1
   selection: all-plants
@@ -1349,7 +1504,9 @@
   manufacturer: pagani
   focus:
     - passenger-cars
-  brand: pagani-sports-cars
+  brand:
+    - pagani
+    - sports-cars
   address: San Cesario Sul Panaro, Italy
   rank: 1
   selection: all-plants
@@ -1360,7 +1517,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: maserati
+  brand:
+    - maserati
   address: Modena, Italy
   rank: 1
   selection: all-plants
@@ -1373,7 +1531,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: lamborghini
+  brand:
+    - lamborghini
   address: Sant'Agata Bolognese, Italy
   rank: 1
   selection: all-plants
@@ -1385,7 +1544,8 @@
   focus:
     - engines
     - electric-motors
-  brand: diesel-engines
+  brand:
+    - diesel-engines
   address: Cento (Ferrara), Italy
   rank: 1
   selection: all-plants
@@ -1398,7 +1558,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: dacia-renault
+  brand:
+    - dacia-renault
   address: Mioveni (Pitesti), Romania
   rank: 1
   selection: all-plants
@@ -1409,7 +1570,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco-astra-extra-heavy-special-vehicles
+  brand:
+    - iveco-astra-extra-heavy-special-vehicles
   address: Piacenza, Italy
   rank: 1
   selection: all-plants
@@ -1422,7 +1584,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: by-fpt-powertrain-technologies
+  brand:
+    - by-fpt-powertrain-technologies
   address: Torino, Italy
   rank: 1
   selection: all-plants
@@ -1433,7 +1596,8 @@
   manufacturer: verkor
   focus:
     - batteries
-  brand: alpine
+  brand:
+    - alpine
   address: Grenoble, France
   rank: 1
   selection: all-plants
@@ -1444,7 +1608,8 @@
   manufacturer: iveco-group
   focus:
     - buses
-  brand: iveco
+  brand:
+    - iveco
   address: Annonay, France
   rank: 1
   selection: all-plants
@@ -1455,7 +1620,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Brescia, Italy
   rank: 1
   selection: all-plants
@@ -1466,7 +1632,10 @@
   manufacturer: automotive-cells-company-acc
   focus:
     - batteries
-  brand: jv-with-stellantis-mercedes-benz-and-totalenergies
+  brand:
+    - jv-with-stellantis
+    - mercedes-benz
+    - and-totalenergies
   address: Nersac, France
   rank: 1
   selection: all-plants
@@ -1479,7 +1648,8 @@
     - heavy-duty-vehicles
     - engines
     - electric-motors
-  brand: roman
+  brand:
+    - roman
   address: Braşov, Romania
   rank: 1
   selection: all-plants
@@ -1491,7 +1661,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volvo-group
+  brand:
+    - volvo-group
   address: Vénissieux, France
   rank: 1
   selection: all-plants
@@ -1502,7 +1673,8 @@
   manufacturer: tab
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Prevalje, Slovenia
   rank: 1
   selection: all-plants
@@ -1514,7 +1686,8 @@
   focus:
     - engines
     - electric-motors
-  brand: fiat-powertrain-technologies-fpt
+  brand:
+    - fiat-powertrain-technologies-fpt
   address: Bourbon Lancy, France
   rank: 1
   selection: all-plants
@@ -1526,7 +1699,8 @@
   focus:
     - engines
     - electric-motors
-  brand: opel-peugeot-citroen-ds
+  brand:
+    - opel-peugeot-citroen-ds
   address: Szentgotthárd, Hungary
   rank: 1
   selection: all-plants
@@ -1537,7 +1711,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: magirus-firefighting-vehicles
+  brand:
+    - magirus-firefighting-vehicles
   address: Premstätten, Austria
   rank: 1
   selection: all-plants
@@ -1549,7 +1724,8 @@
   focus:
     - heavy-duty-vehicles
     - buses
-  brand: scania
+  brand:
+    - scania
   address: Angers, France
   rank: 1
   selection: all-plants
@@ -1561,7 +1737,8 @@
   focus:
     - heavy-duty-vehicles
     - buses
-  brand: truston-trucks-upcity-electric-buses
+  brand:
+    - truston-trucks-upcity-electric-buses
   address: Baia Mare, Romania
   rank: 1
   selection: all-plants
@@ -1572,7 +1749,8 @@
   manufacturer: samsung-sdi
   focus:
     - batteries
-  brand: battery-cells
+  brand:
+    - battery-cells
   address: Göd, Hungary
   rank: 1
   selection: all-plants
@@ -1583,7 +1761,8 @@
   manufacturer: kravtex-kuhne-group
   focus:
     - buses
-  brand: credobus
+  brand:
+    - credobus
   address: Győr, Hungary
   rank: 1
   selection: all-plants
@@ -1596,7 +1775,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: audi
+  brand:
+    - audi
   address: Győr, Hungary
   rank: 1
   selection: all-plants
@@ -1608,7 +1788,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: ds-peugeot-assembly-of-drive-batteries
+  brand:
+    - ds-peugeot-assembly-of-drive-batteries
   address: Mulhouse, France
   rank: 1
   selection: all-plants
@@ -1619,7 +1800,8 @@
   manufacturer: suzuki
   focus:
     - passenger-cars
-  brand: suzuki
+  brand:
+    - suzuki
   address: Esztergom, Hungary
   rank: 1
   selection: all-plants
@@ -1631,7 +1813,8 @@
   focus:
     - buses
     - batteries
-  brand: ev-bluebus-bluesolutions-lithium-ion-polymer-batteries
+  brand:
+    - ev-bluebus-bluesolutions-lithium-ion-polymer-batteries
   address: Ergué-Gabéric, France
   rank: 1
   selection: all-plants
@@ -1643,7 +1826,9 @@
   focus:
     - engines
     - electric-motors
-  brand: diesel-and-petrol-engines-for-bmw-and-mini
+  brand:
+    - diesel-and
+    - petrol-engines-for-bmw-and-mini
   address: Steyr, Austria
   rank: 1
   selection: all-plants
@@ -1654,7 +1839,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: citroen-peugeot
+  brand:
+    - citroen-peugeot
   address: Rennes, France
   rank: 1
   selection: all-plants
@@ -1665,7 +1851,8 @@
   manufacturer: volkswagen-group
   focus:
     - heavy-duty-vehicles
-  brand: man-heavy-trucks
+  brand:
+    - man-heavy-trucks
   address: Munich, Germany
   rank: 1
   selection: all-plants
@@ -1676,7 +1863,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi-porsche-skoda-volkswagen
+  brand:
+    - audi-porsche-skoda-volkswagen
   address: Bratislava, Slovakia
   rank: 1
   selection: all-plants
@@ -1687,7 +1875,8 @@
   manufacturer: inobat
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Voderady, Slovakia
   rank: 1
   selection: all-plants
@@ -1698,7 +1887,8 @@
   manufacturer: jaguar-land-rover
   focus:
     - passenger-cars
-  brand: land-rover
+  brand:
+    - land-rover
   address: Nitra, Slovakia
   rank: 1
   selection: all-plants
@@ -1710,7 +1900,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: peugeot-citroen-drive-batteries
+  brand:
+    - peugeot-citroen-drive-batteries
   address: Trnava, Slovakia
   rank: 1
   selection: all-plants
@@ -1721,7 +1912,9 @@
   manufacturer: daimler-truck
   focus:
     - buses
-  brand: mercedes-benz-setra-evobus
+  brand:
+    - mercedes-benz
+    - setra-evobus
   address: Neu-Ulm, Germany
   rank: 1
   selection: all-plants
@@ -1732,7 +1925,8 @@
   manufacturer: miba
   focus:
     - batteries
-  brand: battery-cells
+  brand:
+    - battery-cells
   address: Bad Leonfelden, Austria
   rank: 1
   selection: all-plants
@@ -1743,7 +1937,9 @@
   manufacturer: daimler-truck
   focus:
     - heavy-duty-vehicles
-  brand: mercedes-benz-custom-tailored-trucks
+  brand:
+    - mercedes-benz
+    - custom-tailored-trucks
   address: Molsheim, France
   rank: 1
   selection: all-plants
@@ -1754,7 +1950,8 @@
   manufacturer: leclanche
   focus:
     - batteries
-  brand: batteries-for-buses
+  brand:
+    - batteries-for-buses
   address: Willstätt, Germany
   rank: 1
   selection: all-plants
@@ -1765,7 +1962,8 @@
   manufacturer: bugatti-rimac
   focus:
     - passenger-cars
-  brand: bugatti
+  brand:
+    - bugatti
   address: Molsheim, France
   rank: 1
   selection: all-plants
@@ -1777,7 +1975,9 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-motors-and-range-extender-hydrogen-electric-drive-train
+  brand:
+    - electric-motors
+    - and-range-extender-hydrogen-electric-drive-train
   address: Ergolding (Landshut), Germany
   rank: 1
   selection: all-plants
@@ -1788,7 +1988,9 @@
   manufacturer: daimler-truck
   focus:
     - buses
-  brand: mercedes-benz-by-evobus
+  brand:
+    - mercedes-benz
+    - by-evobus
   address: Ligny-en-Barrois, France
   rank: 1
   selection: all-plants
@@ -1799,7 +2001,8 @@
   manufacturer: evum-motors
   focus:
     - light-commercial-vehicles
-  brand: acar
+  brand:
+    - acar
   address: Bayerbach bei Ergoldsbach, Germany
   rank: 1
   selection: all-plants
@@ -1811,7 +2014,8 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-motors
+  brand:
+    - electric-motors
   address: Ostfildern, Germany
   rank: 1
   selection: all-plants
@@ -1823,7 +2027,8 @@
   focus:
     - engines
     - electric-motors
-  brand: mercedes
+  brand:
+    - mercedes
   address: Herrlisheim, France
   rank: 1
   selection: all-plants
@@ -1836,7 +2041,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Untertürkheim (Stuttgart), Germany
   rank: 1
   selection: all-plants
@@ -1848,7 +2054,8 @@
   focus:
     - engines
     - electric-motors
-  brand: amg
+  brand:
+    - amg
   address: Affalterbach, Germany
   rank: 1
   selection: all-plants
@@ -1859,7 +2066,8 @@
   manufacturer: vanwall
   focus:
     - passenger-cars
-  brand: vanwall-hypercars
+  brand:
+    - vanwall-hypercars
   address: Greding, Germany
   rank: 1
   selection: all-plants
@@ -1870,7 +2078,8 @@
   manufacturer: ineos
   focus:
     - passenger-cars
-  brand: off-road-grenadier
+  brand:
+    - off-road-grenadier
   address: Hambach, France
   rank: 1
   selection: all-plants
@@ -1881,7 +2090,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi
+  brand:
+    - audi
   address: Neckarsulm, Germany
   rank: 1
   selection: all-plants
@@ -1892,7 +2102,8 @@
   manufacturer: valmet-automotive
   focus:
     - batteries
-  brand: battery-management-systems-bms-modules-and-packs
+  brand:
+    - battery-management-systems-bms-modules-and-packs
   address: Kirchardt, Germany
   rank: 1
   selection: all-plants
@@ -1903,7 +2114,9 @@
   manufacturer: volvo-group
   focus:
     - heavy-duty-vehicles
-  brand: renault-trucks-volvo-trucks
+  brand:
+    - renault-trucks
+    - volvo-trucks
   address: Blainville-sur-Orne, France
   rank: 1
   selection: all-plants
@@ -1916,7 +2129,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: kia
+  brand:
+    - kia
   address: Zilina, Slovakia
   rank: 1
   selection: all-plants
@@ -1928,7 +2142,8 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-and-conventional
+  brand:
+    - electric-and-conventional
   address: Trémery, France
   rank: 1
   selection: all-plants
@@ -1939,7 +2154,8 @@
   manufacturer: ford-of-europe
   focus:
     - passenger-cars
-  brand: ford
+  brand:
+    - ford
   address: Saarlouis, Germany
   rank: 1
   selection: all-plants
@@ -1952,7 +2168,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: combustion-and-electric-lithium-ion-battery-packs
+  brand:
+    - combustion-and-electric
+    - lithium-ion-battery-packs
   address: Cléon, France
   rank: 1
   selection: all-plants
@@ -1963,7 +2181,8 @@
   manufacturer: svolt
   focus:
     - batteries
-  brand: battery-modules-and-packs
+  brand:
+    - battery-modules-and-packs
   address: Heusweiler, Germany
   rank: 1
   selection: all-plants
@@ -1974,7 +2193,8 @@
   manufacturer: autosan
   focus:
     - buses
-  brand: autosan
+  brand:
+    - autosan
   address: Sanok, Poland
   rank: 1
   selection: all-plants
@@ -1985,7 +2205,8 @@
   manufacturer: tatra
   focus:
     - heavy-duty-vehicles
-  brand: tatra-heavy-trucks-military-vehicles
+  brand:
+    - tatra-heavy-trucks-military-vehicles
   address: Koprivnice, Czechia
   rank: 1
   selection: all-plants
@@ -2009,7 +2230,8 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-engines
+  brand:
+    - electric-engines
   address: Czechowice-Dziedzice, Poland
   rank: 1
   selection: all-plants
@@ -2020,7 +2242,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: alpine
+  brand:
+    - alpine
   address: Dieppe, France
   rank: 1
   selection: all-plants
@@ -2032,7 +2255,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: opel-vauxhall
+  brand:
+    - opel-vauxhall
   address: Rüsselsheim, Germany
   rank: 1
   selection: all-plants
@@ -2043,7 +2267,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - passenger-cars
-  brand: toyota
+  brand:
+    - toyota
   address: Kolin, Czechia
   rank: 1
   selection: all-plants
@@ -2054,7 +2279,8 @@
   manufacturer: volkswagen-group
   focus:
     - heavy-duty-vehicles
-  brand: man
+  brand:
+    - man
   address: Niepołomice , Poland
   rank: 1
   selection: all-plants
@@ -2077,7 +2303,10 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: abarth-alfa-romeo-fiat-jeep-lancia
+  brand:
+    - abarth-alfa-romeo
+    - fiat-jeep
+    - lancia
   address: Tychy, Poland
   rank: 1
   selection: all-plants
@@ -2088,7 +2317,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: skoda-seat
+  brand:
+    - skoda-seat
   address: Kvasiny, Czechia
   rank: 1
   selection: all-plants
@@ -2099,7 +2329,10 @@
   manufacturer: stellantis
   focus:
     - light-commercial-vehicles
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Gliwice, Poland
   rank: 1
   selection: all-plants
@@ -2110,7 +2343,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - passenger-cars
-  brand: mazda-toyota
+  brand:
+    - mazda-toyota
   address: Onnaing (Valenciennes), France
   rank: 1
   selection: all-plants
@@ -2121,7 +2355,9 @@
   manufacturer: lion-smart
   focus:
     - batteries
-  brand: battery-cells-battery-packs
+  brand:
+    - battery-cells
+    - battery-packs
   address: Hildburghausen, Germany
   rank: 1
   selection: all-plants
@@ -2132,7 +2368,9 @@
   manufacturer: automobiles-gillet
   focus:
     - passenger-cars
-  brand: gillet-sports-cars
+  brand:
+    - gillet
+    - sports-cars
   address: Gembloux, Belgium
   rank: 1
   selection: all-plants
@@ -2144,7 +2382,10 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-petrol-and-diesel-for-peugeot-citroen-opel-vauxhall-and-ds
+  brand:
+    - electric-petrol-and-diesel-for-peugeot-citroen
+    - opel-vauxhall
+    - and-ds
   address: Douvrin, France
   rank: 1
   selection: all-plants
@@ -2155,7 +2396,10 @@
   manufacturer: automotive-cells-company-acc
   focus:
     - batteries
-  brand: lithium-ion-battery-cells-and-modules-jv-with-stellantis-mercedes-benz-and-totalenergies
+  brand:
+    - lithium-ion-battery-cells
+    - and-modules
+    - jv-with-stellantis-mercedes-benz-and-totalenergies
   address: Billy-Berclau (Douvrin), France
   rank: 1
   selection: all-plants
@@ -2166,7 +2410,8 @@
   manufacturer: b-on
   focus:
     - light-commercial-vehicles
-  brand: electric-vans
+  brand:
+    - electric-vans
   address: Düren, Germany
   rank: 1
   selection: all-plants
@@ -2178,7 +2423,8 @@
   focus:
     - engines
     - electric-motors
-  brand: toyota
+  brand:
+    - toyota
   address: Wałbrzych, Poland
   rank: 1
   selection: all-plants
@@ -2189,7 +2435,9 @@
   manufacturer: solithor
   focus:
     - batteries
-  brand: rechargeable-all-solid-state-lithium-batteries
+  brand:
+    - rechargeable-all-solid-state
+    - lithium-batteries
   address: Sint-Truiden, Belgium
   rank: 1
   selection: all-plants
@@ -2201,7 +2449,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Chemnitz, Germany
   rank: 1
   selection: all-plants
@@ -2212,7 +2461,9 @@
   manufacturer: catl
   focus:
     - batteries
-  brand: bmw-mercedes-lithium-ion-batteries
+  brand:
+    - bmw-mercedes
+    - lithium-ion-batteries
   address: Arnstadt, Germany
   rank: 1
   selection: all-plants
@@ -2223,7 +2474,8 @@
   manufacturer: mol-cy
   focus:
     - heavy-duty-vehicles
-  brand: mol-special-trucks
+  brand:
+    - mol-special-trucks
   address: Staden, Belgium
   rank: 1
   selection: all-plants
@@ -2235,7 +2487,8 @@
   focus:
     - engines
     - electric-motors
-  brand: aston-martin
+  brand:
+    - aston-martin
   address: Köln, Germany
   rank: 1
   selection: all-plants
@@ -2247,7 +2500,8 @@
   focus:
     - engines
     - electric-motors
-  brand: toyota
+  brand:
+    - toyota
   address: Jelcz-Laskowice, Poland
   rank: 1
   selection: all-plants
@@ -2258,7 +2512,8 @@
   manufacturer: volkswagen-group
   focus:
     - buses
-  brand: man
+  brand:
+    - man
   address: Starachowice, Poland
   rank: 1
   selection: all-plants
@@ -2271,7 +2526,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Jawor, Poland
   rank: 1
   selection: all-plants
@@ -2282,7 +2538,8 @@
   manufacturer: gordon-murray-automotive
   focus:
     - passenger-cars
-  brand: gma-supercar
+  brand:
+    - gma-supercar
   address: Dunsfold, United Kingdom
   rank: 1
   selection: all-plants
@@ -2293,7 +2550,9 @@
   manufacturer: tvr
   focus:
     - passenger-cars
-  brand: tvr-sports-cars
+  brand:
+    - tvr
+    - sports-cars
   address: Walliswood, United Kingdom
   rank: 1
   selection: all-plants
@@ -2304,7 +2563,9 @@
   manufacturer: mercedes-benz-group
   focus:
     - batteries
-  brand: mercedes-benz-smart
+  brand:
+    - mercedes-benz
+    - smart
   address: Kamenz, Germany
   rank: 1
   selection: all-plants
@@ -2315,7 +2576,8 @@
   manufacturer: mclaren
   focus:
     - passenger-cars
-  brand: sports-cars
+  brand:
+    - sports-cars
   address: Woking, United Kingdom
   rank: 1
   selection: all-plants
@@ -2326,7 +2588,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: porsche
+  brand:
+    - porsche
   address: Leipzig, Germany
   rank: 1
   selection: all-plants
@@ -2337,7 +2600,9 @@
   manufacturer: vdl-group
   focus:
     - light-commercial-vehicles
-  brand: mini-midi-bus-by-vdl-bus-coach
+  brand:
+    - mini-midi-bus-by
+    - vdl-bus-coach
   address: Venlo, The Netherlands
   rank: 1
   selection: all-plants
@@ -2348,7 +2613,9 @@
   manufacturer: aston-martin
   focus:
     - passenger-cars
-  brand: aston-martin-lagonda
+  brand:
+    - aston-martin
+    - lagonda
   address: Saint Athan, United Kingdom
   rank: 1
   selection: all-plants
@@ -2359,7 +2626,8 @@
   manufacturer: ebusco
   focus:
     - buses
-  brand: ebusco-electric-buses
+  brand:
+    - ebusco-electric-buses
   address: Deurne, The Netherlands
   rank: 1
   selection: all-plants
@@ -2370,7 +2638,9 @@
   manufacturer: caterham
   focus:
     - passenger-cars
-  brand: caterham-sports-cars
+  brand:
+    - caterham
+    - sports-cars
   address: Dartford (Kent), United Kingdom
   rank: 1
   selection: all-plants
@@ -2381,7 +2651,8 @@
   manufacturer: tevva
   focus:
     - heavy-duty-vehicles
-  brand: electric-and-hydrogen-trucks
+  brand:
+    - electric-and-hydrogen-trucks
   address: Tilbury, United Kingdom
   rank: 1
   selection: all-plants
@@ -2392,7 +2663,8 @@
   manufacturer: eleo-technologies
   focus:
     - batteries
-  brand: battery-packs
+  brand:
+    - battery-packs
   address: Helmond, The Netherlands
   rank: 1
   selection: all-plants
@@ -2404,7 +2676,8 @@
   focus:
     - engines
     - electric-motors
-  brand: audi-seat-skoda-volkswagen
+  brand:
+    - audi-seat-skoda-volkswagen
   address: Polkowice, Poland
   rank: 1
   selection: all-plants
@@ -2416,7 +2689,9 @@
   focus:
     - light-commercial-vehicles
     - buses
-  brand: mercedes-benz-minibuses
+  brand:
+    - mercedes-benz
+    - minibuses
   address: Dortmund, Germany
   rank: 1
   selection: all-plants
@@ -2428,7 +2703,8 @@
   focus:
     - engines
     - electric-motors
-  brand: ford
+  brand:
+    - ford
   address: Dagenham, United Kingdom
   rank: 1
   selection: all-plants
@@ -2440,7 +2716,8 @@
   focus:
     - engines
     - electric-motors
-  brand: e-motors-by-yasa
+  brand:
+    - e-motors-by-yasa
   address: Oxford, United Kingdom
   rank: 1
   selection: all-plants
@@ -2451,7 +2728,10 @@
   manufacturer: stellantis
   focus:
     - light-commercial-vehicles
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Luton, United Kingdom
   rank: 1
   selection: all-plants
@@ -2462,7 +2742,9 @@
   manufacturer: morgan-motor-company
   focus:
     - passenger-cars
-  brand: morgan-sports-cars
+  brand:
+    - morgan
+    - sports-cars
   address: Malvern, United Kingdom
   rank: 1
   selection: all-plants
@@ -2473,7 +2755,8 @@
   manufacturer: impact-clean-power-technology
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Pruszków, Poland
   rank: 1
   selection: all-plants
@@ -2484,7 +2767,9 @@
   manufacturer: aston-martin
   focus:
     - passenger-cars
-  brand: aston-martin-sports-cars
+  brand:
+    - aston-martin
+    - sports-cars
   address: Gaydon (Warwick), United Kingdom
   rank: 1
   selection: all-plants
@@ -2496,7 +2781,8 @@
   focus:
     - engines
     - electric-motors
-  brand: diesel-and-petrol-engines
+  brand:
+    - diesel-and-petrol-engines
   address: Northampton, United Kingdom
   rank: 1
   selection: all-plants
@@ -2507,7 +2793,8 @@
   manufacturer: volkswagen-group
   focus:
     - batteries
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Brunswick (Braunschweig), Germany
   rank: 1
   selection: all-plants
@@ -2518,7 +2805,8 @@
   manufacturer: volkswagen-group
   focus:
     - light-commercial-vehicles
-  brand: man-volkswagen
+  brand:
+    - man-volkswagen
   address: Września, Poland
   rank: 1
   selection: all-plants
@@ -2529,7 +2817,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - light-commercial-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Ludwigsfelde, Germany
   rank: 1
   selection: all-plants
@@ -2552,7 +2841,8 @@
   focus:
     - light-commercial-vehicles
     - heavy-duty-vehicles
-  brand: ev-platform
+  brand:
+    - ev-platform
   address: Coventry, United Kingdom
   rank: 1
   selection: all-plants
@@ -2563,7 +2853,8 @@
   manufacturer: eve-energy
   focus:
     - batteries
-  brand: eve-energy-has-allegedly-pledged-to-create-a-battery-plant-on-the-outskirts-of-coventry
+  brand:
+    - eve-energy-has-allegedly-pledged-to-create-a-battery-plant-on-the-outskirts-of-coventry
   address: Coventry, United Kingdom
   rank: 1
   selection: all-plants
@@ -2574,7 +2865,8 @@
   manufacturer: jaguar-land-rover
   focus:
     - passenger-cars
-  brand: jaguar-range-rover
+  brand:
+    - jaguar-range-rover
   address: Solihull, United Kingdom
   rank: 1
   selection: all-plants
@@ -2585,7 +2877,8 @@
   manufacturer: volkswagen-group
   focus:
     - light-commercial-vehicles
-  brand: ford-volkswagen
+  brand:
+    - ford-volkswagen
   address: Poznań, Poland
   rank: 1
   selection: all-plants
@@ -2596,7 +2889,8 @@
   manufacturer: volkswagen-group
   focus:
     - heavy-duty-vehicles
-  brand: scania
+  brand:
+    - scania
   address: Zwolle, The Netherlands
   rank: 1
   selection: all-plants
@@ -2607,7 +2901,9 @@
   manufacturer: donkervoort
   focus:
     - passenger-cars
-  brand: donkervoort-sports-cars
+  brand:
+    - donkervoort
+    - sports-cars
   address: Lelystad, The Netherlands
   rank: 1
   selection: all-plants
@@ -2619,7 +2915,8 @@
   focus:
     - engines
     - electric-motors
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Berlin, Germany
   rank: 1
   selection: all-plants
@@ -2630,7 +2927,9 @@
   manufacturer: jaguar-land-rover
   focus:
     - batteries
-  brand: lithium-ion-battery-packs
+  brand:
+    - lithium-ion
+    - battery-packs
   address: Hams Hall, United Kingdom
   rank: 1
   selection: all-plants
@@ -2642,7 +2941,8 @@
   focus:
     - engines
     - electric-motors
-  brand: petrol-engines-for-bmw-and-mini
+  brand:
+    - petrol-engines-for-bmw-and-mini
   address: Hams Hall, United Kingdom
   rank: 1
   selection: all-plants
@@ -2653,7 +2953,8 @@
   manufacturer: caf-group
   focus:
     - buses
-  brand: solaris
+  brand:
+    - solaris
   address: Bolechowo, Poland
   rank: 1
   selection: all-plants
@@ -2665,7 +2966,8 @@
   focus:
     - engines
     - electric-motors
-  brand: jaguar
+  brand:
+    - jaguar
   address: Wolverhampton, United Kingdom
   rank: 1
   selection: all-plants
@@ -2676,7 +2978,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - passenger-cars
-  brand: toyota
+  brand:
+    - toyota
   address: Burnaston, United Kingdom
   rank: 1
   selection: all-plants
@@ -2687,7 +2990,8 @@
   manufacturer: arp-e-vehicles
   focus:
     - buses
-  brand: pilea
+  brand:
+    - pilea
   address: Bydgoszcz, Poland
   rank: 1
   selection: all-plants
@@ -2700,7 +3004,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: bentley
+  brand:
+    - bentley
   address: Crewe (Cheshire), United Kingdom
   rank: 1
   selection: all-plants
@@ -2711,7 +3016,8 @@
   manufacturer: hyzon-motors
   focus:
     - heavy-duty-vehicles
-  brand: hyzon-hydrogen-powered-heavy-duty-vehicles
+  brand:
+    - hyzon-hydrogen-powered-heavy-duty-vehicles
   address: Winschoten, The Netherlands
   rank: 1
   selection: all-plants
@@ -2723,7 +3029,8 @@
   focus:
     - engines
     - electric-motors
-  brand: toyota
+  brand:
+    - toyota
   address: Deeside, United Kingdom
   rank: 1
   selection: all-plants
@@ -2734,7 +3041,9 @@
   manufacturer: jaguar-land-rover
   focus:
     - passenger-cars
-  brand: land-rover-range-rover
+  brand:
+    - land-rover
+    - range-rover
   address: Halewood, United Kingdom
   rank: 1
   selection: all-plants
@@ -2745,7 +3054,8 @@
   manufacturer: ashok-leyland
   focus:
     - buses
-  brand: switch-mobility-electric-buses
+  brand:
+    - switch-mobility-electric-buses
   address: Sherburn-in-Elmet (Leeds), United Kingdom
   rank: 1
   selection: all-plants
@@ -2756,7 +3066,8 @@
   manufacturer: ginetta
   focus:
     - passenger-cars
-  brand: ginetta-sports-racing-car
+  brand:
+    - ginetta-sports-racing-car
   address: Garforth (Leeds), United Kingdom
   rank: 1
   selection: all-plants
@@ -2767,7 +3078,9 @@
   manufacturer: northvolt
   focus:
     - batteries
-  brand: lithium-ion-battery-cells
+  brand:
+    - lithium-ion
+    - battery-cells
   address: Heide, Germany
   rank: 1
   selection: all-plants
@@ -2778,7 +3091,8 @@
   manufacturer: volkswagen-group
   focus:
     - buses
-  brand: scania
+  brand:
+    - scania
   address: Słupsk, Poland
   rank: 1
   selection: all-plants
@@ -2790,7 +3104,8 @@
   focus:
     - engines
     - electric-motors
-  brand: engines-for-bus-coach-and-hdv
+  brand:
+    - engines-for-bus-coach-and-hdv
   address: Darlington, United Kingdom
   rank: 1
   selection: all-plants
@@ -2801,7 +3116,9 @@
   manufacturer: aesc-group
   focus:
     - batteries
-  brand: lithium-ion-batteries-for-nissan
+  brand:
+    - lithium-ion-batteries
+    - for-nissan
   address: Sunderland, United Kingdom
   rank: 1
   selection: all-plants
@@ -2812,7 +3129,8 @@
   manufacturer: hydrogen-vehicle-systems-hvs
   focus:
     - heavy-duty-vehicles
-  brand: hydrogen-fuel-cell-trucks
+  brand:
+    - hydrogen-fuel-cell-trucks
   address: Glasgow, United Kingdom
   rank: 1
   selection: all-plants
@@ -2823,7 +3141,8 @@
   manufacturer: alexander-dennis
   focus:
     - buses
-  brand: enviro
+  brand:
+    - enviro
   address: Larbert, United Kingdom
   rank: 1
   selection: all-plants
@@ -2834,7 +3153,9 @@
   manufacturer: koenigsegg-automotive-ab
   focus:
     - passenger-cars
-  brand: koenigsegg-sports-cars
+  brand:
+    - koenigsegg
+    - sports-cars
   address: Ängelholm, Sweden
   rank: 1
   selection: all-plants
@@ -2845,7 +3166,8 @@
   manufacturer: volvo-car-corporation-geely
   focus:
     - passenger-cars
-  brand: volvo-cars
+  brand:
+    - volvo-cars
   address: Torslanda (Göteborg), Sweden
   rank: 1
   selection: all-plants
@@ -2857,7 +3179,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volvo-cars
+  brand:
+    - volvo-cars
   address: Skövde, Sweden
   rank: 1
   selection: all-plants
@@ -2869,7 +3192,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volvo-group
+  brand:
+    - volvo-group
   address: Skövde, Sweden
   rank: 1
   selection: all-plants
@@ -2880,7 +3204,8 @@
   manufacturer: lionvolt
   focus:
     - batteries
-  brand: 3d-solid-state-batteries
+  brand:
+    - 3d-solid-state-batteries
   address: Thurso, United Kingdom
   rank: 1
   selection: all-plants
@@ -2891,7 +3216,8 @@
   manufacturer: sisu-auto
   focus:
     - heavy-duty-vehicles
-  brand: sisu-heavy-truck-special-vehicles
+  brand:
+    - sisu-heavy-truck-special-vehicles
   address: Karjaa, Finland
   rank: 1
   selection: all-plants
@@ -2902,7 +3228,9 @@
   manufacturer: valmet-automotive
   focus:
     - batteries
-  brand: lithium-ion-battery-packs
+  brand:
+    - lithium-ion
+    - battery-packs
   address: Salo, Finland
   rank: 1
   selection: all-plants
@@ -2914,7 +3242,11 @@
   focus:
     - passenger-cars
     - batteries
-  brand: amg-mercedes-benz-lithium-ion-battery-modules-and-battery-packs
+  brand:
+    - amg
+    - mercedes-benz
+    - lithium-ion-battery-modules-and
+    - battery-packs
   address: Uusikaupunki, Finland
   rank: 1
   selection: all-plants
@@ -2936,7 +3268,8 @@
   manufacturer: northvolt
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Skellefteå, Sweden
   rank: 1
   selection: all-plants
@@ -2951,7 +3284,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: ford-lithium-ion-battery-packs
+  brand:
+    - ford
+    - lithium-ion-battery-packs
   address: Valencia (Almusafes), Spain
   rank: 2
   selection: engines-electric-motors
@@ -2963,7 +3298,10 @@
   focus:
     - engines
     - electric-motors
-  brand: alfa-romeo-fiat-jeep-diesel-engines
+  brand:
+    - alfa-romeo
+    - fiat-jeep
+    - diesel-engines
   address: Pratola Serra, Italy
   rank: 2
   selection: engines-electric-motors
@@ -2976,7 +3314,8 @@
     - buses
     - engines
     - electric-motors
-  brand: by-fpt-powertrain-technologies
+  brand:
+    - by-fpt-powertrain-technologies
   address: Foggia, Italy
   rank: 2
   selection: engines-electric-motors
@@ -2990,7 +3329,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: mitsubishi-renault-lithium-ion-batteries
+  brand:
+    - mitsubishi-renault
+    - lithium-ion-batteries
   address: Valladolid, Spain
   rank: 2
   selection: engines-electric-motors
@@ -3003,7 +3344,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: fiat-alfa-romeo-lancia-jeep-maseratti-petrol-engines
+  brand:
+    - fiat-alfa-romeo-lancia-jeep-maseratti-petrol-engines
   address: Termoli (Campobasso), Italy
   rank: 2
   selection: engines-electric-motors
@@ -3018,7 +3360,12 @@
     - engines
     - electric-motors
     - batteries
-  brand: citroen-fiat-peugeot-opel-vauxhall-toyota-electric-motors-lithium-ion-battery-packs
+  brand:
+    - citroen-fiat-peugeot
+    - opel-vauxhall
+    - toyota
+    - electric-motors
+    - lithium-ion-battery-packs
   address: Vigo, Spain
   rank: 2
   selection: engines-electric-motors
@@ -3031,7 +3378,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: compressed-air-cars
+  brand:
+    - compressed-air-cars
   address: Carros, France
   rank: 2
   selection: engines-electric-motors
@@ -3045,7 +3393,8 @@
     - light-commercial-vehicles
     - engines
     - electric-motors
-  brand: ford
+  brand:
+    - ford
   address: Craiova, Romania
   rank: 2
   selection: engines-electric-motors
@@ -3059,7 +3408,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: ferrari
+  brand:
+    - ferrari
   address: Maranello, Italy
   rank: 2
   selection: engines-electric-motors
@@ -3072,7 +3422,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: lamborghini
+  brand:
+    - lamborghini
   address: Sant'Agata Bolognese, Italy
   rank: 2
   selection: engines-electric-motors
@@ -3084,7 +3435,8 @@
   focus:
     - engines
     - electric-motors
-  brand: diesel-engines
+  brand:
+    - diesel-engines
   address: Cento (Ferrara), Italy
   rank: 2
   selection: engines-electric-motors
@@ -3097,7 +3449,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: dacia-renault
+  brand:
+    - dacia-renault
   address: Mioveni (Pitesti), Romania
   rank: 2
   selection: engines-electric-motors
@@ -3111,7 +3464,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: abarth-fiat-maserati-electric-drive-motors
+  brand:
+    - abarth-fiat-maserati-electric-drive-motors
   address: Mirafiori (Torino), Italy
   rank: 2
   selection: engines-electric-motors
@@ -3124,7 +3478,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: by-fpt-powertrain-technologies
+  brand:
+    - by-fpt-powertrain-technologies
   address: Torino, Italy
   rank: 2
   selection: engines-electric-motors
@@ -3137,7 +3492,8 @@
     - heavy-duty-vehicles
     - engines
     - electric-motors
-  brand: roman
+  brand:
+    - roman
   address: Braşov, Romania
   rank: 2
   selection: engines-electric-motors
@@ -3149,7 +3505,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volvo-group
+  brand:
+    - volvo-group
   address: Vénissieux, France
   rank: 2
   selection: engines-electric-motors
@@ -3163,7 +3520,10 @@
     - engines
     - electric-motors
     - batteries
-  brand: rimac-electric-hypercars-battery-packs-electric-powertrain-systems
+  brand:
+    - rimac-electric-hypercars
+    - battery-packs
+    - electric-powertrain-systems
   address: Sveta Nedjelja, Croatia
   rank: 2
   selection: engines-electric-motors
@@ -3175,7 +3535,8 @@
   focus:
     - engines
     - electric-motors
-  brand: fiat-powertrain-technologies-fpt
+  brand:
+    - fiat-powertrain-technologies-fpt
   address: Bourbon Lancy, France
   rank: 2
   selection: engines-electric-motors
@@ -3187,7 +3548,8 @@
   focus:
     - engines
     - electric-motors
-  brand: opel-peugeot-citroen-ds
+  brand:
+    - opel-peugeot-citroen-ds
   address: Szentgotthárd, Hungary
   rank: 2
   selection: engines-electric-motors
@@ -3200,7 +3562,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: audi
+  brand:
+    - audi
   address: Győr, Hungary
   rank: 2
   selection: engines-electric-motors
@@ -3212,7 +3575,9 @@
   focus:
     - engines
     - electric-motors
-  brand: diesel-and-petrol-engines-for-bmw-and-mini
+  brand:
+    - diesel-and
+    - petrol-engines-for-bmw-and-mini
   address: Steyr, Austria
   rank: 2
   selection: engines-electric-motors
@@ -3224,7 +3589,9 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-motors-and-range-extender-hydrogen-electric-drive-train
+  brand:
+    - electric-motors
+    - and-range-extender-hydrogen-electric-drive-train
   address: Ergolding (Landshut), Germany
   rank: 2
   selection: engines-electric-motors
@@ -3236,7 +3603,8 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-motors
+  brand:
+    - electric-motors
   address: Ostfildern, Germany
   rank: 2
   selection: engines-electric-motors
@@ -3248,7 +3616,8 @@
   focus:
     - engines
     - electric-motors
-  brand: mercedes
+  brand:
+    - mercedes
   address: Herrlisheim, France
   rank: 2
   selection: engines-electric-motors
@@ -3261,7 +3630,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Untertürkheim (Stuttgart), Germany
   rank: 2
   selection: engines-electric-motors
@@ -3274,7 +3644,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: porsche
+  brand:
+    - porsche
   address: Stuttgart-Zuffenhausen, Germany
   rank: 2
   selection: engines-electric-motors
@@ -3286,7 +3657,8 @@
   focus:
     - engines
     - electric-motors
-  brand: amg
+  brand:
+    - amg
   address: Affalterbach, Germany
   rank: 2
   selection: engines-electric-motors
@@ -3299,7 +3671,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: kia
+  brand:
+    - kia
   address: Zilina, Slovakia
   rank: 2
   selection: engines-electric-motors
@@ -3311,7 +3684,8 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-and-conventional
+  brand:
+    - electric-and-conventional
   address: Trémery, France
   rank: 2
   selection: engines-electric-motors
@@ -3324,7 +3698,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: combustion-and-electric-lithium-ion-battery-packs
+  brand:
+    - combustion-and-electric
+    - lithium-ion-battery-packs
   address: Cléon, France
   rank: 2
   selection: engines-electric-motors
@@ -3338,7 +3714,11 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz-evobus-truck-engines-battery-packs-innolab-battery
+  brand:
+    - mercedes-benz
+    - evobus-truck-engines
+    - battery-packs
+    - innolab-battery
   address: Mannheim, Germany
   rank: 2
   selection: engines-electric-motors
@@ -3362,7 +3742,8 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-engines
+  brand:
+    - electric-engines
   address: Czechowice-Dziedzice, Poland
   rank: 2
   selection: engines-electric-motors
@@ -3388,7 +3769,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: skoda-petrol-engines-battery-packs
+  brand:
+    - skoda-petrol-engines
+    - battery-packs
   address: Mladá Boleslav, Czechia
   rank: 2
   selection: engines-electric-motors
@@ -3400,7 +3783,10 @@
   focus:
     - engines
     - electric-motors
-  brand: electric-petrol-and-diesel-for-peugeot-citroen-opel-vauxhall-and-ds
+  brand:
+    - electric-petrol-and-diesel-for-peugeot-citroen
+    - opel-vauxhall
+    - and-ds
   address: Douvrin, France
   rank: 2
   selection: engines-electric-motors
@@ -3412,7 +3798,8 @@
   focus:
     - engines
     - electric-motors
-  brand: toyota
+  brand:
+    - toyota
   address: Wałbrzych, Poland
   rank: 2
   selection: engines-electric-motors
@@ -3424,7 +3811,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Chemnitz, Germany
   rank: 2
   selection: engines-electric-motors
@@ -3436,7 +3824,8 @@
   focus:
     - engines
     - electric-motors
-  brand: aston-martin
+  brand:
+    - aston-martin
   address: Köln, Germany
   rank: 2
   selection: engines-electric-motors
@@ -3448,7 +3837,8 @@
   focus:
     - engines
     - electric-motors
-  brand: toyota
+  brand:
+    - toyota
   address: Jelcz-Laskowice, Poland
   rank: 2
   selection: engines-electric-motors
@@ -3461,7 +3851,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Jawor, Poland
   rank: 2
   selection: engines-electric-motors
@@ -3475,7 +3866,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: daf-battery-packs
+  brand:
+    - daf
+    - battery-packs
   address: Eindhoven, The Netherlands
   rank: 2
   selection: engines-electric-motors
@@ -3487,7 +3880,8 @@
   focus:
     - engines
     - electric-motors
-  brand: audi-seat-skoda-volkswagen
+  brand:
+    - audi-seat-skoda-volkswagen
   address: Polkowice, Poland
   rank: 2
   selection: engines-electric-motors
@@ -3499,7 +3893,8 @@
   focus:
     - engines
     - electric-motors
-  brand: ford
+  brand:
+    - ford
   address: Dagenham, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3511,7 +3906,8 @@
   focus:
     - engines
     - electric-motors
-  brand: e-motors-by-yasa
+  brand:
+    - e-motors-by-yasa
   address: Oxford, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3523,7 +3919,8 @@
   focus:
     - engines
     - electric-motors
-  brand: diesel-and-petrol-engines
+  brand:
+    - diesel-and-petrol-engines
   address: Northampton, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3535,7 +3932,8 @@
   focus:
     - engines
     - electric-motors
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Berlin, Germany
   rank: 2
   selection: engines-electric-motors
@@ -3547,7 +3945,8 @@
   focus:
     - engines
     - electric-motors
-  brand: petrol-engines-for-bmw-and-mini
+  brand:
+    - petrol-engines-for-bmw-and-mini
   address: Hams Hall, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3559,7 +3958,8 @@
   focus:
     - engines
     - electric-motors
-  brand: jaguar
+  brand:
+    - jaguar
   address: Wolverhampton, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3572,7 +3972,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: bentley
+  brand:
+    - bentley
   address: Crewe (Cheshire), United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3584,7 +3985,8 @@
   focus:
     - engines
     - electric-motors
-  brand: toyota
+  brand:
+    - toyota
   address: Deeside, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3596,7 +3998,8 @@
   focus:
     - engines
     - electric-motors
-  brand: engines-for-bus-coach-and-hdv
+  brand:
+    - engines-for-bus-coach-and-hdv
   address: Darlington, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3610,7 +4013,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: nissan-battery-packs
+  brand:
+    - nissan
+    - battery-packs
   address: Sunderland, United Kingdom
   rank: 2
   selection: engines-electric-motors
@@ -3622,7 +4027,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volvo-cars
+  brand:
+    - volvo-cars
   address: Skövde, Sweden
   rank: 2
   selection: engines-electric-motors
@@ -3634,7 +4040,8 @@
   focus:
     - engines
     - electric-motors
-  brand: volvo-group
+  brand:
+    - volvo-group
   address: Skövde, Sweden
   rank: 2
   selection: engines-electric-motors
@@ -3648,7 +4055,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: scania-battery-modules-and-packs
+  brand:
+    - scania
+    - battery-modules-and-packs
   address: Södertälje, Sweden
   rank: 2
   selection: engines-electric-motors
@@ -3663,7 +4072,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: ford-lithium-ion-battery-packs
+  brand:
+    - ford
+    - lithium-ion-battery-packs
   address: Valencia (Almusafes), Spain
   rank: 3
   selection: batteries
@@ -3674,7 +4085,8 @@
   manufacturer: faam
   focus:
     - batteries
-  brand: lithium-batteries
+  brand:
+    - lithium-batteries
   address: Teverola, Italy
   rank: 3
   selection: batteries
@@ -3686,7 +4098,11 @@
   focus:
     - passenger-cars
     - batteries
-  brand: citroen-lancia-opel-vauxhall-peugeot-lithium-ion-batteries
+  brand:
+    - citroen-lancia
+    - opel-vauxhall
+    - peugeot
+    - lithium-ion-batteries
   address: Zaragoza, Spain
   rank: 3
   selection: batteries
@@ -3700,7 +4116,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: mitsubishi-renault-lithium-ion-batteries
+  brand:
+    - mitsubishi-renault
+    - lithium-ion-batteries
   address: Valladolid, Spain
   rank: 3
   selection: batteries
@@ -3713,7 +4131,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: fiat-alfa-romeo-lancia-jeep-maseratti-petrol-engines
+  brand:
+    - fiat-alfa-romeo-lancia-jeep-maseratti-petrol-engines
   address: Termoli (Campobasso), Italy
   rank: 3
   selection: batteries
@@ -3728,7 +4147,12 @@
     - engines
     - electric-motors
     - batteries
-  brand: citroen-fiat-peugeot-opel-vauxhall-toyota-electric-motors-lithium-ion-battery-packs
+  brand:
+    - citroen-fiat-peugeot
+    - opel-vauxhall
+    - toyota
+    - electric-motors
+    - lithium-ion-battery-packs
   address: Vigo, Spain
   rank: 3
   selection: batteries
@@ -3739,7 +4163,8 @@
   manufacturer: prime-motors-rombat
   focus:
     - batteries
-  brand: li-ion-batteries
+  brand:
+    - li-ion-batteries
   address: Cernica, Romania
   rank: 3
   selection: batteries
@@ -3753,7 +4178,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: ferrari
+  brand:
+    - ferrari
   address: Maranello, Italy
   rank: 3
   selection: batteries
@@ -3767,7 +4193,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: abarth-fiat-maserati-electric-drive-motors
+  brand:
+    - abarth-fiat-maserati-electric-drive-motors
   address: Mirafiori (Torino), Italy
   rank: 3
   selection: batteries
@@ -3780,7 +4207,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: by-fpt-powertrain-technologies
+  brand:
+    - by-fpt-powertrain-technologies
   address: Torino, Italy
   rank: 3
   selection: batteries
@@ -3791,7 +4219,8 @@
   manufacturer: verkor
   focus:
     - batteries
-  brand: alpine
+  brand:
+    - alpine
   address: Grenoble, France
   rank: 3
   selection: batteries
@@ -3802,7 +4231,10 @@
   manufacturer: automotive-cells-company-acc
   focus:
     - batteries
-  brand: jv-with-stellantis-mercedes-benz-and-totalenergies
+  brand:
+    - jv-with-stellantis
+    - mercedes-benz
+    - and-totalenergies
   address: Nersac, France
   rank: 3
   selection: batteries
@@ -3816,7 +4248,10 @@
     - engines
     - electric-motors
     - batteries
-  brand: rimac-electric-hypercars-battery-packs-electric-powertrain-systems
+  brand:
+    - rimac-electric-hypercars
+    - battery-packs
+    - electric-powertrain-systems
   address: Sveta Nedjelja, Croatia
   rank: 3
   selection: batteries
@@ -3827,7 +4262,8 @@
   manufacturer: tab
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Prevalje, Slovenia
   rank: 3
   selection: batteries
@@ -3839,7 +4275,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: ds-peugeot-drive-battery-packs
+  brand:
+    - ds-peugeot-drive
+    - battery-packs
   address: Sochaux, France
   rank: 3
   selection: batteries
@@ -3850,7 +4288,8 @@
   manufacturer: samsung-sdi
   focus:
     - batteries
-  brand: battery-cells
+  brand:
+    - battery-cells
   address: Göd, Hungary
   rank: 3
   selection: batteries
@@ -3862,7 +4301,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: ds-peugeot-assembly-of-drive-batteries
+  brand:
+    - ds-peugeot-assembly-of-drive-batteries
   address: Mulhouse, France
   rank: 3
   selection: batteries
@@ -3874,7 +4314,8 @@
   focus:
     - buses
     - batteries
-  brand: ev-bluebus-bluesolutions-lithium-ion-polymer-batteries
+  brand:
+    - ev-bluebus-bluesolutions-lithium-ion-polymer-batteries
   address: Ergué-Gabéric, France
   rank: 3
   selection: batteries
@@ -3885,7 +4326,8 @@
   manufacturer: inobat
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Voderady, Slovakia
   rank: 3
   selection: batteries
@@ -3897,7 +4339,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: peugeot-citroen-drive-batteries
+  brand:
+    - peugeot-citroen-drive-batteries
   address: Trnava, Slovakia
   rank: 3
   selection: batteries
@@ -3908,7 +4351,8 @@
   manufacturer: miba
   focus:
     - batteries
-  brand: battery-cells
+  brand:
+    - battery-cells
   address: Bad Leonfelden, Austria
   rank: 3
   selection: batteries
@@ -3919,7 +4363,8 @@
   manufacturer: leclanche
   focus:
     - batteries
-  brand: batteries-for-buses
+  brand:
+    - batteries-for-buses
   address: Willstätt, Germany
   rank: 3
   selection: batteries
@@ -3931,7 +4376,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw
+  brand:
+    - bmw
   address: Dingolfing, Germany
   rank: 3
   selection: batteries
@@ -3943,7 +4389,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: audi
+  brand:
+    - audi
   address: Ingolstadt, Germany
   rank: 3
   selection: batteries
@@ -3956,7 +4403,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Untertürkheim (Stuttgart), Germany
   rank: 3
   selection: batteries
@@ -3968,7 +4416,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw-battery-modules
+  brand:
+    - bmw-battery-modules
   address: Regensburg, Germany
   rank: 3
   selection: batteries
@@ -3979,7 +4428,8 @@
   manufacturer: valmet-automotive
   focus:
     - batteries
-  brand: battery-management-systems-bms-modules-and-packs
+  brand:
+    - battery-management-systems-bms-modules-and-packs
   address: Kirchardt, Germany
   rank: 3
   selection: batteries
@@ -3992,7 +4442,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: combustion-and-electric-lithium-ion-battery-packs
+  brand:
+    - combustion-and-electric
+    - lithium-ion-battery-packs
   address: Cléon, France
   rank: 3
   selection: batteries
@@ -4003,7 +4455,8 @@
   manufacturer: svolt
   focus:
     - batteries
-  brand: battery-modules-and-packs
+  brand:
+    - battery-modules-and-packs
   address: Heusweiler, Germany
   rank: 3
   selection: batteries
@@ -4017,7 +4470,11 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz-evobus-truck-engines-battery-packs-innolab-battery
+  brand:
+    - mercedes-benz
+    - evobus-truck-engines
+    - battery-packs
+    - innolab-battery
   address: Mannheim, Germany
   rank: 3
   selection: batteries
@@ -4029,7 +4486,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: hyundai
+  brand:
+    - hyundai
   address: Nosovice, Czechia
   rank: 3
   selection: batteries
@@ -4041,7 +4499,11 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: peugeot-citroen-opel-vauxhall-fiat-and-toyota-battery-packs
+  brand:
+    - peugeot-citroen
+    - opel-vauxhall
+    - fiat-and-toyota
+    - battery-packs
   address: Hordain, France
   rank: 3
   selection: batteries
@@ -4053,7 +4515,10 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: renault-mercedes-benz-nissan-drive-batteries
+  brand:
+    - renault
+    - mercedes-benz
+    - nissan-drive-batteries
   address: Maubeuge, France
   rank: 3
   selection: batteries
@@ -4065,7 +4530,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: renault
+  brand:
+    - renault
   address: Douai, France
   rank: 3
   selection: batteries
@@ -4079,7 +4545,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: skoda-petrol-engines-battery-packs
+  brand:
+    - skoda-petrol-engines
+    - battery-packs
   address: Mladá Boleslav, Czechia
   rank: 3
   selection: batteries
@@ -4090,7 +4558,9 @@
   manufacturer: lion-smart
   focus:
     - batteries
-  brand: battery-cells-battery-packs
+  brand:
+    - battery-cells
+    - battery-packs
   address: Hildburghausen, Germany
   rank: 3
   selection: batteries
@@ -4101,7 +4571,10 @@
   manufacturer: automotive-cells-company-acc
   focus:
     - batteries
-  brand: lithium-ion-battery-cells-and-modules-jv-with-stellantis-mercedes-benz-and-totalenergies
+  brand:
+    - lithium-ion-battery-cells
+    - and-modules
+    - jv-with-stellantis-mercedes-benz-and-totalenergies
   address: Billy-Berclau (Douvrin), France
   rank: 3
   selection: batteries
@@ -4113,7 +4586,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: audi
+  brand:
+    - audi
   address: Forest (Brussels), Belgium
   rank: 3
   selection: batteries
@@ -4124,7 +4598,9 @@
   manufacturer: solithor
   focus:
     - batteries
-  brand: rechargeable-all-solid-state-lithium-batteries
+  brand:
+    - rechargeable-all-solid-state
+    - lithium-batteries
   address: Sint-Truiden, Belgium
   rank: 3
   selection: batteries
@@ -4135,7 +4611,9 @@
   manufacturer: catl
   focus:
     - batteries
-  brand: bmw-mercedes-lithium-ion-batteries
+  brand:
+    - bmw-mercedes
+    - lithium-ion-batteries
   address: Arnstadt, Germany
   rank: 3
   selection: batteries
@@ -4147,7 +4625,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: opel-vauxhall-battery-packs
+  brand:
+    - opel-vauxhall
+    - battery-packs
   address: Eisenach, Germany
   rank: 3
   selection: batteries
@@ -4159,7 +4639,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: volvo-battery-packs
+  brand:
+    - volvo
+    - battery-packs
   address: Gent, Belgium
   rank: 3
   selection: batteries
@@ -4171,7 +4653,9 @@
   focus:
     - heavy-duty-vehicles
     - batteries
-  brand: volvo-trucks-lithium-ion-battery-packs
+  brand:
+    - volvo-trucks
+    - lithium-ion-battery-packs
   address: Oostakker (Gent), Belgium
   rank: 3
   selection: batteries
@@ -4184,7 +4668,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Jawor, Poland
   rank: 3
   selection: batteries
@@ -4195,7 +4680,9 @@
   manufacturer: mercedes-benz-group
   focus:
     - batteries
-  brand: mercedes-benz-smart
+  brand:
+    - mercedes-benz
+    - smart
   address: Kamenz, Germany
   rank: 3
   selection: batteries
@@ -4207,7 +4694,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw-mini-battery-modules
+  brand:
+    - bmw-mini-battery-modules
   address: Leipzig, Germany
   rank: 3
   selection: batteries
@@ -4221,7 +4709,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: daf-battery-packs
+  brand:
+    - daf
+    - battery-packs
   address: Eindhoven, The Netherlands
   rank: 3
   selection: batteries
@@ -4232,7 +4722,8 @@
   manufacturer: eleo-technologies
   focus:
     - batteries
-  brand: battery-packs
+  brand:
+    - battery-packs
   address: Helmond, The Netherlands
   rank: 3
   selection: batteries
@@ -4244,7 +4735,10 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: cenntro-electric-vans-battery-packs
+  brand:
+    - cenntro
+    - electric-vans
+    - battery-packs
   address: Herne, Germany
   rank: 3
   selection: batteries
@@ -4255,7 +4749,8 @@
   manufacturer: impact-clean-power-technology
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Pruszków, Poland
   rank: 3
   selection: batteries
@@ -4266,7 +4761,8 @@
   manufacturer: volkswagen-group
   focus:
     - batteries
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Brunswick (Braunschweig), Germany
   rank: 3
   selection: batteries
@@ -4289,7 +4785,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: tesla
+  brand:
+    - tesla
   address: Grünheide , Germany
   rank: 3
   selection: batteries
@@ -4300,7 +4797,8 @@
   manufacturer: eve-energy
   focus:
     - batteries
-  brand: eve-energy-has-allegedly-pledged-to-create-a-battery-plant-on-the-outskirts-of-coventry
+  brand:
+    - eve-energy-has-allegedly-pledged-to-create-a-battery-plant-on-the-outskirts-of-coventry
   address: Coventry, United Kingdom
   rank: 3
   selection: batteries
@@ -4311,7 +4809,9 @@
   manufacturer: jaguar-land-rover
   focus:
     - batteries
-  brand: lithium-ion-battery-packs
+  brand:
+    - lithium-ion
+    - battery-packs
   address: Hams Hall, United Kingdom
   rank: 3
   selection: batteries
@@ -4324,7 +4824,10 @@
     - passenger-cars
     - light-commercial-vehicles
     - batteries
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Ellesmere Port, United Kingdom
   rank: 3
   selection: batteries
@@ -4335,7 +4838,9 @@
   manufacturer: northvolt
   focus:
     - batteries
-  brand: lithium-ion-battery-cells
+  brand:
+    - lithium-ion
+    - battery-cells
   address: Heide, Germany
   rank: 3
   selection: batteries
@@ -4349,7 +4854,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: nissan-battery-packs
+  brand:
+    - nissan
+    - battery-packs
   address: Sunderland, United Kingdom
   rank: 3
   selection: batteries
@@ -4360,7 +4867,9 @@
   manufacturer: aesc-group
   focus:
     - batteries
-  brand: lithium-ion-batteries-for-nissan
+  brand:
+    - lithium-ion-batteries
+    - for-nissan
   address: Sunderland, United Kingdom
   rank: 3
   selection: batteries
@@ -4371,7 +4880,8 @@
   manufacturer: lionvolt
   focus:
     - batteries
-  brand: 3d-solid-state-batteries
+  brand:
+    - 3d-solid-state-batteries
   address: Thurso, United Kingdom
   rank: 3
   selection: batteries
@@ -4385,7 +4895,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: scania-battery-modules-and-packs
+  brand:
+    - scania
+    - battery-modules-and-packs
   address: Södertälje, Sweden
   rank: 3
   selection: batteries
@@ -4396,7 +4908,9 @@
   manufacturer: valmet-automotive
   focus:
     - batteries
-  brand: lithium-ion-battery-packs
+  brand:
+    - lithium-ion
+    - battery-packs
   address: Salo, Finland
   rank: 3
   selection: batteries
@@ -4408,7 +4922,11 @@
   focus:
     - passenger-cars
     - batteries
-  brand: amg-mercedes-benz-lithium-ion-battery-modules-and-battery-packs
+  brand:
+    - amg
+    - mercedes-benz
+    - lithium-ion-battery-modules-and
+    - battery-packs
   address: Uusikaupunki, Finland
   rank: 3
   selection: batteries
@@ -4430,7 +4948,8 @@
   manufacturer: northvolt
   focus:
     - batteries
-  brand: lithium-ion-batteries
+  brand:
+    - lithium-ion-batteries
   address: Skellefteå, Sweden
   rank: 3
   selection: batteries
@@ -4441,7 +4960,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: citroen
+  brand:
+    - citroen
   address: Madrid (Villaverde), Spain
   rank: 4
   selection: passenger-cars
@@ -4452,7 +4972,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: alfa-romeo-maserati
+  brand:
+    - alfa-romeo-maserati
   address: Cassino, Italy
   rank: 4
   selection: passenger-cars
@@ -4463,7 +4984,8 @@
   manufacturer: dr-motor
   focus:
     - passenger-cars
-  brand: dr-chery
+  brand:
+    - dr-chery
   address: Macchia d'Isernia, Italy
   rank: 4
   selection: passenger-cars
@@ -4474,7 +4996,8 @@
   manufacturer: hispano-suiza
   focus:
     - passenger-cars
-  brand: hispano-suiza
+  brand:
+    - hispano-suiza
   address: Montmeló (Barcelona), Spain
   rank: 4
   selection: passenger-cars
@@ -4486,7 +5009,11 @@
   focus:
     - passenger-cars
     - batteries
-  brand: citroen-lancia-opel-vauxhall-peugeot-lithium-ion-batteries
+  brand:
+    - citroen-lancia
+    - opel-vauxhall
+    - peugeot
+    - lithium-ion-batteries
   address: Zaragoza, Spain
   rank: 4
   selection: passenger-cars
@@ -4501,7 +5028,12 @@
     - engines
     - electric-motors
     - batteries
-  brand: citroen-fiat-peugeot-opel-vauxhall-toyota-electric-motors-lithium-ion-battery-packs
+  brand:
+    - citroen-fiat-peugeot
+    - opel-vauxhall
+    - toyota
+    - electric-motors
+    - lithium-ion-battery-packs
   address: Vigo, Spain
   rank: 4
   selection: passenger-cars
@@ -4512,7 +5044,8 @@
   manufacturer: sin-cars
   focus:
     - passenger-cars
-  brand: sin-supercars
+  brand:
+    - sin-supercars
   address: Giurgiu, Romania
   rank: 4
   selection: passenger-cars
@@ -4526,7 +5059,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: abarth-fiat-maserati-electric-drive-motors
+  brand:
+    - abarth-fiat-maserati-electric-drive-motors
   address: Mirafiori (Torino), Italy
   rank: 4
   selection: passenger-cars
@@ -4540,7 +5074,10 @@
     - engines
     - electric-motors
     - batteries
-  brand: rimac-electric-hypercars-battery-packs-electric-powertrain-systems
+  brand:
+    - rimac-electric-hypercars
+    - battery-packs
+    - electric-powertrain-systems
   address: Sveta Nedjelja, Croatia
   rank: 4
   selection: passenger-cars
@@ -4551,7 +5088,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: renault
+  brand:
+    - renault
   address: Novo Mesto, Slovenia
   rank: 4
   selection: passenger-cars
@@ -4562,7 +5100,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Kecskemet, Hungary
   rank: 4
   selection: passenger-cars
@@ -4573,7 +5112,10 @@
   manufacturer: magna-steyr
   focus:
     - passenger-cars
-  brand: bmw-fisker-jlr-mercedes-benz-toyota
+  brand:
+    - bmw-fisker-jlr
+    - mercedes-benz
+    - toyota
   address: Graz, Austria
   rank: 4
   selection: passenger-cars
@@ -4585,7 +5127,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: ds-peugeot-drive-battery-packs
+  brand:
+    - ds-peugeot-drive
+    - battery-packs
   address: Sochaux, France
   rank: 4
   selection: passenger-cars
@@ -4597,7 +5141,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw
+  brand:
+    - bmw
   address: Dingolfing, Germany
   rank: 4
   selection: passenger-cars
@@ -4608,7 +5153,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Sindelfingen, Germany
   rank: 4
   selection: passenger-cars
@@ -4620,7 +5166,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: audi
+  brand:
+    - audi
   address: Ingolstadt, Germany
   rank: 4
   selection: passenger-cars
@@ -4633,7 +5180,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: porsche
+  brand:
+    - porsche
   address: Stuttgart-Zuffenhausen, Germany
   rank: 4
   selection: passenger-cars
@@ -4644,7 +5192,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Rastatt, Germany
   rank: 4
   selection: passenger-cars
@@ -4655,7 +5204,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: ds-opel
+  brand:
+    - ds-opel
   address: Poissy, France
   rank: 4
   selection: passenger-cars
@@ -4666,7 +5216,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: renault
+  brand:
+    - renault
   address: Flins, France
   rank: 4
   selection: passenger-cars
@@ -4678,7 +5229,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw-battery-modules
+  brand:
+    - bmw-battery-modules
   address: Regensburg, Germany
   rank: 4
   selection: passenger-cars
@@ -4689,7 +5241,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi
+  brand:
+    - audi
   address: Heilbronn, Germany
   rank: 4
   selection: passenger-cars
@@ -4701,7 +5254,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: hyundai
+  brand:
+    - hyundai
   address: Nosovice, Czechia
   rank: 4
   selection: passenger-cars
@@ -4712,7 +5266,10 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: abarth-alfa-romeo-fiat-jeep-lancia
+  brand:
+    - abarth-alfa-romeo
+    - fiat-jeep
+    - lancia
   address: Tychy, Poland
   rank: 4
   selection: passenger-cars
@@ -4724,7 +5281,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: renault
+  brand:
+    - renault
   address: Douai, France
   rank: 4
   selection: passenger-cars
@@ -4738,7 +5296,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: skoda-petrol-engines-battery-packs
+  brand:
+    - skoda-petrol-engines
+    - battery-packs
   address: Mladá Boleslav, Czechia
   rank: 4
   selection: passenger-cars
@@ -4749,7 +5309,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi-cupra-volkswagen
+  brand:
+    - audi-cupra-volkswagen
   address: Zwickau, Germany
   rank: 4
   selection: passenger-cars
@@ -4760,7 +5321,8 @@
   manufacturer: next-e-go-mobile
   focus:
     - passenger-cars
-  brand: e-go-electric-mini-cars
+  brand:
+    - e-go-electric-mini-cars
   address: Aachen, Germany
   rank: 4
   selection: passenger-cars
@@ -4772,7 +5334,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: audi
+  brand:
+    - audi
   address: Forest (Brussels), Belgium
   rank: 4
   selection: passenger-cars
@@ -4783,7 +5346,8 @@
   manufacturer: bmw-group
   focus:
     - passenger-cars
-  brand: rolls-royce
+  brand:
+    - rolls-royce
   address: Goodwood, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -4794,7 +5358,8 @@
   manufacturer: ford-of-europe
   focus:
     - passenger-cars
-  brand: ford
+  brand:
+    - ford
   address: Köln, Germany
   rank: 4
   selection: passenger-cars
@@ -4806,7 +5371,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: opel-vauxhall-battery-packs
+  brand:
+    - opel-vauxhall
+    - battery-packs
   address: Eisenach, Germany
   rank: 4
   selection: passenger-cars
@@ -4817,7 +5384,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Dresden, Germany
   rank: 4
   selection: passenger-cars
@@ -4829,7 +5397,9 @@
   focus:
     - passenger-cars
     - batteries
-  brand: volvo-battery-packs
+  brand:
+    - volvo
+    - battery-packs
   address: Gent, Belgium
   rank: 4
   selection: passenger-cars
@@ -4841,7 +5411,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: bmw-mini-battery-modules
+  brand:
+    - bmw-mini-battery-modules
   address: Leipzig, Germany
   rank: 4
   selection: passenger-cars
@@ -4852,7 +5423,8 @@
   manufacturer: bmw-group
   focus:
     - passenger-cars
-  brand: mini
+  brand:
+    - mini
   address: Cowley (Oxford), United Kingdom
   rank: 4
   selection: passenger-cars
@@ -4863,7 +5435,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen-porsche-skoda
+  brand:
+    - volkswagen-porsche-skoda
   address: Osnabrück, Germany
   rank: 4
   selection: passenger-cars
@@ -4875,7 +5448,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Hannover, Germany
   rank: 4
   selection: passenger-cars
@@ -4887,7 +5461,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: tesla
+  brand:
+    - tesla
   address: Grünheide , Germany
   rank: 4
   selection: passenger-cars
@@ -4899,7 +5474,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: london-electric-vehicle-company-levc
+  brand:
+    - london-electric-vehicle-company-levc
   address: Coventry, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -4910,7 +5486,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen-seat
+  brand:
+    - volkswagen-seat
   address: Wolfsburg, Germany
   rank: 4
   selection: passenger-cars
@@ -4922,7 +5499,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: london-electric-vehicle-company-levc
+  brand:
+    - london-electric-vehicle-company-levc
   address: Ansty, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -4933,7 +5511,9 @@
   manufacturer: lotus-group
   focus:
     - passenger-cars
-  brand: lotus-sports-cars
+  brand:
+    - lotus
+    - sports-cars
   address: Hethel (Norwich), United Kingdom
   rank: 4
   selection: passenger-cars
@@ -4944,7 +5524,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - passenger-cars
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Bremen, Germany
   rank: 4
   selection: passenger-cars
@@ -4957,7 +5538,10 @@
     - passenger-cars
     - light-commercial-vehicles
     - batteries
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Ellesmere Port, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -4968,7 +5552,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Emden, Germany
   rank: 4
   selection: passenger-cars
@@ -4982,7 +5567,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: nissan-battery-packs
+  brand:
+    - nissan
+    - battery-packs
   address: Sunderland, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -4993,7 +5580,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen-by-vw-autoeuropa
+  brand:
+    - volkswagen-by-vw-autoeuropa
   address: Palmela (Setubal), Portugal
   rank: 4
   selection: passenger-cars
@@ -5008,7 +5596,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: ford-lithium-ion-battery-packs
+  brand:
+    - ford
+    - lithium-ion-battery-packs
   address: Valencia (Almusafes), Spain
   rank: 4
   selection: passenger-cars
@@ -5019,7 +5609,8 @@
   manufacturer: toyota-caetano-portugal
   focus:
     - passenger-cars
-  brand: toyota
+  brand:
+    - toyota
   address: Ovar, Portugal
   rank: 4
   selection: passenger-cars
@@ -5030,7 +5621,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: alfa-romeo-dodge-fiat
+  brand:
+    - alfa-romeo-dodge-fiat
   address: Pomigliano d'Arco (Napoli), Italy
   rank: 4
   selection: passenger-cars
@@ -5041,7 +5633,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: fiat-jeep
+  brand:
+    - fiat-jeep
   address: Melfi (Potenza), Italy
   rank: 4
   selection: passenger-cars
@@ -5052,7 +5645,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi-cupra-seat
+  brand:
+    - audi-cupra-seat
   address: Martorell, Spain
   rank: 4
   selection: passenger-cars
@@ -5066,7 +5660,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: mitsubishi-renault-lithium-ion-batteries
+  brand:
+    - mitsubishi-renault
+    - lithium-ion-batteries
   address: Valladolid, Spain
   rank: 4
   selection: passenger-cars
@@ -5077,7 +5673,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: renault
+  brand:
+    - renault
   address: Palencia, Spain
   rank: 4
   selection: passenger-cars
@@ -5088,7 +5685,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Landaben (Pamplona), Spain
   rank: 4
   selection: passenger-cars
@@ -5101,7 +5699,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: compressed-air-cars
+  brand:
+    - compressed-air-cars
   address: Carros, France
   rank: 4
   selection: passenger-cars
@@ -5115,7 +5714,8 @@
     - light-commercial-vehicles
     - engines
     - electric-motors
-  brand: ford
+  brand:
+    - ford
   address: Craiova, Romania
   rank: 4
   selection: passenger-cars
@@ -5129,7 +5729,8 @@
     - engines
     - electric-motors
     - batteries
-  brand: ferrari
+  brand:
+    - ferrari
   address: Maranello, Italy
   rank: 4
   selection: passenger-cars
@@ -5140,7 +5741,9 @@
   manufacturer: pagani
   focus:
     - passenger-cars
-  brand: pagani-sports-cars
+  brand:
+    - pagani
+    - sports-cars
   address: San Cesario Sul Panaro, Italy
   rank: 4
   selection: passenger-cars
@@ -5151,7 +5754,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: maserati
+  brand:
+    - maserati
   address: Modena, Italy
   rank: 4
   selection: passenger-cars
@@ -5164,7 +5768,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: lamborghini
+  brand:
+    - lamborghini
   address: Sant'Agata Bolognese, Italy
   rank: 4
   selection: passenger-cars
@@ -5177,7 +5782,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: dacia-renault
+  brand:
+    - dacia-renault
   address: Mioveni (Pitesti), Romania
   rank: 4
   selection: passenger-cars
@@ -5190,7 +5796,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: audi
+  brand:
+    - audi
   address: Győr, Hungary
   rank: 4
   selection: passenger-cars
@@ -5202,7 +5809,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: ds-peugeot-assembly-of-drive-batteries
+  brand:
+    - ds-peugeot-assembly-of-drive-batteries
   address: Mulhouse, France
   rank: 4
   selection: passenger-cars
@@ -5213,7 +5821,8 @@
   manufacturer: suzuki
   focus:
     - passenger-cars
-  brand: suzuki
+  brand:
+    - suzuki
   address: Esztergom, Hungary
   rank: 4
   selection: passenger-cars
@@ -5224,7 +5833,8 @@
   manufacturer: stellantis
   focus:
     - passenger-cars
-  brand: citroen-peugeot
+  brand:
+    - citroen-peugeot
   address: Rennes, France
   rank: 4
   selection: passenger-cars
@@ -5235,7 +5845,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi-porsche-skoda-volkswagen
+  brand:
+    - audi-porsche-skoda-volkswagen
   address: Bratislava, Slovakia
   rank: 4
   selection: passenger-cars
@@ -5246,7 +5857,8 @@
   manufacturer: jaguar-land-rover
   focus:
     - passenger-cars
-  brand: land-rover
+  brand:
+    - land-rover
   address: Nitra, Slovakia
   rank: 4
   selection: passenger-cars
@@ -5258,7 +5870,8 @@
   focus:
     - passenger-cars
     - batteries
-  brand: peugeot-citroen-drive-batteries
+  brand:
+    - peugeot-citroen-drive-batteries
   address: Trnava, Slovakia
   rank: 4
   selection: passenger-cars
@@ -5269,7 +5882,8 @@
   manufacturer: bugatti-rimac
   focus:
     - passenger-cars
-  brand: bugatti
+  brand:
+    - bugatti
   address: Molsheim, France
   rank: 4
   selection: passenger-cars
@@ -5280,7 +5894,8 @@
   manufacturer: vanwall
   focus:
     - passenger-cars
-  brand: vanwall-hypercars
+  brand:
+    - vanwall-hypercars
   address: Greding, Germany
   rank: 4
   selection: passenger-cars
@@ -5291,7 +5906,8 @@
   manufacturer: ineos
   focus:
     - passenger-cars
-  brand: off-road-grenadier
+  brand:
+    - off-road-grenadier
   address: Hambach, France
   rank: 4
   selection: passenger-cars
@@ -5302,7 +5918,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: audi
+  brand:
+    - audi
   address: Neckarsulm, Germany
   rank: 4
   selection: passenger-cars
@@ -5315,7 +5932,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: kia
+  brand:
+    - kia
   address: Zilina, Slovakia
   rank: 4
   selection: passenger-cars
@@ -5326,7 +5944,8 @@
   manufacturer: ford-of-europe
   focus:
     - passenger-cars
-  brand: ford
+  brand:
+    - ford
   address: Saarlouis, Germany
   rank: 4
   selection: passenger-cars
@@ -5337,7 +5956,8 @@
   manufacturer: renault-group
   focus:
     - passenger-cars
-  brand: alpine
+  brand:
+    - alpine
   address: Dieppe, France
   rank: 4
   selection: passenger-cars
@@ -5349,7 +5969,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: opel-vauxhall
+  brand:
+    - opel-vauxhall
   address: Rüsselsheim, Germany
   rank: 4
   selection: passenger-cars
@@ -5360,7 +5981,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - passenger-cars
-  brand: toyota
+  brand:
+    - toyota
   address: Kolin, Czechia
   rank: 4
   selection: passenger-cars
@@ -5371,7 +5993,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: skoda-seat
+  brand:
+    - skoda-seat
   address: Kvasiny, Czechia
   rank: 4
   selection: passenger-cars
@@ -5382,7 +6005,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - passenger-cars
-  brand: mazda-toyota
+  brand:
+    - mazda-toyota
   address: Onnaing (Valenciennes), France
   rank: 4
   selection: passenger-cars
@@ -5393,7 +6017,9 @@
   manufacturer: automobiles-gillet
   focus:
     - passenger-cars
-  brand: gillet-sports-cars
+  brand:
+    - gillet
+    - sports-cars
   address: Gembloux, Belgium
   rank: 4
   selection: passenger-cars
@@ -5404,7 +6030,8 @@
   manufacturer: gordon-murray-automotive
   focus:
     - passenger-cars
-  brand: gma-supercar
+  brand:
+    - gma-supercar
   address: Dunsfold, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5415,7 +6042,9 @@
   manufacturer: tvr
   focus:
     - passenger-cars
-  brand: tvr-sports-cars
+  brand:
+    - tvr
+    - sports-cars
   address: Walliswood, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5426,7 +6055,8 @@
   manufacturer: mclaren
   focus:
     - passenger-cars
-  brand: sports-cars
+  brand:
+    - sports-cars
   address: Woking, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5437,7 +6067,8 @@
   manufacturer: volkswagen-group
   focus:
     - passenger-cars
-  brand: porsche
+  brand:
+    - porsche
   address: Leipzig, Germany
   rank: 4
   selection: passenger-cars
@@ -5448,7 +6079,9 @@
   manufacturer: aston-martin
   focus:
     - passenger-cars
-  brand: aston-martin-lagonda
+  brand:
+    - aston-martin
+    - lagonda
   address: Saint Athan, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5459,7 +6092,9 @@
   manufacturer: caterham
   focus:
     - passenger-cars
-  brand: caterham-sports-cars
+  brand:
+    - caterham
+    - sports-cars
   address: Dartford (Kent), United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5470,7 +6105,9 @@
   manufacturer: morgan-motor-company
   focus:
     - passenger-cars
-  brand: morgan-sports-cars
+  brand:
+    - morgan
+    - sports-cars
   address: Malvern, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5481,7 +6118,9 @@
   manufacturer: aston-martin
   focus:
     - passenger-cars
-  brand: aston-martin-sports-cars
+  brand:
+    - aston-martin
+    - sports-cars
   address: Gaydon (Warwick), United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5492,7 +6131,8 @@
   manufacturer: jaguar-land-rover
   focus:
     - passenger-cars
-  brand: jaguar-range-rover
+  brand:
+    - jaguar-range-rover
   address: Solihull, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5503,7 +6143,9 @@
   manufacturer: donkervoort
   focus:
     - passenger-cars
-  brand: donkervoort-sports-cars
+  brand:
+    - donkervoort
+    - sports-cars
   address: Lelystad, The Netherlands
   rank: 4
   selection: passenger-cars
@@ -5514,7 +6156,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - passenger-cars
-  brand: toyota
+  brand:
+    - toyota
   address: Burnaston, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5527,7 +6170,8 @@
     - passenger-cars
     - engines
     - electric-motors
-  brand: bentley
+  brand:
+    - bentley
   address: Crewe (Cheshire), United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5538,7 +6182,9 @@
   manufacturer: jaguar-land-rover
   focus:
     - passenger-cars
-  brand: land-rover-range-rover
+  brand:
+    - land-rover
+    - range-rover
   address: Halewood, United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5549,7 +6195,8 @@
   manufacturer: ginetta
   focus:
     - passenger-cars
-  brand: ginetta-sports-racing-car
+  brand:
+    - ginetta-sports-racing-car
   address: Garforth (Leeds), United Kingdom
   rank: 4
   selection: passenger-cars
@@ -5560,7 +6207,9 @@
   manufacturer: koenigsegg-automotive-ab
   focus:
     - passenger-cars
-  brand: koenigsegg-sports-cars
+  brand:
+    - koenigsegg
+    - sports-cars
   address: Ängelholm, Sweden
   rank: 4
   selection: passenger-cars
@@ -5571,7 +6220,8 @@
   manufacturer: volvo-car-corporation-geely
   focus:
     - passenger-cars
-  brand: volvo-cars
+  brand:
+    - volvo-cars
   address: Torslanda (Göteborg), Sweden
   rank: 4
   selection: passenger-cars
@@ -5583,7 +6233,11 @@
   focus:
     - passenger-cars
     - batteries
-  brand: amg-mercedes-benz-lithium-ion-battery-modules-and-battery-packs
+  brand:
+    - amg
+    - mercedes-benz
+    - lithium-ion-battery-modules-and
+    - battery-packs
   address: Uusikaupunki, Finland
   rank: 4
   selection: passenger-cars
@@ -5594,7 +6248,8 @@
   manufacturer: daimler-truck
   focus:
     - heavy-duty-vehicles
-  brand: fuso
+  brand:
+    - fuso
   address: Tramagal, Portugal
   rank: 5
   selection: heavy-duty-vehicles
@@ -5605,7 +6260,8 @@
   manufacturer: irizar
   focus:
     - heavy-duty-vehicles
-  brand: irizar-electric-trucks
+  brand:
+    - irizar-electric-trucks
   address: Lazkao, Spain
   rank: 5
   selection: heavy-duty-vehicles
@@ -5616,7 +6272,8 @@
   manufacturer: volvo-group
   focus:
     - heavy-duty-vehicles
-  brand: renault-trucks
+  brand:
+    - renault-trucks
   address: Bourg-en-Bresse, France
   rank: 5
   selection: heavy-duty-vehicles
@@ -5627,7 +6284,8 @@
   manufacturer: steyr-automotive
   focus:
     - heavy-duty-vehicles
-  brand: volta-trucks
+  brand:
+    - volta-trucks
   address: Steyr, Austria
   rank: 5
   selection: heavy-duty-vehicles
@@ -5638,7 +6296,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Ulm, Germany
   rank: 5
   selection: heavy-duty-vehicles
@@ -5649,7 +6308,8 @@
   manufacturer: daimler-truck
   focus:
     - heavy-duty-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Wörth, Germany
   rank: 5
   selection: heavy-duty-vehicles
@@ -5660,7 +6320,9 @@
   manufacturer: volvo-group
   focus:
     - heavy-duty-vehicles
-  brand: renault-trucks-volvo-trucks
+  brand:
+    - renault-trucks
+    - volvo-trucks
   address: Blainville-sur-Orne, France
   rank: 5
   selection: heavy-duty-vehicles
@@ -5672,7 +6334,9 @@
   focus:
     - heavy-duty-vehicles
     - batteries
-  brand: volvo-trucks-lithium-ion-battery-packs
+  brand:
+    - volvo-trucks
+    - lithium-ion-battery-packs
   address: Oostakker (Gent), Belgium
   rank: 5
   selection: heavy-duty-vehicles
@@ -5686,7 +6350,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: daf-battery-packs
+  brand:
+    - daf
+    - battery-packs
   address: Eindhoven, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
@@ -5697,7 +6363,8 @@
   manufacturer: tevva
   focus:
     - heavy-duty-vehicles
-  brand: electric-and-hydrogen-trucks
+  brand:
+    - electric-and-hydrogen-trucks
   address: Tilbury, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
@@ -5708,7 +6375,8 @@
   manufacturer: ginaf
   focus:
     - heavy-duty-vehicles
-  brand: ginaf-heavy-special-vehicles
+  brand:
+    - ginaf-heavy-special-vehicles
   address: Veenendaal, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
@@ -5719,7 +6387,8 @@
   manufacturer: dennis-eagle
   focus:
     - heavy-duty-vehicles
-  brand: dennis-waste-collection
+  brand:
+    - dennis-waste-collection
   address: Warwick, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
@@ -5731,7 +6400,8 @@
   focus:
     - light-commercial-vehicles
     - heavy-duty-vehicles
-  brand: ev-platform
+  brand:
+    - ev-platform
   address: Coventry, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
@@ -5742,7 +6412,8 @@
   manufacturer: paccar
   focus:
     - heavy-duty-vehicles
-  brand: daf-by-leyland-trucks
+  brand:
+    - daf-by-leyland-trucks
   address: Leyland, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
@@ -5753,7 +6424,8 @@
   manufacturer: volvo-group
   focus:
     - heavy-duty-vehicles
-  brand: volvo-trucks
+  brand:
+    - volvo-trucks
   address: Tuve (Göteborg), Sweden
   rank: 5
   selection: heavy-duty-vehicles
@@ -5767,7 +6439,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: scania-battery-modules-and-packs
+  brand:
+    - scania
+    - battery-modules-and-packs
   address: Södertälje, Sweden
   rank: 5
   selection: heavy-duty-vehicles
@@ -5778,7 +6452,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Madrid, Spain
   rank: 5
   selection: heavy-duty-vehicles
@@ -5789,7 +6464,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco-astra-extra-heavy-special-vehicles
+  brand:
+    - iveco-astra-extra-heavy-special-vehicles
   address: Piacenza, Italy
   rank: 5
   selection: heavy-duty-vehicles
@@ -5800,7 +6476,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Brescia, Italy
   rank: 5
   selection: heavy-duty-vehicles
@@ -5813,7 +6490,8 @@
     - heavy-duty-vehicles
     - engines
     - electric-motors
-  brand: roman
+  brand:
+    - roman
   address: Braşov, Romania
   rank: 5
   selection: heavy-duty-vehicles
@@ -5824,7 +6502,8 @@
   manufacturer: iveco-group
   focus:
     - heavy-duty-vehicles
-  brand: magirus-firefighting-vehicles
+  brand:
+    - magirus-firefighting-vehicles
   address: Premstätten, Austria
   rank: 5
   selection: heavy-duty-vehicles
@@ -5836,7 +6515,8 @@
   focus:
     - heavy-duty-vehicles
     - buses
-  brand: scania
+  brand:
+    - scania
   address: Angers, France
   rank: 5
   selection: heavy-duty-vehicles
@@ -5848,7 +6528,8 @@
   focus:
     - heavy-duty-vehicles
     - buses
-  brand: truston-trucks-upcity-electric-buses
+  brand:
+    - truston-trucks-upcity-electric-buses
   address: Baia Mare, Romania
   rank: 5
   selection: heavy-duty-vehicles
@@ -5859,7 +6540,8 @@
   manufacturer: volkswagen-group
   focus:
     - heavy-duty-vehicles
-  brand: man-heavy-trucks
+  brand:
+    - man-heavy-trucks
   address: Munich, Germany
   rank: 5
   selection: heavy-duty-vehicles
@@ -5870,7 +6552,9 @@
   manufacturer: daimler-truck
   focus:
     - heavy-duty-vehicles
-  brand: mercedes-benz-custom-tailored-trucks
+  brand:
+    - mercedes-benz
+    - custom-tailored-trucks
   address: Molsheim, France
   rank: 5
   selection: heavy-duty-vehicles
@@ -5881,7 +6565,8 @@
   manufacturer: tatra
   focus:
     - heavy-duty-vehicles
-  brand: tatra-heavy-trucks-military-vehicles
+  brand:
+    - tatra-heavy-trucks-military-vehicles
   address: Koprivnice, Czechia
   rank: 5
   selection: heavy-duty-vehicles
@@ -5892,7 +6577,8 @@
   manufacturer: volkswagen-group
   focus:
     - heavy-duty-vehicles
-  brand: man
+  brand:
+    - man
   address: Niepołomice , Poland
   rank: 5
   selection: heavy-duty-vehicles
@@ -5903,7 +6589,8 @@
   manufacturer: mol-cy
   focus:
     - heavy-duty-vehicles
-  brand: mol-special-trucks
+  brand:
+    - mol-special-trucks
   address: Staden, Belgium
   rank: 5
   selection: heavy-duty-vehicles
@@ -5914,7 +6601,8 @@
   manufacturer: volkswagen-group
   focus:
     - heavy-duty-vehicles
-  brand: scania
+  brand:
+    - scania
   address: Zwolle, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
@@ -5925,7 +6613,8 @@
   manufacturer: hyzon-motors
   focus:
     - heavy-duty-vehicles
-  brand: hyzon-hydrogen-powered-heavy-duty-vehicles
+  brand:
+    - hyzon-hydrogen-powered-heavy-duty-vehicles
   address: Winschoten, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
@@ -5936,7 +6625,8 @@
   manufacturer: hydrogen-vehicle-systems-hvs
   focus:
     - heavy-duty-vehicles
-  brand: hydrogen-fuel-cell-trucks
+  brand:
+    - hydrogen-fuel-cell-trucks
   address: Glasgow, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
@@ -5947,7 +6637,8 @@
   manufacturer: sisu-auto
   focus:
     - heavy-duty-vehicles
-  brand: sisu-heavy-truck-special-vehicles
+  brand:
+    - sisu-heavy-truck-special-vehicles
   address: Karjaa, Finland
   rank: 5
   selection: heavy-duty-vehicles
@@ -5958,7 +6649,10 @@
   manufacturer: stellantis-sevelsud
   focus:
     - light-commercial-vehicles
-  brand: fiat-opel-vauxhall-peugeot-citroen
+  brand:
+    - fiat
+    - opel-vauxhall
+    - peugeot-citroen
   address: Val di Sangro (Atessa), Italy
   rank: 6
   selection: light-commercial-vehicles
@@ -5973,7 +6667,12 @@
     - engines
     - electric-motors
     - batteries
-  brand: citroen-fiat-peugeot-opel-vauxhall-toyota-electric-motors-lithium-ion-battery-packs
+  brand:
+    - citroen-fiat-peugeot
+    - opel-vauxhall
+    - toyota
+    - electric-motors
+    - lithium-ion-battery-packs
   address: Vigo, Spain
   rank: 6
   selection: light-commercial-vehicles
@@ -5984,7 +6683,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - light-commercial-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Vitoria , Spain
   rank: 6
   selection: light-commercial-vehicles
@@ -5995,7 +6695,8 @@
   manufacturer: iveco-group
   focus:
     - light-commercial-vehicles
-  brand: iveco
+  brand:
+    - iveco
   address: Suzzara, Italy
   rank: 6
   selection: light-commercial-vehicles
@@ -6006,7 +6707,8 @@
   manufacturer: evum-motors
   focus:
     - light-commercial-vehicles
-  brand: acar
+  brand:
+    - acar
   address: Bayerbach bei Ergoldsbach, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6017,7 +6719,8 @@
   manufacturer: renault-sovab
   focus:
     - light-commercial-vehicles
-  brand: renault-nissan
+  brand:
+    - renault-nissan
   address: Batilly (Metz), France
   rank: 6
   selection: light-commercial-vehicles
@@ -6028,7 +6731,9 @@
   manufacturer: renault-group
   focus:
     - light-commercial-vehicles
-  brand: renault-nissan-mitsubishi
+  brand:
+    - renault-nissan
+    - mitsubishi
   address: Sandouville, France
   rank: 6
   selection: light-commercial-vehicles
@@ -6040,7 +6745,11 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: peugeot-citroen-opel-vauxhall-fiat-and-toyota-battery-packs
+  brand:
+    - peugeot-citroen
+    - opel-vauxhall
+    - fiat-and-toyota
+    - battery-packs
   address: Hordain, France
   rank: 6
   selection: light-commercial-vehicles
@@ -6052,7 +6761,10 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: renault-mercedes-benz-nissan-drive-batteries
+  brand:
+    - renault
+    - mercedes-benz
+    - nissan-drive-batteries
   address: Maubeuge, France
   rank: 6
   selection: light-commercial-vehicles
@@ -6063,7 +6775,10 @@
   manufacturer: stellantis
   focus:
     - light-commercial-vehicles
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Gliwice, Poland
   rank: 6
   selection: light-commercial-vehicles
@@ -6074,7 +6789,8 @@
   manufacturer: b-on
   focus:
     - light-commercial-vehicles
-  brand: electric-vans
+  brand:
+    - electric-vans
   address: Aachen, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6085,7 +6801,8 @@
   manufacturer: b-on
   focus:
     - light-commercial-vehicles
-  brand: electric-vans
+  brand:
+    - electric-vans
   address: Düren, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6096,7 +6813,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - light-commercial-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Düsseldorf, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6108,7 +6826,10 @@
   focus:
     - light-commercial-vehicles
     - batteries
-  brand: cenntro-electric-vans-battery-packs
+  brand:
+    - cenntro
+    - electric-vans
+    - battery-packs
   address: Herne, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6119,7 +6840,8 @@
   manufacturer: volkswagen-group
   focus:
     - light-commercial-vehicles
-  brand: man-volkswagen
+  brand:
+    - man-volkswagen
   address: Września, Poland
   rank: 6
   selection: light-commercial-vehicles
@@ -6131,7 +6853,8 @@
   focus:
     - light-commercial-vehicles
     - heavy-duty-vehicles
-  brand: ev-platform
+  brand:
+    - ev-platform
   address: Coventry, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
@@ -6143,7 +6866,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: london-electric-vehicle-company-levc
+  brand:
+    - london-electric-vehicle-company-levc
   address: Coventry, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
@@ -6155,7 +6879,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: london-electric-vehicle-company-levc
+  brand:
+    - london-electric-vehicle-company-levc
   address: Ansty, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
@@ -6168,7 +6893,10 @@
     - passenger-cars
     - light-commercial-vehicles
     - batteries
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Ellesmere Port, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
@@ -6183,7 +6911,9 @@
     - engines
     - electric-motors
     - batteries
-  brand: ford-lithium-ion-battery-packs
+  brand:
+    - ford
+    - lithium-ion-battery-packs
   address: Valencia (Almusafes), Spain
   rank: 6
   selection: light-commercial-vehicles
@@ -6194,7 +6924,8 @@
   manufacturer: stellantis
   focus:
     - light-commercial-vehicles
-  brand: citroen-fiat-opel-peugeot
+  brand:
+    - citroen-fiat-opel-peugeot
   address: Mangualde, Portugal
   rank: 6
   selection: light-commercial-vehicles
@@ -6205,7 +6936,8 @@
   manufacturer: piaggio
   focus:
     - light-commercial-vehicles
-  brand: piaggio
+  brand:
+    - piaggio
   address: Pontedera (Pisa), Italy
   rank: 6
   selection: light-commercial-vehicles
@@ -6219,7 +6951,8 @@
     - light-commercial-vehicles
     - engines
     - electric-motors
-  brand: ford
+  brand:
+    - ford
   address: Craiova, Romania
   rank: 6
   selection: light-commercial-vehicles
@@ -6231,7 +6964,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: opel-vauxhall
+  brand:
+    - opel-vauxhall
   address: Rüsselsheim, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6242,7 +6976,9 @@
   manufacturer: vdl-group
   focus:
     - light-commercial-vehicles
-  brand: mini-midi-bus-by-vdl-bus-coach
+  brand:
+    - mini-midi-bus-by
+    - vdl-bus-coach
   address: Venlo, The Netherlands
   rank: 6
   selection: light-commercial-vehicles
@@ -6254,7 +6990,9 @@
   focus:
     - light-commercial-vehicles
     - buses
-  brand: mercedes-benz-minibuses
+  brand:
+    - mercedes-benz
+    - minibuses
   address: Dortmund, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6265,7 +7003,10 @@
   manufacturer: stellantis
   focus:
     - light-commercial-vehicles
-  brand: citroen-fiat-opel-vauxhall-peugeot
+  brand:
+    - citroen-fiat
+    - opel-vauxhall
+    - peugeot
   address: Luton, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
@@ -6276,7 +7017,8 @@
   manufacturer: mercedes-benz-group
   focus:
     - light-commercial-vehicles
-  brand: mercedes-benz
+  brand:
+    - mercedes-benz
   address: Ludwigsfelde, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6288,7 +7030,8 @@
   focus:
     - passenger-cars
     - light-commercial-vehicles
-  brand: volkswagen
+  brand:
+    - volkswagen
   address: Hannover, Germany
   rank: 6
   selection: light-commercial-vehicles
@@ -6299,7 +7042,8 @@
   manufacturer: volkswagen-group
   focus:
     - light-commercial-vehicles
-  brand: ford-volkswagen
+  brand:
+    - ford-volkswagen
   address: Poznań, Poland
   rank: 6
   selection: light-commercial-vehicles
@@ -6310,7 +7054,8 @@
   manufacturer: toyota-motor-europe
   focus:
     - buses
-  brand: caetano-toyota
+  brand:
+    - caetano-toyota
   address: Vila Nova de Gaia (Porto), Portugal
   rank: 7
   selection: buses
@@ -6321,7 +7066,8 @@
   manufacturer: icap-group
   focus:
     - buses
-  brand: tecnobus-electric-minibuses
+  brand:
+    - tecnobus-electric-minibuses
   address: '#REF!'
   rank: 7
   selection: buses
@@ -6332,7 +7078,8 @@
   manufacturer: ayats
   focus:
     - buses
-  brand: ayats-buses-and-coaches
+  brand:
+    - ayats-buses-and-coaches
   address: Arbúcies, Spain
   rank: 7
   selection: buses
@@ -6343,7 +7090,8 @@
   manufacturer: beulas-s-a-u
   focus:
     - buses
-  brand: beulas
+  brand:
+    - beulas
   address: Arbúcies, Spain
   rank: 7
   selection: buses
@@ -6354,7 +7102,8 @@
   manufacturer: ayats
   focus:
     - buses
-  brand: ayats-buses-and-coaches
+  brand:
+    - ayats-buses-and-coaches
   address: Tona, Spain
   rank: 7
   selection: buses
@@ -6365,7 +7114,8 @@
   manufacturer: castrosua
   focus:
     - buses
-  brand: castrosua
+  brand:
+    - castrosua
   address: Santiago de Compostela, Spain
   rank: 7
   selection: buses
@@ -6376,7 +7126,8 @@
   manufacturer: rampini
   focus:
     - buses
-  brand: electric-and-hydrogen-bus
+  brand:
+    - electric-and-hydrogen-bus
   address: Passignano sul Trasimeno, Italy
   rank: 7
   selection: buses
@@ -6387,7 +7138,8 @@
   manufacturer: irizar
   focus:
     - buses
-  brand: irizar-electric-buses
+  brand:
+    - irizar-electric-buses
   address: Aduna, Spain
   rank: 7
   selection: buses
@@ -6398,7 +7150,8 @@
   manufacturer: bmc-group
   focus:
     - buses
-  brand: euro-bus-diamond
+  brand:
+    - euro-bus-diamond
   address: Ciorogârla (Bucharest), Romania
   rank: 7
   selection: buses
@@ -6409,7 +7162,8 @@
   manufacturer: industria-italiana-autobus
   focus:
     - buses
-  brand: vivacity-citymood
+  brand:
+    - vivacity-citymood
   address: Bologna, Italy
   rank: 7
   selection: buses
@@ -6420,7 +7174,8 @@
   manufacturer: industria-italiana-autobus
   focus:
     - buses
-  brand: vivacity-citymood
+  brand:
+    - vivacity-citymood
   address: Flumeri, Italy
   rank: 7
   selection: buses
@@ -6431,7 +7186,8 @@
   manufacturer: iveco-group
   focus:
     - buses
-  brand: heuliez-iveco
+  brand:
+    - heuliez-iveco
   address: Rorthais, France
   rank: 7
   selection: buses
@@ -6443,7 +7199,8 @@
   focus:
     - heavy-duty-vehicles
     - buses
-  brand: truston-trucks-upcity-electric-buses
+  brand:
+    - truston-trucks-upcity-electric-buses
   address: Baia Mare, Romania
   rank: 7
   selection: buses
@@ -6454,7 +7211,8 @@
   manufacturer: byd
   focus:
     - buses
-  brand: byd-electric-buses
+  brand:
+    - byd-electric-buses
   address: Komaróm, Hungary
   rank: 7
   selection: buses
@@ -6466,7 +7224,8 @@
   focus:
     - buses
     - batteries
-  brand: ev-bluebus-bluesolutions-lithium-ion-polymer-batteries
+  brand:
+    - ev-bluebus-bluesolutions-lithium-ion-polymer-batteries
   address: Ergué-Gabéric, France
   rank: 7
   selection: buses
@@ -6477,7 +7236,8 @@
   manufacturer: ebusco
   focus:
     - buses
-  brand: ebusco-electric-buses
+  brand:
+    - ebusco-electric-buses
   address: Cléon, France
   rank: 7
   selection: buses
@@ -6491,7 +7251,11 @@
     - engines
     - electric-motors
     - batteries
-  brand: mercedes-benz-evobus-truck-engines-battery-packs-innolab-battery
+  brand:
+    - mercedes-benz
+    - evobus-truck-engines
+    - battery-packs
+    - innolab-battery
   address: Mannheim, Germany
   rank: 7
   selection: buses
@@ -6502,7 +7266,8 @@
   manufacturer: autosan
   focus:
     - buses
-  brand: autosan
+  brand:
+    - autosan
   address: Sanok, Poland
   rank: 7
   selection: buses
@@ -6513,7 +7278,8 @@
   manufacturer: skoda-group
   focus:
     - buses
-  brand: skoda
+  brand:
+    - skoda
   address: Plzeň, Czechia
   rank: 7
   selection: buses
@@ -6524,7 +7290,8 @@
   manufacturer: iveco-group
   focus:
     - buses
-  brand: iveco
+  brand:
+    - iveco
   address: Vysoké Myto, Czechia
   rank: 7
   selection: buses
@@ -6535,7 +7302,8 @@
   manufacturer: sor
   focus:
     - buses
-  brand: sor
+  brand:
+    - sor
   address: Libchavy, Czechia
   rank: 7
   selection: buses
@@ -6546,7 +7314,8 @@
   manufacturer: vdl-group
   focus:
     - buses
-  brand: vdl-jonckheere
+  brand:
+    - vdl-jonckheere
   address: Roeselare, Belgium
   rank: 7
   selection: buses
@@ -6557,7 +7326,8 @@
   manufacturer: volkswagen-group
   focus:
     - buses
-  brand: man
+  brand:
+    - man
   address: Starachowice, Poland
   rank: 7
   selection: buses
@@ -6568,7 +7338,8 @@
   manufacturer: volvo-group
   focus:
     - buses
-  brand: volvo-buses
+  brand:
+    - volvo-buses
   address: Wroclaw, Poland
   rank: 7
   selection: buses
@@ -6579,7 +7350,8 @@
   manufacturer: vdl-groep
   focus:
     - buses
-  brand: vdl-bus-coach
+  brand:
+    - vdl-bus-coach
   address: Valkenswaard, The Netherlands
   rank: 7
   selection: buses
@@ -6590,7 +7362,8 @@
   manufacturer: ebusco
   focus:
     - buses
-  brand: ebusco-electric-buses
+  brand:
+    - ebusco-electric-buses
   address: Deurne, The Netherlands
   rank: 7
   selection: buses
@@ -6601,7 +7374,8 @@
   manufacturer: caf-group
   focus:
     - buses
-  brand: solaris
+  brand:
+    - solaris
   address: Bolechowo, Poland
   rank: 7
   selection: buses
@@ -6612,7 +7386,8 @@
   manufacturer: arp-e-vehicles
   focus:
     - buses
-  brand: pilea
+  brand:
+    - pilea
   address: Bydgoszcz, Poland
   rank: 7
   selection: buses
@@ -6623,7 +7398,8 @@
   manufacturer: ashok-leyland
   focus:
     - buses
-  brand: switch-mobility-electric-buses
+  brand:
+    - switch-mobility-electric-buses
   address: Sherburn-in-Elmet (Leeds), United Kingdom
   rank: 7
   selection: buses
@@ -6634,7 +7410,8 @@
   manufacturer: alexander-dennis
   focus:
     - buses
-  brand: enviro-plaxton
+  brand:
+    - enviro-plaxton
   address: Scarborough, United Kingdom
   rank: 7
   selection: buses
@@ -6645,7 +7422,8 @@
   manufacturer: volkswagen-group
   focus:
     - buses
-  brand: scania
+  brand:
+    - scania
   address: Słupsk, Poland
   rank: 7
   selection: buses
@@ -6656,7 +7434,8 @@
   manufacturer: wrightbus
   focus:
     - buses
-  brand: wright
+  brand:
+    - wright
   address: Ballymena, United Kingdom
   rank: 7
   selection: buses
@@ -6667,7 +7446,8 @@
   manufacturer: alexander-dennis
   focus:
     - buses
-  brand: enviro-partnership-with-byd-for-electric-buses
+  brand:
+    - enviro-partnership-with-byd-for-electric-buses
   address: Falkirk, United Kingdom
   rank: 7
   selection: buses
@@ -6678,7 +7458,8 @@
   manufacturer: alexander-dennis
   focus:
     - buses
-  brand: enviro
+  brand:
+    - enviro
   address: Larbert, United Kingdom
   rank: 7
   selection: buses
@@ -6691,7 +7472,8 @@
     - buses
     - engines
     - electric-motors
-  brand: by-fpt-powertrain-technologies
+  brand:
+    - by-fpt-powertrain-technologies
   address: Foggia, Italy
   rank: 7
   selection: buses
@@ -6702,7 +7484,8 @@
   manufacturer: sunsundegui
   focus:
     - buses
-  brand: sunsundegui
+  brand:
+    - sunsundegui
   address: Altsasu, Spain
   rank: 7
   selection: buses
@@ -6713,7 +7496,8 @@
   manufacturer: irizar
   focus:
     - buses
-  brand: irizar
+  brand:
+    - irizar
   address: Ormaiztegi, Spain
   rank: 7
   selection: buses
@@ -6724,7 +7508,8 @@
   manufacturer: safra
   focus:
     - buses
-  brand: safra-hycity-hydrogen-buses
+  brand:
+    - safra-hycity-hydrogen-buses
   address: Albi, France
   rank: 7
   selection: buses
@@ -6735,7 +7520,8 @@
   manufacturer: iveco-group
   focus:
     - buses
-  brand: iveco
+  brand:
+    - iveco
   address: Annonay, France
   rank: 7
   selection: buses
@@ -6747,7 +7533,8 @@
   focus:
     - heavy-duty-vehicles
     - buses
-  brand: scania
+  brand:
+    - scania
   address: Angers, France
   rank: 7
   selection: buses
@@ -6758,7 +7545,8 @@
   manufacturer: kravtex-kuhne-group
   focus:
     - buses
-  brand: credobus
+  brand:
+    - credobus
   address: Győr, Hungary
   rank: 7
   selection: buses
@@ -6769,7 +7557,9 @@
   manufacturer: daimler-truck
   focus:
     - buses
-  brand: mercedes-benz-setra-evobus
+  brand:
+    - mercedes-benz
+    - setra-evobus
   address: Neu-Ulm, Germany
   rank: 7
   selection: buses
@@ -6780,7 +7570,9 @@
   manufacturer: daimler-truck
   focus:
     - buses
-  brand: mercedes-benz-by-evobus
+  brand:
+    - mercedes-benz
+    - by-evobus
   address: Ligny-en-Barrois, France
   rank: 7
   selection: buses
@@ -6792,7 +7584,9 @@
   focus:
     - light-commercial-vehicles
     - buses
-  brand: mercedes-benz-minibuses
+  brand:
+    - mercedes-benz
+    - minibuses
   address: Dortmund, Germany
   rank: 7
   selection: buses
