@@ -872,3 +872,13 @@
     - ecuador
     - dominican-republic
     - egypt
+- ridehailing-slug: grab
+  countries:
+    - singapore
+    - malaysia
+    - indonesia
+    - philippines
+    - thailand
+    - vietnam
+    - myanmar
+    - cambodia
