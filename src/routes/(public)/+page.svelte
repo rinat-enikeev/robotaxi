@@ -2193,7 +2193,7 @@
   <div class="contribute-wrapper">
     <a
       class="contribute-button"
-      href="https://github.com/rinat-enikeev/robotaxi/tree/main/data"
+      href="https://github.com/rinat-enikeev/robotaxi/tree/develop/data"
       target="_blank"
       rel="noopener noreferrer"
     >

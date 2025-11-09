@@ -45,7 +45,7 @@ This folder contains the source of truth for the geospatial and organizational d
    npm run check
    npm run format_check
    ```
-6. **Review your diff** to confirm both YAML and generated SQL changes are present, then open a PR describing the data source and verification steps.
+6. **Review your diff** to confirm both YAML and generated SQL changes are present, then open a PR against `develop` (never `main`) describing the data source and verification steps.
 
 ## Dataset-Specific Guidelines
 
