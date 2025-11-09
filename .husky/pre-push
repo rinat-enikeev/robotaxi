@@ -1,0 +1,21 @@
+#!/bin/sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+run_step() {
+  label="$1"
+  shift
+  printf '➤ Running %s...\n' "$label"
+  "$@"
+  printf '✔ %s completed successfully.\n' "$label"
+}
+
+run_step "lint" npm run lint -- --max-warnings=0
+run_step "svelte-check" npm run check -- --fail-on-warnings
+run_step "format_check" npm run format_check
+
+printf '✅ All pre-push checks passed.\n'
+
