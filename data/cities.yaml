@@ -1,3 +1,18 @@
+- slug: macchia-d-isernia-italy
+  city: Macchia d'Isernia
+  city_ascii: Macchia d'Isernia
+  latitude: 41.5603263
+  longitude: 14.1672417
+  admin_name: Province of Isernia
+  capital: ''
+  population: 1,008
+  source_id: 
+  country:
+    slug: italy
+    name: Italy
+    iso2: IT
+    iso3: ITA
+  country_slug: italy
 - slug: aghdash-azerbaijan
   city: Aghdash
   city_ascii: Aghdash
