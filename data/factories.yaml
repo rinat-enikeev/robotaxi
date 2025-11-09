@@ -8,7 +8,6 @@
   address: Tramagal, Portugal
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-madrid-spain
   city: madrid-spain
   latitude: 40,3624983
@@ -19,7 +18,6 @@
   address: Madrid (Villaverde), Spain
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: toyota-motor-europe-vila-nova-de-gaia-portugal
   city: vila-nova-de-gaia-portugal
   latitude: 41,123876
@@ -30,7 +28,6 @@
   address: Vila Nova de Gaia (Porto), Portugal
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-cassino-italy
   city: cassino-italy
   latitude: 41,490789
@@ -41,7 +38,6 @@
   address: Cassino, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: dr-motor-macchia-d-isernia-italy
   city: macchia-d-isernia-italy
   latitude: 41,562027
@@ -52,7 +48,6 @@
   address: Macchia d'Isernia, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-zaragoza-spain
   city: zaragoza-spain
   latitude: 41,648823
@@ -63,7 +58,6 @@
   address: Zaragoza, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: ayats-tona-spain
   city: tona-spain
   latitude: 41,84853
@@ -74,7 +68,6 @@
   address: Tona, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-sevelsud-atessa-italy
   city: atessa-italy
   latitude: 42,14862
@@ -85,7 +78,6 @@
   address: Val di Sangro (Atessa), Italy
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-vigo-spain
   city: vigo-spain
   latitude: 42,240599
@@ -96,7 +88,6 @@
   address: Vigo, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: mercedes-benz-group-arriaga-spain
   city: arriaga-spain
   latitude: 42,859166
@@ -107,7 +98,6 @@
   address: Vitoria , Spain
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: castrosua-santiago-de-compostela-spain
   city: santiago-de-compostela-spain
   latitude: 42,9055
@@ -118,7 +108,6 @@
   address: Santiago de Compostela, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: industria-italiana-autobus-bologna-italy
   city: bologna-italy
   latitude: 44,494887
@@ -129,7 +118,6 @@
   address: Bologna, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: industria-italiana-autobus-bologna-italy
   city: bologna-italy
   latitude: 44,494887
@@ -140,7 +128,6 @@
   address: Flumeri, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: iveco-group-suzzara-italy
   city: suzzara-italy
   latitude: 44,991873
@@ -151,7 +138,6 @@
   address: Suzzara, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-beinasco-italy
   city: beinasco-italy
   latitude: 45,021022
@@ -162,7 +148,6 @@
   address: Mirafiori (Torino), Italy
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: rimac-group-sveta-nedjelja-croatia
   city: sveta-nedjelja-croatia
   latitude: 45,796376
@@ -173,7 +158,6 @@
   address: Sveta Nedjelja, Croatia
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: renault-group-novo-mesto-slovenia
   city: novo-mesto-slovenia
   latitude: 45,801082
@@ -184,7 +168,6 @@
   address: Novo Mesto, Slovenia
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volvo-group-bourg-en-bresse-france
   city: bourg-en-bresse-france
   latitude: 46,205167
@@ -195,7 +178,6 @@
   address: Bourg-en-Bresse, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: mercedes-benz-group-kecskemet-hungary
   city: kecskemet-hungary
   latitude: 46,896371
@@ -206,7 +188,6 @@
   address: Kecskemet, Hungary
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: iveco-group-mauleon-france
   city: mauleon-france
   latitude: 46,916446
@@ -217,7 +198,6 @@
   address: Rorthais, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: magna-steyr-graz-austria
   city: graz-austria
   latitude: 47,070714
@@ -228,7 +208,6 @@
   address: Graz, Austria
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-montbeliard-france
   city: montbeliard-france
   latitude: 47,513075
@@ -239,7 +218,6 @@
   address: Sochaux, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: byd-komarom-hungary
   city: komarom-hungary
   latitude: 47,7451335
@@ -250,7 +228,6 @@
   address: Komaróm, Hungary
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: steyr-automotive-steyr-austria
   city: steyr-austria
   latitude: 48,05009
@@ -261,7 +238,6 @@
   address: Steyr, Austria
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: iveco-group-ulm-germany
   city: ulm-germany
   latitude: 48,401082
@@ -272,7 +248,6 @@
   address: Ulm, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: bmw-group-dingolfing-germany
   city: dingolfing-germany
   latitude: 48,643481
@@ -283,7 +258,6 @@
   address: Dingolfing, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: mercedes-benz-group-sindelfingen-germany
   city: sindelfingen-germany
   latitude: 48,707456
@@ -294,7 +268,6 @@
   address: Sindelfingen, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-ingolstadt-germany
   city: ingolstadt-germany
   latitude: 48,766535
@@ -305,7 +278,6 @@
   address: Ingolstadt, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-kornwestheim-germany
   city: kornwestheim-germany
   latitude: 48,833251
@@ -316,7 +288,6 @@
   address: Stuttgart-Zuffenhausen, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: mercedes-benz-group-rastatt-germany
   city: rastatt-germany
   latitude: 48,859117
@@ -327,7 +298,6 @@
   address: Rastatt, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-poissy-france
   city: poissy-france
   latitude: 48,929584
@@ -338,7 +308,6 @@
   address: Poissy, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: renault-group-aubergenville-france
   city: aubergenville-france
   latitude: 48,962687
@@ -349,7 +318,6 @@
   address: Flins, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: bmw-group-regensburg-germany
   city: regensburg-germany
   latitude: 49,01343
@@ -360,7 +328,6 @@
   address: Regensburg, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: daimler-truck-worth-am-rhein-germany
   city: worth-am-rhein-germany
   latitude: 49,051442
@@ -371,7 +338,6 @@
   address: Wörth, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: renault-sovab-rombas-france
   city: rombas-france
   latitude: 49,164711
@@ -382,7 +348,6 @@
   address: Batilly (Metz), France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-heilbronn-germany
   city: heilbronn-germany
   latitude: 49,178787
@@ -393,7 +358,6 @@
   address: Heilbronn, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: ebusco-elbeuf-france
   city: elbeuf-france
   latitude: 49,3158196
@@ -404,7 +368,6 @@
   address: Cléon, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: daimler-truck-mannheim-germany
   city: mannheim-germany
   latitude: 49,487459
@@ -415,7 +378,6 @@
   address: Mannheim, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: renault-group-gonfreville-lorcher-france
   city: gonfreville-lorcher-france
   latitude: 49,496903
@@ -426,7 +388,6 @@
   address: Sandouville, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: hyundai-motor-europe-frydek-mistek-czechia
   city: frydek-mistek-czechia
   latitude: 49,660725
@@ -437,7 +398,6 @@
   address: Nosovice, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: skoda-group-plzen-czechia
   city: plzen-czechia
   latitude: 49,741944
@@ -448,7 +408,6 @@
   address: Plzeň, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: iveco-group-vysoke-myto-czechia
   city: vysoke-myto-czechia
   latitude: 49,954264
@@ -459,7 +418,6 @@
   address: Vysoké Myto, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: sor-usti-nad-orlici-czechia
   city: usti-nad-orlici-czechia
   latitude: 50,005475
@@ -470,7 +428,6 @@
   address: Libchavy, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-sevelnord-douchy-les-mines-france
   city: douchy-les-mines-france
   latitude: 50,262392
@@ -481,7 +438,6 @@
   address: Hordain, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: renault-group-maubeuge-france
   city: maubeuge-france
   latitude: 50,280228
@@ -492,7 +448,6 @@
   address: Maubeuge, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: renault-group-douai-france
   city: douai-france
   latitude: 50,367874
@@ -503,7 +458,6 @@
   address: Douai, France
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-mlada-boleslav-czechia
   city: mlada-boleslav-czechia
   latitude: 50,413425
@@ -514,7 +468,6 @@
   address: Mladá Boleslav, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-zwickau-germany
   city: zwickau-germany
   latitude: 50,710217
@@ -525,7 +478,6 @@
   address: Zwickau, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: next-e-go-mobile-aachen-germany
   city: aachen-germany
   latitude: 50,7752131
@@ -536,7 +488,6 @@
   address: Aachen, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: b-on-aachen-germany
   city: aachen-germany
   latitude: 50,7840412
@@ -547,7 +498,6 @@
   address: Aachen, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-forest-belgium
   city: forest-belgium
   latitude: 50,813433
@@ -558,7 +508,6 @@
   address: Forest (Brussels), Belgium
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: bmw-group-chichester-united-kingdom
   city: chichester-united-kingdom
   latitude: 50,868676
@@ -569,7 +518,6 @@
   address: Goodwood, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: ford-of-europe-cologne-germany
   city: cologne-germany
   latitude: 50,937531
@@ -580,7 +528,6 @@
   address: Köln, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: vdl-group-roeselare-belgium
   city: roeselare-belgium
   latitude: 50,949909
@@ -591,7 +538,6 @@
   address: Roeselare, Belgium
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-eisenach-germany
   city: eisenach-germany
   latitude: 50,979572
@@ -602,7 +548,6 @@
   address: Eisenach, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-dresden-germany
   city: dresden-germany
   latitude: 51,050409
@@ -613,7 +558,6 @@
   address: Dresden, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volvo-car-corporation-geely-gent-belgium
   city: gent-belgium
   latitude: 51,054342
@@ -624,7 +568,6 @@
   address: Gent, Belgium
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volvo-group-oostakker-belgium
   city: oostakker-belgium
   latitude: 51,0852081
@@ -635,7 +578,6 @@
   address: Oostakker (Gent), Belgium
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volvo-group-kieczow-poland
   city: kieczow-poland
   latitude: 51,1211158
@@ -646,7 +588,6 @@
   address: Wroclaw, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: mercedes-benz-group-dusseldorf-germany
   city: dusseldorf-germany
   latitude: 51,227741
@@ -657,7 +598,6 @@
   address: Düsseldorf, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: vdl-groep-valkenswaard-netherlands
   city: valkenswaard-netherlands
   latitude: 51,355496
@@ -668,7 +608,6 @@
   address: Valkenswaard, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: bmw-group-leipzig-germany
   city: leipzig-germany
   latitude: 51,4025447
@@ -679,7 +618,6 @@
   address: Leipzig, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: daf-trucks-nv-eindhoven-netherlands
   city: eindhoven-netherlands
   latitude: 51,441642
@@ -690,7 +628,6 @@
   address: Eindhoven, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: cenntro-herne-germany
   city: herne-germany
   latitude: 51,5274932
@@ -701,7 +638,6 @@
   address: Herne, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: bmw-group-cowley-united-kingdom
   city: cowley-united-kingdom
   latitude: 51,746426
@@ -712,7 +648,6 @@
   address: Cowley (Oxford), United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: ginaf-veenendaal-netherlands
   city: veenendaal-netherlands
   latitude: 52,026301
@@ -723,7 +658,6 @@
   address: Veenendaal, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-osnabruck-germany
   city: osnabruck-germany
   latitude: 52,279911
@@ -734,7 +668,6 @@
   address: Osnabrück, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: dennis-eagle-warwick-united-kingdom
   city: warwick-united-kingdom
   latitude: 52,282316
@@ -745,7 +678,6 @@
   address: Warwick, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-hannover-germany
   city: hannover-germany
   latitude: 52,375892
@@ -756,7 +688,6 @@
   address: Hannover, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: tesla-motors-grunheide-germany
   city: grunheide-germany
   latitude: 52,39399
@@ -767,7 +698,6 @@
   address: Grünheide , Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: geely-uk-ltd-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,406822
@@ -778,7 +708,6 @@
   address: Coventry, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-wolfsburg-germany
   city: wolfsburg-germany
   latitude: 52,42265
@@ -789,7 +718,6 @@
   address: Wolfsburg, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: geely-uk-ltd-foleshill-united-kingdom
   city: foleshill-united-kingdom
   latitude: 52,4313992
@@ -800,7 +728,6 @@
   address: Ansty, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: lotus-group-wymondham-united-kingdom
   city: wymondham-united-kingdom
   latitude: 52,555074
@@ -811,7 +738,6 @@
   address: Hethel (Norwich), United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: mercedes-benz-group-bremen-germany
   city: bremen-germany
   latitude: 53,079296
@@ -822,7 +748,6 @@
   address: Bremen, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: stellantis-ellesmere-port-united-kingdom
   city: ellesmere-port-united-kingdom
   latitude: 53,279812
@@ -833,7 +758,6 @@
   address: Ellesmere Port, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-emden-germany
   city: emden-germany
   latitude: 53,359403
@@ -844,7 +768,6 @@
   address: Emden, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: paccar-leyland-united-kingdom
   city: leyland-united-kingdom
   latitude: 53,697931
@@ -855,7 +778,6 @@
   address: Leyland, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: alexander-dennis-scarborough-united-kingdom
   city: scarborough-united-kingdom
   latitude: 54,283113
@@ -866,7 +788,6 @@
   address: Scarborough, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: wrightbus-ballymena-united-kingdom
   city: ballymena-united-kingdom
   latitude: 54,865294
@@ -877,7 +798,6 @@
   address: Ballymena, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: nissan-motor-corporation-sunderland-united-kingdom
   city: sunderland-united-kingdom
   latitude: 54,906869
@@ -888,7 +808,6 @@
   address: Sunderland, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: alexander-dennis-falkirk-united-kingdom
   city: falkirk-united-kingdom
   latitude: 56,001878
@@ -899,7 +818,6 @@
   address: Falkirk, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volvo-group-gothenburg-sweden
   city: gothenburg-sweden
   latitude: 57,70887
@@ -910,7 +828,6 @@
   address: Tuve (Göteborg), Sweden
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-sodertalje-sweden
   city: sodertalje-sweden
   latitude: 59,195363
@@ -921,7 +838,6 @@
   address: Södertälje, Sweden
   rank: 1
   selection: all-plants
-  icons: all-plants*
 - slug: volkswagen-group-palmela-portugal
   city: palmela-portugal
   latitude: 38,569441
@@ -932,7 +848,6 @@
   address: Palmela (Setubal), Portugal
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ford-of-europe-valencia-spain
   city: valencia-spain
   latitude: 39,292765
@@ -943,7 +858,6 @@
   address: Valencia (Almusafes), Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-madrid-spain
   city: madrid-spain
   latitude: 40,416775
@@ -954,7 +868,6 @@
   address: Madrid, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-mangualde-portugal
   city: mangualde-portugal
   latitude: 40,608372
@@ -965,7 +878,6 @@
   address: Mangualde, Portugal
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: toyota-caetano-portugal-ovar-portugal
   city: ovar-portugal
   latitude: 40,85964
@@ -976,7 +888,6 @@
   address: Ovar, Portugal
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-pomigliano-darco-italy
   city: pomigliano-darco-italy
   latitude: 40,91013
@@ -987,7 +898,6 @@
   address: Pomigliano d'Arco (Napoli), Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-atripalda-italy
   city: atripalda-italy
   latitude: 40,987369
@@ -998,7 +908,6 @@
   address: Pratola Serra, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-melfi-italy
   city: melfi-italy
   latitude: 40,993314
@@ -1009,7 +918,6 @@
   address: Melfi (Potenza), Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: faam-casaluce-italy
   city: casaluce-italy
   latitude: 41,0151845
@@ -1020,7 +928,6 @@
   address: Teverola, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-foggia-italy
   city: foggia-italy
   latitude: 41,462198
@@ -1031,7 +938,6 @@
   address: Foggia, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-martorell-spain
   city: martorell-spain
   latitude: 41,479504
@@ -1042,7 +948,6 @@
   address: Martorell, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: hispano-suiza-montmelo-spain
   city: montmelo-spain
   latitude: 41,5679889
@@ -1053,7 +958,6 @@
   address: Montmeló (Barcelona), Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: icap-group-frosinone-italy
   city: frosinone-italy
   latitude: 41,6256153
@@ -1064,7 +968,6 @@
   address: '#REF!'
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: renault-group-valladolid-spain
   city: valladolid-spain
   latitude: 41,652251
@@ -1075,7 +978,6 @@
   address: Valladolid, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ayats-santa-coloma-de-farnes-spain
   city: santa-coloma-de-farnes-spain
   latitude: 41,8095168
@@ -1086,7 +988,6 @@
   address: Arbúcies, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: beulas-s-a-u-santa-coloma-de-farnes-spain
   city: santa-coloma-de-farnes-spain
   latitude: 41,8252605
@@ -1097,7 +998,6 @@
   address: Arbúcies, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-termoli-italy
   city: termoli-italy
   latitude: 42,000533
@@ -1108,7 +1008,6 @@
   address: Termoli (Campobasso), Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: renault-group-palencia-spain
   city: palencia-spain
   latitude: 42,009686
@@ -1119,7 +1018,6 @@
   address: Palencia, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-baranain-spain
   city: baranain-spain
   latitude: 42,807818
@@ -1130,7 +1028,6 @@
   address: Landaben (Pamplona), Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: sunsundegui-beasain-spain
   city: beasain-spain
   latitude: 42,9019889
@@ -1141,7 +1038,6 @@
   address: Altsasu, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: irizar-beasain-spain
   city: beasain-spain
   latitude: 43,0439089
@@ -1152,7 +1048,6 @@
   address: Lazkao, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: irizar-beasain-spain
   city: beasain-spain
   latitude: 43,044062
@@ -1163,7 +1058,6 @@
   address: Ormaiztegi, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: rampini-magione-italy
   city: magione-italy
   latitude: 43,1988755
@@ -1174,7 +1068,6 @@
   address: Passignano sul Trasimeno, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: irizar-andoain-spain
   city: andoain-spain
   latitude: 43,2052
@@ -1185,7 +1078,6 @@
   address: Aduna, Spain
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: piaggio-pontedera-italy
   city: pontedera-italy
   latitude: 43,662516
@@ -1196,7 +1088,6 @@
   address: Pontedera (Pisa), Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mdi-carros-france
   city: carros-france
   latitude: 43,792389
@@ -1207,7 +1098,6 @@
   address: Carros, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: sin-cars-giurgiu-romania
   city: giurgiu-romania
   latitude: 43,8184335
@@ -1218,7 +1108,6 @@
   address: Giurgiu, Romania
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: safra-albi-france
   city: albi-france
   latitude: 43,9178355
@@ -1229,7 +1118,6 @@
   address: Albi, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ford-of-europe-craiova-romania
   city: craiova-romania
   latitude: 44,330179
@@ -1240,7 +1128,6 @@
   address: Craiova, Romania
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: prime-motors-rombat-pantelimon-romania
   city: pantelimon-romania
   latitude: 44,4202003
@@ -1251,7 +1138,6 @@
   address: Cernica, Romania
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: bmc-group-domnesti-romania
   city: domnesti-romania
   latitude: 44,4426717
@@ -1262,7 +1148,6 @@
   address: Ciorogârla (Bucharest), Romania
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ferrari-maranello-italy
   city: maranello-italy
   latitude: 44,526302
@@ -1273,7 +1158,6 @@
   address: Maranello, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: pagani-spilamberto-italy
   city: spilamberto-italy
   latitude: 44,562105
@@ -1284,7 +1168,6 @@
   address: San Cesario Sul Panaro, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-modena-italy
   city: modena-italy
   latitude: 44,647128
@@ -1295,7 +1178,6 @@
   address: Modena, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-san-giovanni-in-persiceto-italy
   city: san-giovanni-in-persiceto-italy
   latitude: 44,664776
@@ -1306,7 +1188,6 @@
   address: Sant'Agata Bolognese, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-cento-italy
   city: cento-italy
   latitude: 44,731532
@@ -1317,7 +1198,6 @@
   address: Cento (Ferrara), Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: renault-group-mioveni-romania
   city: mioveni-romania
   latitude: 44,9464616
@@ -1328,7 +1208,6 @@
   address: Mioveni (Pitesti), Romania
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-piacenza-italy
   city: piacenza-italy
   latitude: 45,0431468
@@ -1339,7 +1218,6 @@
   address: Piacenza, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-turin-italy
   city: turin-italy
   latitude: 45,070312
@@ -1350,7 +1228,6 @@
   address: Torino, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: verkor-grenoble-france
   city: grenoble-france
   latitude: 45,2007116
@@ -1361,7 +1238,6 @@
   address: Grenoble, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-annonay-france
   city: annonay-france
   latitude: 45,239403
@@ -1372,7 +1248,6 @@
   address: Annonay, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-brescia-italy
   city: brescia-italy
   latitude: 45,541553
@@ -1383,7 +1258,6 @@
   address: Brescia, Italy
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: automotive-cells-company-acc-angouleme-france
   city: angouleme-france
   latitude: 45,6311586
@@ -1394,7 +1268,6 @@
   address: Nersac, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: roman-brasov-romania
   city: brasov-romania
   latitude: 45,657976
@@ -1405,7 +1278,6 @@
   address: Braşov, Romania
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volvo-group-venissieux-france
   city: venissieux-france
   latitude: 45,699594
@@ -1416,7 +1288,6 @@
   address: Vénissieux, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: tab-prevalje-slovenia
   city: prevalje-slovenia
   latitude: 46,5475745
@@ -1427,7 +1298,6 @@
   address: Prevalje, Slovenia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-bourbon-lancy-france
   city: bourbon-lancy-france
   latitude: 46,61921
@@ -1438,7 +1308,6 @@
   address: Bourbon Lancy, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-salovci-slovenia
   city: salovci-slovenia
   latitude: 46,950004
@@ -1449,7 +1318,6 @@
   address: Szentgotthárd, Hungary
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: iveco-group-graz-austria
   city: graz-austria
   latitude: 46,960989
@@ -1460,7 +1328,6 @@
   address: Premstätten, Austria
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-angers-france
   city: angers-france
   latitude: 47,478419
@@ -1471,7 +1338,6 @@
   address: Angers, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: atp-exodus-group-baia-mare-romania
   city: baia-mare-romania
   latitude: 47,6539689
@@ -1482,7 +1348,6 @@
   address: Baia Mare, Romania
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: samsung-sdi-god-hungary
   city: god-hungary
   latitude: 47,6811541
@@ -1493,7 +1358,6 @@
   address: Göd, Hungary
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: kravtex-kuhne-group-gyor-hungary
   city: gyor-hungary
   latitude: 47,683905
@@ -1504,7 +1368,6 @@
   address: Győr, Hungary
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-gyor-hungary
   city: gyor-hungary
   latitude: 47,687457
@@ -1515,7 +1378,6 @@
   address: Győr, Hungary
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-mulhouse-france
   city: mulhouse-france
   latitude: 47,750839
@@ -1526,7 +1388,6 @@
   address: Mulhouse, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: suzuki-esztergom-hungary
   city: esztergom-hungary
   latitude: 47,788395
@@ -1537,7 +1398,6 @@
   address: Esztergom, Hungary
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: bollore-ergue-gaberic-france
   city: ergue-gaberic-france
   latitude: 48,0103418
@@ -1548,7 +1408,6 @@
   address: Ergué-Gabéric, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: bmw-group-steyr-austria
   city: steyr-austria
   latitude: 48,0541873
@@ -1559,7 +1418,6 @@
   address: Steyr, Austria
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-rennes-france
   city: rennes-france
   latitude: 48,117266
@@ -1570,7 +1428,6 @@
   address: Rennes, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-munich-germany
   city: munich-germany
   latitude: 48,135125
@@ -1581,7 +1438,6 @@
   address: Munich, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-bratislava-slovakia
   city: bratislava-slovakia
   latitude: 48,145892
@@ -1592,7 +1448,6 @@
   address: Bratislava, Slovakia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: inobat-trnava-slovakia
   city: trnava-slovakia
   latitude: 48,3007649
@@ -1603,7 +1458,6 @@
   address: Voderady, Slovakia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: jaguar-land-rover-nitra-slovakia
   city: nitra-slovakia
   latitude: 48,352859
@@ -1614,7 +1468,6 @@
   address: Nitra, Slovakia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-trnava-slovakia
   city: trnava-slovakia
   latitude: 48,380416
@@ -1625,7 +1478,6 @@
   address: Trnava, Slovakia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: daimler-truck-neu-ulm-germany
   city: neu-ulm-germany
   latitude: 48,390604
@@ -1636,7 +1488,6 @@
   address: Neu-Ulm, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: miba-bad-leonfelden-austria
   city: bad-leonfelden-austria
   latitude: 48,5238825
@@ -1647,7 +1498,6 @@
   address: Bad Leonfelden, Austria
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: daimler-truck-molsheim-france
   city: molsheim-france
   latitude: 48,539254
@@ -1658,7 +1508,6 @@
   address: Molsheim, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: leclanche-willstatt-germany
   city: willstatt-germany
   latitude: 48,5400075
@@ -1669,7 +1518,6 @@
   address: Willstätt, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: bugatti-rimac-molsheim-france
   city: molsheim-france
   latitude: 48,5404
@@ -1680,7 +1528,6 @@
   address: Molsheim, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: bmw-group-ergolding-germany
   city: ergolding-germany
   latitude: 48,561132
@@ -1691,7 +1538,6 @@
   address: Ergolding (Landshut), Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: daimler-truck-bar-le-duc-france
   city: bar-le-duc-france
   latitude: 48,68827
@@ -1702,7 +1548,6 @@
   address: Ligny-en-Barrois, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: evum-motors-ergoldsbach-germany
   city: ergoldsbach-germany
   latitude: 48,7050237
@@ -1713,7 +1558,6 @@
   address: Bayerbach bei Ergoldsbach, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: gehring-ostfildern-germany
   city: ostfildern-germany
   latitude: 48,7300324
@@ -1724,7 +1568,6 @@
   address: Ostfildern, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: thyssenkrupp-bischwiller-france
   city: bischwiller-france
   latitude: 48,7480727
@@ -1735,7 +1578,6 @@
   address: Herrlisheim, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mercedes-benz-group-fellbach-germany
   city: fellbach-germany
   latitude: 48,785674
@@ -1746,7 +1588,6 @@
   address: Untertürkheim (Stuttgart), Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mercedes-benz-group-marbach-am-neckar-germany
   city: marbach-am-neckar-germany
   latitude: 48,920349
@@ -1757,7 +1598,6 @@
   address: Affalterbach, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: vanwall-berching-germany
   city: berching-germany
   latitude: 49,0480258
@@ -1768,7 +1608,6 @@
   address: Greding, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ineos-sarreguemines-france
   city: sarreguemines-france
   latitude: 49,061083
@@ -1779,7 +1618,6 @@
   address: Hambach, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-neckarsulm-germany
   city: neckarsulm-germany
   latitude: 49,192258
@@ -1790,7 +1628,6 @@
   address: Neckarsulm, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: valmet-automotive-bad-rappenau-germany
   city: bad-rappenau-germany
   latitude: 49,2044988
@@ -1801,7 +1638,6 @@
   address: Kirchardt, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volvo-group-herouville-saint-clair-france
   city: herouville-saint-clair-france
   latitude: 49,2118598
@@ -1812,7 +1648,6 @@
   address: Blainville-sur-Orne, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: hyundai-motor-group-zilina-slovakia
   city: zilina-slovakia
   latitude: 49,22159
@@ -1823,7 +1658,6 @@
   address: Zilina, Slovakia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-hagondange-france
   city: hagondange-france
   latitude: 49,246379
@@ -1834,7 +1668,6 @@
   address: Trémery, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ford-of-europe-saarlouis-germany
   city: saarlouis-germany
   latitude: 49,313461
@@ -1845,7 +1678,6 @@
   address: Saarlouis, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: renault-group-elbeuf-france
   city: elbeuf-france
   latitude: 49,315798
@@ -1856,7 +1688,6 @@
   address: Cléon, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: svolt-heusweiler-germany
   city: heusweiler-germany
   latitude: 49,3649043
@@ -1867,7 +1698,6 @@
   address: Heusweiler, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: autosan-sanok-poland
   city: sanok-poland
   latitude: 49,5474753
@@ -1878,7 +1708,6 @@
   address: Sanok, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: tatra-koprivnice-czechia
   city: koprivnice-czechia
   latitude: 49,59947
@@ -1889,7 +1718,6 @@
   address: Koprivnice, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-bielsko-biaa-poland
   city: bielsko-biaa-poland
   latitude: 49,8436973
@@ -1900,7 +1728,6 @@
   address: Bielsko-Biała, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: valeo-siemens-eautomotive-czechowice-dziedzice-poland
   city: czechowice-dziedzice-poland
   latitude: 49,884437
@@ -1911,7 +1738,6 @@
   address: Czechowice-Dziedzice, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: renault-group-dieppe-france
   city: dieppe-france
   latitude: 49,922992
@@ -1922,7 +1748,6 @@
   address: Dieppe, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-russelsheim-germany
   city: russelsheim-germany
   latitude: 49,98875
@@ -1933,7 +1758,6 @@
   address: Rüsselsheim, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: toyota-motor-europe-kolin-czechia
   city: kolin-czechia
   latitude: 50,027329
@@ -1944,7 +1768,6 @@
   address: Kolin, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-niepoomice-poland
   city: niepoomice-poland
   latitude: 50,0300093
@@ -1955,7 +1778,6 @@
   address: Niepołomice , Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-tychy-poland
   city: tychy-poland
   latitude: 50,1025402
@@ -1966,7 +1788,6 @@
   address: Tychy, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-tychy-poland
   city: tychy-poland
   latitude: 50,1046698
@@ -1977,7 +1798,6 @@
   address: Tychy, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-rychnov-nad-kneznou-czechia
   city: rychnov-nad-kneznou-czechia
   latitude: 50,212494
@@ -1988,7 +1808,6 @@
   address: Kvasiny, Czechia
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-gliwice-poland
   city: gliwice-poland
   latitude: 50,3192435
@@ -1999,7 +1818,6 @@
   address: Gliwice, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: toyota-motor-europe-onnaing-france
   city: onnaing-france
   latitude: 50,396215
@@ -2010,7 +1828,6 @@
   address: Onnaing (Valenciennes), France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: lion-smart-hildburghausen-germany
   city: hildburghausen-germany
   latitude: 50,4234904
@@ -2021,7 +1838,6 @@
   address: Hildburghausen, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: automobiles-gillet-gembloux-belgium
   city: gembloux-belgium
   latitude: 50,4975755
@@ -2032,7 +1848,6 @@
   address: Gembloux, Belgium
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-wingles-france
   city: wingles-france
   latitude: 50,510541
@@ -2043,7 +1858,6 @@
   address: Douvrin, France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: automotive-cells-company-acc-wingles-france
   city: wingles-france
   latitude: 50,5207482
@@ -2054,7 +1868,6 @@
   address: Billy-Berclau (Douvrin), France
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: b-on-duren-germany
   city: duren-germany
   latitude: 50,80681
@@ -2065,7 +1878,6 @@
   address: Düren, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: toyota-motor-europe-wabrzych-poland
   city: wabrzych-poland
   latitude: 50,8086084
@@ -2076,7 +1888,6 @@
   address: Wałbrzych, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: solithor-sint-truiden-belgium
   city: sint-truiden-belgium
   latitude: 50,814777
@@ -2087,7 +1898,6 @@
   address: Sint-Truiden, Belgium
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-chemnitz-germany
   city: chemnitz-germany
   latitude: 50,827845
@@ -2098,7 +1908,6 @@
   address: Chemnitz, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: catl-arnstadt-germany
   city: arnstadt-germany
   latitude: 50,8625709
@@ -2109,7 +1918,6 @@
   address: Arnstadt, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mol-cy-staden-belgium
   city: staden-belgium
   latitude: 50,974651
@@ -2120,7 +1928,6 @@
   address: Staden, Belgium
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: aston-martin-cologne-germany
   city: cologne-germany
   latitude: 51,0050958
@@ -2131,7 +1938,6 @@
   address: Köln, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: toyota-motor-europe-jelcz-laskowice-poland
   city: jelcz-laskowice-poland
   latitude: 51,0361797
@@ -2142,7 +1948,6 @@
   address: Jelcz-Laskowice, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-starachowice-poland
   city: starachowice-poland
   latitude: 51,0556697
@@ -2153,7 +1958,6 @@
   address: Starachowice, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mercedes-benz-group-jawor-poland
   city: jawor-poland
   latitude: 51,0911972
@@ -2164,7 +1968,6 @@
   address: Jawor, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: gordon-murray-automotive-cranleigh-united-kingdom
   city: cranleigh-united-kingdom
   latitude: 51,1221954
@@ -2175,7 +1978,6 @@
   address: Dunsfold, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: tvr-cranleigh-united-kingdom
   city: cranleigh-united-kingdom
   latitude: 51,1325212
@@ -2186,7 +1988,6 @@
   address: Walliswood, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mercedes-benz-group-kamenz-germany
   city: kamenz-germany
   latitude: 51,2993257
@@ -2197,7 +1998,6 @@
   address: Kamenz, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mclaren-woking-united-kingdom
   city: woking-united-kingdom
   latitude: 51,316774
@@ -2208,7 +2008,6 @@
   address: Woking, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-leipzig-germany
   city: leipzig-germany
   latitude: 51,339696
@@ -2219,7 +2018,6 @@
   address: Leipzig, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: vdl-group-venlo-netherlands
   city: venlo-netherlands
   latitude: 51,370375
@@ -2230,7 +2028,6 @@
   address: Venlo, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: aston-martin-llantwit-major-united-kingdom
   city: llantwit-major-united-kingdom
   latitude: 51,410837
@@ -2241,7 +2038,6 @@
   address: Saint Athan, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ebusco-deurne-netherlands
   city: deurne-netherlands
   latitude: 51,4543792
@@ -2252,7 +2048,6 @@
   address: Deurne, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: caterham-dartford-united-kingdom
   city: dartford-united-kingdom
   latitude: 51,4642694
@@ -2263,7 +2058,6 @@
   address: Dartford (Kent), United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: tevva-tilbury-united-kingdom
   city: tilbury-united-kingdom
   latitude: 51,4695764
@@ -2274,7 +2068,6 @@
   address: Tilbury, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: eleo-technologies-helmond-netherlands
   city: helmond-netherlands
   latitude: 51,4747961
@@ -2285,7 +2078,6 @@
   address: Helmond, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-polkowice-poland
   city: polkowice-poland
   latitude: 51,4948134
@@ -2296,7 +2088,6 @@
   address: Polkowice, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: aequita-dortmund-germany
   city: dortmund-germany
   latitude: 51,513587
@@ -2307,7 +2098,6 @@
   address: Dortmund, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ford-of-europe-dagenham-united-kingdom
   city: dagenham-united-kingdom
   latitude: 51,53889
@@ -2318,7 +2108,6 @@
   address: Dagenham, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mercedes-benz-group-oxford-united-kingdom
   city: oxford-united-kingdom
   latitude: 51,8041198
@@ -2329,7 +2118,6 @@
   address: Oxford, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: stellantis-luton-united-kingdom
   city: luton-united-kingdom
   latitude: 51,878671
@@ -2340,7 +2128,6 @@
   address: Luton, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: morgan-motor-company-worcester-united-kingdom
   city: worcester-united-kingdom
   latitude: 52,136618
@@ -2351,7 +2138,6 @@
   address: Malvern, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: impact-clean-power-technology-pruszkow-poland
   city: pruszkow-poland
   latitude: 52,173847
@@ -2362,7 +2148,6 @@
   address: Pruszków, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: aston-martin-whitnash-united-kingdom
   city: whitnash-united-kingdom
   latitude: 52,183553
@@ -2373,7 +2158,6 @@
   address: Gaydon (Warwick), United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: cosworth-northampton-united-kingdom
   city: northampton-united-kingdom
   latitude: 52,2318581
@@ -2384,7 +2168,6 @@
   address: Northampton, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-braunschweig-germany
   city: braunschweig-germany
   latitude: 52,2934302
@@ -2395,7 +2178,6 @@
   address: Brunswick (Braunschweig), Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-wrzesnia-poland
   city: wrzesnia-poland
   latitude: 52,2985897
@@ -2406,7 +2188,6 @@
   address: Września, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mercedes-benz-group-ludwigsfelde-germany
   city: ludwigsfelde-germany
   latitude: 52,301144
@@ -2417,7 +2198,6 @@
   address: Ludwigsfelde, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: microvast-ludwigsfelde-germany
   city: ludwigsfelde-germany
   latitude: 52,3280103
@@ -2428,7 +2208,6 @@
   address: Ludwigsfelde, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ree-automotive-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,3760828
@@ -2439,7 +2218,6 @@
   address: Coventry, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: eve-energy-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,408056
@@ -2450,7 +2228,6 @@
   address: Coventry, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: jaguar-land-rover-solihull-united-kingdom
   city: solihull-united-kingdom
   latitude: 52,411811
@@ -2461,7 +2238,6 @@
   address: Solihull, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-poznan-poland
   city: poznan-poland
   latitude: 52,4120521
@@ -2472,7 +2248,6 @@
   address: Poznań, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-zwolle-netherlands
   city: zwolle-netherlands
   latitude: 52,516775
@@ -2483,7 +2258,6 @@
   address: Zwolle, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: donkervoort-lelystad-netherlands
   city: lelystad-netherlands
   latitude: 52,518537
@@ -2494,7 +2268,6 @@
   address: Lelystad, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: mercedes-benz-group-berlin-germany
   city: berlin-germany
   latitude: 52,520007
@@ -2505,7 +2278,6 @@
   address: Berlin, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: jaguar-land-rover-castle-bromwich-united-kingdom
   city: castle-bromwich-united-kingdom
   latitude: 52,5291111
@@ -2516,7 +2288,6 @@
   address: Hams Hall, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: bmw-group-castle-bromwich-united-kingdom
   city: castle-bromwich-united-kingdom
   latitude: 52,529475
@@ -2527,7 +2298,6 @@
   address: Hams Hall, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: caf-group-murowana-goslina-poland
   city: murowana-goslina-poland
   latitude: 52,5465548
@@ -2538,7 +2308,6 @@
   address: Bolechowo, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: jaguar-land-rover-wolverhampton-united-kingdom
   city: wolverhampton-united-kingdom
   latitude: 52,586973
@@ -2549,7 +2318,6 @@
   address: Wolverhampton, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: toyota-motor-europe-mickleover-united-kingdom
   city: mickleover-united-kingdom
   latitude: 52,889015
@@ -2560,7 +2328,6 @@
   address: Burnaston, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: arp-e-vehicles-bydgoszcz-poland
   city: bydgoszcz-poland
   latitude: 53,0943265
@@ -2571,7 +2338,6 @@
   address: Bydgoszcz, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-crewe-united-kingdom
   city: crewe-united-kingdom
   latitude: 53,100405
@@ -2582,7 +2348,6 @@
   address: Crewe (Cheshire), United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: hyzon-motors-veendam-netherlands
   city: veendam-netherlands
   latitude: 53,1483073
@@ -2593,7 +2358,6 @@
   address: Winschoten, The Netherlands
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: toyota-motor-europe-hawarden-united-kingdom
   city: hawarden-united-kingdom
   latitude: 53,202661
@@ -2604,7 +2368,6 @@
   address: Deeside, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: jaguar-land-rover-halewood-united-kingdom
   city: halewood-united-kingdom
   latitude: 53,370573
@@ -2615,7 +2378,6 @@
   address: Halewood, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ashok-leyland-knottingley-united-kingdom
   city: knottingley-united-kingdom
   latitude: 53,789584
@@ -2626,7 +2388,6 @@
   address: Sherburn-in-Elmet (Leeds), United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ginetta-garforth-united-kingdom
   city: garforth-united-kingdom
   latitude: 53,792149
@@ -2637,7 +2398,6 @@
   address: Garforth (Leeds), United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: northvolt-heide-germany
   city: heide-germany
   latitude: 54,1953315
@@ -2648,7 +2408,6 @@
   address: Heide, Germany
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volkswagen-group-supsk-poland
   city: supsk-poland
   latitude: 54,4784142
@@ -2659,7 +2418,6 @@
   address: Słupsk, Poland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: cummins-darlington-united-kingdom
   city: darlington-united-kingdom
   latitude: 54,519549
@@ -2670,7 +2428,6 @@
   address: Darlington, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: aesc-group-sunderland-united-kingdom
   city: sunderland-united-kingdom
   latitude: 54,9236324
@@ -2681,7 +2438,6 @@
   address: Sunderland, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: hydrogen-vehicle-systems-hvs-glasgow-united-kingdom
   city: glasgow-united-kingdom
   latitude: 55,8406701
@@ -2692,7 +2448,6 @@
   address: Glasgow, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: alexander-dennis-larbert-united-kingdom
   city: larbert-united-kingdom
   latitude: 56,0334362
@@ -2703,7 +2458,6 @@
   address: Larbert, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: koenigsegg-automotive-ab-angelholm-sweden
   city: angelholm-sweden
   latitude: 56,245748
@@ -2714,7 +2468,6 @@
   address: Ängelholm, Sweden
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volvo-car-corporation-geely-gothenburg-sweden
   city: gothenburg-sweden
   latitude: 57,723152
@@ -2725,7 +2478,6 @@
   address: Torslanda (Göteborg), Sweden
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volvo-car-corporation-geely-skovde-sweden
   city: skovde-sweden
   latitude: 58,3770841
@@ -2736,7 +2488,6 @@
   address: Skövde, Sweden
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: volvo-group-skovde-sweden
   city: skovde-sweden
   latitude: 58,3791721
@@ -2747,7 +2498,6 @@
   address: Skövde, Sweden
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: lionvolt-thurso-united-kingdom
   city: thurso-united-kingdom
   latitude: 58,5957531
@@ -2758,7 +2508,6 @@
   address: Thurso, United Kingdom
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: sisu-auto-karis-finland
   city: karis-finland
   latitude: 60,07139
@@ -2769,7 +2518,6 @@
   address: Karjaa, Finland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: valmet-automotive-salo-finland
   city: salo-finland
   latitude: 60,3897028
@@ -2780,7 +2528,6 @@
   address: Salo, Finland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: valmet-automotive-uusikaupunki-finland
   city: uusikaupunki-finland
   latitude: 60,800202
@@ -2791,7 +2538,6 @@
   address: Uusikaupunki, Finland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: skeleton-varkaus-finland
   city: varkaus-finland
   latitude: 62,2810118
@@ -2802,7 +2548,6 @@
   address: Varkaus, Finland
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: northvolt-skelleftea-sweden
   city: skelleftea-sweden
   latitude: 64,7388903
@@ -2813,7 +2558,6 @@
   address: Skellefteå, Sweden
   rank: 1
   selection: all-plants
-  icons: all-plants
 - slug: ford-of-europe-valencia-spain
   city: valencia-spain
   latitude: 39,292765
@@ -2824,7 +2568,6 @@
   address: Valencia (Almusafes), Spain
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-atripalda-italy
   city: atripalda-italy
   latitude: 40,987369
@@ -2835,7 +2578,6 @@
   address: Pratola Serra, Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: iveco-group-foggia-italy
   city: foggia-italy
   latitude: 41,462198
@@ -2846,7 +2588,6 @@
   address: Foggia, Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: renault-group-valladolid-spain
   city: valladolid-spain
   latitude: 41,652251
@@ -2857,7 +2598,6 @@
   address: Valladolid, Spain
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-termoli-italy
   city: termoli-italy
   latitude: 42,000533
@@ -2868,7 +2608,6 @@
   address: Termoli (Campobasso), Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-vigo-spain
   city: vigo-spain
   latitude: 42,240599
@@ -2879,7 +2618,6 @@
   address: Vigo, Spain
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: mdi-carros-france
   city: carros-france
   latitude: 43,792389
@@ -2890,7 +2628,6 @@
   address: Carros, France
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: ford-of-europe-craiova-romania
   city: craiova-romania
   latitude: 44,330179
@@ -2901,7 +2638,6 @@
   address: Craiova, Romania
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: ferrari-maranello-italy
   city: maranello-italy
   latitude: 44,526302
@@ -2912,7 +2648,6 @@
   address: Maranello, Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-san-giovanni-in-persiceto-italy
   city: san-giovanni-in-persiceto-italy
   latitude: 44,664776
@@ -2923,7 +2658,6 @@
   address: Sant'Agata Bolognese, Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-cento-italy
   city: cento-italy
   latitude: 44,731532
@@ -2934,7 +2668,6 @@
   address: Cento (Ferrara), Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: renault-group-mioveni-romania
   city: mioveni-romania
   latitude: 44,9464616
@@ -2945,7 +2678,6 @@
   address: Mioveni (Pitesti), Romania
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-beinasco-italy
   city: beinasco-italy
   latitude: 45,021022
@@ -2956,7 +2688,6 @@
   address: Mirafiori (Torino), Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: iveco-group-turin-italy
   city: turin-italy
   latitude: 45,070312
@@ -2967,7 +2698,6 @@
   address: Torino, Italy
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: roman-brasov-romania
   city: brasov-romania
   latitude: 45,657976
@@ -2978,7 +2708,6 @@
   address: Braşov, Romania
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volvo-group-venissieux-france
   city: venissieux-france
   latitude: 45,699594
@@ -2989,7 +2718,6 @@
   address: Vénissieux, France
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: rimac-group-sveta-nedjelja-croatia
   city: sveta-nedjelja-croatia
   latitude: 45,796376
@@ -3000,7 +2728,6 @@
   address: Sveta Nedjelja, Croatia
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: iveco-group-bourbon-lancy-france
   city: bourbon-lancy-france
   latitude: 46,61921
@@ -3011,7 +2738,6 @@
   address: Bourbon Lancy, France
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-salovci-slovenia
   city: salovci-slovenia
   latitude: 46,950004
@@ -3022,7 +2748,6 @@
   address: Szentgotthárd, Hungary
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-gyor-hungary
   city: gyor-hungary
   latitude: 47,687457
@@ -3033,7 +2758,6 @@
   address: Győr, Hungary
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: bmw-group-steyr-austria
   city: steyr-austria
   latitude: 48,0541873
@@ -3044,7 +2768,6 @@
   address: Steyr, Austria
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: bmw-group-ergolding-germany
   city: ergolding-germany
   latitude: 48,56113204
@@ -3055,7 +2778,6 @@
   address: Ergolding (Landshut), Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: gehring-ostfildern-germany
   city: ostfildern-germany
   latitude: 48,73003236
@@ -3066,7 +2788,6 @@
   address: Ostfildern, Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: thyssenkrupp-bischwiller-france
   city: bischwiller-france
   latitude: 48,74807271
@@ -3077,7 +2798,6 @@
   address: Herrlisheim, France
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: mercedes-benz-group-fellbach-germany
   city: fellbach-germany
   latitude: 48,785674
@@ -3088,7 +2808,6 @@
   address: Untertürkheim (Stuttgart), Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-kornwestheim-germany
   city: kornwestheim-germany
   latitude: 48,833251
@@ -3099,7 +2818,6 @@
   address: Stuttgart-Zuffenhausen, Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: mercedes-benz-group-marbach-am-neckar-germany
   city: marbach-am-neckar-germany
   latitude: 48,920349
@@ -3110,7 +2828,6 @@
   address: Affalterbach, Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: hyundai-motor-group-zilina-slovakia
   city: zilina-slovakia
   latitude: 49,22159
@@ -3121,7 +2838,6 @@
   address: Zilina, Slovakia
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-hagondange-france
   city: hagondange-france
   latitude: 49,246379
@@ -3132,7 +2848,6 @@
   address: Trémery, France
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: renault-group-elbeuf-france
   city: elbeuf-france
   latitude: 49,315798
@@ -3143,7 +2858,6 @@
   address: Cléon, France
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: daimler-truck-mannheim-germany
   city: mannheim-germany
   latitude: 49,487459
@@ -3154,7 +2868,6 @@
   address: Mannheim, Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-bielsko-biaa-poland
   city: bielsko-biaa-poland
   latitude: 49,84369729
@@ -3165,7 +2878,6 @@
   address: Bielsko-Biała, Poland
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: valeo-siemens-eautomotive-czechowice-dziedzice-poland
   city: czechowice-dziedzice-poland
   latitude: 49,88443699
@@ -3176,7 +2888,6 @@
   address: Czechowice-Dziedzice, Poland
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-tychy-poland
   city: tychy-poland
   latitude: 50,10254018
@@ -3187,7 +2898,6 @@
   address: Tychy, Poland
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-mlada-boleslav-czechia
   city: mlada-boleslav-czechia
   latitude: 50,413425
@@ -3198,7 +2908,6 @@
   address: Mladá Boleslav, Czechia
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: stellantis-wingles-france
   city: wingles-france
   latitude: 50,510541
@@ -3209,7 +2918,6 @@
   address: Douvrin, France
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: toyota-motor-europe-wabrzych-poland
   city: wabrzych-poland
   latitude: 50,80860839
@@ -3220,7 +2928,6 @@
   address: Wałbrzych, Poland
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-chemnitz-germany
   city: chemnitz-germany
   latitude: 50,827845
@@ -3231,7 +2938,6 @@
   address: Chemnitz, Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: aston-martin-cologne-germany
   city: cologne-germany
   latitude: 51,00509584
@@ -3242,7 +2948,6 @@
   address: Köln, Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: toyota-motor-europe-jelcz-laskowice-poland
   city: jelcz-laskowice-poland
   latitude: 51,03617969
@@ -3253,7 +2958,6 @@
   address: Jelcz-Laskowice, Poland
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: mercedes-benz-group-jawor-poland
   city: jawor-poland
   latitude: 51,09119723
@@ -3264,7 +2968,6 @@
   address: Jawor, Poland
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: daf-trucks-nv-eindhoven-netherlands
   city: eindhoven-netherlands
   latitude: 51,441642
@@ -3275,7 +2978,6 @@
   address: Eindhoven, The Netherlands
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-polkowice-poland
   city: polkowice-poland
   latitude: 51,49481338
@@ -3286,7 +2988,6 @@
   address: Polkowice, Poland
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: ford-of-europe-dagenham-united-kingdom
   city: dagenham-united-kingdom
   latitude: 51,53889
@@ -3297,7 +2998,6 @@
   address: Dagenham, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: mercedes-benz-group-oxford-united-kingdom
   city: oxford-united-kingdom
   latitude: 51,80411975
@@ -3308,7 +3008,6 @@
   address: Oxford, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: cosworth-northampton-united-kingdom
   city: northampton-united-kingdom
   latitude: 52,23185813
@@ -3319,7 +3018,6 @@
   address: Northampton, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: mercedes-benz-group-berlin-germany
   city: berlin-germany
   latitude: 52,520007
@@ -3330,7 +3028,6 @@
   address: Berlin, Germany
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: bmw-group-castle-bromwich-united-kingdom
   city: castle-bromwich-united-kingdom
   latitude: 52,529475
@@ -3341,7 +3038,6 @@
   address: Hams Hall, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: jaguar-land-rover-wolverhampton-united-kingdom
   city: wolverhampton-united-kingdom
   latitude: 52,586973
@@ -3352,7 +3048,6 @@
   address: Wolverhampton, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-crewe-united-kingdom
   city: crewe-united-kingdom
   latitude: 53,100405
@@ -3363,7 +3058,6 @@
   address: Crewe (Cheshire), United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: toyota-motor-europe-hawarden-united-kingdom
   city: hawarden-united-kingdom
   latitude: 53,202661
@@ -3374,7 +3068,6 @@
   address: Deeside, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: cummins-darlington-united-kingdom
   city: darlington-united-kingdom
   latitude: 54,51954896
@@ -3385,7 +3078,6 @@
   address: Darlington, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: nissan-motor-corporation-sunderland-united-kingdom
   city: sunderland-united-kingdom
   latitude: 54,906869
@@ -3396,7 +3088,6 @@
   address: Sunderland, United Kingdom
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volvo-car-corporation-geely-skovde-sweden
   city: skovde-sweden
   latitude: 58,37708408
@@ -3407,7 +3098,6 @@
   address: Skövde, Sweden
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volvo-group-skovde-sweden
   city: skovde-sweden
   latitude: 58,37917212
@@ -3418,7 +3108,6 @@
   address: Skövde, Sweden
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: volkswagen-group-sodertalje-sweden
   city: sodertalje-sweden
   latitude: 59,195363
@@ -3429,7 +3118,6 @@
   address: Södertälje, Sweden
   rank: 2
   selection: engines-electric-motors
-  icons: engines-electric-motors
 - slug: ford-of-europe-valencia-spain
   city: valencia-spain
   latitude: 39,292765
@@ -3440,7 +3128,6 @@
   address: Valencia (Almusafes), Spain
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: faam-casaluce-italy
   city: casaluce-italy
   latitude: 41,01518447
@@ -3451,7 +3138,6 @@
   address: Teverola, Italy
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-zaragoza-spain
   city: zaragoza-spain
   latitude: 41,648823
@@ -3462,7 +3148,6 @@
   address: Zaragoza, Spain
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: renault-group-valladolid-spain
   city: valladolid-spain
   latitude: 41,652251
@@ -3473,7 +3158,6 @@
   address: Valladolid, Spain
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-termoli-italy
   city: termoli-italy
   latitude: 42,000533
@@ -3484,7 +3168,6 @@
   address: Termoli (Campobasso), Italy
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-vigo-spain
   city: vigo-spain
   latitude: 42,240599
@@ -3495,7 +3178,6 @@
   address: Vigo, Spain
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: prime-motors-rombat-pantelimon-romania
   city: pantelimon-romania
   latitude: 44,42020033
@@ -3506,7 +3188,6 @@
   address: Cernica, Romania
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: ferrari-maranello-italy
   city: maranello-italy
   latitude: 44,526302
@@ -3517,7 +3198,6 @@
   address: Maranello, Italy
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-beinasco-italy
   city: beinasco-italy
   latitude: 45,021022
@@ -3528,7 +3208,6 @@
   address: Mirafiori (Torino), Italy
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: iveco-group-turin-italy
   city: turin-italy
   latitude: 45,070312
@@ -3539,7 +3218,6 @@
   address: Torino, Italy
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: verkor-grenoble-france
   city: grenoble-france
   latitude: 45,20071164
@@ -3550,7 +3228,6 @@
   address: Grenoble, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: automotive-cells-company-acc-angouleme-france
   city: angouleme-france
   latitude: 45,63115859
@@ -3561,7 +3238,6 @@
   address: Nersac, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: rimac-group-sveta-nedjelja-croatia
   city: sveta-nedjelja-croatia
   latitude: 45,796376
@@ -3572,7 +3248,6 @@
   address: Sveta Nedjelja, Croatia
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: tab-prevalje-slovenia
   city: prevalje-slovenia
   latitude: 46,5475745
@@ -3583,7 +3258,6 @@
   address: Prevalje, Slovenia
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-montbeliard-france
   city: montbeliard-france
   latitude: 47,513075
@@ -3594,7 +3268,6 @@
   address: Sochaux, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: samsung-sdi-god-hungary
   city: god-hungary
   latitude: 47,68115408
@@ -3605,7 +3278,6 @@
   address: Göd, Hungary
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-mulhouse-france
   city: mulhouse-france
   latitude: 47,750839
@@ -3616,7 +3288,6 @@
   address: Mulhouse, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: bollore-ergue-gaberic-france
   city: ergue-gaberic-france
   latitude: 48,01034178
@@ -3627,7 +3298,6 @@
   address: Ergué-Gabéric, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: inobat-trnava-slovakia
   city: trnava-slovakia
   latitude: 48,30076486
@@ -3638,7 +3308,6 @@
   address: Voderady, Slovakia
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-trnava-slovakia
   city: trnava-slovakia
   latitude: 48,380416
@@ -3649,7 +3318,6 @@
   address: Trnava, Slovakia
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: miba-bad-leonfelden-austria
   city: bad-leonfelden-austria
   latitude: 48,52388252
@@ -3660,7 +3328,6 @@
   address: Bad Leonfelden, Austria
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: leclanche-willstatt-germany
   city: willstatt-germany
   latitude: 48,54000749
@@ -3671,7 +3338,6 @@
   address: Willstätt, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: bmw-group-dingolfing-germany
   city: dingolfing-germany
   latitude: 48,643481
@@ -3682,7 +3348,6 @@
   address: Dingolfing, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: volkswagen-group-ingolstadt-germany
   city: ingolstadt-germany
   latitude: 48,766535
@@ -3693,7 +3358,6 @@
   address: Ingolstadt, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: mercedes-benz-group-fellbach-germany
   city: fellbach-germany
   latitude: 48,785674
@@ -3704,7 +3368,6 @@
   address: Untertürkheim (Stuttgart), Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: bmw-group-regensburg-germany
   city: regensburg-germany
   latitude: 49,01343
@@ -3715,7 +3378,6 @@
   address: Regensburg, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: valmet-automotive-bad-rappenau-germany
   city: bad-rappenau-germany
   latitude: 49,20449876
@@ -3726,7 +3388,6 @@
   address: Kirchardt, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: renault-group-elbeuf-france
   city: elbeuf-france
   latitude: 49,315798
@@ -3737,7 +3398,6 @@
   address: Cléon, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: svolt-heusweiler-germany
   city: heusweiler-germany
   latitude: 49,36490425
@@ -3748,7 +3408,6 @@
   address: Heusweiler, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: daimler-truck-mannheim-germany
   city: mannheim-germany
   latitude: 49,487459
@@ -3759,7 +3418,6 @@
   address: Mannheim, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: hyundai-motor-europe-frydek-mistek-czechia
   city: frydek-mistek-czechia
   latitude: 49,660725
@@ -3770,7 +3428,6 @@
   address: Nosovice, Czechia
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-sevelnord-douchy-les-mines-france
   city: douchy-les-mines-france
   latitude: 50,262392
@@ -3781,7 +3438,6 @@
   address: Hordain, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: renault-group-maubeuge-france
   city: maubeuge-france
   latitude: 50,280228
@@ -3792,7 +3448,6 @@
   address: Maubeuge, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: renault-group-douai-france
   city: douai-france
   latitude: 50,367874
@@ -3803,7 +3458,6 @@
   address: Douai, France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: volkswagen-group-mlada-boleslav-czechia
   city: mlada-boleslav-czechia
   latitude: 50,413425
@@ -3814,7 +3468,6 @@
   address: Mladá Boleslav, Czechia
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: lion-smart-hildburghausen-germany
   city: hildburghausen-germany
   latitude: 50,42349045
@@ -3825,7 +3478,6 @@
   address: Hildburghausen, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: automotive-cells-company-acc-wingles-france
   city: wingles-france
   latitude: 50,52074823
@@ -3836,7 +3488,6 @@
   address: Billy-Berclau (Douvrin), France
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: volkswagen-group-forest-belgium
   city: forest-belgium
   latitude: 50,813433
@@ -3847,7 +3498,6 @@
   address: Forest (Brussels), Belgium
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: solithor-sint-truiden-belgium
   city: sint-truiden-belgium
   latitude: 50,81477703
@@ -3858,7 +3508,6 @@
   address: Sint-Truiden, Belgium
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: catl-arnstadt-germany
   city: arnstadt-germany
   latitude: 50,86257086
@@ -3869,7 +3518,6 @@
   address: Arnstadt, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-eisenach-germany
   city: eisenach-germany
   latitude: 50,979572
@@ -3880,7 +3528,6 @@
   address: Eisenach, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: volvo-car-corporation-geely-gent-belgium
   city: gent-belgium
   latitude: 51,054342
@@ -3891,7 +3538,6 @@
   address: Gent, Belgium
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: volvo-group-oostakker-belgium
   city: oostakker-belgium
   latitude: 51,0852081
@@ -3902,7 +3548,6 @@
   address: Oostakker (Gent), Belgium
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: mercedes-benz-group-jawor-poland
   city: jawor-poland
   latitude: 51,09119723
@@ -3913,7 +3558,6 @@
   address: Jawor, Poland
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: mercedes-benz-group-kamenz-germany
   city: kamenz-germany
   latitude: 51,29932569
@@ -3924,7 +3568,6 @@
   address: Kamenz, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: bmw-group-leipzig-germany
   city: leipzig-germany
   latitude: 51,4025447
@@ -3935,7 +3578,6 @@
   address: Leipzig, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: daf-trucks-nv-eindhoven-netherlands
   city: eindhoven-netherlands
   latitude: 51,441642
@@ -3946,7 +3588,6 @@
   address: Eindhoven, The Netherlands
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: eleo-technologies-helmond-netherlands
   city: helmond-netherlands
   latitude: 51,47479608
@@ -3957,7 +3598,6 @@
   address: Helmond, The Netherlands
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: cenntro-herne-germany
   city: herne-germany
   latitude: 51,5274932
@@ -3968,7 +3608,6 @@
   address: Herne, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: impact-clean-power-technology-pruszkow-poland
   city: pruszkow-poland
   latitude: 52,17384696
@@ -3979,7 +3618,6 @@
   address: Pruszków, Poland
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: volkswagen-group-braunschweig-germany
   city: braunschweig-germany
   latitude: 52,29343018
@@ -3990,7 +3628,6 @@
   address: Brunswick (Braunschweig), Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: microvast-ludwigsfelde-germany
   city: ludwigsfelde-germany
   latitude: 52,32801035
@@ -4001,7 +3638,6 @@
   address: Ludwigsfelde, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: tesla-motors-grunheide-germany
   city: grunheide-germany
   latitude: 52,39399
@@ -4012,7 +3648,6 @@
   address: Grünheide , Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: eve-energy-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,408056
@@ -4023,7 +3658,6 @@
   address: Coventry, United Kingdom
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: jaguar-land-rover-castle-bromwich-united-kingdom
   city: castle-bromwich-united-kingdom
   latitude: 52,52911108
@@ -4034,7 +3668,6 @@
   address: Hams Hall, United Kingdom
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-ellesmere-port-united-kingdom
   city: ellesmere-port-united-kingdom
   latitude: 53,279812
@@ -4045,7 +3678,6 @@
   address: Ellesmere Port, United Kingdom
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: northvolt-heide-germany
   city: heide-germany
   latitude: 54,19533148
@@ -4056,7 +3688,6 @@
   address: Heide, Germany
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: nissan-motor-corporation-sunderland-united-kingdom
   city: sunderland-united-kingdom
   latitude: 54,906869
@@ -4067,7 +3698,6 @@
   address: Sunderland, United Kingdom
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: aesc-group-sunderland-united-kingdom
   city: sunderland-united-kingdom
   latitude: 54,92363242
@@ -4078,7 +3708,6 @@
   address: Sunderland, United Kingdom
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: lionvolt-thurso-united-kingdom
   city: thurso-united-kingdom
   latitude: 58,59575312
@@ -4089,7 +3718,6 @@
   address: Thurso, United Kingdom
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: volkswagen-group-sodertalje-sweden
   city: sodertalje-sweden
   latitude: 59,195363
@@ -4100,7 +3728,6 @@
   address: Södertälje, Sweden
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: valmet-automotive-salo-finland
   city: salo-finland
   latitude: 60,38970283
@@ -4111,7 +3738,6 @@
   address: Salo, Finland
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: valmet-automotive-uusikaupunki-finland
   city: uusikaupunki-finland
   latitude: 60,800202
@@ -4122,7 +3748,6 @@
   address: Uusikaupunki, Finland
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: skeleton-varkaus-finland
   city: varkaus-finland
   latitude: 62,28101182
@@ -4133,7 +3758,6 @@
   address: Varkaus, Finland
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: northvolt-skelleftea-sweden
   city: skelleftea-sweden
   latitude: 64,73889028
@@ -4144,7 +3768,6 @@
   address: Skellefteå, Sweden
   rank: 3
   selection: batteries
-  icons: batteries
 - slug: stellantis-madrid-spain
   city: madrid-spain
   latitude: 40,3624983
@@ -4155,7 +3778,6 @@
   address: Madrid (Villaverde), Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-cassino-italy
   city: cassino-italy
   latitude: 41,490789
@@ -4166,7 +3788,6 @@
   address: Cassino, Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: dr-motor-macchia-d-isernia-italy
   city: macchia-d-isernia-italy
   latitude: 41,562027
@@ -4177,7 +3798,6 @@
   address: Macchia d'Isernia, Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: hispano-suiza-montmelo-spain
   city: montmelo-spain
   latitude: 41,56798893
@@ -4188,7 +3808,6 @@
   address: Montmeló (Barcelona), Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-zaragoza-spain
   city: zaragoza-spain
   latitude: 41,648823
@@ -4199,7 +3818,6 @@
   address: Zaragoza, Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-vigo-spain
   city: vigo-spain
   latitude: 42,240599
@@ -4210,7 +3828,6 @@
   address: Vigo, Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: sin-cars-giurgiu-romania
   city: giurgiu-romania
   latitude: 43,81843351
@@ -4221,7 +3838,6 @@
   address: Giurgiu, Romania
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-beinasco-italy
   city: beinasco-italy
   latitude: 45,021022
@@ -4232,7 +3848,6 @@
   address: Mirafiori (Torino), Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: rimac-group-sveta-nedjelja-croatia
   city: sveta-nedjelja-croatia
   latitude: 45,796376
@@ -4243,7 +3858,6 @@
   address: Sveta Nedjelja, Croatia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: renault-group-novo-mesto-slovenia
   city: novo-mesto-slovenia
   latitude: 45,801082
@@ -4254,7 +3868,6 @@
   address: Novo Mesto, Slovenia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: mercedes-benz-group-kecskemet-hungary
   city: kecskemet-hungary
   latitude: 46,896371
@@ -4265,7 +3878,6 @@
   address: Kecskemet, Hungary
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: magna-steyr-graz-austria
   city: graz-austria
   latitude: 47,070714
@@ -4276,7 +3888,6 @@
   address: Graz, Austria
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-montbeliard-france
   city: montbeliard-france
   latitude: 47,513075
@@ -4287,7 +3898,6 @@
   address: Sochaux, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: bmw-group-dingolfing-germany
   city: dingolfing-germany
   latitude: 48,643481
@@ -4298,7 +3908,6 @@
   address: Dingolfing, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: mercedes-benz-group-sindelfingen-germany
   city: sindelfingen-germany
   latitude: 48,707456
@@ -4309,7 +3918,6 @@
   address: Sindelfingen, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-ingolstadt-germany
   city: ingolstadt-germany
   latitude: 48,766535
@@ -4320,7 +3928,6 @@
   address: Ingolstadt, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-kornwestheim-germany
   city: kornwestheim-germany
   latitude: 48,833251
@@ -4331,7 +3938,6 @@
   address: Stuttgart-Zuffenhausen, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: mercedes-benz-group-rastatt-germany
   city: rastatt-germany
   latitude: 48,859117
@@ -4342,7 +3948,6 @@
   address: Rastatt, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-poissy-france
   city: poissy-france
   latitude: 48,929584
@@ -4353,7 +3958,6 @@
   address: Poissy, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: renault-group-aubergenville-france
   city: aubergenville-france
   latitude: 48,962687
@@ -4364,7 +3968,6 @@
   address: Flins, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: bmw-group-regensburg-germany
   city: regensburg-germany
   latitude: 49,01343
@@ -4375,7 +3978,6 @@
   address: Regensburg, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-heilbronn-germany
   city: heilbronn-germany
   latitude: 49,178787
@@ -4386,7 +3988,6 @@
   address: Heilbronn, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: hyundai-motor-europe-frydek-mistek-czechia
   city: frydek-mistek-czechia
   latitude: 49,660725
@@ -4397,7 +3998,6 @@
   address: Nosovice, Czechia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-tychy-poland
   city: tychy-poland
   latitude: 50,10466978
@@ -4408,7 +4008,6 @@
   address: Tychy, Poland
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: renault-group-douai-france
   city: douai-france
   latitude: 50,367874
@@ -4419,7 +4018,6 @@
   address: Douai, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-mlada-boleslav-czechia
   city: mlada-boleslav-czechia
   latitude: 50,413425
@@ -4430,7 +4028,6 @@
   address: Mladá Boleslav, Czechia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-zwickau-germany
   city: zwickau-germany
   latitude: 50,710217
@@ -4441,7 +4038,6 @@
   address: Zwickau, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: next-e-go-mobile-aachen-germany
   city: aachen-germany
   latitude: 50,7752131
@@ -4452,7 +4048,6 @@
   address: Aachen, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-forest-belgium
   city: forest-belgium
   latitude: 50,813433
@@ -4463,7 +4058,6 @@
   address: Forest (Brussels), Belgium
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: bmw-group-chichester-united-kingdom
   city: chichester-united-kingdom
   latitude: 50,868676
@@ -4474,7 +4068,6 @@
   address: Goodwood, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: ford-of-europe-cologne-germany
   city: cologne-germany
   latitude: 50,937531
@@ -4485,7 +4078,6 @@
   address: Köln, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-eisenach-germany
   city: eisenach-germany
   latitude: 50,979572
@@ -4496,7 +4088,6 @@
   address: Eisenach, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-dresden-germany
   city: dresden-germany
   latitude: 51,050409
@@ -4507,7 +4098,6 @@
   address: Dresden, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volvo-car-corporation-geely-gent-belgium
   city: gent-belgium
   latitude: 51,054342
@@ -4518,7 +4108,6 @@
   address: Gent, Belgium
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: bmw-group-leipzig-germany
   city: leipzig-germany
   latitude: 51,4025447
@@ -4529,7 +4118,6 @@
   address: Leipzig, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: bmw-group-cowley-united-kingdom
   city: cowley-united-kingdom
   latitude: 51,746426
@@ -4540,7 +4128,6 @@
   address: Cowley (Oxford), United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-osnabruck-germany
   city: osnabruck-germany
   latitude: 52,279911
@@ -4551,7 +4138,6 @@
   address: Osnabrück, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-hannover-germany
   city: hannover-germany
   latitude: 52,375892
@@ -4562,7 +4148,6 @@
   address: Hannover, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: tesla-motors-grunheide-germany
   city: grunheide-germany
   latitude: 52,39399
@@ -4573,7 +4158,6 @@
   address: Grünheide , Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: geely-uk-ltd-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,406822
@@ -4584,7 +4168,6 @@
   address: Coventry, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-wolfsburg-germany
   city: wolfsburg-germany
   latitude: 52,42265
@@ -4595,7 +4178,6 @@
   address: Wolfsburg, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: geely-uk-ltd-foleshill-united-kingdom
   city: foleshill-united-kingdom
   latitude: 52,4313992
@@ -4606,7 +4188,6 @@
   address: Ansty, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: lotus-group-wymondham-united-kingdom
   city: wymondham-united-kingdom
   latitude: 52,555074
@@ -4617,7 +4198,6 @@
   address: Hethel (Norwich), United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: mercedes-benz-group-bremen-germany
   city: bremen-germany
   latitude: 53,079296
@@ -4628,7 +4208,6 @@
   address: Bremen, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: stellantis-ellesmere-port-united-kingdom
   city: ellesmere-port-united-kingdom
   latitude: 53,279812
@@ -4639,7 +4218,6 @@
   address: Ellesmere Port, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-emden-germany
   city: emden-germany
   latitude: 53,359403
@@ -4650,7 +4228,6 @@
   address: Emden, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: nissan-motor-corporation-sunderland-united-kingdom
   city: sunderland-united-kingdom
   latitude: 54,906869
@@ -4661,7 +4238,6 @@
   address: Sunderland, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars*
 - slug: volkswagen-group-palmela-portugal
   city: palmela-portugal
   latitude: 38,569441
@@ -4672,7 +4248,6 @@
   address: Palmela (Setubal), Portugal
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: ford-of-europe-valencia-spain
   city: valencia-spain
   latitude: 39,292765
@@ -4683,7 +4258,6 @@
   address: Valencia (Almusafes), Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: toyota-caetano-portugal-ovar-portugal
   city: ovar-portugal
   latitude: 40,85964
@@ -4694,7 +4268,6 @@
   address: Ovar, Portugal
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: stellantis-pomigliano-darco-italy
   city: pomigliano-darco-italy
   latitude: 40,91013
@@ -4705,7 +4278,6 @@
   address: Pomigliano d'Arco (Napoli), Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: stellantis-melfi-italy
   city: melfi-italy
   latitude: 40,993314
@@ -4716,7 +4288,6 @@
   address: Melfi (Potenza), Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-martorell-spain
   city: martorell-spain
   latitude: 41,479504
@@ -4727,7 +4298,6 @@
   address: Martorell, Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: renault-group-valladolid-spain
   city: valladolid-spain
   latitude: 41,652251
@@ -4738,7 +4308,6 @@
   address: Valladolid, Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: renault-group-palencia-spain
   city: palencia-spain
   latitude: 42,009686
@@ -4749,7 +4318,6 @@
   address: Palencia, Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-baranain-spain
   city: baranain-spain
   latitude: 42,807818
@@ -4760,7 +4328,6 @@
   address: Landaben (Pamplona), Spain
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: mdi-carros-france
   city: carros-france
   latitude: 43,792389
@@ -4771,7 +4338,6 @@
   address: Carros, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: ford-of-europe-craiova-romania
   city: craiova-romania
   latitude: 44,330179
@@ -4782,7 +4348,6 @@
   address: Craiova, Romania
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: ferrari-maranello-italy
   city: maranello-italy
   latitude: 44,526302
@@ -4793,7 +4358,6 @@
   address: Maranello, Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: pagani-spilamberto-italy
   city: spilamberto-italy
   latitude: 44,562105
@@ -4804,7 +4368,6 @@
   address: San Cesario Sul Panaro, Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: stellantis-modena-italy
   city: modena-italy
   latitude: 44,647128
@@ -4815,7 +4378,6 @@
   address: Modena, Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-san-giovanni-in-persiceto-italy
   city: san-giovanni-in-persiceto-italy
   latitude: 44,664776
@@ -4826,7 +4388,6 @@
   address: Sant'Agata Bolognese, Italy
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: renault-group-mioveni-romania
   city: mioveni-romania
   latitude: 44,9464616
@@ -4837,7 +4398,6 @@
   address: Mioveni (Pitesti), Romania
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-gyor-hungary
   city: gyor-hungary
   latitude: 47,687457
@@ -4848,7 +4408,6 @@
   address: Győr, Hungary
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: stellantis-mulhouse-france
   city: mulhouse-france
   latitude: 47,750839
@@ -4859,7 +4418,6 @@
   address: Mulhouse, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: suzuki-esztergom-hungary
   city: esztergom-hungary
   latitude: 47,788395
@@ -4870,7 +4428,6 @@
   address: Esztergom, Hungary
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: stellantis-rennes-france
   city: rennes-france
   latitude: 48,117266
@@ -4881,7 +4438,6 @@
   address: Rennes, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-bratislava-slovakia
   city: bratislava-slovakia
   latitude: 48,145892
@@ -4892,7 +4448,6 @@
   address: Bratislava, Slovakia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: jaguar-land-rover-nitra-slovakia
   city: nitra-slovakia
   latitude: 48,352859
@@ -4903,7 +4458,6 @@
   address: Nitra, Slovakia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: stellantis-trnava-slovakia
   city: trnava-slovakia
   latitude: 48,380416
@@ -4914,7 +4468,6 @@
   address: Trnava, Slovakia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: bugatti-rimac-molsheim-france
   city: molsheim-france
   latitude: 48,5404
@@ -4925,7 +4478,6 @@
   address: Molsheim, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: vanwall-berching-germany
   city: berching-germany
   latitude: 49,04802576
@@ -4936,7 +4488,6 @@
   address: Greding, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: ineos-sarreguemines-france
   city: sarreguemines-france
   latitude: 49,061083
@@ -4947,7 +4498,6 @@
   address: Hambach, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-neckarsulm-germany
   city: neckarsulm-germany
   latitude: 49,192258
@@ -4958,7 +4508,6 @@
   address: Neckarsulm, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: hyundai-motor-group-zilina-slovakia
   city: zilina-slovakia
   latitude: 49,22159
@@ -4969,7 +4518,6 @@
   address: Zilina, Slovakia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: ford-of-europe-saarlouis-germany
   city: saarlouis-germany
   latitude: 49,313461
@@ -4980,7 +4528,6 @@
   address: Saarlouis, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: renault-group-dieppe-france
   city: dieppe-france
   latitude: 49,922992
@@ -4991,7 +4538,6 @@
   address: Dieppe, France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: stellantis-russelsheim-germany
   city: russelsheim-germany
   latitude: 49,98875
@@ -5002,7 +4548,6 @@
   address: Rüsselsheim, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: toyota-motor-europe-kolin-czechia
   city: kolin-czechia
   latitude: 50,027329
@@ -5013,7 +4558,6 @@
   address: Kolin, Czechia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-rychnov-nad-kneznou-czechia
   city: rychnov-nad-kneznou-czechia
   latitude: 50,212494
@@ -5024,7 +4568,6 @@
   address: Kvasiny, Czechia
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: toyota-motor-europe-onnaing-france
   city: onnaing-france
   latitude: 50,396215
@@ -5035,7 +4578,6 @@
   address: Onnaing (Valenciennes), France
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: automobiles-gillet-gembloux-belgium
   city: gembloux-belgium
   latitude: 50,4975755
@@ -5046,7 +4588,6 @@
   address: Gembloux, Belgium
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: gordon-murray-automotive-cranleigh-united-kingdom
   city: cranleigh-united-kingdom
   latitude: 51,12219539
@@ -5057,7 +4598,6 @@
   address: Dunsfold, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: tvr-cranleigh-united-kingdom
   city: cranleigh-united-kingdom
   latitude: 51,13252117
@@ -5068,7 +4608,6 @@
   address: Walliswood, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: mclaren-woking-united-kingdom
   city: woking-united-kingdom
   latitude: 51,316774
@@ -5079,7 +4618,6 @@
   address: Woking, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-leipzig-germany
   city: leipzig-germany
   latitude: 51,339696
@@ -5090,7 +4628,6 @@
   address: Leipzig, Germany
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: aston-martin-llantwit-major-united-kingdom
   city: llantwit-major-united-kingdom
   latitude: 51,410837
@@ -5101,7 +4638,6 @@
   address: Saint Athan, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: caterham-dartford-united-kingdom
   city: dartford-united-kingdom
   latitude: 51,46426935
@@ -5112,7 +4648,6 @@
   address: Dartford (Kent), United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: morgan-motor-company-worcester-united-kingdom
   city: worcester-united-kingdom
   latitude: 52,136618
@@ -5123,7 +4658,6 @@
   address: Malvern, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: aston-martin-whitnash-united-kingdom
   city: whitnash-united-kingdom
   latitude: 52,183553
@@ -5134,7 +4668,6 @@
   address: Gaydon (Warwick), United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: jaguar-land-rover-solihull-united-kingdom
   city: solihull-united-kingdom
   latitude: 52,411811
@@ -5145,7 +4678,6 @@
   address: Solihull, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: donkervoort-lelystad-netherlands
   city: lelystad-netherlands
   latitude: 52,518537
@@ -5156,7 +4688,6 @@
   address: Lelystad, The Netherlands
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: toyota-motor-europe-mickleover-united-kingdom
   city: mickleover-united-kingdom
   latitude: 52,889015
@@ -5167,7 +4698,6 @@
   address: Burnaston, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volkswagen-group-crewe-united-kingdom
   city: crewe-united-kingdom
   latitude: 53,100405
@@ -5178,7 +4708,6 @@
   address: Crewe (Cheshire), United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: jaguar-land-rover-halewood-united-kingdom
   city: halewood-united-kingdom
   latitude: 53,370573
@@ -5189,7 +4718,6 @@
   address: Halewood, United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: ginetta-garforth-united-kingdom
   city: garforth-united-kingdom
   latitude: 53,792149
@@ -5200,7 +4728,6 @@
   address: Garforth (Leeds), United Kingdom
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: koenigsegg-automotive-ab-angelholm-sweden
   city: angelholm-sweden
   latitude: 56,245748
@@ -5211,7 +4738,6 @@
   address: Ängelholm, Sweden
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: volvo-car-corporation-geely-gothenburg-sweden
   city: gothenburg-sweden
   latitude: 57,723152
@@ -5222,7 +4748,6 @@
   address: Torslanda (Göteborg), Sweden
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: valmet-automotive-uusikaupunki-finland
   city: uusikaupunki-finland
   latitude: 60,800202
@@ -5233,7 +4758,6 @@
   address: Uusikaupunki, Finland
   rank: 4
   selection: passenger-cars
-  icons: passenger-cars
 - slug: daimler-truck-abrantes-portugal
   city: abrantes-portugal
   latitude: 39,451625
@@ -5244,7 +4768,6 @@
   address: Tramagal, Portugal
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: irizar-beasain-spain
   city: beasain-spain
   latitude: 43,04390894
@@ -5255,7 +4778,6 @@
   address: Lazkao, Spain
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: volvo-group-bourg-en-bresse-france
   city: bourg-en-bresse-france
   latitude: 46,205167
@@ -5266,7 +4788,6 @@
   address: Bourg-en-Bresse, France
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: steyr-automotive-steyr-austria
   city: steyr-austria
   latitude: 48,05009
@@ -5277,7 +4798,6 @@
   address: Steyr, Austria
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: iveco-group-ulm-germany
   city: ulm-germany
   latitude: 48,401082
@@ -5288,7 +4808,6 @@
   address: Ulm, Germany
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: daimler-truck-worth-am-rhein-germany
   city: worth-am-rhein-germany
   latitude: 49,051442
@@ -5299,7 +4818,6 @@
   address: Wörth, Germany
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: volvo-group-herouville-saint-clair-france
   city: herouville-saint-clair-france
   latitude: 49,21185984
@@ -5310,7 +4828,6 @@
   address: Blainville-sur-Orne, France
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: volvo-group-oostakker-belgium
   city: oostakker-belgium
   latitude: 51,0852081
@@ -5321,7 +4838,6 @@
   address: Oostakker (Gent), Belgium
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: daf-trucks-nv-eindhoven-netherlands
   city: eindhoven-netherlands
   latitude: 51,441642
@@ -5332,7 +4848,6 @@
   address: Eindhoven, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: tevva-tilbury-united-kingdom
   city: tilbury-united-kingdom
   latitude: 51,46957643
@@ -5343,7 +4858,6 @@
   address: Tilbury, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: ginaf-veenendaal-netherlands
   city: veenendaal-netherlands
   latitude: 52,026301
@@ -5354,7 +4868,6 @@
   address: Veenendaal, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: dennis-eagle-warwick-united-kingdom
   city: warwick-united-kingdom
   latitude: 52,282316
@@ -5365,7 +4878,6 @@
   address: Warwick, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: ree-automotive-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,37608277
@@ -5376,7 +4888,6 @@
   address: Coventry, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: paccar-leyland-united-kingdom
   city: leyland-united-kingdom
   latitude: 53,697931
@@ -5387,7 +4898,6 @@
   address: Leyland, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: volvo-group-gothenburg-sweden
   city: gothenburg-sweden
   latitude: 57,70887
@@ -5398,7 +4908,6 @@
   address: Tuve (Göteborg), Sweden
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: volkswagen-group-sodertalje-sweden
   city: sodertalje-sweden
   latitude: 59,195363
@@ -5409,7 +4918,6 @@
   address: Södertälje, Sweden
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles*
 - slug: iveco-group-madrid-spain
   city: madrid-spain
   latitude: 40,416775
@@ -5420,7 +4928,6 @@
   address: Madrid, Spain
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: iveco-group-piacenza-italy
   city: piacenza-italy
   latitude: 45,0431468
@@ -5431,7 +4938,6 @@
   address: Piacenza, Italy
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: iveco-group-brescia-italy
   city: brescia-italy
   latitude: 45,541553
@@ -5442,7 +4948,6 @@
   address: Brescia, Italy
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: roman-brasov-romania
   city: brasov-romania
   latitude: 45,657976
@@ -5453,7 +4958,6 @@
   address: Braşov, Romania
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: iveco-group-graz-austria
   city: graz-austria
   latitude: 46,96098903
@@ -5464,7 +4968,6 @@
   address: Premstätten, Austria
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: volkswagen-group-angers-france
   city: angers-france
   latitude: 47,478419
@@ -5475,7 +4978,6 @@
   address: Angers, France
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: atp-exodus-group-baia-mare-romania
   city: baia-mare-romania
   latitude: 47,65396889
@@ -5486,7 +4988,6 @@
   address: Baia Mare, Romania
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: volkswagen-group-munich-germany
   city: munich-germany
   latitude: 48,135125
@@ -5497,7 +4998,6 @@
   address: Munich, Germany
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: daimler-truck-molsheim-france
   city: molsheim-france
   latitude: 48,539254
@@ -5508,7 +5008,6 @@
   address: Molsheim, France
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: tatra-koprivnice-czechia
   city: koprivnice-czechia
   latitude: 49,59947
@@ -5519,7 +5018,6 @@
   address: Koprivnice, Czechia
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: volkswagen-group-niepoomice-poland
   city: niepoomice-poland
   latitude: 50,03000925
@@ -5530,7 +5028,6 @@
   address: Niepołomice , Poland
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: mol-cy-staden-belgium
   city: staden-belgium
   latitude: 50,974651
@@ -5541,7 +5038,6 @@
   address: Staden, Belgium
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: volkswagen-group-zwolle-netherlands
   city: zwolle-netherlands
   latitude: 52,516775
@@ -5552,7 +5048,6 @@
   address: Zwolle, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: hyzon-motors-veendam-netherlands
   city: veendam-netherlands
   latitude: 53,14830728
@@ -5563,7 +5058,6 @@
   address: Winschoten, The Netherlands
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: hydrogen-vehicle-systems-hvs-glasgow-united-kingdom
   city: glasgow-united-kingdom
   latitude: 55,84067014
@@ -5574,7 +5068,6 @@
   address: Glasgow, United Kingdom
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: sisu-auto-karis-finland
   city: karis-finland
   latitude: 60,07139
@@ -5585,7 +5078,6 @@
   address: Karjaa, Finland
   rank: 5
   selection: heavy-duty-vehicles
-  icons: heavy-duty-vehicles
 - slug: stellantis-sevelsud-atessa-italy
   city: atessa-italy
   latitude: 42,14862
@@ -5596,7 +5088,6 @@
   address: Val di Sangro (Atessa), Italy
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: stellantis-vigo-spain
   city: vigo-spain
   latitude: 42,240599
@@ -5607,7 +5098,6 @@
   address: Vigo, Spain
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: mercedes-benz-group-arriaga-spain
   city: arriaga-spain
   latitude: 42,859166
@@ -5618,7 +5108,6 @@
   address: Vitoria , Spain
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: iveco-group-suzzara-italy
   city: suzzara-italy
   latitude: 44,991873
@@ -5629,7 +5118,6 @@
   address: Suzzara, Italy
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: evum-motors-ergoldsbach-germany
   city: ergoldsbach-germany
   latitude: 48,70502372
@@ -5640,7 +5128,6 @@
   address: Bayerbach bei Ergoldsbach, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: renault-sovab-rombas-france
   city: rombas-france
   latitude: 49,164711
@@ -5651,7 +5138,6 @@
   address: Batilly (Metz), France
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: renault-group-gonfreville-lorcher-france
   city: gonfreville-lorcher-france
   latitude: 49,496903
@@ -5662,7 +5148,6 @@
   address: Sandouville, France
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: stellantis-sevelnord-douchy-les-mines-france
   city: douchy-les-mines-france
   latitude: 50,262392
@@ -5673,7 +5158,6 @@
   address: Hordain, France
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: renault-group-maubeuge-france
   city: maubeuge-france
   latitude: 50,280228
@@ -5684,7 +5168,6 @@
   address: Maubeuge, France
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: stellantis-gliwice-poland
   city: gliwice-poland
   latitude: 50,31924353
@@ -5695,7 +5178,6 @@
   address: Gliwice, Poland
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: b-on-aachen-germany
   city: aachen-germany
   latitude: 50,7840412
@@ -5706,7 +5188,6 @@
   address: Aachen, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: b-on-duren-germany
   city: duren-germany
   latitude: 50,80680996
@@ -5717,7 +5198,6 @@
   address: Düren, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: mercedes-benz-group-dusseldorf-germany
   city: dusseldorf-germany
   latitude: 51,227741
@@ -5728,7 +5208,6 @@
   address: Düsseldorf, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: cenntro-herne-germany
   city: herne-germany
   latitude: 51,5274932
@@ -5739,7 +5218,6 @@
   address: Herne, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: volkswagen-group-wrzesnia-poland
   city: wrzesnia-poland
   latitude: 52,29858969
@@ -5750,7 +5228,6 @@
   address: Września, Poland
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: ree-automotive-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,37608277
@@ -5761,7 +5238,6 @@
   address: Coventry, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: geely-uk-ltd-coventry-united-kingdom
   city: coventry-united-kingdom
   latitude: 52,406822
@@ -5772,7 +5248,6 @@
   address: Coventry, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: geely-uk-ltd-foleshill-united-kingdom
   city: foleshill-united-kingdom
   latitude: 52,4313992
@@ -5783,7 +5258,6 @@
   address: Ansty, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: stellantis-ellesmere-port-united-kingdom
   city: ellesmere-port-united-kingdom
   latitude: 53,279812
@@ -5794,7 +5268,6 @@
   address: Ellesmere Port, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles*
 - slug: ford-of-europe-valencia-spain
   city: valencia-spain
   latitude: 39,292765
@@ -5805,7 +5278,6 @@
   address: Valencia (Almusafes), Spain
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: stellantis-mangualde-portugal
   city: mangualde-portugal
   latitude: 40,608372
@@ -5816,7 +5288,6 @@
   address: Mangualde, Portugal
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: piaggio-pontedera-italy
   city: pontedera-italy
   latitude: 43,662516
@@ -5827,7 +5298,6 @@
   address: Pontedera (Pisa), Italy
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: ford-of-europe-craiova-romania
   city: craiova-romania
   latitude: 44,330179
@@ -5838,7 +5308,6 @@
   address: Craiova, Romania
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: stellantis-russelsheim-germany
   city: russelsheim-germany
   latitude: 49,98875
@@ -5849,7 +5318,6 @@
   address: Rüsselsheim, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: vdl-group-venlo-netherlands
   city: venlo-netherlands
   latitude: 51,370375
@@ -5860,7 +5328,6 @@
   address: Venlo, The Netherlands
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: aequita-dortmund-germany
   city: dortmund-germany
   latitude: 51,513587
@@ -5871,7 +5338,6 @@
   address: Dortmund, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: stellantis-luton-united-kingdom
   city: luton-united-kingdom
   latitude: 51,878671
@@ -5882,7 +5348,6 @@
   address: Luton, United Kingdom
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: mercedes-benz-group-ludwigsfelde-germany
   city: ludwigsfelde-germany
   latitude: 52,301144
@@ -5893,7 +5358,6 @@
   address: Ludwigsfelde, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: volkswagen-group-hannover-germany
   city: hannover-germany
   latitude: 52,375892
@@ -5904,7 +5368,6 @@
   address: Hannover, Germany
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: volkswagen-group-poznan-poland
   city: poznan-poland
   latitude: 52,41205207
@@ -5915,7 +5378,6 @@
   address: Poznań, Poland
   rank: 6
   selection: light-commercial-vehicles
-  icons: light-commercial-vehicles
 - slug: toyota-motor-europe-vila-nova-de-gaia-portugal
   city: vila-nova-de-gaia-portugal
   latitude: 41,123876
@@ -5926,7 +5388,6 @@
   address: Vila Nova de Gaia (Porto), Portugal
   rank: 7
   selection: buses
-  icons: buses*
 - slug: icap-group-frosinone-italy
   city: frosinone-italy
   latitude: 41,62561529
@@ -5937,7 +5398,6 @@
   address: '#REF!'
   rank: 7
   selection: buses
-  icons: buses*
 - slug: ayats-santa-coloma-de-farnes-spain
   city: santa-coloma-de-farnes-spain
   latitude: 41,80951676
@@ -5948,7 +5408,6 @@
   address: Arbúcies, Spain
   rank: 7
   selection: buses
-  icons: buses*
 - slug: beulas-s-a-u-santa-coloma-de-farnes-spain
   city: santa-coloma-de-farnes-spain
   latitude: 41,82526049
@@ -5959,7 +5418,6 @@
   address: Arbúcies, Spain
   rank: 7
   selection: buses
-  icons: buses*
 - slug: ayats-tona-spain
   city: tona-spain
   latitude: 41,84853
@@ -5970,7 +5428,6 @@
   address: Tona, Spain
   rank: 7
   selection: buses
-  icons: buses*
 - slug: castrosua-santiago-de-compostela-spain
   city: santiago-de-compostela-spain
   latitude: 42,9055
@@ -5981,7 +5438,6 @@
   address: Santiago de Compostela, Spain
   rank: 7
   selection: buses
-  icons: buses*
 - slug: rampini-magione-italy
   city: magione-italy
   latitude: 43,19887554
@@ -5992,7 +5448,6 @@
   address: Passignano sul Trasimeno, Italy
   rank: 7
   selection: buses
-  icons: buses*
 - slug: irizar-andoain-spain
   city: andoain-spain
   latitude: 43,20519995
@@ -6003,7 +5458,6 @@
   address: Aduna, Spain
   rank: 7
   selection: buses
-  icons: buses*
 - slug: bmc-group-domnesti-romania
   city: domnesti-romania
   latitude: 44,44267165
@@ -6014,7 +5468,6 @@
   address: Ciorogârla (Bucharest), Romania
   rank: 7
   selection: buses
-  icons: buses*
 - slug: industria-italiana-autobus-bologna-italy
   city: bologna-italy
   latitude: 44,494887
@@ -6025,7 +5478,6 @@
   address: Bologna, Italy
   rank: 7
   selection: buses
-  icons: buses*
 - slug: industria-italiana-autobus-bologna-italy
   city: bologna-italy
   latitude: 44,494887
@@ -6036,7 +5488,6 @@
   address: Flumeri, Italy
   rank: 7
   selection: buses
-  icons: buses*
 - slug: iveco-group-mauleon-france
   city: mauleon-france
   latitude: 46,916446
@@ -6047,7 +5498,6 @@
   address: Rorthais, France
   rank: 7
   selection: buses
-  icons: buses*
 - slug: atp-exodus-group-baia-mare-romania
   city: baia-mare-romania
   latitude: 47,65396889
@@ -6058,7 +5508,6 @@
   address: Baia Mare, Romania
   rank: 7
   selection: buses
-  icons: buses*
 - slug: byd-komarom-hungary
   city: komarom-hungary
   latitude: 47,7451335
@@ -6069,7 +5518,6 @@
   address: Komaróm, Hungary
   rank: 7
   selection: buses
-  icons: buses*
 - slug: bollore-ergue-gaberic-france
   city: ergue-gaberic-france
   latitude: 48,01034178
@@ -6080,7 +5528,6 @@
   address: Ergué-Gabéric, France
   rank: 7
   selection: buses
-  icons: buses*
 - slug: ebusco-elbeuf-france
   city: elbeuf-france
   latitude: 49,3158196
@@ -6091,7 +5538,6 @@
   address: Cléon, France
   rank: 7
   selection: buses
-  icons: buses*
 - slug: daimler-truck-mannheim-germany
   city: mannheim-germany
   latitude: 49,487459
@@ -6102,7 +5548,6 @@
   address: Mannheim, Germany
   rank: 7
   selection: buses
-  icons: buses*
 - slug: autosan-sanok-poland
   city: sanok-poland
   latitude: 49,54747528
@@ -6113,7 +5558,6 @@
   address: Sanok, Poland
   rank: 7
   selection: buses
-  icons: buses*
 - slug: skoda-group-plzen-czechia
   city: plzen-czechia
   latitude: 49,741944
@@ -6124,7 +5568,6 @@
   address: Plzeň, Czechia
   rank: 7
   selection: buses
-  icons: buses*
 - slug: iveco-group-vysoke-myto-czechia
   city: vysoke-myto-czechia
   latitude: 49,954264
@@ -6135,7 +5578,6 @@
   address: Vysoké Myto, Czechia
   rank: 7
   selection: buses
-  icons: buses*
 - slug: sor-usti-nad-orlici-czechia
   city: usti-nad-orlici-czechia
   latitude: 50,005475
@@ -6146,7 +5588,6 @@
   address: Libchavy, Czechia
   rank: 7
   selection: buses
-  icons: buses*
 - slug: vdl-group-roeselare-belgium
   city: roeselare-belgium
   latitude: 50,949909
@@ -6157,7 +5598,6 @@
   address: Roeselare, Belgium
   rank: 7
   selection: buses
-  icons: buses*
 - slug: volkswagen-group-starachowice-poland
   city: starachowice-poland
   latitude: 51,05566968
@@ -6168,7 +5608,6 @@
   address: Starachowice, Poland
   rank: 7
   selection: buses
-  icons: buses*
 - slug: volvo-group-kieczow-poland
   city: kieczow-poland
   latitude: 51,1211158
@@ -6179,7 +5618,6 @@
   address: Wroclaw, Poland
   rank: 7
   selection: buses
-  icons: buses*
 - slug: vdl-groep-valkenswaard-netherlands
   city: valkenswaard-netherlands
   latitude: 51,355496
@@ -6190,7 +5628,6 @@
   address: Valkenswaard, The Netherlands
   rank: 7
   selection: buses
-  icons: buses*
 - slug: ebusco-deurne-netherlands
   city: deurne-netherlands
   latitude: 51,45437921
@@ -6201,7 +5638,6 @@
   address: Deurne, The Netherlands
   rank: 7
   selection: buses
-  icons: buses*
 - slug: caf-group-murowana-goslina-poland
   city: murowana-goslina-poland
   latitude: 52,54655482
@@ -6212,7 +5648,6 @@
   address: Bolechowo, Poland
   rank: 7
   selection: buses
-  icons: buses*
 - slug: arp-e-vehicles-bydgoszcz-poland
   city: bydgoszcz-poland
   latitude: 53,09432653
@@ -6223,7 +5658,6 @@
   address: Bydgoszcz, Poland
   rank: 7
   selection: buses
-  icons: buses*
 - slug: ashok-leyland-knottingley-united-kingdom
   city: knottingley-united-kingdom
   latitude: 53,78958402
@@ -6234,7 +5668,6 @@
   address: Sherburn-in-Elmet (Leeds), United Kingdom
   rank: 7
   selection: buses
-  icons: buses*
 - slug: alexander-dennis-scarborough-united-kingdom
   city: scarborough-united-kingdom
   latitude: 54,283113
@@ -6245,7 +5678,6 @@
   address: Scarborough, United Kingdom
   rank: 7
   selection: buses
-  icons: buses*
 - slug: volkswagen-group-supsk-poland
   city: supsk-poland
   latitude: 54,47841422
@@ -6256,7 +5688,6 @@
   address: Słupsk, Poland
   rank: 7
   selection: buses
-  icons: buses*
 - slug: wrightbus-ballymena-united-kingdom
   city: ballymena-united-kingdom
   latitude: 54,865294
@@ -6267,7 +5698,6 @@
   address: Ballymena, United Kingdom
   rank: 7
   selection: buses
-  icons: buses*
 - slug: alexander-dennis-falkirk-united-kingdom
   city: falkirk-united-kingdom
   latitude: 56,001878
@@ -6278,7 +5708,6 @@
   address: Falkirk, United Kingdom
   rank: 7
   selection: buses
-  icons: buses*
 - slug: alexander-dennis-larbert-united-kingdom
   city: larbert-united-kingdom
   latitude: 56,03343624
@@ -6289,7 +5718,6 @@
   address: Larbert, United Kingdom
   rank: 7
   selection: buses
-  icons: buses*
 - slug: iveco-group-foggia-italy
   city: foggia-italy
   latitude: 41,462198
@@ -6300,7 +5728,6 @@
   address: Foggia, Italy
   rank: 7
   selection: buses
-  icons: buses
 - slug: sunsundegui-beasain-spain
   city: beasain-spain
   latitude: 42,90198892
@@ -6311,7 +5738,6 @@
   address: Altsasu, Spain
   rank: 7
   selection: buses
-  icons: buses
 - slug: irizar-beasain-spain
   city: beasain-spain
   latitude: 43,044062
@@ -6322,7 +5748,6 @@
   address: Ormaiztegi, Spain
   rank: 7
   selection: buses
-  icons: buses
 - slug: safra-albi-france
   city: albi-france
   latitude: 43,91783554
@@ -6333,7 +5758,6 @@
   address: Albi, France
   rank: 7
   selection: buses
-  icons: buses
 - slug: iveco-group-annonay-france
   city: annonay-france
   latitude: 45,239403
@@ -6344,7 +5768,6 @@
   address: Annonay, France
   rank: 7
   selection: buses
-  icons: buses
 - slug: volkswagen-group-angers-france
   city: angers-france
   latitude: 47,478419
@@ -6355,7 +5778,6 @@
   address: Angers, France
   rank: 7
   selection: buses
-  icons: buses
 - slug: kravtex-kuhne-group-gyor-hungary
   city: gyor-hungary
   latitude: 47,68390499
@@ -6366,7 +5788,6 @@
   address: Győr, Hungary
   rank: 7
   selection: buses
-  icons: buses
 - slug: daimler-truck-neu-ulm-germany
   city: neu-ulm-germany
   latitude: 48,390604
@@ -6377,7 +5798,6 @@
   address: Neu-Ulm, Germany
   rank: 7
   selection: buses
-  icons: buses
 - slug: daimler-truck-bar-le-duc-france
   city: bar-le-duc-france
   latitude: 48,68827
@@ -6388,7 +5808,6 @@
   address: Ligny-en-Barrois, France
   rank: 7
   selection: buses
-  icons: buses
 - slug: aequita-dortmund-germany
   city: dortmund-germany
   latitude: 51,513587
@@ -6399,4 +5818,3 @@
   address: Dortmund, Germany
   rank: 7
   selection: buses
-  icons: buses
