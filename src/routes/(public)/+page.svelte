@@ -328,10 +328,10 @@
         },
         geometry: {
           type: "Point" as const,
-          coordinates: [Number(factory.longitude), Number(factory.latitude)] as [
-            number,
-            number,
-          ],
+          coordinates: [
+            Number(factory.longitude),
+            Number(factory.latitude),
+          ] as [number, number],
         },
       }
     }),
@@ -1653,9 +1653,7 @@
     const rawAddress = props.address ? String(props.address) : ""
     const rawSelection = props.selection ? String(props.selection) : ""
     const parsedRank =
-      props.rank != null && props.rank !== ""
-        ? Number(props.rank)
-        : Number.NaN
+      props.rank != null && props.rank !== "" ? Number(props.rank) : Number.NaN
 
     const title = escapeHtml(rawManufacturer)
     const brand = rawBrand ? escapeHtml(rawBrand) : ""
