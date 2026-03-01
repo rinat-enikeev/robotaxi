@@ -118,4 +118,27 @@
   country: united-kingdom
   latitude: 51.733623
   longitude: -1.207653
-  address: Oxford Business Park, 8050 Alec Issigonis Wy., Oxford OX4 2FL, United Kingdom
+  address: Oxford Business Park, 8050 Alec Issigonis Wy., Oxford OX4 2FL, United Kingdom- slug: avride
+  name: Avride
+  website: avride.com
+  city: austin-united-states
+  country: united-states
+  latitude: 30.267153
+  longitude: -97.7430608
+  address: Austin, TX, USA
+- slug: vw-admt
+  name: VW ADMT
+  website: autonomousmobility.vw.com
+  city: munich-germany
+  country: germany
+  latitude: 48.1351253
+  longitude: 11.5819806
+  address: Munich, Germany
+- slug: cruise
+  name: Cruise
+  website: getcruise.com
+  city: san-francisco-united-states
+  country: united-states
+  latitude: 37.7749295
+  longitude: -122.4194155
+  address: San Francisco, CA, USA
