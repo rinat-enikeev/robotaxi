@@ -118,7 +118,8 @@
   country: united-kingdom
   latitude: 51.733623
   longitude: -1.207653
-  address: Oxford Business Park, 8050 Alec Issigonis Wy., Oxford OX4 2FL, United Kingdom- slug: avride
+  address: Oxford Business Park, 8050 Alec Issigonis Wy., Oxford OX4 2FL, United Kingdom
+- slug: avride
   name: Avride
   website: avride.com
   city: austin-united-states
