@@ -1083,16 +1083,6 @@
     }
   }
 
-  const handleRidehailingCityVisibilityToggle = (
-    slug: string,
-    checked: boolean,
-  ) => {
-    ridehailingCityVisibilityBySlug = {
-      ...ridehailingCityVisibilityBySlug,
-      [slug]: checked,
-    }
-  }
-
   const handleRidehailingStyleImageMissing = (
     event: maplibregl.MapStyleImageMissingEvent,
   ) => {
@@ -2544,32 +2534,46 @@
             const next: Record<string, boolean> = {}
             for (const c of ridehailingOperationCompanies()) next[c.slug] = true
             ridehailingOperationVisibilityBySlug = next
-          }}
-        >All</button>
+          }}>All</button
+        >
         <button
           class="ridehailing-bar-action ridehailing-bar-action--none"
           type="button"
           onclick={() => {
             const next: Record<string, boolean> = {}
-            for (const c of ridehailingOperationCompanies()) next[c.slug] = false
+            for (const c of ridehailingOperationCompanies())
+              next[c.slug] = false
             ridehailingOperationVisibilityBySlug = next
-          }}
-        >None</button>
+          }}>None</button
+        >
         <div class="ridehailing-bar-divider"></div>
         {#each ridehailingOperationCompanies() as company}
-          {@const isActive = ridehailingOperationVisibilityBySlug[company.slug] ?? true}
+          {@const isActive =
+            ridehailingOperationVisibilityBySlug[company.slug] ?? true}
           <button
             class="ridehailing-chip"
             class:ridehailing-chip--active={isActive}
             type="button"
-            title="{company.name} · {company.countryCount} {company.countryCount === 1 ? 'country' : 'countries'}"
-            onclick={() => handleRidehailingOperationVisibilityToggle(company.slug, !isActive)}
+            title="{company.name} · {company.countryCount} {company.countryCount ===
+            1
+              ? 'country'
+              : 'countries'}"
+            onclick={() =>
+              handleRidehailingOperationVisibilityToggle(
+                company.slug,
+                !isActive,
+              )}
           >
             <img
               class="ridehailing-chip-logo"
-              src={buildRidehailingLogoUrl(ridehailings.find(r => r.slug === company.slug)?.website ?? '')}
+              src={buildRidehailingLogoUrl(
+                ridehailings.find((r) => r.slug === company.slug)?.website ??
+                  "",
+              )}
               alt=""
-              onerror={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+              onerror={(e) => {
+                ;(e.currentTarget as HTMLImageElement).style.display = "none"
+              }}
             />
             <span class="ridehailing-chip-name">{company.name}</span>
             <span class="ridehailing-chip-count">{company.countryCount}</span>
@@ -2706,40 +2710,8 @@
     margin-left: 1.5rem;
   }
 
-  .operations-checkboxes {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .operations-company {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .operations-company + .operations-company {
-    margin-top: 0.25rem;
-  }
-
-  .operations-company-row.city {
-    padding-left: 2.5rem;
-  }
-
-  .operations-company-row.city input {
-    margin-left: 0;
-  }
-
   .menu-label {
     flex: 1;
-  }
-
-  .menu-meta {
-    margin-left: auto;
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: #6b7280;
   }
 
   .menu-status {
