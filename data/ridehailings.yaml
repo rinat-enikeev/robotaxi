@@ -77,7 +77,8 @@
   country: russia
   latitude: 55.7340711
   longitude: 37.584527
-  address: 16 Leo Tolstoy St, Moscow, Russia, 119021- slug: careem
+  address: 16 Leo Tolstoy St, Moscow, Russia, 119021
+- slug: careem
   name: Careem
   website: careem.com
   city: dubai-united-arab-emirates
