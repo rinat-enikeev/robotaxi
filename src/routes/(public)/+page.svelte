@@ -113,6 +113,26 @@
     fillColor: [number, number, number, number]
   }
 
+  type RobotaxiCityOperation = {
+    robotaxi_slug: string
+    city_slug: string
+    city_name: string
+    country_slug: string | null
+    latitude: number | null
+    longitude: number | null
+    population: number | null
+  }
+
+  type RobotaxiCityOperationDeckDatum = {
+    robotaxi_slug: string
+    city_slug: string
+    city_name: string
+    latitude: number
+    longitude: number
+    elevation: number
+    fillColor: [number, number, number, number]
+  }
+
   type RidehailingOperationFeatureProperties = {
     ridehailing_slug: string
     name: string
@@ -176,6 +196,12 @@
   let ridehailingOperationsError = $state<string | null>(null)
   let ridehailingOperationVisibilityBySlug = $state<Record<string, boolean>>({})
   let ridehailingCityVisibilityBySlug = $state<Record<string, boolean>>({})
+
+  let isRobotaxiOperationsEnabled = $state(false)
+  let isRobotaxiOperationsLoading = $state(false)
+  let hasFetchedRobotaxiOperations = $state(false)
+  let robotaxiCityOperations = $state<RobotaxiCityOperation[]>([])
+  let robotaxiOperationsError = $state<string | null>(null)
 
   let isCountryBoundariesLoading = $state(false)
   let countryBoundariesError = $state<string | null>(null)
@@ -800,6 +826,69 @@
     return [columns, labels]
   })
 
+  const robotaxiCityOperationsDeckData = $derived(
+    (): RobotaxiCityOperationDeckDatum[] => {
+      if (!isRobotaxiOperationsEnabled || !isRobotaxisEnabled) return []
+      const data: RobotaxiCityOperationDeckDatum[] = []
+      for (const op of robotaxiCityOperations) {
+        if (op.longitude == null || op.latitude == null) continue
+        const elevation = computeCityElevation(op.population)
+        data.push({
+          robotaxi_slug: op.robotaxi_slug,
+          city_slug: op.city_slug,
+          city_name: op.city_name,
+          longitude: op.longitude,
+          latitude: op.latitude,
+          elevation,
+          fillColor: [220, 80, 40, 220],
+        })
+      }
+      return data
+    },
+  )
+
+  const robotaxiCityOperationsDeckLayers = $derived(() => {
+    const data = robotaxiCityOperationsDeckData()
+    if (data.length === 0) return []
+
+    const columns = new ColumnLayer<RobotaxiCityOperationDeckDatum>({
+      id: "robotaxis-city-operations-columns",
+      data,
+      coordinateSystem: COORDINATE_SYSTEM.LNGLAT,
+      pickable: false,
+      diskResolution: 12,
+      radius: CITY_COLUMN_RADIUS_METERS,
+      extruded: true,
+      elevationScale: 1,
+      getPosition: (d) => [d.longitude, d.latitude],
+      getFillColor: (d) => d.fillColor,
+      getElevation: (d) => d.elevation,
+    })
+
+    const labels = new TextLayer<RobotaxiCityOperationDeckDatum>({
+      id: "robotaxis-city-operations-labels",
+      data,
+      coordinateSystem: COORDINATE_SYSTEM.LNGLAT,
+      pickable: false,
+      billboard: true,
+      sizeUnits: "pixels",
+      getPosition: (d) => [
+        d.longitude,
+        d.latitude,
+        d.elevation + CITY_LABEL_VERTICAL_OFFSET,
+      ],
+      getText: (d) => d.city_name,
+      getColor: [32, 32, 32, 230],
+      getSize: 14,
+      fontWeight: "600",
+      background: true,
+      backgroundPadding: [4, 2],
+      getBackgroundColor: [255, 255, 255, 220],
+    })
+
+    return [columns, labels]
+  })
+
   $effect(() => {
     const companies = ridehailingOperationCompanies()
     const currentVisibility = ridehailingOperationVisibilityBySlug
@@ -857,6 +946,16 @@
         Object.keys(nextVisibility).length
     ) {
       ridehailingCityVisibilityBySlug = nextVisibility
+    }
+  })
+
+  $effect(() => {
+    if (
+      isRobotaxiOperationsEnabled &&
+      !hasFetchedRobotaxiOperations &&
+      !isRobotaxiOperationsLoading
+    ) {
+      loadRobotaxiOperations()
     }
   })
 
@@ -1237,6 +1336,25 @@
       hasFetchedRidehailingOperations = false
     } finally {
       isRidehailingOperationsLoading = false
+    }
+  }
+
+  const loadRobotaxiOperations = async () => {
+    if (isRobotaxiOperationsLoading) return
+    isRobotaxiOperationsLoading = true
+    robotaxiOperationsError = null
+    try {
+      const response = await fetch("/api/robotaxis/operations")
+      if (!response.ok) throw new Error("Failed to fetch robotaxi operations")
+      const payload = await response.json()
+      robotaxiCityOperations = payload.cityOperations ?? []
+      hasFetchedRobotaxiOperations = true
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unknown error"
+      robotaxiOperationsError = message
+      hasFetchedRobotaxiOperations = false
+    } finally {
+      isRobotaxiOperationsLoading = false
     }
   }
 
@@ -2205,6 +2323,7 @@
   >
     <GlobeControl />
     <DeckGLOverlay layers={ridehailingCityOperationsDeckLayers()} />
+    <DeckGLOverlay layers={robotaxiCityOperationsDeckLayers()} />
 
     {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
       <GeoJSONSource
@@ -2369,6 +2488,32 @@
           <p class="menu-status">
             Showing {robotaxisWithCoords().length} robotaxi companies
           </p>
+        {/if}
+
+        {#if isRobotaxisEnabled && hasFetchedRobotaxis}
+          <label class="menu-item menu-subitem">
+            <input
+              type="checkbox"
+              checked={isRobotaxiOperationsEnabled}
+              onchange={(event) => {
+                isRobotaxiOperationsEnabled = (
+                  event.currentTarget as HTMLInputElement
+                ).checked
+              }}
+            />
+            <span class="menu-label">City operations</span>
+          </label>
+          {#if isRobotaxiOperationsLoading}
+            <p class="menu-status menu-substatus">Loading operations…</p>
+          {:else if robotaxiOperationsError}
+            <p class="menu-status error menu-substatus">
+              {robotaxiOperationsError}
+            </p>
+          {:else if hasFetchedRobotaxiOperations}
+            <p class="menu-status menu-substatus">
+              {robotaxiCityOperations.length} city operations
+            </p>
+          {/if}
         {/if}
 
         <label class="menu-item">
