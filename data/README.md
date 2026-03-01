@@ -9,6 +9,7 @@ This folder contains the source of truth for the geospatial and organizational d
 - `data/ridehailings.yaml` — ridehailing companies and primary offices.
 - `data/factories.yaml` — automotive manufacturing sites; drives `supabase/seeds/factories.sql`.
 - `data/operations.yaml` — per ridehailing company, the countries and cities where they operate.
+- `data/robotaxi-operations.yaml` — per robotaxi company, the cities where they operate; drives `supabase/seeds/robotaxi-operations.sql`.
 - `data/universities.yaml` — universities mapped to city and country slugs.
 - `scripts/generate_*_seed.sh` — Python-backed helpers that convert YAML into Supabase seed SQL.
 
