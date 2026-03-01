@@ -956,7 +956,6 @@
     - lebanon
     - morocco
     - tunisia
-    - palestine
   cities:
     - dubai-united-arab-emirates
     - abu-dhabi-united-arab-emirates
@@ -1081,7 +1080,7 @@
     - fremont-united-states
     - san-francisco-united-states
     - abu-dhabi-united-arab-emirates
-    - luxembourg-city-luxembourg
+    - luxembourg-luxembourg
 - ridehailing-slug: blablacar
   countries:
     - france
@@ -1147,7 +1146,7 @@
     - novosibirsk-russia
     - yekaterinburg-russia
     - almaty-kazakhstan
-    - nur-sultan-kazakhstan
+    - astana-kazakhstan
     - tashkent-uzbekistan
     - bishkek-kyrgyzstan
     - minsk-belarus
@@ -1160,14 +1159,14 @@
     - dar-es-salaam-tanzania
 - ridehailing-slug: kakao-t
   countries:
-    - south-korea
+    - korea-south
   cities:
-    - seoul-south-korea
-    - busan-south-korea
-    - incheon-south-korea
-    - daegu-south-korea
-    - daejeon-south-korea
-    - gwangju-south-korea
-    - suwon-south-korea
-    - seongnam-south-korea
-    - jeju-south-korea
+    - seoul-korea-south
+    - busan-korea-south
+    - incheon-korea-south
+    - daegu-korea-south
+    - daejeon-korea-south
+    - gwangju-korea-south
+    - suwon-korea-south
+    - seongnam-korea-south
+    - jeju-korea-south
