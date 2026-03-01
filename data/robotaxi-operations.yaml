@@ -1,0 +1,116 @@
+- robotaxi-slug: apollo-go
+  cities:
+    - abu-dhabi-united-arab-emirates
+    - beijing-china
+    - dubai-united-arab-emirates
+    - london-united-kingdom
+    - wuhan-china
+- robotaxi-slug: autox
+  cities:
+    - shenzhen-china
+- robotaxi-slug: avride
+  cities:
+    - austin-united-states
+    - dallas-united-states
+- robotaxi-slug: cruise
+  cities:
+    - san-francisco-united-states
+- robotaxi-slug: moia
+  cities:
+    - berlin-germany
+    - hamburg-germany
+    - oslo-norway
+- robotaxi-slug: maymobility
+  cities:
+    - ann-arbor-united-states
+    - arlington-united-states
+    - atlanta-united-states
+    - grand-rapids-united-states
+    # Grand Rapids MN — only grand-rapids-united-states found (likely MI); skipping separate MN entry
+    - martinez-united-states
+    - peachtree-corners-united-states
+    - sun-city-united-states
+- robotaxi-slug: nuro
+  cities:
+    - san-francisco-united-states
+- robotaxi-slug: oxa
+  cities:
+    - honolulu-united-states
+    - jacksonville-united-states
+    # Lake Nona FL — not found in cities.yaml, skipping
+    - san-ramon-united-states
+    - walnut-creek-united-states
+- robotaxi-slug: pony.ai
+  cities:
+    - beijing-china
+    - guangzhou-china
+    - luxembourg-luxembourg
+    - shanghai-china
+    - shenzhen-china
+- robotaxi-slug: tesla
+  cities:
+    - austin-united-states
+    - san-francisco-united-states
+- robotaxi-slug: vw-admt
+  cities:
+    - austin-united-states
+    - los-angeles-united-states
+- robotaxi-slug: waymo
+  cities:
+    - atlanta-united-states
+    - austin-united-states
+    - baltimore-united-states
+    - boston-united-states
+    - buffalo-united-states
+    - charlotte-united-states
+    - chicago-united-states
+    - dallas-united-states
+    - denver-united-states
+    - detroit-united-states
+    - houston-united-states
+    - las-vegas-united-states
+    - london-united-kingdom
+    - los-angeles-united-states
+    - miami-united-states
+    - minneapolis-united-states
+    - nashville-united-states
+    - new-orleans-united-states
+    - new-york-united-states
+    - orlando-united-states
+    - philadelphia-united-states
+    - phoenix-united-states
+    - pittsburgh-united-states
+    - sacramento-united-states
+    - san-antonio-united-states
+    - san-diego-united-states
+    - san-francisco-united-states
+    - seattle-united-states
+    - st-louis-united-states
+    - tampa-united-states
+    - tokyo-japan
+    - washington-united-states
+- robotaxi-slug: wayve
+  cities:
+    - london-united-kingdom
+    - san-francisco-united-states
+    - tokyo-japan
+- robotaxi-slug: weride
+  cities:
+    - abu-dhabi-united-arab-emirates
+    - beijing-china
+    - dubai-united-arab-emirates
+    - guangzhou-china
+    - riyadh-saudi-arabia
+    - shenzhen-china
+    - singapore-singapore
+    - zurich-switzerland
+- robotaxi-slug: zoox
+  cities:
+    - atlanta-united-states
+    - austin-united-states
+    - las-vegas-united-states
+    - los-angeles-united-states
+    - miami-united-states
+    - san-francisco-united-states
+    - seattle-united-states
+    - washington-united-states

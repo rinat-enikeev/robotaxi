@@ -113,6 +113,26 @@
     fillColor: [number, number, number, number]
   }
 
+  type RobotaxiCityOperation = {
+    robotaxi_slug: string
+    city_slug: string
+    city_name: string
+    country_slug: string | null
+    latitude: number | null
+    longitude: number | null
+    population: number | null
+  }
+
+  type RobotaxiCityOperationDeckDatum = {
+    robotaxi_slug: string
+    city_slug: string
+    city_name: string
+    latitude: number
+    longitude: number
+    elevation: number
+    fillColor: [number, number, number, number]
+  }
+
   type RidehailingOperationFeatureProperties = {
     ridehailing_slug: string
     name: string
@@ -176,6 +196,12 @@
   let ridehailingOperationsError = $state<string | null>(null)
   let ridehailingOperationVisibilityBySlug = $state<Record<string, boolean>>({})
   let ridehailingCityVisibilityBySlug = $state<Record<string, boolean>>({})
+
+  let isRobotaxiOperationsEnabled = $state(false)
+  let isRobotaxiOperationsLoading = $state(false)
+  let hasFetchedRobotaxiOperations = $state(false)
+  let robotaxiCityOperations = $state<RobotaxiCityOperation[]>([])
+  let robotaxiOperationsError = $state<string | null>(null)
 
   let isCountryBoundariesLoading = $state(false)
   let countryBoundariesError = $state<string | null>(null)
@@ -800,6 +826,69 @@
     return [columns, labels]
   })
 
+  const robotaxiCityOperationsDeckData = $derived(
+    (): RobotaxiCityOperationDeckDatum[] => {
+      if (!isRobotaxiOperationsEnabled || !isRobotaxisEnabled) return []
+      const data: RobotaxiCityOperationDeckDatum[] = []
+      for (const op of robotaxiCityOperations) {
+        if (op.longitude == null || op.latitude == null) continue
+        const elevation = computeCityElevation(op.population)
+        data.push({
+          robotaxi_slug: op.robotaxi_slug,
+          city_slug: op.city_slug,
+          city_name: op.city_name,
+          longitude: op.longitude,
+          latitude: op.latitude,
+          elevation,
+          fillColor: [220, 80, 40, 220],
+        })
+      }
+      return data
+    },
+  )
+
+  const robotaxiCityOperationsDeckLayers = $derived(() => {
+    const data = robotaxiCityOperationsDeckData()
+    if (data.length === 0) return []
+
+    const columns = new ColumnLayer<RobotaxiCityOperationDeckDatum>({
+      id: "robotaxis-city-operations-columns",
+      data,
+      coordinateSystem: COORDINATE_SYSTEM.LNGLAT,
+      pickable: false,
+      diskResolution: 12,
+      radius: CITY_COLUMN_RADIUS_METERS,
+      extruded: true,
+      elevationScale: 1,
+      getPosition: (d) => [d.longitude, d.latitude],
+      getFillColor: (d) => d.fillColor,
+      getElevation: (d) => d.elevation,
+    })
+
+    const labels = new TextLayer<RobotaxiCityOperationDeckDatum>({
+      id: "robotaxis-city-operations-labels",
+      data,
+      coordinateSystem: COORDINATE_SYSTEM.LNGLAT,
+      pickable: false,
+      billboard: true,
+      sizeUnits: "pixels",
+      getPosition: (d) => [
+        d.longitude,
+        d.latitude,
+        d.elevation + CITY_LABEL_VERTICAL_OFFSET,
+      ],
+      getText: (d) => d.city_name,
+      getColor: [32, 32, 32, 230],
+      getSize: 14,
+      fontWeight: "600",
+      background: true,
+      backgroundPadding: [4, 2],
+      getBackgroundColor: [255, 255, 255, 220],
+    })
+
+    return [columns, labels]
+  })
+
   $effect(() => {
     const companies = ridehailingOperationCompanies()
     const currentVisibility = ridehailingOperationVisibilityBySlug
@@ -857,6 +946,16 @@
         Object.keys(nextVisibility).length
     ) {
       ridehailingCityVisibilityBySlug = nextVisibility
+    }
+  })
+
+  $effect(() => {
+    if (
+      isRobotaxiOperationsEnabled &&
+      !hasFetchedRobotaxiOperations &&
+      !isRobotaxiOperationsLoading
+    ) {
+      loadRobotaxiOperations()
     }
   })
 
@@ -1083,16 +1182,6 @@
     }
   }
 
-  const handleRidehailingCityVisibilityToggle = (
-    slug: string,
-    checked: boolean,
-  ) => {
-    ridehailingCityVisibilityBySlug = {
-      ...ridehailingCityVisibilityBySlug,
-      [slug]: checked,
-    }
-  }
-
   const handleRidehailingStyleImageMissing = (
     event: maplibregl.MapStyleImageMissingEvent,
   ) => {
@@ -1247,6 +1336,25 @@
       hasFetchedRidehailingOperations = false
     } finally {
       isRidehailingOperationsLoading = false
+    }
+  }
+
+  const loadRobotaxiOperations = async () => {
+    if (isRobotaxiOperationsLoading) return
+    isRobotaxiOperationsLoading = true
+    robotaxiOperationsError = null
+    try {
+      const response = await fetch("/api/robotaxis/operations")
+      if (!response.ok) throw new Error("Failed to fetch robotaxi operations")
+      const payload = await response.json()
+      robotaxiCityOperations = payload.cityOperations ?? []
+      hasFetchedRobotaxiOperations = true
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unknown error"
+      robotaxiOperationsError = message
+      hasFetchedRobotaxiOperations = false
+    } finally {
+      isRobotaxiOperationsLoading = false
     }
   }
 
@@ -2215,6 +2323,7 @@
   >
     <GlobeControl />
     <DeckGLOverlay layers={ridehailingCityOperationsDeckLayers()} />
+    <DeckGLOverlay layers={robotaxiCityOperationsDeckLayers()} />
 
     {#if isRidehailingOperationsEnabled && ridehailingOperationsGeoJson().features.length > 0}
       <GeoJSONSource
@@ -2381,6 +2490,32 @@
           </p>
         {/if}
 
+        {#if isRobotaxisEnabled && hasFetchedRobotaxis}
+          <label class="menu-item menu-subitem">
+            <input
+              type="checkbox"
+              checked={isRobotaxiOperationsEnabled}
+              onchange={(event) => {
+                isRobotaxiOperationsEnabled = (
+                  event.currentTarget as HTMLInputElement
+                ).checked
+              }}
+            />
+            <span class="menu-label">City operations</span>
+          </label>
+          {#if isRobotaxiOperationsLoading}
+            <p class="menu-status menu-substatus">Loading operations…</p>
+          {:else if robotaxiOperationsError}
+            <p class="menu-status error menu-substatus">
+              {robotaxiOperationsError}
+            </p>
+          {:else if hasFetchedRobotaxiOperations}
+            <p class="menu-status menu-substatus">
+              {robotaxiCityOperations.length} city operations
+            </p>
+          {/if}
+        {/if}
+
         <label class="menu-item">
           <input
             type="checkbox"
@@ -2449,55 +2584,9 @@
                   No operations data yet.
                 </p>
               {:else if ridehailingOperationCompanies().length > 0}
-                <div class="operations-checkboxes">
-                  {#each ridehailingOperationCompanies() as company}
-                    <div class="operations-company">
-                      <label
-                        class="menu-item menu-subitem operations-company-row"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={ridehailingOperationVisibilityBySlug[
-                            company.slug
-                          ] ?? true}
-                          onchange={(event) =>
-                            handleRidehailingOperationVisibilityToggle(
-                              company.slug,
-                              (event.currentTarget as HTMLInputElement).checked,
-                            )}
-                        />
-                        <span class="menu-label">{company.name}</span>
-                        <span class="menu-meta">
-                          {company.countryCount}{" "}
-                          {company.countryCount === 1 ? "country" : "countries"}
-                        </span>
-                      </label>
-                      {#if company.cityCount > 0}
-                        <label
-                          class="menu-item menu-subitem operations-company-row city"
-                        >
-                          <input
-                            type="checkbox"
-                            checked={ridehailingCityVisibilityBySlug[
-                              company.slug
-                            ] ?? false}
-                            onchange={(event) =>
-                              handleRidehailingCityVisibilityToggle(
-                                company.slug,
-                                (event.currentTarget as HTMLInputElement)
-                                  .checked,
-                              )}
-                          />
-                          <span class="menu-label">Cities</span>
-                          <span class="menu-meta">
-                            {company.cityCount}{" "}
-                            {company.cityCount === 1 ? "city" : "cities"}
-                          </span>
-                        </label>
-                      {/if}
-                    </div>
-                  {/each}
-                </div>
+                <p class="menu-status menu-substatus">
+                  Use the bottom bar to filter operators.
+                </p>
               {/if}
             {/if}
           </div>
@@ -2578,6 +2667,65 @@
 
   {#if isUniversitiesEnabled && hasFetchedUniversities && !isUniversitiesLoading && universitiesWithCoords().length === 0}
     <div class="empty-state">No universities available yet.</div>
+  {/if}
+
+  {#if isRidehailingsEnabled && isRidehailingOperationsEnabled && hasFetchedRidehailingOperations && ridehailingOperationCompanies().length > 0}
+    <div class="ridehailing-bar">
+      <div class="ridehailing-bar-inner">
+        <button
+          class="ridehailing-bar-action"
+          type="button"
+          onclick={() => {
+            const next: Record<string, boolean> = {}
+            for (const c of ridehailingOperationCompanies()) next[c.slug] = true
+            ridehailingOperationVisibilityBySlug = next
+          }}>All</button
+        >
+        <button
+          class="ridehailing-bar-action ridehailing-bar-action--none"
+          type="button"
+          onclick={() => {
+            const next: Record<string, boolean> = {}
+            for (const c of ridehailingOperationCompanies())
+              next[c.slug] = false
+            ridehailingOperationVisibilityBySlug = next
+          }}>None</button
+        >
+        <div class="ridehailing-bar-divider"></div>
+        {#each ridehailingOperationCompanies() as company}
+          {@const isActive =
+            ridehailingOperationVisibilityBySlug[company.slug] ?? true}
+          <button
+            class="ridehailing-chip"
+            class:ridehailing-chip--active={isActive}
+            type="button"
+            title="{company.name} · {company.countryCount} {company.countryCount ===
+            1
+              ? 'country'
+              : 'countries'}"
+            onclick={() =>
+              handleRidehailingOperationVisibilityToggle(
+                company.slug,
+                !isActive,
+              )}
+          >
+            <img
+              class="ridehailing-chip-logo"
+              src={buildRidehailingLogoUrl(
+                ridehailings.find((r) => r.slug === company.slug)?.website ??
+                  "",
+              )}
+              alt=""
+              onerror={(e) => {
+                ;(e.currentTarget as HTMLImageElement).style.display = "none"
+              }}
+            />
+            <span class="ridehailing-chip-name">{company.name}</span>
+            <span class="ridehailing-chip-count">{company.countryCount}</span>
+          </button>
+        {/each}
+      </div>
+    </div>
   {/if}
 
   <div class="contribute-wrapper">
@@ -2707,40 +2855,8 @@
     margin-left: 1.5rem;
   }
 
-  .operations-checkboxes {
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .operations-company {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .operations-company + .operations-company {
-    margin-top: 0.25rem;
-  }
-
-  .operations-company-row.city {
-    padding-left: 2.5rem;
-  }
-
-  .operations-company-row.city input {
-    margin-left: 0;
-  }
-
   .menu-label {
     flex: 1;
-  }
-
-  .menu-meta {
-    margin-left: auto;
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: #6b7280;
   }
 
   .menu-status {
@@ -2788,10 +2904,133 @@
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
   }
 
+  .ridehailing-bar {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    max-width: calc(100vw - 3rem);
+  }
+
+  .ridehailing-bar-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(17, 24, 39, 0.1);
+    border-radius: 9999px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ridehailing-bar-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ridehailing-bar-action {
+    flex-shrink: 0;
+    padding: 0.3rem 0.7rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(17, 24, 39, 0.15);
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 120ms ease;
+    white-space: nowrap;
+  }
+
+  .ridehailing-bar-action:hover {
+    background: #e5e7eb;
+  }
+
+  .ridehailing-bar-action--none {
+    color: #6b7280;
+  }
+
+  .ridehailing-bar-divider {
+    flex-shrink: 0;
+    width: 1px;
+    height: 1.25rem;
+    background: rgba(17, 24, 39, 0.12);
+    margin: 0 0.25rem;
+  }
+
+  .ridehailing-chip {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background: #f3f4f6;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      background 120ms ease,
+      color 120ms ease,
+      border-color 120ms ease;
+    white-space: nowrap;
+    opacity: 0.5;
+  }
+
+  .ridehailing-chip--active {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-color: #bfdbfe;
+    opacity: 1;
+  }
+
+  .ridehailing-chip:hover {
+    opacity: 1;
+    background: #e0e7ff;
+    color: #1d4ed8;
+    border-color: #a5b4fc;
+  }
+
+  .ridehailing-chip-logo {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .ridehailing-chip-name {
+    line-height: 1;
+  }
+
+  .ridehailing-chip-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.1rem;
+    padding: 0 0.25rem;
+    height: 1.1rem;
+    border-radius: 9999px;
+    background: currentColor;
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    opacity: 0.7;
+  }
+
+  .ridehailing-chip--active .ridehailing-chip-count {
+    opacity: 1;
+  }
+
   .contribute-wrapper {
     position: absolute;
     left: 50%;
-    bottom: 1.5rem;
+    bottom: 5.5rem;
     transform: translateX(-50%);
     z-index: 30;
   }
