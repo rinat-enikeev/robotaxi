@@ -940,4 +940,233 @@
     - kazakhstan
     - tajikistan
     - israel
+    - united-arab-emirates- ridehailing-slug: careem
+  countries:
     - united-arab-emirates
+    - saudi-arabia
+    - egypt
+    - pakistan
+    - jordan
+    - kuwait
+    - bahrain
+    - qatar
+    - oman
+    - iraq
+    - lebanon
+    - morocco
+    - tunisia
+    - palestine
+  cities:
+    - dubai-united-arab-emirates
+    - abu-dhabi-united-arab-emirates
+    - riyadh-saudi-arabia
+    - jeddah-saudi-arabia
+    - cairo-egypt
+    - karachi-pakistan
+    - lahore-pakistan
+    - islamabad-pakistan
+    - amman-jordan
+    - kuwait-city-kuwait
+    - manama-bahrain
+    - doha-qatar
+    - muscat-oman
+    - casablanca-morocco
+    - beirut-lebanon
+- ridehailing-slug: ola-cabs
+  countries:
+    - india
+    - united-kingdom
+    - australia
+    - new-zealand
+  cities:
+    - bengaluru-india
+    - mumbai-india
+    - delhi-india
+    - hyderabad-india
+    - chennai-india
+    - pune-india
+    - kolkata-india
+    - ahmedabad-india
+    - jaipur-india
+    - london-united-kingdom
+    - manchester-united-kingdom
+    - birmingham-united-kingdom
+    - sydney-australia
+    - melbourne-australia
+    - auckland-new-zealand
+- ridehailing-slug: free-now
+  countries:
+    - germany
+    - united-kingdom
+    - ireland
+    - france
+    - spain
+    - portugal
+    - italy
+    - austria
+    - poland
+    - greece
+  cities:
+    - hamburg-germany
+    - berlin-germany
+    - munich-germany
+    - frankfurt-germany
+    - cologne-germany
+    - london-united-kingdom
+    - dublin-ireland
+    - paris-france
+    - barcelona-spain
+    - madrid-spain
+    - lisbon-portugal
+    - milan-italy
+    - vienna-austria
+    - warsaw-poland
+    - athens-greece
+- ridehailing-slug: gojek
+  countries:
+    - indonesia
+    - vietnam
+    - singapore
+    - thailand
+  cities:
+    - jakarta-indonesia
+    - surabaya-indonesia
+    - bandung-indonesia
+    - medan-indonesia
+    - yogyakarta-indonesia
+    - ho-chi-minh-city-vietnam
+    - hanoi-vietnam
+    - singapore-singapore
+    - bangkok-thailand
+- ridehailing-slug: weride
+  countries:
+    - china
+    - united-arab-emirates
+    - singapore
+    - united-states
+  cities:
+    - guangzhou-china
+    - beijing-china
+    - wuhan-china
+    - shenzhen-china
+    - shanghai-china
+    - dubai-united-arab-emirates
+    - abu-dhabi-united-arab-emirates
+    - singapore-singapore
+    - san-jose-united-states
+- ridehailing-slug: baidu-apollo-go
+  countries:
+    - china
+  cities:
+    - beijing-china
+    - wuhan-china
+    - chongqing-china
+    - shenzhen-china
+    - guangzhou-china
+    - changsha-china
+    - hefei-china
+    - cangzhou-china
+- ridehailing-slug: pony-ai
+  countries:
+    - china
+    - united-states
+    - united-arab-emirates
+    - luxembourg
+  cities:
+    - guangzhou-china
+    - beijing-china
+    - shanghai-china
+    - shenzhen-china
+    - fremont-united-states
+    - san-francisco-united-states
+    - abu-dhabi-united-arab-emirates
+    - luxembourg-city-luxembourg
+- ridehailing-slug: blablacar
+  countries:
+    - france
+    - germany
+    - spain
+    - italy
+    - poland
+    - russia
+    - ukraine
+    - hungary
+    - romania
+    - portugal
+    - belgium
+    - netherlands
+    - croatia
+    - serbia
+    - india
+    - brazil
+    - mexico
+    - turkey
+  cities:
+    - paris-france
+    - lyon-france
+    - marseille-france
+    - berlin-germany
+    - munich-germany
+    - madrid-spain
+    - barcelona-spain
+    - milan-italy
+    - rome-italy
+    - warsaw-poland
+    - krakow-poland
+    - moscow-russia
+    - kyiv-ukraine
+    - budapest-hungary
+    - bucharest-romania
+    - brussels-belgium
+    - amsterdam-netherlands
+    - istanbul-turkey
+- ridehailing-slug: maxim
+  countries:
+    - russia
+    - kazakhstan
+    - uzbekistan
+    - kyrgyzstan
+    - belarus
+    - georgia
+    - armenia
+    - azerbaijan
+    - ukraine
+    - ghana
+    - kenya
+    - ethiopia
+    - tanzania
+    - cameroon
+    - indonesia
+    - brazil
+    - colombia
+    - peru
+  cities:
+    - tyumen-russia
+    - moscow-russia
+    - novosibirsk-russia
+    - yekaterinburg-russia
+    - almaty-kazakhstan
+    - nur-sultan-kazakhstan
+    - tashkent-uzbekistan
+    - bishkek-kyrgyzstan
+    - minsk-belarus
+    - tbilisi-georgia
+    - yerevan-armenia
+    - baku-azerbaijan
+    - accra-ghana
+    - nairobi-kenya
+    - addis-ababa-ethiopia
+    - dar-es-salaam-tanzania
+- ridehailing-slug: kakao-t
+  countries:
+    - south-korea
+  cities:
+    - seoul-south-korea
+    - busan-south-korea
+    - incheon-south-korea
+    - daegu-south-korea
+    - daejeon-south-korea
+    - gwangju-south-korea
+    - suwon-south-korea
+    - seongnam-south-korea
+    - jeju-south-korea

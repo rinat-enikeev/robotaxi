@@ -77,4 +77,83 @@
   country: russia
   latitude: 55.7340711
   longitude: 37.584527
-  address: 16 Leo Tolstoy St, Moscow, Russia, 119021
+  address: 16 Leo Tolstoy St, Moscow, Russia, 119021- slug: careem
+  name: Careem
+  website: careem.com
+  city: dubai-united-arab-emirates
+  country: united-arab-emirates
+  latitude: 25.1972
+  longitude: 55.2744
+  address: Building 3, Dubai Internet City, Dubai, United Arab Emirates
+- slug: ola-cabs
+  name: Ola Cabs
+  website: olacabs.com
+  city: bengaluru-india
+  country: india
+  latitude: 12.9352
+  longitude: 77.6245
+  address: ANI Technologies Pvt. Ltd., Regent Insignia, 3rd Floor, 414/415, 4th Cross, Sadashivanagar, Bengaluru, Karnataka 560080, India
+- slug: free-now
+  name: FREE NOW
+  website: free-now.com
+  city: hamburg-germany
+  country: germany
+  latitude: 53.5488
+  longitude: 9.9872
+  address: FREE NOW GmbH, Große Elbstraße 145a, 22767 Hamburg, Germany
+- slug: gojek
+  name: Gojek
+  website: gojek.com
+  city: jakarta-indonesia
+  country: indonesia
+  latitude: -6.2297
+  longitude: 106.8261
+  address: GoTo Group, Pasaraya Blok M Building, Jl. Iskandarsyah II No.2, Kebayoran Baru, Jakarta Selatan 12160, Indonesia
+- slug: weride
+  name: WeRide
+  website: weride.ai
+  city: guangzhou-china
+  country: china
+  latitude: 23.1291
+  longitude: 113.2644
+  address: Bldg. B1, Huangpu Science City, 162 Science Avenue, Huangpu District, Guangzhou, Guangdong 510700, China
+- slug: baidu-apollo-go
+  name: Baidu Apollo Go
+  website: apollo.baidu.com
+  city: beijing-china
+  country: china
+  latitude: 40.0507
+  longitude: 116.3050
+  address: No. 10 Shangdi 10th Street, Haidian District, Beijing 100085, China
+- slug: pony-ai
+  name: Pony.ai
+  website: pony.ai
+  city: guangzhou-china
+  country: china
+  latitude: 23.0263
+  longitude: 113.4069
+  address: No. 3 Lushan Road, Panyu District, Guangzhou, Guangdong 511400, China
+- slug: blablacar
+  name: BlaBlaCar
+  website: blablacar.com
+  city: paris-france
+  country: france
+  latitude: 48.8566
+  longitude: 2.3488
+  address: 84 avenue de la République, 75011 Paris, France
+- slug: maxim
+  name: Maxim
+  website: taximaxim.com
+  city: tyumen-russia
+  country: russia
+  latitude: 57.1553
+  longitude: 65.5343
+  address: ul. Respubliki 211, Tyumen 625016, Russia
+- slug: kakao-t
+  name: Kakao T
+  website: kakaomobility.com
+  city: seongnam-south-korea
+  country: south-korea
+  latitude: 37.4021
+  longitude: 127.1082
+  address: 166 Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do 13529, South Korea
