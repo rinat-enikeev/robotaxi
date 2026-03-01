@@ -332,6 +332,45 @@ export type Database = {
           },
         ]
       }
+      robotaxi_city_operations: {
+        Row: {
+          city_slug: string
+          created_at: string | null
+          id: number
+          robotaxi_slug: string
+          updated_at: string | null
+        }
+        Insert: {
+          city_slug: string
+          created_at?: string | null
+          id?: number
+          robotaxi_slug: string
+          updated_at?: string | null
+        }
+        Update: {
+          city_slug?: string
+          created_at?: string | null
+          id?: number
+          robotaxi_slug?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "robotaxi_city_operations_city_slug_fkey"
+            columns: ["city_slug"]
+            isOneToOne: false
+            referencedRelation: "cities"
+            referencedColumns: ["slug"]
+          },
+          {
+            foreignKeyName: "robotaxi_city_operations_robotaxi_slug_fkey"
+            columns: ["robotaxi_slug"]
+            isOneToOne: false
+            referencedRelation: "robotaxis"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
       robotaxis: {
         Row: {
           address: string | null
