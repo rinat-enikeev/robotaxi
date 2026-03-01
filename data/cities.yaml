@@ -721363,3 +721363,33 @@
     iso2: RO
     iso3: ROU
   country_slug: romania
+- slug: seongnam-korea-south
+  city: Seongnam
+  city_ascii: Seongnam
+  latitude: 37.43861
+  longitude: 127.13778
+  admin_name: Gyeonggi-do
+  capital: ''
+  population: 954640
+  source_id: ''
+  country:
+    slug: korea-south
+    name: South Korea
+    iso2: KR
+    iso3: KOR
+  country_slug: korea-south
+- slug: bengaluru-india
+  city: Bengaluru
+  city_ascii: Bengaluru
+  latitude: 12.9716
+  longitude: 77.5946
+  admin_name: Karnataka
+  capital: ''
+  population: null
+  source_id: ''
+  country:
+    slug: india
+    name: India
+    iso2: IN
+    iso3: IND
+  country_slug: india
