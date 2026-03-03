@@ -2676,7 +2676,7 @@
           class="ridehailing-bar-action"
           type="button"
           onclick={() => {
-            const next: Record = {}
+            const next: Record<string, boolean> = {}
             for (const c of ridehailingOperationCompanies()) next[c.slug] = true
             ridehailingOperationVisibilityBySlug = next
           }}>All</button
@@ -2685,7 +2685,7 @@
           class="ridehailing-bar-action ridehailing-bar-action--none"
           type="button"
           onclick={() => {
-            const next: Record = {}
+            const next: Record<string, boolean> = {}
             for (const c of ridehailingOperationCompanies())
               next[c.slug] = false
             ridehailingOperationVisibilityBySlug = next
@@ -3156,9 +3156,8 @@
     border-radius: 12px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
     border: 1px solid rgba(15, 23, 42, 0.08);
-    font-family:
-      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", sans-serif;
     min-width: 240px;
     max-width: 320px;
   }
