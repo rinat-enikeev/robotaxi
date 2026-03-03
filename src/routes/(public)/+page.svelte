@@ -162,7 +162,7 @@
 
   let map = $state<maplibregl.Map | undefined>(undefined)
 
-  let isHamburgerOpen = $state(true)
+  let isHamburgerOpen = $state(false)
 
   let isRobotaxisEnabled = $state(false)
   let isRobotaxisLoading = $state(false)
@@ -972,6 +972,11 @@
     }
   }
 
+  const getMapPadding = () => {
+    const w = typeof window !== "undefined" ? window.innerWidth : 800
+    return w < 640 ? 40 : 180
+  }
+
   const focusMapOnRobotaxis = (
     m: maplibregl.Map,
     companies: Robotaxi[] | null = null,
@@ -987,7 +992,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: getMapPadding(), maxZoom: 6 })
     }
   }
 
@@ -1006,7 +1011,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: getMapPadding(), maxZoom: 6 })
     }
   }
 
@@ -1025,7 +1030,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: getMapPadding(), maxZoom: 6 })
     }
   }
 
@@ -1041,7 +1046,7 @@
     }
 
     if (!bounds.isEmpty()) {
-      m.fitBounds(bounds, { padding: 180, maxZoom: 6 })
+      m.fitBounds(bounds, { padding: getMapPadding(), maxZoom: 6 })
     }
   }
 
