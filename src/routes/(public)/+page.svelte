@@ -2676,7 +2676,7 @@
           class="ridehailing-bar-action"
           type="button"
           onclick={() => {
-            const next: Record<string, boolean> = {}
+            const next: Record = {}
             for (const c of ridehailingOperationCompanies()) next[c.slug] = true
             ridehailingOperationVisibilityBySlug = next
           }}>All</button
@@ -2685,7 +2685,7 @@
           class="ridehailing-bar-action ridehailing-bar-action--none"
           type="button"
           onclick={() => {
-            const next: Record<string, boolean> = {}
+            const next: Record = {}
             for (const c of ridehailingOperationCompanies())
               next[c.slug] = false
             ridehailingOperationVisibilityBySlug = next
@@ -2695,34 +2695,59 @@
         {#each ridehailingOperationCompanies() as company}
           {@const isActive =
             ridehailingOperationVisibilityBySlug[company.slug] ?? true}
-          <button
-            class="ridehailing-chip"
-            class:ridehailing-chip--active={isActive}
-            type="button"
-            title="{company.name} · {company.countryCount} {company.countryCount ===
-            1
-              ? 'country'
-              : 'countries'}"
-            onclick={() =>
-              handleRidehailingOperationVisibilityToggle(
-                company.slug,
-                !isActive,
-              )}
-          >
-            <img
-              class="ridehailing-chip-logo"
-              src={buildRidehailingLogoUrl(
-                ridehailings.find((r) => r.slug === company.slug)?.website ??
-                  "",
-              )}
-              alt=""
-              onerror={(e) => {
-                ;(e.currentTarget as HTMLImageElement).style.display = "none"
-              }}
-            />
-            <span class="ridehailing-chip-name">{company.name}</span>
-            <span class="ridehailing-chip-count">{company.countryCount}</span>
-          </button>
+          {@const citiesVisible =
+            ridehailingCityVisibilityBySlug[company.slug] ?? false}
+          <div class="ridehailing-chip-wrapper">
+            <button
+              class="ridehailing-chip"
+              class:ridehailing-chip--active={isActive}
+              type="button"
+              title="{company.name} · {company.countryCount} {company.countryCount ===
+              1
+                ? 'country'
+                : 'countries'}"
+              onclick={() =>
+                handleRidehailingOperationVisibilityToggle(
+                  company.slug,
+                  !isActive,
+                )}
+            >
+              <img
+                class="ridehailing-chip-logo"
+                src={buildRidehailingLogoUrl(
+                  ridehailings.find((r) => r.slug === company.slug)?.website ??
+                    "",
+                )}
+                alt=""
+                onerror={(e) => {
+                  ;(e.currentTarget as HTMLImageElement).style.display = "none"
+                }}
+              />
+              <span class="ridehailing-chip-name">{company.name}</span>
+              <span class="ridehailing-chip-count">{company.countryCount}</span>
+            </button>
+            {#if company.cityCount > 0}
+              <button
+                class="ridehailing-chip-cities-btn"
+                class:ridehailing-chip-cities-btn--active={citiesVisible}
+                type="button"
+                title="{citiesVisible
+                  ? 'Hide'
+                  : 'Show'} {company.cityCount} cities on map"
+                onclick={() => {
+                  ridehailingCityVisibilityBySlug = {
+                    ...ridehailingCityVisibilityBySlug,
+                    [company.slug]: !citiesVisible,
+                  }
+                }}
+              >
+                🗺
+                <span class="ridehailing-chip-cities-count"
+                  >{company.cityCount}</span
+                >
+              </button>
+            {/if}
+          </div>
         {/each}
       </div>
     </div>
@@ -2962,6 +2987,56 @@
     margin: 0 0.25rem;
   }
 
+  .ridehailing-chip-wrapper {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0 0.15rem;
+  }
+
+  .ridehailing-chip-cities-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0 9999px 9999px 0;
+    border: 1px solid #d1d5db;
+    border-left: none;
+    background: #f9fafb;
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: #6b7280;
+    transition:
+      background 120ms ease,
+      color 120ms ease;
+    white-space: nowrap;
+  }
+
+  .ridehailing-chip-cities-btn:hover {
+    background: #e5e7eb;
+    color: #111827;
+  }
+
+  .ridehailing-chip-cities-btn--active {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border-color: #93c5fd;
+  }
+
+  .ridehailing-chip-cities-btn--active:hover {
+    background: #bfdbfe;
+  }
+
+  .ridehailing-chip-cities-count {
+    font-weight: 600;
+  }
+
+  .ridehailing-chip-wrapper:has(.ridehailing-chip-cities-btn)
+    .ridehailing-chip {
+    border-radius: 9999px 0 0 9999px;
+    border-right: none;
+  }
+
   .ridehailing-chip {
     flex-shrink: 0;
     display: flex;
@@ -2969,7 +3044,7 @@
     gap: 0.35rem;
     padding: 0.3rem 0.65rem;
     border-radius: 9999px;
-    border: 1px solid transparent;
+    border: 1px solid #d1d5db;
     background: #f3f4f6;
     color: #6b7280;
     font-size: 0.75rem;
@@ -3081,8 +3156,9 @@
     border-radius: 12px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
     border: 1px solid rgba(15, 23, 42, 0.08);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", sans-serif;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+      sans-serif;
     min-width: 240px;
     max-width: 320px;
   }
