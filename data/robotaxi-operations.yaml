@@ -114,3 +114,28 @@
     - san-francisco-united-states
     - seattle-united-states
     - washington-united-states
+- robotaxi-slug: motional
+  cities:
+    - las-vegas-united-states
+    - pittsburgh-united-states
+    - santa-monica-united-states
+    - singapore-singapore
+- robotaxi-slug: mobileye
+  cities:
+    - jerusalem-israel
+    - munich-germany
+    - new-york-united-states
+    - tokyo-japan
+- robotaxi-slug: didi-autonomous
+  cities:
+    - shanghai-china
+    - chengdu-china
+    - guangzhou-china
+    - shenzhen-china
+- robotaxi-slug: gac-aion
+  cities:
+    - guangzhou-china
+    - shenzhen-china
+- robotaxi-slug: yandex-robotaxi
+  cities:
+    - kazan-russia
