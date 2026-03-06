@@ -143,3 +143,43 @@
   latitude: 37.7749295
   longitude: -122.4194155
   address: San Francisco, CA, USA
+- slug: motional
+  name: Motional
+  website: motional.com
+  city: boston-united-states
+  country: united-states
+  latitude: 42.3600825
+  longitude: -71.0588801
+  address: Boston, MA, USA
+- slug: mobileye
+  name: Mobileye
+  website: mobileye.com
+  city: jerusalem-israel
+  country: israel
+  latitude: 31.768319
+  longitude: 35.21371
+  address: Jerusalem, Israel
+- slug: didi-autonomous
+  name: Didi Autonomous Driving
+  website: didiglobal.com
+  city: shanghai-china
+  country: china
+  latitude: 31.2240977
+  longitude: 121.4879823
+  address: Shanghai, China
+- slug: gac-aion
+  name: GAC Aion
+  website: aion.gac.com
+  city: guangzhou-china
+  country: china
+  latitude: 23.1290853
+  longitude: 113.2591441
+  address: Guangzhou, China
+- slug: yandex-robotaxi
+  name: Yandex Robotaxi
+  website: yandex.com/sdg
+  city: moscow-russia
+  country: russia
+  latitude: 55.755826
+  longitude: 37.6172999
+  address: Moscow, Russia
